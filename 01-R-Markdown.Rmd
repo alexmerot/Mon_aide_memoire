@@ -1,0 +1,25 @@
+# R Markdown
+
+## Pourquoi R Markdown ?
+
+R Markdown est un format de fichier (à l'extension `.Rmd`) fournissant un cadre
+de création pour faire des rapports scientifiques automatisés. Ces documents
+peuvent ainsi être totalement reproductibles et plusieurs formats de rendu
+finale (statiques ou dynamiques) sont supportés.
+
+Le fichier est écrit via le langage Markdown et des sections de code R peuvent y
+être insérées facilement (ainsi que du code écrit via d'autres langages tels
+que Python ou SQL). Cela offre une syntaxe facile à lire et à écrire tout en
+permettant de générer un rapport structuré et élégant.
+
+Pour que cela fonctionne, R Markdown est lié à deux packages : `knitr` et le
+convertisseur universel de document `pandoc`.  
+Le package `knitr` permet la création, à partir du fichier `.Rmd`, d'un fichier
+au format `md` contenant le code et sa sortie. Ce fichier est alors converti
+dans le format voulu de rendu final via `pandoc` (`.html`, `.pdf`, etc.).
+
+![*Source : <https://rmarkdown.rstudio.com/lesson-2.html>*](image/rmarkdownflow.png)
+
+Toutes mes notes seront donc écrites via R Markdown, et cette section intégrera
+tous les tips intéressants que je rencontre au fur et à mesure des besoins 
+pendant l'écriture de ma auto-formation.

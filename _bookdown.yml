@@ -1,0 +1,22 @@
+book_filename: "Mon_aide_memoire"
+delete_merged_file: true
+language:
+  label:
+    fig: 'Figure '
+    tab: 'Tableau '
+    eq: 'Équation '
+    thm: 'Théorème '
+    lem: 'Lemme '
+    cor: 'Corollaire '
+    prp: 'Proposition '
+    cnj: 'Conjecture '
+    def: 'Définition '
+    exm: 'Exemple '
+    exr: 'Exercice '
+    proof: 'Preuve. '
+    remark: 'Remarque. '
+    solution: 'Solution. '
+  ui:
+    edit: Edit
+    chapter_name: 'Section '
+    appendix_name: 'Appendice '
