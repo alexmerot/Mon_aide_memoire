@@ -1,4 +1,4 @@
-book_filename: "Mon_aide_memoire"
+book_filename: "Mon_aide_memoire_R"
 delete_merged_file: true
 language:
   label:
@@ -18,5 +18,5 @@ language:
     solution: 'Solution. '
   ui:
     edit: Edit
-    chapter_name: 'Section '
-    appendix_name: 'Appendice '
+    chapter_name: ''
+    appendix_name: ''

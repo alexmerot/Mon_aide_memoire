@@ -16,10 +16,12 @@ Pour que cela fonctionne, R Markdown est lié à deux packages : `knitr` et le
 convertisseur universel de document `pandoc`.  
 Le package `knitr` permet la création, à partir du fichier `.Rmd`, d'un fichier
 au format `md` contenant le code et sa sortie. Ce fichier est alors converti
-dans le format voulu de rendu final via `pandoc` (`.html`, `.pdf`, etc.).
+dans le format voulu de rendu final via `pandoc` (`.html`, `.pdf`, etc).
 
 ![*Source : <https://rmarkdown.rstudio.com/lesson-2.html>*](image/rmarkdownflow.png)
 
 Toutes mes notes seront donc écrites via R Markdown, et cette section intégrera
 tous les tips intéressants que je rencontre au fur et à mesure des besoins 
 pendant l'écriture de ma auto-formation.
+
+Pour ne pas paraphraser tout le livre de Yihui Xie
