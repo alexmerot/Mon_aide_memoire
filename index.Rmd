@@ -14,15 +14,18 @@ description: "Ceci est l'ensemble de mes notes accumulées au fur et à mesure d
 
 Ce projet est un ensemble de notes écrites en R Markdown et via le package
 **bookdown** (https://github.com/rstudio/bookdown). Ces notes s'accumuleront au
-fur et à mesure de mon apprentissage des différents outils et concepts
-nécessaires à mes besoins dans les analyses de données et la programmation. Cela
-me permet de les comprendre, les mémoriser, ainsi que de les partager.
+fur et à mesure de mon apprentissage des différents outils et concepts dont j'ai
+besoin pour les analyses de données et la programmation. Cela me permet de les
+comprendre, les mémoriser, ainsi que de les partager.
 
-Ce projet évoluera peut-être en un blog, puisque l'excellent package
-**blogdown** existe aussi (https://bookdown.org/yihui/blogdown/).
+Le projet s'insérera peut-être dans un autre plus gros projet : la création d'un
+blog répertoriant tous mes projets et mon CV. Il commencera certainement lorsque
+je démarrerai la lecture de l'excellent package **blogdown**
+(https://bookdown.org/yihui/blogdown/).
+
 
 ```{r include=FALSE}
-# Créer automatiquement une base de données .bib pour les packages R utilisés.
+# Créer automatiquement une base de données '.bib' pour les packages R utilisés.
 knitr::write_bib(c(
   .packages(), 'bookdown', 'knitr', 'rmarkdown', 'blogdown'
 ), 'packages.bib')
