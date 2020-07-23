@@ -1,5 +1,5 @@
 --- 
-title: "Aide-mémoire : Théories et pratiques sur R et ses merveilleux packages"
+title: "Aide-mémoire : Théories et pratiques sur R"
 author: "Alexis Mérot"
 date: "Modifié le : `r Sys.Date()`"
 site: bookdown::bookdown_site
