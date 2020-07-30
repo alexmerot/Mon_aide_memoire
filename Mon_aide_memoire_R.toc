@@ -11,8 +11,4 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {3}Système d'Information Géographique}{11}{chapter.3}%
 \defcounter {refsection}{0}\relax 
-<<<<<<< HEAD
 \contentsline {chapter}{Ressources Internet}{13}{chapter*.3}%
-=======
-\contentsline {chapter}{\numberline {4}Ressources Internet}{13}{chapter.4}%
->>>>>>> b6482ce61e3db5b2bdcc244853eccd658cfd67c7
