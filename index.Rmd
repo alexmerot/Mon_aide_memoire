@@ -29,4 +29,8 @@ je démarrerai la lecture de la documentation de l'excellent package **blogdown*
 knitr::write_bib(c(
   .packages(), 'bookdown', 'knitr', 'rmarkdown', 'blogdown'
 ), 'packages.bib')
+
+# Ne pas supprimer les fichiers latex auxiliaires.
+# Permet de mettre à jour les références pour biblatex après un rebuild du livre.
+options(tinytex.clean = FALSE)
 ```
