@@ -5,23 +5,23 @@ date: "Modifié le : `r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
-biblio-style: apalike
+biblio-style: authoryear
 link-citations: yes
 description: "Ceci est l'ensemble de mes notes accumulées au fur et à mesure de mon apprentissage de différents outils et concepts, qui sont nécessaires à mes besoins dans les analyses de données et la programmation. Cela me permet de les comprendre, les mémoriser, ainsi que de les partager."
 ---
 
 # Introduction {-}
 
-Ce projet est un ensemble de notes écrites en R Markdown et via le package
-**bookdown** (https://github.com/rstudio/bookdown). Ces notes s'accumuleront au
-fur et à mesure de mon apprentissage des différents outils et concepts dont j'ai
-besoin pour les analyses de données et la programmation. Cela me permet de les
-comprendre, les mémoriser, ainsi que de les partager.
+Ce projet est un ensemble de notes écrites en R Markdown [@R-rmarkdown] et via
+le package **bookdown** (<https://github.com/rstudio/bookdown>). Ces notes
+s'accumuleront au fur et à mesure de mon apprentissage des différents outils et
+concepts dont j'ai besoin pour les analyses de données et la programmation. Cela
+me permet de les comprendre, les mémoriser, ainsi que de les partager.
 
 Le projet s'insérera peut-être dans un autre plus gros projet : la création d'un
 blog répertoriant tous mes projets et mon CV. Il commencera certainement lorsque
-je démarrerai la lecture de l'excellent package **blogdown**
-(https://bookdown.org/yihui/blogdown/).
+je démarrerai la lecture de la documentation de l'excellent package **blogdown**
+(<https://bookdown.org/yihui/blogdown/>).
 
 
 ```{r include=FALSE}

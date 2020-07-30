@@ -36,7 +36,7 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \hypersetup{
-  pdftitle={Aide-mémoire : Théories et pratiques sur R et ses merveilleux packages},
+  pdftitle={Aide-mémoire : Théories et pratiques sur R},
   pdfauthor={Alexis Mérot},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
@@ -69,12 +69,13 @@
 \setcounter{secnumdepth}{5}
 \usepackage{booktabs}
 \usepackage[french]{babel} % Ajout du français
-\usepackage[]{natbib}
-\bibliographystyle{apalike}
+\usepackage[style=authoryear,]{biblatex}
+\addbibresource{book.bib}
+\addbibresource{packages.bib}
 
-\title{Aide-mémoire : Théories et pratiques sur R et ses merveilleux packages}
+\title{Aide-mémoire : Théories et pratiques sur R}
 \author{Alexis Mérot}
-\date{Modifié le : 2020-07-23}
+\date{Modifié le : 2020-07-30}
 
 \begin{document}
 \maketitle
@@ -87,20 +88,22 @@
 \chapter*{Introduction}\label{introduction}}
 \addcontentsline{toc}{chapter}{Introduction}
 
-Ce projet est un ensemble de notes écrites en R Markdown et via le package
-\textbf{bookdown} (\url{https://github.com/rstudio/bookdown}). Ces notes s'accumuleront au
-fur et à mesure de mon apprentissage des différents outils et concepts
-nécessaires à mes besoins dans les analyses de données et la programmation. Cela
+Ce projet est un ensemble de notes écrites en R Markdown \autocite{R-rmarkdown} et via
+le package \textbf{bookdown} (\url{https://github.com/rstudio/bookdown}). Ces notes
+s'accumuleront au fur et à mesure de mon apprentissage des différents outils et
+concepts dont j'ai besoin pour les analyses de données et la programmation. Cela
 me permet de les comprendre, les mémoriser, ainsi que de les partager.
 
-Ce projet évoluera peut-être en un blog, puisque l'excellent package
-\textbf{blogdown} existe aussi (\url{https://bookdown.org/yihui/blogdown/}).
+Le projet s'insérera peut-être dans un autre plus gros projet : la création d'un
+blog répertoriant tous mes projets et mon CV. Il commencera certainement lorsque
+je démarrerai la lecture de la documentation de l'excellent package \textbf{blogdown}
+(\url{https://bookdown.org/yihui/blogdown/}).
 
-\hypertarget{r-markdown}{%
-\chapter{R Markdown}\label{r-markdown}}
+\hypertarget{rmarkdown}{%
+\chapter{R Markdown, Bookdown \& Blogdown}\label{rmarkdown}}
 
-\hypertarget{pourquoi-r-markdown}{%
-\section{Pourquoi R Markdown ?}\label{pourquoi-r-markdown}}
+\hypertarget{pourquoi-rmarkdown}{%
+\section{Pourquoi R Markdown ?}\label{pourquoi-rmarkdown}}
 
 R Markdown est un format de fichier (à l'extension \texttt{.Rmd}) fournissant un cadre
 de création pour faire des rapports scientifiques automatisés. Ces documents
@@ -116,7 +119,7 @@ Pour que cela fonctionne, R Markdown est lié à deux packages : \texttt{knitr} 
 convertisseur universel de document \texttt{pandoc}.\\
 Le package \texttt{knitr} permet la création, à partir du fichier \texttt{.Rmd}, d'un fichier
 au format \texttt{md} contenant le code et sa sortie. Ce fichier est alors converti
-dans le format voulu de rendu final via \texttt{pandoc} (\texttt{.html}, \texttt{.pdf}, etc).
+dans le format de rendu final voulu via \texttt{pandoc} (\texttt{.html}, \texttt{.pdf}, etc).
 
 \begin{figure}
 \centering
@@ -125,17 +128,21 @@ dans le format voulu de rendu final via \texttt{pandoc} (\texttt{.html}, \texttt
 \end{figure}
 
 Toutes mes notes seront donc écrites via R Markdown, et cette section intégrera
-tous les tips intéressants que je rencontre au fur et à mesure des besoins
-pendant l'écriture de ma auto-formation.
+toutes les astuces intéressantes que je rencontre au fur et à mesure des
+besoins.
 
-Pour ne pas paraphraser tout le livre de Yihui Xie
+Pour ne pas paraphraser tout le livre de Yihui Xie, je vous invite à
+lire son excellent guide gratuit : \url{https://bookdown.org/yihui/rmarkdown/}.
 
 \hypertarget{statistique}{%
 \chapter{Statistique}\label{statistique}}
 
-\hypertarget{systuxe8me-dinformation-guxe9ographique}{%
-\chapter{Système d'\,'Information Géographique}\label{systuxe8me-dinformation-guxe9ographique}}
+\hypertarget{SIG}{%
+\chapter{Système d'Information Géographique}\label{SIG}}
 
-  \bibliography{book.bib,packages.bib}
+\hypertarget{web-sources}{%
+\chapter{Ressources Internet}\label{web-sources}}
+
+\printbibliography
 
 \end{document}
