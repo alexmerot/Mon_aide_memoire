@@ -1,0 +1,110 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nyt/global//global/global}
+    \entry{R-rmarkdown}{manual}{}
+      \name{author}{10}{}{%
+        {{un=0,uniquepart=base,hash=c1f21e57d853466471e4fe8476b2e1f1}{%
+           family={Allaire},
+           familyi={A\bibinitperiod},
+           given={JJ},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=25ce25b9d444076e0963bcf9fa3a6f92}{%
+           family={Xie},
+           familyi={X\bibinitperiod},
+           given={Yihui},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8ec1111ac0c875e804db9ca5a116c726}{%
+           family={McPherson},
+           familyi={M\bibinitperiod},
+           given={Jonathan},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=52abee7d3c633f341186707ffa2faeb9}{%
+           family={Luraschi},
+           familyi={L\bibinitperiod},
+           given={Javier},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=067f2e01322d1b0cb9c65d573ad37d1e}{%
+           family={Ushey},
+           familyi={U\bibinitperiod},
+           given={Kevin},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=881341d600df8778c23ac24f4b27dfa9}{%
+           family={Atkins},
+           familyi={A\bibinitperiod},
+           given={Aron},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1d0f6977ce2d043e298a59a1cd75b7ef}{%
+           family={Wickham},
+           familyi={W\bibinitperiod},
+           given={Hadley},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c94e860a0102157c3ad5932d1028762d}{%
+           family={Cheng},
+           familyi={C\bibinitperiod},
+           given={Joe},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3ad4f9244dbfff3b38eeeec6d91fbd7d}{%
+           family={Chang},
+           familyi={C\bibinitperiod},
+           given={Winston},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4e344d0d30f27315082c8e6fcd3e7360}{%
+           family={Iannone},
+           familyi={I\bibinitperiod},
+           given={Richard},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{26055ade1179ca3a14ca29806be1158b}
+      \strng{fullhash}{612f3b07563af61f6d83b653ac6e7f2d}
+      \strng{bibnamehash}{26055ade1179ca3a14ca29806be1158b}
+      \strng{authorbibnamehash}{26055ade1179ca3a14ca29806be1158b}
+      \strng{authornamehash}{26055ade1179ca3a14ca29806be1158b}
+      \strng{authorfullhash}{612f3b07563af61f6d83b653ac6e7f2d}
+      \field{sortinit}{A}
+      \field{sortinithash}{a3dcedd53b04d1adfd5ac303ecd5e6fa}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{R package version 2.3}
+      \field{title}{rmarkdown: Dynamic Documents for R}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb https://CRAN.R-project.org/package=rmarkdown
+      \endverb
+      \verb{url}
+      \verb https://CRAN.R-project.org/package=rmarkdown
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
