@@ -8,7 +8,7 @@ bibliography: [book.bib, packages.bib]
 biblio-style: authoryear
 link-citations: yes
 github-repo: "alexmerot/Mon_aide_memoire"
-description: "Ceci est l'ensemble de mes notes accumulées au fur et à mesure de mon apprentissage de différents outils et concepts, qui sont nécessaires à mes besoins dans les analyses de données et la programmation. Cela me permet de les comprendre, les mémoriser, ainsi que de les partager."
+description: "Ceci est l'ensemble de mes notes accumulées au fur et à mesure de mon apprentissage de différents outils et concepts qui sont nécessaires à mes besoins dans les analyses de données et la programmation. Cela me permet de les comprendre, les mémoriser, ainsi que de les partager."
 ---
 
 # Introduction {-}

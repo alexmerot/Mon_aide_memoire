@@ -2,7 +2,7 @@
 
 ## Pourquoi R Markdown ? {#pourquoi-rmarkdown}
 
-R Markdown est un format de fichier (à l'extension `.Rmd`) fournissant un cadre
+R Markdown est un format de fichier (à l'extension **.Rmd**) fournissant un cadre
 de création pour faire des rapports scientifiques automatisés. Ces documents
 peuvent ainsi être totalement reproductibles et plusieurs formats de rendu
 finale (statiques ou dynamiques) sont supportés.
@@ -12,11 +12,11 @@ Le fichier est écrit via le langage Markdown et des sections de code R peuvent 
 que Python ou SQL). Cela offre une syntaxe facile à lire et à écrire tout en
 permettant de générer un rapport structuré et élégant.
 
-Pour que cela fonctionne, R Markdown est lié à deux packages : `knitr` et le
-convertisseur universel de document `pandoc`.  
-Le package `knitr` permet la création, à partir du fichier `.Rmd`, d'un fichier
-au format `md` contenant le code et sa sortie. Ce fichier est alors converti
-dans le format de rendu final voulu via `pandoc` (`.html`, `.pdf`, etc).
+Pour que cela fonctionne, R Markdown est lié à deux packages : **knitr** et le
+convertisseur universel de document **pandoc**.  
+Le package **knitr** permet la création, à partir du fichier **.Rmd**, d'un fichier
+au format **md** contenant le code et sa sortie. Ce fichier est alors converti
+dans le format de rendu final voulu via **pandoc** (**.html**, **.pdf**, etc).
 
 ![*Source : <https://rmarkdown.rstudio.com/lesson-2.html>*](images/rmarkdownflow.png)
 
@@ -27,27 +27,38 @@ besoins.
 Pour ne pas paraphraser tout le livre de Yihui Xie, je vous invite à
 lire son excellent guide gratuit : <https://bookdown.org/yihui/rmarkdown/>.
 
-## Liste de ressources Internet utiles {-}
+***
+
+## Liste de ressources Internet utiles {.unnumbered #ref-rmd}
 
 * R Markdown :
-  - [Vue d'ensemble de R Markdown](https://rmarkdown.rstudio.com/lesson-1.html)
-  - [Cours sur la communication avec R Markdown](https://ysc-rmarkdown.netlify.app/)
-  - [Comment utiliser R Markdown comme base pour le développement de packages bien organisés](https://emilyriederer.netlify.app/post/rmarkdown-driven-development/)
-  - [Quelques trucs et astuces sur R Markdown](https://www.dataquest.io/blog/r-markdown-tips-tricks-and-shortcuts/)
-  - [Comment donner du *peps* à mon document RMD](https://holtzy.github.io/Pimp-my-rmd/)
-  - [Un autre guide de R Markdown](https://www.dataquest.io/blog/r-markdown-guide-cheatsheet/)
-  - [Guide complet de R Markdown](https://bookdown.org/yihui/rmarkdown/)
-  - [Nouveau guide de R Markdown en cours d'écriture](https://bookdown.org/yihui/rmarkdown-cookbook/)
-  - [Création d'un template R Markdown](https://danawanzer.com/using-r-for-immediate-reporting-in-evaluation/)
+  - [Vue d'ensemble](https://rmarkdown.rstudio.com/lesson-1.html) de R Markdown
+  - [Cours](https://ysc-rmarkdown.netlify.app/) sur la communication avec R Markdown
+  - [Comment utiliser R Markdown](https://emilyriederer.netlify.app/post/rmarkdown-driven-development/)
+  comme base pour le développement de packages bien organisés
+  - Quelques [trucs et astuces](https://www.dataquest.io/blog/r-markdown-tips-tricks-and-shortcuts/)
+   sur R Markdown
+  - [Comment donner du *peps*](https://holtzy.github.io/Pimp-my-rmd/)
+   à mon document RMD
+  - [Un autre guide](https://www.dataquest.io/blog/r-markdown-guide-cheatsheet/)
+   de R Markdown
+  - [Guide complet](https://bookdown.org/yihui/rmarkdown/) de R Markdown
+  - [Nouveau guide](https://bookdown.org/yihui/rmarkdown-cookbook/)
+  de R Markdown (***en cours d'écriture***)
+  - [Création d'un template](https://danawanzer.com/using-r-for-immediate-reporting-in-evaluation/)
+   R Markdown
 * Bookdown :
-  - [Site officiel de Bookdown](https://bookdown.org/home/about/)
-  - [Guide complet de Bookdown](https://bookdown.org/yihui/bookdown/)
-  - [Extension à Bookdown](https://github.com/pzhaonet/bookdownplus)
-  - [Guide en français de Bookdown](https://statistique-et-logiciel-r.com/creer-un-livre-document-avec-bookdown/)
-  - [Introduction en français à Bookdown](https://thinkr.fr/rediger-avec-bookdown-pourquoi-comment/)
+  - [Site officiel](https://bookdown.org/home/about/) de Bookdown
+  - [Guide complet](https://bookdown.org/yihui/bookdown/) de Bookdown
+  - Extension à Bookdown : [**bookdownplus**](https://bookdown.org/baydap/bookdownplus/)
+  - [Guide en français](https://statistique-et-logiciel-r.com/creer-un-livre-document-avec-bookdown/)
+  de Bookdown
+  - [Introduction en français](https://thinkr.fr/rediger-avec-bookdown-pourquoi-comment/)
+   à Bookdown
 * Blogdown :
-  - [Guide complet sur Blogdown](https://bookdown.org/yihui/blogdown/)
-* [Court tutoriel d'introduction sur R Markdown, Bookdown et Blogdown](https://slides.yihui.org/2017-rmarkdown-UNL-Yihui-Xie.html#1)
-* [Guide pour le package `knitr`](https://yihui.org/knitr/)
+  - [Guide complet](https://bookdown.org/yihui/blogdown/) sur Blogdown
+* Court [tutoriel](https://slides.yihui.org/2017-rmarkdown-UNL-Yihui-Xie.html#1)
+ d'introduction sur R Markdown, Bookdown et Blogdown
+* Guide pour le package [**knitr**](https://yihui.org/knitr/)
 
 ***

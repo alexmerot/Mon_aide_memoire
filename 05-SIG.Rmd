@@ -1,1 +1,42 @@
 # Système d'Information Géographique {#SIG}
+
+::: {.infobox .caution data-latex="{caution}"}
+**Work In Progress**
+:::
+
+***
+
+## Liste de ressources Internet utiles {.unnumbered #ref-sig}
+
+* [Guide](https://geocompr.robinlovelace.net/) sur les analyses de données
+géographiques, leur visualisation et leur modélisation sur R
+* [Introduction](https://statnmap.com/2018-07-14-introduction-to-mapping-with-sf-and-co/)
+à l'utilisation des packages de cartographie sur R
+* [Introduction](https://www.infoworld.com/article/3505897/how-to-do-spatial-analysis-in-r-with-sf.amp.html)
+au package **sf**
+* [Édition](https://github.com/r-spatial/mapedit) interactive de cartes avec
+**mapedit**
+* [introduction](https://mhallwor.github.io/_pages/welcome) à l'utilisation de R
+comme un SIG
+* [Introduction](http://eriqande.github.io/rep-res-web/lectures/making-maps-with-R.html)
+pour créer des cartes avec R
+* [Introduction](https://thinkr.fr/sil-te-plait-dessine-moi-carte-r/)
+en français pour créer des cartes avec R
+* Introduction en français sur le package 
+[**rgeoapi**](https://colinfay.me/carte-r-rgeoapi-ggplot2/)
+* [Zoomer](https://rgeomatic.hypotheses.org/tag/sf) sur une carte avec R
+* [Tracer des cartes avec **ggplot2**](https://rpubs.com/huanfaChen/ggplotShapefile)
+via des fichiers *shapefiles*
+* [Tutoriel](https://www.r-spatial.org/r/2018/10/25/ggplot2-sf.html)
+pour dessiner des cartes avec R, **sf** et **ggplot2**
+* [Cartes interactives](https://r-spatial.github.io/mapview/) avec **mapview**
+* [Cartes interactives](https://rstudio.github.io/leaflet/) avec **leaflet**
+* Guide pour faire des
+[cartes en 3D](https://www.tylermw.com/a-step-by-step-guide-to-making-3d-maps-with-satellite-imagery-in-r/)
+à partir d'une imagerie satellite
+* Utilisation du package [**rayshader**](https://www.rayshader.com/) pour la
+création de cartes en 2D et 3D
+* Manipulation et visualisation de données
+[LiDAR](https://github.com/Jean-Romain/lidR) pour la foresterie avec **lidr**
+
+***

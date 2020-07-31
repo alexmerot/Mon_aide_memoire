@@ -11,8 +11,12 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {2}Statistique fréquentiste}{9}{chapter.2}%
 \defcounter {refsection}{0}\relax 
+\contentsline {section}{Liste de ressources Internet utiles}{9}{section*.4}%
+\defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {3}Statistique bayésienne}{11}{chapter.3}%
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {4}Visualisation des données : la \emph {Dataviz}}{13}{chapter.4}%
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {5}Système d'Information Géographique}{15}{chapter.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Liste de ressources Internet utiles}{15}{section*.5}%

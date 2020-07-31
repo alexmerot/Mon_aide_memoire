@@ -1,6 +1,5 @@
 # Visualisation des données : la *Dataviz* {#dataviz}
 
-```{block}
-Work in progress
-```
-
+::: {.infobox .caution data-latex="{caution}"}
+**Work In Progress**
+:::

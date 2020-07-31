@@ -1,1 +1,5 @@
 # Statistique bayésienne {#bayesienne}
+
+::: {.infobox .caution data-latex="{caution}"}
+**Work In Progress**
+:::

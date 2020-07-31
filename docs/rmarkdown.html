@@ -5,20 +5,20 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>1 R Markdown, Bookdown &amp; Blogdown | Aide-mémoire : Théories et pratiques sur R</title>
-  <meta name="description" content="Ceci est l’ensemble de mes notes accumulées au fur et à mesure de mon apprentissage de différents outils et concepts, qui sont nécessaires à mes besoins dans les analyses de données et la programmation. Cela me permet de les comprendre, les mémoriser, ainsi que de les partager." />
+  <meta name="description" content="Ceci est l’ensemble de mes notes accumulées au fur et à mesure de mon apprentissage de différents outils et concepts qui sont nécessaires à mes besoins dans les analyses de données et la programmation. Cela me permet de les comprendre, les mémoriser, ainsi que de les partager." />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
   <meta property="og:title" content="1 R Markdown, Bookdown &amp; Blogdown | Aide-mémoire : Théories et pratiques sur R" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="Ceci est l’ensemble de mes notes accumulées au fur et à mesure de mon apprentissage de différents outils et concepts, qui sont nécessaires à mes besoins dans les analyses de données et la programmation. Cela me permet de les comprendre, les mémoriser, ainsi que de les partager." />
+  <meta property="og:description" content="Ceci est l’ensemble de mes notes accumulées au fur et à mesure de mon apprentissage de différents outils et concepts qui sont nécessaires à mes besoins dans les analyses de données et la programmation. Cela me permet de les comprendre, les mémoriser, ainsi que de les partager." />
   <meta name="github-repo" content="alexmerot/Mon_aide_memoire" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="1 R Markdown, Bookdown &amp; Blogdown | Aide-mémoire : Théories et pratiques sur R" />
   
-  <meta name="twitter:description" content="Ceci est l’ensemble de mes notes accumulées au fur et à mesure de mon apprentissage de différents outils et concepts, qui sont nécessaires à mes besoins dans les analyses de données et la programmation. Cela me permet de les comprendre, les mémoriser, ainsi que de les partager." />
+  <meta name="twitter:description" content="Ceci est l’ensemble de mes notes accumulées au fur et à mesure de mon apprentissage de différents outils et concepts qui sont nécessaires à mes besoins dans les analyses de données et la programmation. Cela me permet de les comprendre, les mémoriser, ainsi que de les partager." />
   
 
 <meta name="author" content="Alexis Mérot" />
@@ -73,12 +73,18 @@
 <li class="chapter" data-level="1" data-path="rmarkdown.html"><a href="rmarkdown.html"><i class="fa fa-check"></i><b>1</b> R Markdown, Bookdown &amp; Blogdown</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="rmarkdown.html"><a href="rmarkdown.html#pourquoi-rmarkdown"><i class="fa fa-check"></i><b>1.1</b> Pourquoi R Markdown ?</a></li>
-<li class="chapter" data-level="" data-path="rmarkdown.html"><a href="rmarkdown.html#liste-de-ressources-internet-utiles"><i class="fa fa-check"></i>Liste de ressources Internet utiles</a></li>
+<li class="chapter" data-level="" data-path="rmarkdown.html"><a href="rmarkdown.html#ref-rmd"><i class="fa fa-check"></i>Liste de ressources Internet utiles</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="frequentiste.html"><a href="frequentiste.html"><i class="fa fa-check"></i><b>2</b> Statistique fréquentiste</a></li>
+<li class="chapter" data-level="2" data-path="frequentiste.html"><a href="frequentiste.html"><i class="fa fa-check"></i><b>2</b> Statistique fréquentiste</a>
+<ul>
+<li class="chapter" data-level="" data-path="frequentiste.html"><a href="frequentiste.html#ref-stat-freq"><i class="fa fa-check"></i>Liste de ressources Internet utiles</a></li>
+</ul></li>
 <li class="chapter" data-level="3" data-path="bayesienne.html"><a href="bayesienne.html"><i class="fa fa-check"></i><b>3</b> Statistique bayésienne</a></li>
 <li class="chapter" data-level="4" data-path="dataviz.html"><a href="dataviz.html"><i class="fa fa-check"></i><b>4</b> Visualisation des données : la <em>Dataviz</em></a></li>
-<li class="chapter" data-level="5" data-path="SIG.html"><a href="SIG.html"><i class="fa fa-check"></i><b>5</b> Système d’Information Géographique</a></li>
+<li class="chapter" data-level="5" data-path="SIG.html"><a href="SIG.html"><i class="fa fa-check"></i><b>5</b> Système d’Information Géographique</a>
+<ul>
+<li class="chapter" data-level="" data-path="SIG.html"><a href="SIG.html#ref-sig"><i class="fa fa-check"></i>Liste de ressources Internet utiles</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="références.html"><a href="références.html"><i class="fa fa-check"></i>Références</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Écrit avec bookdown</a></li>
@@ -104,7 +110,7 @@
 <h1><span class="header-section-number">1</span> R Markdown, Bookdown &amp; Blogdown</h1>
 <div id="pourquoi-rmarkdown" class="section level2" number="1.1">
 <h2><span class="header-section-number">1.1</span> Pourquoi R Markdown ?</h2>
-<p>R Markdown est un format de fichier (à l’extension <code>.Rmd</code>) fournissant un cadre
+<p>R Markdown est un format de fichier (à l’extension <strong>.Rmd</strong>) fournissant un cadre
 de création pour faire des rapports scientifiques automatisés. Ces documents
 peuvent ainsi être totalement reproductibles et plusieurs formats de rendu
 finale (statiques ou dynamiques) sont supportés.</p>
@@ -112,11 +118,11 @@ finale (statiques ou dynamiques) sont supportés.</p>
 être insérées facilement (ainsi que du code écrit via d’autres langages tels
 que Python ou SQL). Cela offre une syntaxe facile à lire et à écrire tout en
 permettant de générer un rapport structuré et élégant.</p>
-<p>Pour que cela fonctionne, R Markdown est lié à deux packages : <code>knitr</code> et le
-convertisseur universel de document <code>pandoc</code>.<br />
-Le package <code>knitr</code> permet la création, à partir du fichier <code>.Rmd</code>, d’un fichier
-au format <code>md</code> contenant le code et sa sortie. Ce fichier est alors converti
-dans le format de rendu final voulu via <code>pandoc</code> (<code>.html</code>, <code>.pdf</code>, etc).</p>
+<p>Pour que cela fonctionne, R Markdown est lié à deux packages : <strong>knitr</strong> et le
+convertisseur universel de document <strong>pandoc</strong>.<br />
+Le package <strong>knitr</strong> permet la création, à partir du fichier <strong>.Rmd</strong>, d’un fichier
+au format <strong>md</strong> contenant le code et sa sortie. Ce fichier est alors converti
+dans le format de rendu final voulu via <strong>pandoc</strong> (<strong>.html</strong>, <strong>.pdf</strong>, etc).</p>
 <div class="figure">
 <img src="images/rmarkdownflow.png" alt="" />
 <p class="caption"><em>Source : <a href="https://rmarkdown.rstudio.com/lesson-2.html" class="uri">https://rmarkdown.rstudio.com/lesson-2.html</a></em></p>
@@ -126,36 +132,46 @@ toutes les astuces intéressantes que je rencontre au fur et à mesure des
 besoins.</p>
 <p>Pour ne pas paraphraser tout le livre de Yihui Xie, je vous invite à
 lire son excellent guide gratuit : <a href="https://bookdown.org/yihui/rmarkdown/" class="uri">https://bookdown.org/yihui/rmarkdown/</a>.</p>
+<hr />
 </div>
-<div id="liste-de-ressources-internet-utiles" class="section level2 unnumbered">
+<div id="ref-rmd" class="section level2 unnumbered">
 <h2>Liste de ressources Internet utiles</h2>
 <ul>
 <li>R Markdown :
 <ul>
-<li><a href="https://rmarkdown.rstudio.com/lesson-1.html">Vue d’ensemble de R Markdown</a></li>
-<li><a href="https://ysc-rmarkdown.netlify.app/">Cours sur la communication avec R Markdown</a></li>
-<li><a href="https://emilyriederer.netlify.app/post/rmarkdown-driven-development/">Comment utiliser R Markdown comme base pour le développement de packages bien organisés</a></li>
-<li><a href="https://www.dataquest.io/blog/r-markdown-tips-tricks-and-shortcuts/">Quelques trucs et astuces sur R Markdown</a></li>
-<li><a href="https://holtzy.github.io/Pimp-my-rmd/">Comment donner du <em>peps</em> à mon document RMD</a></li>
-<li><a href="https://www.dataquest.io/blog/r-markdown-guide-cheatsheet/">Un autre guide de R Markdown</a></li>
-<li><a href="https://bookdown.org/yihui/rmarkdown/">Guide complet de R Markdown</a></li>
-<li><a href="https://bookdown.org/yihui/rmarkdown-cookbook/">Nouveau guide de R Markdown en cours d’écriture</a></li>
-<li><a href="https://danawanzer.com/using-r-for-immediate-reporting-in-evaluation/">Création d’un template R Markdown</a></li>
+<li><a href="https://rmarkdown.rstudio.com/lesson-1.html">Vue d’ensemble</a> de R Markdown</li>
+<li><a href="https://ysc-rmarkdown.netlify.app/">Cours</a> sur la communication avec R Markdown</li>
+<li><a href="https://emilyriederer.netlify.app/post/rmarkdown-driven-development/">Comment utiliser R Markdown</a>
+comme base pour le développement de packages bien organisés</li>
+<li>Quelques <a href="https://www.dataquest.io/blog/r-markdown-tips-tricks-and-shortcuts/">trucs et astuces</a>
+sur R Markdown</li>
+<li><a href="https://holtzy.github.io/Pimp-my-rmd/">Comment donner du <em>peps</em></a>
+à mon document RMD</li>
+<li><a href="https://www.dataquest.io/blog/r-markdown-guide-cheatsheet/">Un autre guide</a>
+de R Markdown</li>
+<li><a href="https://bookdown.org/yihui/rmarkdown/">Guide complet</a> de R Markdown</li>
+<li><a href="https://bookdown.org/yihui/rmarkdown-cookbook/">Nouveau guide</a>
+de R Markdown (<strong><em>en cours d’écriture</em></strong>)</li>
+<li><a href="https://danawanzer.com/using-r-for-immediate-reporting-in-evaluation/">Création d’un template</a>
+R Markdown</li>
 </ul></li>
 <li>Bookdown :
 <ul>
-<li><a href="https://bookdown.org/home/about/">Site officiel de Bookdown</a></li>
-<li><a href="https://bookdown.org/yihui/bookdown/">Guide complet de Bookdown</a></li>
-<li><a href="https://github.com/pzhaonet/bookdownplus">Extension à Bookdown</a></li>
-<li><a href="https://statistique-et-logiciel-r.com/creer-un-livre-document-avec-bookdown/">Guide en français de Bookdown</a></li>
-<li><a href="https://thinkr.fr/rediger-avec-bookdown-pourquoi-comment/">Introduction en français à Bookdown</a></li>
+<li><a href="https://bookdown.org/home/about/">Site officiel</a> de Bookdown</li>
+<li><a href="https://bookdown.org/yihui/bookdown/">Guide complet</a> de Bookdown</li>
+<li>Extension à Bookdown : <a href="https://bookdown.org/baydap/bookdownplus/"><strong>bookdownplus</strong></a></li>
+<li><a href="https://statistique-et-logiciel-r.com/creer-un-livre-document-avec-bookdown/">Guide en français</a>
+de Bookdown</li>
+<li><a href="https://thinkr.fr/rediger-avec-bookdown-pourquoi-comment/">Introduction en français</a>
+à Bookdown</li>
 </ul></li>
 <li>Blogdown :
 <ul>
-<li><a href="https://bookdown.org/yihui/blogdown/">Guide complet sur Blogdown</a></li>
+<li><a href="https://bookdown.org/yihui/blogdown/">Guide complet</a> sur Blogdown</li>
 </ul></li>
-<li><a href="https://slides.yihui.org/2017-rmarkdown-UNL-Yihui-Xie.html#1">Court tutoriel d’introduction sur R Markdown, Bookdown et Blogdown</a></li>
-<li><a href="https://yihui.org/knitr/">Guide pour le package <code>knitr</code></a></li>
+<li>Court <a href="https://slides.yihui.org/2017-rmarkdown-UNL-Yihui-Xie.html#1">tutoriel</a>
+d’introduction sur R Markdown, Bookdown et Blogdown</li>
+<li>Guide pour le package <a href="https://yihui.org/knitr/"><strong>knitr</strong></a></li>
 </ul>
 <hr />
 

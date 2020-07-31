@@ -105,7 +105,7 @@
 
 \title{Aide-mémoire : Théories et pratiques sur R}
 \author{Alexis Mérot}
-\date{Modifié le : 2020-07-31}
+\date{Modifié le : 2020-08-01}
 
 \begin{document}
 \maketitle
@@ -135,7 +135,7 @@ je démarrerai la lecture de la documentation de l'excellent package \textbf{blo
 \hypertarget{pourquoi-rmarkdown}{%
 \section{Pourquoi R Markdown ?}\label{pourquoi-rmarkdown}}
 
-R Markdown est un format de fichier (à l'extension \texttt{.Rmd}) fournissant un cadre
+R Markdown est un format de fichier (à l'extension \textbf{.Rmd}) fournissant un cadre
 de création pour faire des rapports scientifiques automatisés. Ces documents
 peuvent ainsi être totalement reproductibles et plusieurs formats de rendu
 finale (statiques ou dynamiques) sont supportés.
@@ -145,11 +145,11 @@ Le fichier est écrit via le langage Markdown et des sections de code R peuvent 
 que Python ou SQL). Cela offre une syntaxe facile à lire et à écrire tout en
 permettant de générer un rapport structuré et élégant.
 
-Pour que cela fonctionne, R Markdown est lié à deux packages : \texttt{knitr} et le
-convertisseur universel de document \texttt{pandoc}.\\
-Le package \texttt{knitr} permet la création, à partir du fichier \texttt{.Rmd}, d'un fichier
-au format \texttt{md} contenant le code et sa sortie. Ce fichier est alors converti
-dans le format de rendu final voulu via \texttt{pandoc} (\texttt{.html}, \texttt{.pdf}, etc).
+Pour que cela fonctionne, R Markdown est lié à deux packages : \textbf{knitr} et le
+convertisseur universel de document \textbf{pandoc}.\\
+Le package \textbf{knitr} permet la création, à partir du fichier \textbf{.Rmd}, d'un fichier
+au format \textbf{md} contenant le code et sa sortie. Ce fichier est alors converti
+dans le format de rendu final voulu via \textbf{pandoc} (\textbf{.html}, \textbf{.pdf}, etc).
 
 \begin{figure}
 \centering
@@ -164,8 +164,10 @@ besoins.
 Pour ne pas paraphraser tout le livre de Yihui Xie, je vous invite à
 lire son excellent guide gratuit : \url{https://bookdown.org/yihui/rmarkdown/}.
 
-\hypertarget{liste-de-ressources-internet-utiles}{%
-\section*{Liste de ressources Internet utiles}\label{liste-de-ressources-internet-utiles}}
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{ref-rmd}{%
+\section*{Liste de ressources Internet utiles}\label{ref-rmd}}
 \addcontentsline{toc}{section}{Liste de ressources Internet utiles}
 
 \begin{itemize}
@@ -176,23 +178,29 @@ lire son excellent guide gratuit : \url{https://bookdown.org/yihui/rmarkdown/}.
   \begin{itemize}
   \tightlist
   \item
-    \href{https://rmarkdown.rstudio.com/lesson-1.html}{Vue d'ensemble de R Markdown}
+    \href{https://rmarkdown.rstudio.com/lesson-1.html}{Vue d'ensemble} de R Markdown
   \item
-    \href{https://ysc-rmarkdown.netlify.app/}{Cours sur la communication avec R Markdown}
+    \href{https://ysc-rmarkdown.netlify.app/}{Cours} sur la communication avec R Markdown
   \item
-    \href{https://emilyriederer.netlify.app/post/rmarkdown-driven-development/}{Comment utiliser R Markdown comme base pour le développement de packages bien organisés}
+    \href{https://emilyriederer.netlify.app/post/rmarkdown-driven-development/}{Comment utiliser R Markdown}
+    comme base pour le développement de packages bien organisés
   \item
-    \href{https://www.dataquest.io/blog/r-markdown-tips-tricks-and-shortcuts/}{Quelques trucs et astuces sur R Markdown}
+    Quelques \href{https://www.dataquest.io/blog/r-markdown-tips-tricks-and-shortcuts/}{trucs et astuces}
+    sur R Markdown
   \item
-    \href{https://holtzy.github.io/Pimp-my-rmd/}{Comment donner du \emph{peps} à mon document RMD}
+    \href{https://holtzy.github.io/Pimp-my-rmd/}{Comment donner du \emph{peps}}
+    à mon document RMD
   \item
-    \href{https://www.dataquest.io/blog/r-markdown-guide-cheatsheet/}{Un autre guide de R Markdown}
+    \href{https://www.dataquest.io/blog/r-markdown-guide-cheatsheet/}{Un autre guide}
+    de R Markdown
   \item
-    \href{https://bookdown.org/yihui/rmarkdown/}{Guide complet de R Markdown}
+    \href{https://bookdown.org/yihui/rmarkdown/}{Guide complet} de R Markdown
   \item
-    \href{https://bookdown.org/yihui/rmarkdown-cookbook/}{Nouveau guide de R Markdown en cours d'écriture}
+    \href{https://bookdown.org/yihui/rmarkdown-cookbook/}{Nouveau guide}
+    de R Markdown (\textbf{\emph{en cours d'écriture}})
   \item
-    \href{https://danawanzer.com/using-r-for-immediate-reporting-in-evaluation/}{Création d'un template R Markdown}
+    \href{https://danawanzer.com/using-r-for-immediate-reporting-in-evaluation/}{Création d'un template}
+    R Markdown
   \end{itemize}
 \item
   Bookdown :
@@ -200,15 +208,17 @@ lire son excellent guide gratuit : \url{https://bookdown.org/yihui/rmarkdown/}.
   \begin{itemize}
   \tightlist
   \item
-    \href{https://bookdown.org/home/about/}{Site officiel de Bookdown}
+    \href{https://bookdown.org/home/about/}{Site officiel} de Bookdown
   \item
-    \href{https://bookdown.org/yihui/bookdown/}{Guide complet de Bookdown}
+    \href{https://bookdown.org/yihui/bookdown/}{Guide complet} de Bookdown
   \item
-    \href{https://github.com/pzhaonet/bookdownplus}{Extension à Bookdown}
+    Extension à Bookdown : \href{https://bookdown.org/baydap/bookdownplus/}{\textbf{bookdownplus}}
   \item
-    \href{https://statistique-et-logiciel-r.com/creer-un-livre-document-avec-bookdown/}{Guide en français de Bookdown}
+    \href{https://statistique-et-logiciel-r.com/creer-un-livre-document-avec-bookdown/}{Guide en français}
+    de Bookdown
   \item
-    \href{https://thinkr.fr/rediger-avec-bookdown-pourquoi-comment/}{Introduction en français à Bookdown}
+    \href{https://thinkr.fr/rediger-avec-bookdown-pourquoi-comment/}{Introduction en français}
+    à Bookdown
   \end{itemize}
 \item
   Blogdown :
@@ -216,12 +226,13 @@ lire son excellent guide gratuit : \url{https://bookdown.org/yihui/rmarkdown/}.
   \begin{itemize}
   \tightlist
   \item
-    \href{https://bookdown.org/yihui/blogdown/}{Guide complet sur Blogdown}
+    \href{https://bookdown.org/yihui/blogdown/}{Guide complet} sur Blogdown
   \end{itemize}
 \item
-  \href{https://slides.yihui.org/2017-rmarkdown-UNL-Yihui-Xie.html\#1}{Court tutoriel d'introduction sur R Markdown, Bookdown et Blogdown}
+  Court \href{https://slides.yihui.org/2017-rmarkdown-UNL-Yihui-Xie.html\#1}{tutoriel}
+  d'introduction sur R Markdown, Bookdown et Blogdown
 \item
-  \href{https://yihui.org/knitr/}{Guide pour le package \texttt{knitr}}
+  Guide pour le package \href{https://yihui.org/knitr/}{\textbf{knitr}}
 \end{itemize}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
@@ -235,16 +246,98 @@ lire son excellent guide gratuit : \url{https://bookdown.org/yihui/rmarkdown/}.
 
 \end{infobox}
 
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{ref-stat-freq}{%
+\section*{Liste de ressources Internet utiles}\label{ref-stat-freq}}
+\addcontentsline{toc}{section}{Liste de ressources Internet utiles}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
 \hypertarget{bayesienne}{%
 \chapter{Statistique bayésienne}\label{bayesienne}}
+
+\begin{infobox}{caution}
+
+\textbf{Work In Progress}
+
+\end{infobox}
 
 \hypertarget{dataviz}{%
 \chapter{\texorpdfstring{Visualisation des données : la \emph{Dataviz}}{Visualisation des données : la Dataviz}}\label{dataviz}}
 
-Work in progress
+\begin{infobox}{caution}
+
+\textbf{Work In Progress}
+
+\end{infobox}
 
 \hypertarget{SIG}{%
 \chapter{Système d'Information Géographique}\label{SIG}}
+
+\begin{infobox}{caution}
+
+\textbf{Work In Progress}
+
+\end{infobox}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{ref-sig}{%
+\section*{Liste de ressources Internet utiles}\label{ref-sig}}
+\addcontentsline{toc}{section}{Liste de ressources Internet utiles}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://geocompr.robinlovelace.net/}{Guide} sur les analyses de données
+  géographiques, leur visualisation et leur modélisation sur R
+\item
+  \href{https://statnmap.com/2018-07-14-introduction-to-mapping-with-sf-and-co/}{Introduction}
+  à l'utilisation des packages de cartographie sur R
+\item
+  \href{https://www.infoworld.com/article/3505897/how-to-do-spatial-analysis-in-r-with-sf.amp.html}{Introduction}
+  au package \textbf{sf}
+\item
+  \href{https://github.com/r-spatial/mapedit}{Édition} interactive de cartes avec
+  \textbf{mapedit}
+\item
+  \href{https://mhallwor.github.io/_pages/welcome}{introduction} à l'utilisation de R
+  comme un SIG
+\item
+  \href{http://eriqande.github.io/rep-res-web/lectures/making-maps-with-R.html}{Introduction}
+  pour créer des cartes avec R
+\item
+  \href{https://thinkr.fr/sil-te-plait-dessine-moi-carte-r/}{Introduction}
+  en français pour créer des cartes avec R
+\item
+  Introduction en français sur le package
+  \href{https://colinfay.me/carte-r-rgeoapi-ggplot2/}{\textbf{rgeoapi}}
+\item
+  \href{https://rgeomatic.hypotheses.org/tag/sf}{Zoomer} sur une carte avec R
+\item
+  \href{https://rpubs.com/huanfaChen/ggplotShapefile}{Tracer des cartes avec \textbf{ggplot2}}
+  via des fichiers \emph{shapefiles}
+\item
+  \href{https://www.r-spatial.org/r/2018/10/25/ggplot2-sf.html}{Tutoriel}
+  pour dessiner des cartes avec R, \textbf{sf} et \textbf{ggplot2}
+\item
+  \href{https://r-spatial.github.io/mapview/}{Cartes interactives} avec \textbf{mapview}
+\item
+  \href{https://rstudio.github.io/leaflet/}{Cartes interactives} avec \textbf{leaflet}
+\item
+  Guide pour faire des
+  \href{https://www.tylermw.com/a-step-by-step-guide-to-making-3d-maps-with-satellite-imagery-in-r/}{cartes en 3D}
+  à partir d'une imagerie satellite
+\item
+  Utilisation du package \href{https://www.rayshader.com/}{\textbf{rayshader}} pour la
+  création de cartes en 2D et 3D
+\item
+  Manipulation et visualisation de données
+  \href{https://github.com/Jean-Romain/lidR}{LiDAR} pour la foresterie avec \textbf{lidr}
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \printbibliography
 
