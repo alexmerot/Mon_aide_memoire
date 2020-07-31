@@ -1,0 +1,5 @@
+# Statistique fréquentiste {#frequentiste}
+
+::: {.infobox .caution data-latex="{caution}"}
+**Work In Progress**
+:::

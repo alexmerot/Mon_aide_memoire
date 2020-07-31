@@ -94,14 +94,14 @@
       \field{labeldatesource}{year}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{note}{R package version 2.3}
+      \field{note}{R package version 2.3.3}
       \field{title}{rmarkdown: Dynamic Documents for R}
       \field{year}{2020}
       \verb{urlraw}
-      \verb https://CRAN.R-project.org/package=rmarkdown
+      \verb https://github.com/rstudio/rmarkdown
       \endverb
       \verb{url}
-      \verb https://CRAN.R-project.org/package=rmarkdown
+      \verb https://github.com/rstudio/rmarkdown
       \endverb
     \endentry
   \enddatalist

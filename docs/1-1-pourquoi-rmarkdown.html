@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="1.1 Pourquoi R Markdown ? | Aide-mémoire : Théories et pratiques sur R" />
+<meta property="og:type" content="book" />
+
+
+<meta property="og:description" content="Ceci est l’ensemble de mes notes accumulées au fur et à mesure de mon apprentissage de différents outils et concepts, qui sont nécessaires à mes besoins dans les analyses de données et la programmation. Cela me permet de les comprendre, les mémoriser, ainsi que de les partager." />
+<meta name="github-repo" content="alexmerot/Mon_aide_memoire" />
+
+<meta name="author" content="Alexis Mérot" />
+
+
+
+<meta name="description" content="Ceci est l’ensemble de mes notes accumulées au fur et à mesure de mon apprentissage de différents outils et concepts, qui sont nécessaires à mes besoins dans les analyses de données et la programmation. Cela me permet de les comprendre, les mémoriser, ainsi que de les partager.">
+
+<title>1.1 Pourquoi R Markdown ? | Aide-mémoire : Théories et pratiques sur R</title>
+
+<script src="libs/header-attrs-2.3.3/header-attrs.js"></script>
+<script src="libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="libs/navigation-1.1/tabsets.js"></script>
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container-fluid main-container">
+
+
+<div class="row">
+<div class="col-sm-12">
+<div id="TOC">
+<ul>
+<li><a href="index.html#introduction">Introduction</a></li>
+<li><a href="1-rmarkdown.html#rmarkdown"><span class="toc-section-number">1</span> R Markdown, Bookdown &amp; Blogdown</a>
+<ul>
+<li><a href="1-1-pourquoi-rmarkdown.html#pourquoi-rmarkdown"><span class="toc-section-number">1.1</span> Pourquoi R Markdown ?</a></li>
+<li><a href="liste-de-ressources-internet-utiles.html#liste-de-ressources-internet-utiles">Liste de ressources Internet utiles</a></li>
+</ul></li>
+<li><a href="2-frequentiste.html#frequentiste"><span class="toc-section-number">2</span> Statistique fréquentiste</a></li>
+<li><a href="3-bayesienne.html#bayesienne"><span class="toc-section-number">3</span> Statistique bayésienne</a></li>
+<li><a href="4-dataviz.html#dataviz"><span class="toc-section-number">4</span> Visualisation des données : la <em>Dataviz</em></a></li>
+<li><a href="5-SIG.html#SIG"><span class="toc-section-number">5</span> Système d’Information Géographique</a></li>
+<li><a href="références.html#références">Références</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12">
+<div id="pourquoi-rmarkdown" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> Pourquoi R Markdown ?</h2>
+<p>R Markdown est un format de fichier (à l’extension <code>.Rmd</code>) fournissant un cadre
+de création pour faire des rapports scientifiques automatisés. Ces documents
+peuvent ainsi être totalement reproductibles et plusieurs formats de rendu
+finale (statiques ou dynamiques) sont supportés.</p>
+<p>Le fichier est écrit via le langage Markdown et des sections de code R peuvent y
+être insérées facilement (ainsi que du code écrit via d’autres langages tels
+que Python ou SQL). Cela offre une syntaxe facile à lire et à écrire tout en
+permettant de générer un rapport structuré et élégant.</p>
+<p>Pour que cela fonctionne, R Markdown est lié à deux packages : <code>knitr</code> et le
+convertisseur universel de document <code>pandoc</code>.<br />
+Le package <code>knitr</code> permet la création, à partir du fichier <code>.Rmd</code>, d’un fichier
+au format <code>md</code> contenant le code et sa sortie. Ce fichier est alors converti
+dans le format de rendu final voulu via <code>pandoc</code> (<code>.html</code>, <code>.pdf</code>, etc).</p>
+<div class="figure">
+<img src="image/rmarkdownflow.png" alt="" />
+<p class="caption"><em>Source : <a href="https://rmarkdown.rstudio.com/lesson-2.html" class="uri">https://rmarkdown.rstudio.com/lesson-2.html</a></em></p>
+</div>
+<p>Toutes mes notes seront donc écrites via R Markdown, et cette section intégrera
+toutes les astuces intéressantes que je rencontre au fur et à mesure des
+besoins.</p>
+<p>Pour ne pas paraphraser tout le livre de Yihui Xie, je vous invite à
+lire son excellent guide gratuit : <a href="https://bookdown.org/yihui/rmarkdown/" class="uri">https://bookdown.org/yihui/rmarkdown/</a>.</p>
+</div>
+<p style="text-align: center;">
+<a href="1-rmarkdown.html"><button class="btn btn-default">Previous</button></a>
+<a href="liste-de-ressources-internet-utiles.html"><button class="btn btn-default">Next</button></a>
+</p>
+</div>
+</div>
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+});
+
+</script>
+
+</body>
+</html>

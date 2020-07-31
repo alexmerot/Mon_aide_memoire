@@ -70,13 +70,42 @@
 \usepackage{booktabs}
 \usepackage{csquotes}
 \usepackage[french]{babel} % Ajout du français
+\usepackage{tcolorbox}
+
+\newtcolorbox{blackbox}{
+  colback=black!5!white,
+  colframe=orange,
+  coltext=black,
+  boxsep=5pt,
+  arc=4pt}
+
+\newenvironment{infobox}[1]
+  {
+  \begin{itemize}
+  \renewcommand{\labelitemi}{
+    \raisebox{-.7\height}[0pt][0pt]{
+      {\setkeys{Gin}{width=3em,keepaspectratio}
+        \includegraphics{images/#1}}
+    }
+  }
+  \setlength{\fboxsep}{1em}
+  \begin{blackbox}
+  \item
+  }
+  {
+  \end{blackbox}
+  \end{itemize}
+  }
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
 \usepackage[style=authoryear,]{biblatex}
 \addbibresource{book.bib}
 \addbibresource{packages.bib}
 
 \title{Aide-mémoire : Théories et pratiques sur R}
 \author{Alexis Mérot}
-\date{Modifié le : 2020-07-30}
+\date{Modifié le : 2020-07-31}
 
 \begin{document}
 \maketitle
@@ -124,7 +153,7 @@ dans le format de rendu final voulu via \texttt{pandoc} (\texttt{.html}, \texttt
 
 \begin{figure}
 \centering
-\includegraphics{image/rmarkdownflow.png}
+\includegraphics{images/rmarkdownflow.png}
 \caption{\emph{Source : \url{https://rmarkdown.rstudio.com/lesson-2.html}}}
 \end{figure}
 
@@ -135,15 +164,87 @@ besoins.
 Pour ne pas paraphraser tout le livre de Yihui Xie, je vous invite à
 lire son excellent guide gratuit : \url{https://bookdown.org/yihui/rmarkdown/}.
 
-\hypertarget{statistique}{%
-\chapter{Statistique}\label{statistique}}
+\hypertarget{liste-de-ressources-internet-utiles}{%
+\section*{Liste de ressources Internet utiles}\label{liste-de-ressources-internet-utiles}}
+\addcontentsline{toc}{section}{Liste de ressources Internet utiles}
+
+\begin{itemize}
+\tightlist
+\item
+  R Markdown :
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \href{https://rmarkdown.rstudio.com/lesson-1.html}{Vue d'ensemble de R Markdown}
+  \item
+    \href{https://ysc-rmarkdown.netlify.app/}{Cours sur la communication avec R Markdown}
+  \item
+    \href{https://emilyriederer.netlify.app/post/rmarkdown-driven-development/}{Comment utiliser R Markdown comme base pour le développement de packages bien organisés}
+  \item
+    \href{https://www.dataquest.io/blog/r-markdown-tips-tricks-and-shortcuts/}{Quelques trucs et astuces sur R Markdown}
+  \item
+    \href{https://holtzy.github.io/Pimp-my-rmd/}{Comment donner du \emph{peps} à mon document RMD}
+  \item
+    \href{https://www.dataquest.io/blog/r-markdown-guide-cheatsheet/}{Un autre guide de R Markdown}
+  \item
+    \href{https://bookdown.org/yihui/rmarkdown/}{Guide complet de R Markdown}
+  \item
+    \href{https://bookdown.org/yihui/rmarkdown-cookbook/}{Nouveau guide de R Markdown en cours d'écriture}
+  \item
+    \href{https://danawanzer.com/using-r-for-immediate-reporting-in-evaluation/}{Création d'un template R Markdown}
+  \end{itemize}
+\item
+  Bookdown :
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \href{https://bookdown.org/home/about/}{Site officiel de Bookdown}
+  \item
+    \href{https://bookdown.org/yihui/bookdown/}{Guide complet de Bookdown}
+  \item
+    \href{https://github.com/pzhaonet/bookdownplus}{Extension à Bookdown}
+  \item
+    \href{https://statistique-et-logiciel-r.com/creer-un-livre-document-avec-bookdown/}{Guide en français de Bookdown}
+  \item
+    \href{https://thinkr.fr/rediger-avec-bookdown-pourquoi-comment/}{Introduction en français à Bookdown}
+  \end{itemize}
+\item
+  Blogdown :
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \href{https://bookdown.org/yihui/blogdown/}{Guide complet sur Blogdown}
+  \end{itemize}
+\item
+  \href{https://slides.yihui.org/2017-rmarkdown-UNL-Yihui-Xie.html\#1}{Court tutoriel d'introduction sur R Markdown, Bookdown et Blogdown}
+\item
+  \href{https://yihui.org/knitr/}{Guide pour le package \texttt{knitr}}
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{frequentiste}{%
+\chapter{Statistique fréquentiste}\label{frequentiste}}
+
+\begin{infobox}{caution}
+
+\textbf{Work In Progress}
+
+\end{infobox}
+
+\hypertarget{bayesienne}{%
+\chapter{Statistique bayésienne}\label{bayesienne}}
+
+\hypertarget{dataviz}{%
+\chapter{\texorpdfstring{Visualisation des données : la \emph{Dataviz}}{Visualisation des données : la Dataviz}}\label{dataviz}}
+
+Work in progress
 
 \hypertarget{SIG}{%
 \chapter{Système d'Information Géographique}\label{SIG}}
-
-\hypertarget{ressources-internet}{%
-\chapter*{Ressources Internet}\label{ressources-internet}}
-\addcontentsline{toc}{chapter}{Ressources Internet}
 
 \printbibliography
 

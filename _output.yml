@@ -6,7 +6,11 @@ bookdown::gitbook:
         <li><a href="./">Mon aide-mémoire sur R</a></li>
       after: |
         <li><a href="https://github.com/rstudio/bookdown" target="blank">Écrit avec bookdown</a></li>
-    download: ["pdf", "epub"]
+    download: no
+    sharing:
+      facebook: no
+      twitter: no
+      github: yes
 bookdown::pdf_book:
   includes:
     in_header: preamble.tex

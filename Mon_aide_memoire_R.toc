@@ -7,8 +7,12 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1.1}Pourquoi R Markdown ?}{7}{section.1.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {2}Statistique}{9}{chapter.2}%
+\contentsline {section}{Liste de ressources Internet utiles}{8}{section*.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Système d'Information Géographique}{11}{chapter.3}%
+\contentsline {chapter}{\numberline {2}Statistique fréquentiste}{9}{chapter.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Ressources Internet}{13}{chapter*.3}%
+\contentsline {chapter}{\numberline {3}Statistique bayésienne}{11}{chapter.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {4}Visualisation des données : la \emph {Dataviz}}{13}{chapter.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {5}Système d'Information Géographique}{15}{chapter.5}%
