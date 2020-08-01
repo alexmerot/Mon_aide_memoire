@@ -1,6 +1,8 @@
 book_filename: "Mon_aide_memoire_R"
 delete_merged_file: true
 output_dir: "docs"
+clean: [packages.bib]
+repo: https://github.com/alexmerot/Mon_aide_memoire
 language:
   label:
     fig: 'Figure '
