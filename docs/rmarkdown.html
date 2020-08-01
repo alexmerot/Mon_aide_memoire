@@ -113,19 +113,22 @@
 <p>R Markdown est un format de fichier (à l’extension <strong>.Rmd</strong>) fournissant un cadre
 de création pour faire des rapports scientifiques automatisés. Ces documents
 peuvent ainsi être totalement reproductibles et plusieurs formats de rendu
-finale (statiques ou dynamiques) sont supportés.</p>
+final (statiques ou dynamiques) sont supportés.</p>
 <p>Le fichier est écrit via le langage Markdown et des sections de code R peuvent y
 être insérées facilement (ainsi que du code écrit via d’autres langages tels
 que Python ou SQL). Cela offre une syntaxe facile à lire et à écrire tout en
 permettant de générer un rapport structuré et élégant.</p>
 <p>Pour que cela fonctionne, R Markdown est lié à deux packages : <strong>knitr</strong> et le
-convertisseur universel de document <strong>pandoc</strong>.<br />
+convertisseur universel de document <strong>pandoc</strong> (Fig. <a href="rmarkdown.html#fig:rmarkdownflow">1.1</a>).<br />
 Le package <strong>knitr</strong> permet la création, à partir du fichier <strong>.Rmd</strong>, d’un fichier
 au format <strong>md</strong> contenant le code et sa sortie. Ce fichier est alors converti
 dans le format de rendu final voulu via <strong>pandoc</strong> (<strong>.html</strong>, <strong>.pdf</strong>, etc).</p>
-<div class="figure">
-<img src="images/rmarkdownflow.png" alt="" />
-<p class="caption"><em>Source : <a href="https://rmarkdown.rstudio.com/lesson-2.html" class="uri">https://rmarkdown.rstudio.com/lesson-2.html</a></em></p>
+
+<div class="figure" style="text-align: center"><span id="fig:rmarkdownflow"></span>
+<img src="images/rmarkdownflow.png" alt="Source : https://rmarkdown.rstudio.com/lesson-2.html" width="354" />
+<p class="caption">
+Figure 1.1: <em>Source : <a href="https://rmarkdown.rstudio.com/lesson-2.html" class="uri">https://rmarkdown.rstudio.com/lesson-2.html</a></em>
+</p>
 </div>
 <p>Toutes mes notes seront donc écrites via R Markdown, et cette section intégrera
 toutes les astuces intéressantes que je rencontre au fur et à mesure des
@@ -172,6 +175,8 @@ de Bookdown</li>
 <li>Court <a href="https://slides.yihui.org/2017-rmarkdown-UNL-Yihui-Xie.html#1">tutoriel</a>
 d’introduction sur R Markdown, Bookdown et Blogdown</li>
 <li>Guide pour le package <a href="https://yihui.org/knitr/"><strong>knitr</strong></a></li>
+<li><a href="https://yihui.org/knitr/options/">Options</a> valables pour les <em>chunks</em> et le
+package <strong>knitr</strong></li>
 </ul>
 <hr />
 

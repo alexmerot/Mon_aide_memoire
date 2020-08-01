@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.2)  1 AUG 2020 00:04
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.2)  1 AUG 2020 13:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1352,6 +1352,14 @@ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 Chapitre 1.
 File: images/rmarkdownflow.png Graphic file (type bmp)
 <images/rmarkdownflow.png>
+
+Overfull \hbox (366.67873pt too wide) in paragraph at lines 158--159
+ [][] 
+ []
+
+
+Underfull \vbox (badness 3118) has occurred while \output is active []
+
 [7] [8]
 Chapitre 2.
 File: images/caution.png Graphic file (type bmp)
@@ -1379,20 +1387,20 @@ File: images/caution.png Graphic file (type bmp)
 [15] [16] [17
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 344.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 344.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 352.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 352.
 (./Mon_aide_memoire_R.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 344.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 344.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 352.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 352.
 Package logreq Info: Writing requests to 'Mon_aide_memoire_R.run.xml'.
 \openout1 = `Mon_aide_memoire_R.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 35841 strings out of 479488
- 688123 string characters out of 5884709
- 1512520 words of memory out of 5000000
- 52748 multiletter control sequences out of 15000+600000
+ 35847 strings out of 479488
+ 688256 string characters out of 5884709
+ 1512607 words of memory out of 5000000
+ 52754 multiletter control sequences out of 15000+600000
  538805 words of font info for 79 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  59i,6n,118p,817b,5468s stack positions out of 5000i,500n,10000p,200000b,80000s

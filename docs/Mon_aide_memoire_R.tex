@@ -138,7 +138,7 @@ je démarrerai la lecture de la documentation de l'excellent package \textbf{blo
 R Markdown est un format de fichier (à l'extension \textbf{.Rmd}) fournissant un cadre
 de création pour faire des rapports scientifiques automatisés. Ces documents
 peuvent ainsi être totalement reproductibles et plusieurs formats de rendu
-finale (statiques ou dynamiques) sont supportés.
+final (statiques ou dynamiques) sont supportés.
 
 Le fichier est écrit via le langage Markdown et des sections de code R peuvent y
 être insérées facilement (ainsi que du code écrit via d'autres langages tels
@@ -146,15 +146,20 @@ que Python ou SQL). Cela offre une syntaxe facile à lire et à écrire tout en
 permettant de générer un rapport structuré et élégant.
 
 Pour que cela fonctionne, R Markdown est lié à deux packages : \textbf{knitr} et le
-convertisseur universel de document \textbf{pandoc}.\\
+convertisseur universel de document \textbf{pandoc} (Fig. \ref{fig:rmarkdownflow}).\\
 Le package \textbf{knitr} permet la création, à partir du fichier \textbf{.Rmd}, d'un fichier
 au format \textbf{md} contenant le code et sa sortie. Ce fichier est alors converti
 dans le format de rendu final voulu via \textbf{pandoc} (\textbf{.html}, \textbf{.pdf}, etc).
 
+
+
 \begin{figure}
-\centering
-\includegraphics{images/rmarkdownflow.png}
-\caption{\emph{Source : \url{https://rmarkdown.rstudio.com/lesson-2.html}}}
+
+{\centering \includegraphics[width=9.85in]{images/rmarkdownflow} 
+
+}
+
+\caption{\emph{Source : \url{https://rmarkdown.rstudio.com/lesson-2.html}}}\label{fig:rmarkdownflow}
 \end{figure}
 
 Toutes mes notes seront donc écrites via R Markdown, et cette section intégrera
@@ -233,6 +238,9 @@ lire son excellent guide gratuit : \url{https://bookdown.org/yihui/rmarkdown/}.
   d'introduction sur R Markdown, Bookdown et Blogdown
 \item
   Guide pour le package \href{https://yihui.org/knitr/}{\textbf{knitr}}
+\item
+  \href{https://yihui.org/knitr/options/}{Options} valables pour les \emph{chunks} et le
+  package \textbf{knitr}
 \end{itemize}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}

@@ -1,22 +1,22 @@
 [0] Config.pm:304> INFO - This is Biber 2.14
 [0] Config.pm:307> INFO - Logfile is 'Mon_aide_memoire_R.blg'
-[78] biber:322> INFO - === sam. août  1, 2020, 00:04:45
+[79] biber:322> INFO - === sam. août  1, 2020, 13:24:46
 [94] Biber.pm:415> INFO - Reading 'Mon_aide_memoire_R.bcf'
-[176] Biber.pm:943> INFO - Found 1 citekeys in bib section 0
-[195] Biber.pm:4256> INFO - Processing section 0
-[195] Utils.pm:75> INFO - Globbing data source 'book.bib'
-[196] Utils.pm:91> INFO - Globbed data source 'book.bib' to book.bib
-[196] Utils.pm:75> INFO - Globbing data source 'packages.bib'
-[196] Utils.pm:91> INFO - Globbed data source 'packages.bib' to packages.bib
-[209] Biber.pm:4455> INFO - Looking for bibtex format file 'book.bib' for section 0
-[210] bibtex.pm:1653> INFO - LaTeX decoding ...
-[214] bibtex.pm:1471> INFO - Found BibTeX data source 'book.bib'
-[215] Biber.pm:4455> INFO - Looking for bibtex format file 'packages.bib' for section 0
-[215] bibtex.pm:1653> INFO - LaTeX decoding ...
-[229] bibtex.pm:1471> INFO - Found BibTeX data source 'packages.bib'
-[268] UCollate.pm:68> INFO - Overriding locale 'fr-FR' defaults 'variable = shifted' with 'variable = non-ignorable'
-[269] UCollate.pm:68> INFO - Overriding locale 'fr-FR' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[269] Biber.pm:4084> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'fr-FR'
-[269] Biber.pm:4090> INFO - No sort tailoring available for locale 'fr-FR'
-[274] bbl.pm:652> INFO - Writing 'Mon_aide_memoire_R.bbl' with encoding 'UTF-8'
-[277] bbl.pm:755> INFO - Output to Mon_aide_memoire_R.bbl
+[169] Biber.pm:943> INFO - Found 1 citekeys in bib section 0
+[183] Biber.pm:4256> INFO - Processing section 0
+[183] Utils.pm:75> INFO - Globbing data source 'book.bib'
+[183] Utils.pm:91> INFO - Globbed data source 'book.bib' to book.bib
+[183] Utils.pm:75> INFO - Globbing data source 'packages.bib'
+[183] Utils.pm:91> INFO - Globbed data source 'packages.bib' to packages.bib
+[193] Biber.pm:4455> INFO - Looking for bibtex format file 'book.bib' for section 0
+[194] bibtex.pm:1653> INFO - LaTeX decoding ...
+[197] bibtex.pm:1471> INFO - Found BibTeX data source 'book.bib'
+[198] Biber.pm:4455> INFO - Looking for bibtex format file 'packages.bib' for section 0
+[199] bibtex.pm:1653> INFO - LaTeX decoding ...
+[207] bibtex.pm:1471> INFO - Found BibTeX data source 'packages.bib'
+[246] UCollate.pm:68> INFO - Overriding locale 'fr-FR' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[247] UCollate.pm:68> INFO - Overriding locale 'fr-FR' defaults 'variable = shifted' with 'variable = non-ignorable'
+[247] Biber.pm:4084> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'fr-FR'
+[247] Biber.pm:4090> INFO - No sort tailoring available for locale 'fr-FR'
+[253] bbl.pm:652> INFO - Writing 'Mon_aide_memoire_R.bbl' with encoding 'UTF-8'
+[256] bbl.pm:755> INFO - Output to Mon_aide_memoire_R.bbl

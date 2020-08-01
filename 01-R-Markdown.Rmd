@@ -5,7 +5,7 @@
 R Markdown est un format de fichier (à l'extension **.Rmd**) fournissant un cadre
 de création pour faire des rapports scientifiques automatisés. Ces documents
 peuvent ainsi être totalement reproductibles et plusieurs formats de rendu
-finale (statiques ou dynamiques) sont supportés.
+final (statiques ou dynamiques) sont supportés.
 
 Le fichier est écrit via le langage Markdown et des sections de code R peuvent y
 être insérées facilement (ainsi que du code écrit via d'autres langages tels
@@ -13,12 +13,16 @@ que Python ou SQL). Cela offre une syntaxe facile à lire et à écrire tout en
 permettant de générer un rapport structuré et élégant.
 
 Pour que cela fonctionne, R Markdown est lié à deux packages : **knitr** et le
-convertisseur universel de document **pandoc**.  
+convertisseur universel de document **pandoc** (Fig. \@ref(fig:rmarkdownflow)).  
 Le package **knitr** permet la création, à partir du fichier **.Rmd**, d'un fichier
 au format **md** contenant le code et sa sortie. Ce fichier est alors converti
 dans le format de rendu final voulu via **pandoc** (**.html**, **.pdf**, etc).
 
-![*Source : <https://rmarkdown.rstudio.com/lesson-2.html>*](images/rmarkdownflow.png)
+(ref:rmarkdownflow) *Source : <https://rmarkdown.rstudio.com/lesson-2.html>*
+
+```{r rmarkdownflow, echo=FALSE, fig.cap='(ref:rmarkdownflow)', fig.align='center'}
+knitr::include_graphics("images/rmarkdownflow.png")
+```
 
 Toutes mes notes seront donc écrites via R Markdown, et cette section intégrera
 toutes les astuces intéressantes que je rencontre au fur et à mesure des
@@ -60,5 +64,7 @@ lire son excellent guide gratuit : <https://bookdown.org/yihui/rmarkdown/>.
 * Court [tutoriel](https://slides.yihui.org/2017-rmarkdown-UNL-Yihui-Xie.html#1)
  d'introduction sur R Markdown, Bookdown et Blogdown
 * Guide pour le package [**knitr**](https://yihui.org/knitr/)
+* [Options](https://yihui.org/knitr/options/) valables pour les *chunks* et le
+package **knitr**
 
 ***
