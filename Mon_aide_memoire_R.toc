@@ -1,22 +1,11 @@
-\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
 \babel@toc {french}{}
-\defcounter {refsection}{0}\relax 
 \contentsline {chapter}{Introduction}{5}{chapter*.2}%
-\defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {1}R Markdown, Bookdown \& Blogdown}{7}{chapter.1}%
-\defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1.1}Pourquoi R Markdown ?}{7}{section.1.1}%
-\defcounter {refsection}{0}\relax 
 \contentsline {section}{Liste de ressources Internet utiles}{8}{section*.3}%
-\defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {2}Statistique fréquentiste}{9}{chapter.2}%
-\defcounter {refsection}{0}\relax 
 \contentsline {section}{Liste de ressources Internet utiles}{9}{section*.4}%
-\defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {3}Statistique bayésienne}{11}{chapter.3}%
-\defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {4}Visualisation des données : la \emph {Dataviz}}{13}{chapter.4}%
-\defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {5}Système d'Information Géographique}{15}{chapter.5}%
-\defcounter {refsection}{0}\relax 
 \contentsline {section}{Liste de ressources Internet utiles}{15}{section*.5}%
