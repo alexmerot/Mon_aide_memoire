@@ -1,6 +1,7 @@
 bookdown::gitbook:
   css: css/style.css
   highlight: default
+  clean: [packages.bib]
   config:
     toc:
       before: |
@@ -16,5 +17,5 @@ bookdown::pdf_book:
   includes:
     in_header: latex/preamble.tex
   latex_engine: xelatex
-  citation_package: biblatex
+  citation_package: natbib
   keep_tex: yes

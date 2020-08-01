@@ -99,9 +99,8 @@
 \ifluatex
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
-\usepackage[style=authoryear,]{biblatex}
-\addbibresource{book.bib}
-\addbibresource{packages.bib}
+\usepackage[]{natbib}
+\bibliographystyle{apalike}
 
 \title{Aide-mémoire : Théories et pratiques sur R}
 \author{Alexis Mérot}
@@ -118,7 +117,7 @@
 \chapter*{Introduction}\label{introduction}}
 \addcontentsline{toc}{chapter}{Introduction}
 
-Ce projet est un ensemble de notes écrites en R Markdown \autocite{R-rmarkdown} et via
+Ce projet est un ensemble de notes écrites en R Markdown \citep{R-rmarkdown} et via
 le package \textbf{bookdown} (\url{https://github.com/rstudio/bookdown}). Ces notes
 s'accumuleront au fur et à mesure de mon apprentissage des différents outils et
 concepts dont j'ai besoin pour les analyses de données et la programmation. Cela
@@ -347,6 +346,6 @@ lire son excellent guide gratuit : \url{https://bookdown.org/yihui/rmarkdown/}.
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-\printbibliography
+  \bibliography{book.bib,packages.bib}
 
 \end{document}
