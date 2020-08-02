@@ -4,7 +4,7 @@
 \contentsline {section}{\numberline {1.1}Pourquoi R Markdown ?}{7}{section.1.1}%
 \contentsline {section}{Liste de ressources Internet utiles}{8}{section*.3}%
 \contentsline {chapter}{\numberline {2}Statistique}{9}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Quelques notions clées}{9}{section.2.1}%
+\contentsline {section}{\numberline {2.1}Quelques notions clés}{9}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Statistique fréquentiste}{9}{section.2.2}%
 \contentsline {section}{Liste de ressources Internet utiles}{9}{section*.4}%
 \contentsline {section}{\numberline {2.3}Statistique bayésienne}{9}{section.2.3}%
