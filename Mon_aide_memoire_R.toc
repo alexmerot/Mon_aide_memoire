@@ -3,9 +3,12 @@
 \contentsline {chapter}{\numberline {1}R Markdown, Bookdown \& Blogdown}{7}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Pourquoi R Markdown ?}{7}{section.1.1}%
 \contentsline {section}{Liste de ressources Internet utiles}{8}{section*.3}%
-\contentsline {chapter}{\numberline {2}Statistique fréquentiste}{9}{chapter.2}%
+\contentsline {chapter}{\numberline {2}Statistique}{9}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Quelques notions clées}{9}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Statistique fréquentiste}{9}{section.2.2}%
 \contentsline {section}{Liste de ressources Internet utiles}{9}{section*.4}%
-\contentsline {chapter}{\numberline {3}Statistique bayésienne}{11}{chapter.3}%
-\contentsline {chapter}{\numberline {4}Visualisation des données : la \emph {Dataviz}}{13}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Système d'Information Géographique}{15}{chapter.5}%
-\contentsline {section}{Liste de ressources Internet utiles}{15}{section*.5}%
+\contentsline {section}{\numberline {2.3}Statistique bayésienne}{9}{section.2.3}%
+\contentsline {section}{Liste de ressources Internet utiles}{10}{section*.5}%
+\contentsline {chapter}{\numberline {3}Visualisation des données : la \emph {Dataviz}}{11}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Système d'Information Géographique}{13}{chapter.4}%
+\contentsline {section}{Liste de ressources Internet utiles}{13}{section*.6}%

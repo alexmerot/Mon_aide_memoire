@@ -1,11 +1,31 @@
-# Statistique fréquentiste {#frequentiste}
+# Statistique {#statistique}
 
 ::: {.infobox .caution data-latex="{caution}"}
 **Work In Progress**
 :::
 
+## Quelques notions clés
+
+Concepts à comprendre :
+
+- Théorie des probabilités
+- Variable aléatoire réelle
+- Fonction de répartition (ou fonction de distribution cumulative) d'une
+variable aléatoire
+- Fonction de densité ou densité de probabilité
+
+## Statistique fréquentiste {#frequentiste}
+
 ***
 
 ## Liste de ressources Internet utiles {.unnumbered #ref-stat-freq}
+
+***
+
+## Statistique bayésienne {#bayesienne}
+
+***
+
+## Liste de ressources Internet utiles {.unnumbered #ref-stat-bayes}
 
 ***
