@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.2)  2 AUG 2020 23:58
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.2)  3 AUG 2020 11:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1147,34 +1147,46 @@ File: images/caution.png Graphic file (type bmp)
 <images/caution.png>
 [9
 
-] [10]
+]
+Overfull \hbox (118.17334pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 10 \TU/lmr/m/sl/10 CHAPITRE 2.  EXTRACTION/IMPORTATION, NETTOYAG
+E & MANIPULATION DES DONNÉES
+ []
+
+[10
+
+]
 Chapitre 3.
 File: images/caution.png Graphic file (type bmp)
 <images/caution.png>
-[11
-
-] [12
-
-]
+[11] [12]
 Chapitre 4.
 File: images/caution.png Graphic file (type bmp)
 <images/caution.png>
-[13] (./Mon_aide_memoire_R.bbl [14]) [15
+[13
+
+] [14
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 374.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 374.
+Chapitre 5.
+File: images/caution.png Graphic file (type bmp)
+<images/caution.png>
+[15] (./Mon_aide_memoire_R.bbl [16]) [17
+
+]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 387.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 387.
 (./Mon_aide_memoire_R.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 374.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 374.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 387.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 387.
  ) 
 Here is how much of TeX's memory you used:
- 29530 strings out of 479488
- 560888 string characters out of 5884709
- 995335 words of memory out of 5000000
- 46480 multiletter control sequences out of 15000+600000
+ 29535 strings out of 479488
+ 560949 string characters out of 5884709
+ 994482 words of memory out of 5000000
+ 46485 multiletter control sequences out of 15000+600000
  538805 words of font info for 79 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  59i,6n,118p,817b,582s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Mon_aide_memoire_R.pdf (15 pages).
+Output written on Mon_aide_memoire_R.pdf (17 pages).
