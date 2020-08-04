@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.2)  4 AUG 2020 18:56
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.2)  4 AUG 2020 19:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1174,18 +1174,18 @@ File: images/caution.png Graphic file (type bmp)
 [15] [16] (./Mon_aide_memoire_R.bbl [17] [18
 
 ]) [19]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 451.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 451.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 457.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 457.
 (./Mon_aide_memoire_R.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 451.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 451.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 457.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 457.
  ) 
 Here is how much of TeX's memory you used:
- 29550 strings out of 479488
- 561275 string characters out of 5884709
- 996618 words of memory out of 5000000
- 46496 multiletter control sequences out of 15000+600000
- 538821 words of font info for 81 fonts, out of 8000000 for 9000
+ 29557 strings out of 479488
+ 561481 string characters out of 5884709
+ 996838 words of memory out of 5000000
+ 46502 multiletter control sequences out of 15000+600000
+ 538829 words of font info for 82 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  59i,6n,118p,817b,582s stack positions out of 5000i,500n,10000p,200000b,80000s
 

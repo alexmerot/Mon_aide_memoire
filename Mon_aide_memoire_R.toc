@@ -4,6 +4,8 @@
 \contentsline {section}{\numberline {1.1}Pourquoi R Markdown ?}{7}{section.1.1}%
 \contentsline {section}{Liste de ressources Internet utiles}{8}{section*.3}%
 \contentsline {chapter}{\numberline {2}Extraction/importation, nettoyage \& manipulation des données}{9}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Extraction de données provenant d'un PDF}{9}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Récupération de données provenant du web : le \emph {web scraping}}{9}{section.2.2}%
 \contentsline {section}{Liste de ressources Internet utiles}{9}{section*.4}%
 \contentsline {chapter}{\numberline {3}Statistique}{11}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Quelques notions clés}{11}{section.3.1}%

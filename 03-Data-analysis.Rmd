@@ -4,4 +4,9 @@
 **Work In Progress**
 :::
 
+
+## Extraction de données provenant d'un PDF
+  
+## Récupération de données provenant du web : le *web scraping*
+  
 ## Liste de ressources Internet utiles {.unnumbered #ref-data-analysis}

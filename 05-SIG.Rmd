@@ -69,7 +69,7 @@ Pour plus d'informations concernant les atouts de R en tant que SIG ainsi qu'un
 bref aperçu de l'utilité des autres langages tels que Python, Java et C++, je
 vous invite à lire le chapitre [Why use R for
 geocomputation](https://geocompr.robinlovelace.net/intro.html#why-use-r-for-geocomputation)
-du livre de @geocomputation. <span style="font-variant:small-caps;">Alexis Mérot</span>
+du livre de @geocomputation.
 
 ***
 
