@@ -4,44 +4,44 @@ The top-level auxiliary file: Mon_aide_memoire_R.aux
 The style file: apalike.bst
 Database file #1: book.bib
 Database file #2: packages.bib
-You've used 1 entry,
+You've used 2 entries,
             1935 wiz_defined-function locations,
-            478 strings with 3961 characters,
-and the built_in function-call counts, 563 in all, are:
-= -- 44
-> -- 53
+            484 strings with 4086 characters,
+and the built_in function-call counts, 916 in all, are:
+= -- 78
+> -- 71
 < -- 0
-+ -- 20
-- -- 20
-* -- 55
-:= -- 110
-add.period$ -- 3
-call.type$ -- 1
-change.case$ -- 14
-chr.to.int$ -- 1
-cite$ -- 1
-duplicate$ -- 13
-empty$ -- 21
-format.name$ -- 21
-if$ -- 96
++ -- 26
+- -- 26
+* -- 83
+:= -- 176
+add.period$ -- 7
+call.type$ -- 2
+change.case$ -- 21
+chr.to.int$ -- 2
+cite$ -- 2
+duplicate$ -- 27
+empty$ -- 44
+format.name$ -- 28
+if$ -- 165
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 0
-newline$ -- 8
-num.names$ -- 3
-pop$ -- 15
+missing$ -- 2
+newline$ -- 13
+num.names$ -- 6
+pop$ -- 24
 preamble$ -- 1
-purify$ -- 15
+purify$ -- 23
 quote$ -- 0
-skip$ -- 11
+skip$ -- 20
 stack$ -- 0
-substring$ -- 12
-swap$ -- 2
+substring$ -- 24
+swap$ -- 3
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 6
+type$ -- 10
 warning$ -- 0
-while$ -- 2
+while$ -- 4
 width$ -- 0
-write$ -- 14
+write$ -- 27

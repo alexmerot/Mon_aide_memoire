@@ -104,7 +104,7 @@
 
 \title{Aide-mémoire : Théories et pratiques sur R}
 \author{Alexis Mérot}
-\date{Modifié le : 2020-08-03}
+\date{Modifié le : 2020-08-04}
 
 \begin{document}
 \maketitle
@@ -316,13 +316,76 @@ Concepts à comprendre :
 \end{infobox}
 
 \hypertarget{SIG}{%
-\chapter{Système d'Information Géographique}\label{SIG}}
+\chapter{Les Systèmes d'Information Géographiques}\label{SIG}}
 
 \begin{infobox}{caution}
 
 \textbf{Work In Progress}
 
 \end{infobox}
+
+\hypertarget{quest-ce-quun-sig}{%
+\section{Qu'est-ce qu'un SIG ?}\label{quest-ce-quun-sig}}
+
+Un Système d'Information Géographique est, comme tout Système d'Information
+\footnote{Cf. le cours sur
+  \href{https://openclassrooms.com/fr/courses/2100086-decouvrez-le-monde-des-systemes-dinformation}{Openclassroom}.}, un ensemble organisé de ressources ayant pour fonction de collecter,
+stocker, traiter et diffuser des informations \footnote{Cf. la page Wikipédia sur le
+  \href{https://fr.wikipedia.org/wiki/Syst\%C3\%A8me_d\%27information_g\%C3\%A9ographique}{Système d'Information Géographique}.}. Ici, ces informations
+(généralement informatisées) sont des données géospatiales stockées sous forme
+de couches d'informations superposées et reliées les unes aux autres par un
+référentiel cartographique \footnote{Fond de carte représentant un territoire géographique sur lequel
+  peuvent s'appuyer de nouvelles données cartographiques.}. Les SIG sont devenus des outils
+essentiels dans de nombreux domaines tels que l'écologie, la médecine ou la
+sociologie.
+
+Pour aider les utilisateurs au traitement des données géospatiales, il existe de
+performants et très utilisés logiciels gratuits ou payants tels que
+\href{https://www.qgis.org/fr/site/}{QGis} ou
+\href{https://www.arcgis.com/index.html}{ArcGIS}. Ces logiciels offrent une approche
+graphique à la lecture, l'écriture, la manipulation et la visualisation des
+données. Ceci peut néanmoins limiter la reproductibilité et l'automatisation des
+projets. Pour remédier à cela, de nombreux langages de programmation peuvent
+être utilisés pour écrire et partager des scripts. Parmi les plus utilisés, il y
+a \href{https://www.python.org/}{Python} (qui est notamment utilisé pour la
+conception de plugins dans les logiciels de SIG) et
+\href{https://www.r-project.org/about.html}{R} (dont les scripts sont maintenant
+exécutables dans QGis). En plus de cela, l'approche en lignes de commande permet
+de se libérer de certaines contraintes imposées par ces logiciels ainsi que
+d'avoir plus de contrôle sur ce que l'ont fait (même si ces logiciels sont de
+plus en plus performants).
+
+\hypertarget{r-en-tant-que-sig}{%
+\section{R en tant que SIG}\label{r-en-tant-que-sig}}
+
+Ayant commencé à apprendre les analyses statistiques avec R, c'est naturellement
+que je me suis tourné vers ce langage pour la cartographie et l'analyse des
+données géospatiales. En effet, la communauté de R a créé de performants et
+magnifiques packages de cartographie et de géocalcul libres, gratuits et bien
+documentés. Je m'intéresserai donc de plus près à ce qu'offre par exemple Python
+lorsque j'aurai maîtrisé suffisamment R. Un autre langage élégant et très récent
+qui est à regarder de très près est \href{https://julialang.org/}{Julia}, qui offrira
+certainement des packages rapides et performants au fur et à mesure de sa
+maturité. Par ailleurs, même si des programmes manqueraient à R ou si d'autres
+langages possèdent des programmes plus adaptés pour certaines tâches, des
+packages R offrent la possibilité d'en faciliter l'accès. Par exemple, les
+packages tels que \href{https://github.com/RcppCore/Rcpp}{\textbf{Rcpp}} et
+\href{https://rstudio.github.io/reticulate/}{\textbf{Reticulate}} permettent l'utilisation
+de programmes écrits respectivement en C++ et Python.
+
+D'autres caractéristiques intéressantes de R sont sa flexibilité et sa constante
+évolution. Par exemple, il offre maintenant la possibilité de faire facilement
+des applications et des cartes interactives notamment via les packages
+\href{https://shiny.rstudio.com/}{\textbf{Shiny}} et
+\href{https://rstudio.github.io/leaflet/}{\textbf{Leaflet}}. Il offre par la même occasion
+divers outils d'analyses avancées, de modélisation et de visualisation qui sont
+mis à jour et améliorés régulièrement.
+
+Pour plus d'informations concernant les atouts de R en tant que SIG ainsi qu'un
+bref aperçu de l'utilité des autres langages tels que Python, Java et C++, je
+vous invite à lire le chapitre \href{https://geocompr.robinlovelace.net/intro.html\#why-use-r-for-geocomputation}{Why use R for
+geocomputation}
+du livre de \citet{geocomputation}. \textsc{Alexis Mérot}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -378,9 +441,10 @@ Concepts à comprendre :
 \item
   Manipulation et visualisation de données
   \href{https://github.com/Jean-Romain/lidR}{LiDAR} pour la foresterie avec \textbf{lidr}
+\item
+  \href{https://www.sigterritoires.fr/index.php/concepts/}{Blog français} contenant
+  divers tutoriels sur la SIG et QGis
 \end{itemize}
-
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
   \bibliography{book.bib,packages.bib}
 

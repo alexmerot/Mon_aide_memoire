@@ -12,5 +12,7 @@
 \contentsline {section}{\numberline {3.3}Statistique bayésienne}{11}{section.3.3}%
 \contentsline {section}{Liste de ressources Internet utiles}{12}{section*.6}%
 \contentsline {chapter}{\numberline {4}Visualisation des données : la \emph {Dataviz}}{13}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Système d'Information Géographique}{15}{chapter.5}%
-\contentsline {section}{Liste de ressources Internet utiles}{15}{section*.7}%
+\contentsline {chapter}{\numberline {5}Les Systèmes d'Information Géographiques}{15}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Qu'est-ce qu'un SIG ?}{15}{section.5.1}%
+\contentsline {section}{\numberline {5.2}R en tant que SIG}{16}{section.5.2}%
+\contentsline {section}{Liste de ressources Internet utiles}{16}{section*.7}%

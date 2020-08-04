@@ -1,3 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Alegreya');
+@import url('https://fonts.googleapis.com/css?family=Volkorn');
+
+.book.font-family-0 {
+  font-family: Alegreya, Volkorn, Libertine, Georgia, serif;
+
+}
+.book.font-family-1 {
+  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
 .infobox {
   padding: 1em 1em 1em 4em;
   margin-bottom: 10px;

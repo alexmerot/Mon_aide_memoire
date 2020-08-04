@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>5 Système d’Information Géographique | Aide-mémoire : Théories et pratiques sur R</title>
+  <title>5 Les Systèmes d’Information Géographiques | Aide-mémoire : Théories et pratiques sur R</title>
   <meta name="description" content="Ceci est l’ensemble de mes notes accumulées au fur et à mesure de mon apprentissage de différents outils et concepts qui sont nécessaires à mes besoins dans les analyses de données et la programmation. Cela me permet de les comprendre, les mémoriser, ainsi que de les partager." />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="5 Système d’Information Géographique | Aide-mémoire : Théories et pratiques sur R" />
+  <meta property="og:title" content="5 Les Systèmes d’Information Géographiques | Aide-mémoire : Théories et pratiques sur R" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://alexmerot.github.io/Mon_aide_memoire/" />
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="alexmerot/Mon_aide_memoire" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="5 Système d’Information Géographique | Aide-mémoire : Théories et pratiques sur R" />
+  <meta name="twitter:title" content="5 Les Systèmes d’Information Géographiques | Aide-mémoire : Théories et pratiques sur R" />
   
   <meta name="twitter:description" content="Ceci est l’ensemble de mes notes accumulées au fur et à mesure de mon apprentissage de différents outils et concepts qui sont nécessaires à mes besoins dans les analyses de données et la programmation. Cela me permet de les comprendre, les mémoriser, ainsi que de les partager." />
   
@@ -88,8 +88,10 @@
 <li class="chapter" data-level="" data-path="statistique.html"><a href="statistique.html#ref-stat-bayes"><i class="fa fa-check"></i>Liste de ressources Internet utiles</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="dataviz.html"><a href="dataviz.html"><i class="fa fa-check"></i><b>4</b> Visualisation des données : la <em>Dataviz</em></a></li>
-<li class="chapter" data-level="5" data-path="SIG.html"><a href="SIG.html"><i class="fa fa-check"></i><b>5</b> Système d’Information Géographique</a>
+<li class="chapter" data-level="5" data-path="SIG.html"><a href="SIG.html"><i class="fa fa-check"></i><b>5</b> Les Systèmes d’Information Géographiques</a>
 <ul>
+<li class="chapter" data-level="5.1" data-path="SIG.html"><a href="SIG.html#quest-ce-quun-sig"><i class="fa fa-check"></i><b>5.1</b> Qu’est-ce qu’un SIG ?</a></li>
+<li class="chapter" data-level="5.2" data-path="SIG.html"><a href="SIG.html#r-en-tant-que-sig"><i class="fa fa-check"></i><b>5.2</b> R en tant que SIG</a></li>
 <li class="chapter" data-level="" data-path="SIG.html"><a href="SIG.html#ref-sig"><i class="fa fa-check"></i>Liste de ressources Internet utiles</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="références.html"><a href="références.html"><i class="fa fa-check"></i>Références</a></li>
@@ -114,11 +116,66 @@
 
             <section class="normal" id="section-">
 <div id="SIG" class="section level1" number="5">
-<h1><span class="header-section-number">5</span> Système d’Information Géographique</h1>
+<h1><span class="header-section-number">5</span> Les Systèmes d’Information Géographiques</h1>
 <div class="infobox caution">
 <p><strong>Work In Progress</strong></p>
 </div>
+<div id="quest-ce-quun-sig" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Qu’est-ce qu’un SIG ?</h2>
+<p><!-- TODO : Développer l'utilité des SIG dans les prises de décision --></p>
+<p>Un Système d’Information Géographique est, comme tout Système d’Information,<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> un ensemble organisé de ressources ayant pour fonction de collecter,
+stocker, traiter et diffuser des informations.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> Ici, ces informations
+(généralement informatisées) sont des données géospatiales stockées sous forme
+de couches d’informations superposées et reliées les unes aux autres par un
+référentiel cartographique.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> Les SIG sont devenus des outils
+essentiels dans de nombreux domaines tels que l’écologie, la médecine ou la
+sociologie.</p>
+<p>Pour aider les utilisateurs au traitement des données géospatiales, il existe de
+performants et très utilisés logiciels gratuits ou payants tels que
+<a href="https://www.qgis.org/fr/site/">QGis</a> ou
+<a href="https://www.arcgis.com/index.html">ArcGIS</a>. Ces logiciels offrent une approche
+graphique à la lecture, l’écriture, la manipulation et la visualisation des
+données. Ceci peut néanmoins limiter la reproductibilité et l’automatisation des
+projets. Pour remédier à cela, de nombreux langages de programmation peuvent
+être utilisés pour écrire et partager des scripts. Parmi les plus utilisés, il y
+a <a href="https://www.python.org/">Python</a> (qui est notamment utilisé pour la
+conception de plugins dans les logiciels de SIG) et
+<a href="https://www.r-project.org/about.html">R</a> (dont les scripts sont maintenant
+exécutables dans QGis). En plus de cela, l’approche en lignes de commande permet
+de se libérer de certaines contraintes imposées par ces logiciels ainsi que
+d’avoir plus de contrôle sur ce que l’ont fait (même si ces logiciels sont de
+plus en plus performants).</p>
+</div>
+<div id="r-en-tant-que-sig" class="section level2" number="5.2">
+<h2><span class="header-section-number">5.2</span> R en tant que SIG</h2>
+<p>Ayant commencé à apprendre les analyses statistiques avec R, c’est naturellement
+que je me suis tourné vers ce langage pour la cartographie et l’analyse des
+données géospatiales. En effet, la communauté de R a créé de performants et
+magnifiques packages de cartographie et de géocalcul libres, gratuits et bien
+documentés. Je m’intéresserai donc de plus près à ce qu’offre par exemple Python
+lorsque j’aurai maîtrisé suffisamment R. Un autre langage élégant et très récent
+qui est à regarder de très près est <a href="https://julialang.org/">Julia</a>, qui offrira
+certainement des packages rapides et performants au fur et à mesure de sa
+maturité. Par ailleurs, même si des programmes manqueraient à R ou si d’autres
+langages possèdent des programmes plus adaptés pour certaines tâches, des
+packages R offrent la possibilité d’en faciliter l’accès. Par exemple, les
+packages tels que <a href="https://github.com/RcppCore/Rcpp"><strong>Rcpp</strong></a> et
+<a href="https://rstudio.github.io/reticulate/"><strong>Reticulate</strong></a> permettent l’utilisation
+de programmes écrits respectivement en C++ et Python.</p>
+<p>D’autres caractéristiques intéressantes de R sont sa flexibilité et sa constante
+évolution. Par exemple, il offre maintenant la possibilité de faire facilement
+des applications et des cartes interactives notamment via les packages
+<a href="https://shiny.rstudio.com/"><strong>Shiny</strong></a> et
+<a href="https://rstudio.github.io/leaflet/"><strong>Leaflet</strong></a>. Il offre par la même occasion
+divers outils d’analyses avancées, de modélisation et de visualisation qui sont
+mis à jour et améliorés régulièrement.</p>
+<p>Pour plus d’informations concernant les atouts de R en tant que SIG ainsi qu’un
+bref aperçu de l’utilité des autres langages tels que Python, Java et C++, je
+vous invite à lire le chapitre <a href="https://geocompr.robinlovelace.net/intro.html#why-use-r-for-geocomputation">Why use R for
+geocomputation</a>
+du livre de <span class="citation">Lovelace, Nowosad, and Muenchow (<a href="#ref-geocomputation" role="doc-biblioref">2019</a>)</span>. <span class="smallcaps">Alexis Mérot</span></p>
 <hr />
+</div>
 <div id="ref-sig" class="section level2 unnumbered">
 <h2>Liste de ressources Internet utiles</h2>
 <ul>
@@ -152,10 +209,28 @@ pour dessiner des cartes avec R, <strong>sf</strong> et <strong>ggplot2</strong>
 création de cartes en 2D et 3D</li>
 <li>Manipulation et visualisation de données
 <a href="https://github.com/Jean-Romain/lidR">LiDAR</a> pour la foresterie avec <strong>lidr</strong></li>
+<li><a href="https://www.sigterritoires.fr/index.php/concepts/">Blog français</a> contenant
+divers tutoriels sur la SIG et QGis</li>
 </ul>
-<hr />
 
 </div>
+</div>
+<h3>Références</h3>
+<div id="refs" class="references">
+<div id="ref-geocomputation">
+<p>Lovelace, R., J. Nowosad, and J. Muenchow. 2019. <em>Geocomputation with R</em>. Chapman &amp; Hall/Crc the R Series. CRC Press. <a href="https://books.google.fr/books?id=0y6ODwAAQBAJ">https://books.google.fr/books?id=0y6ODwAAQBAJ</a>.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>Cf. le cours sur
+<a href="https://openclassrooms.com/fr/courses/2100086-decouvrez-le-monde-des-systemes-dinformation">Openclassroom</a>.<a href="SIG.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>Cf. la page Wikipédia sur le
+<a href="https://fr.wikipedia.org/wiki/Syst%C3%A8me_d%27information_g%C3%A9ographique">Système d’Information Géographique</a>.<a href="SIG.html#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>Fond de carte représentant un territoire géographique sur lequel
+peuvent s’appuyer de nouvelles données cartographiques.<a href="SIG.html#fnref3" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 

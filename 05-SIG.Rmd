@@ -1,8 +1,75 @@
-# Système d'Information Géographique {#SIG}
+# Les Systèmes d'Information Géographiques {#SIG}
 
 ::: {.infobox .caution data-latex="{caution}"}
 **Work In Progress**
 :::
+
+## Qu'est-ce qu'un SIG ?
+
+ <!-- TODO : Développer l'utilité des SIG dans les prises de décision --> 
+
+Un Système d'Information Géographique est, comme tout Système d'Information
+[^SI], un ensemble organisé de ressources ayant pour fonction de collecter,
+stocker, traiter et diffuser des informations [^SIG]. Ici, ces informations
+(généralement informatisées) sont des données géospatiales stockées sous forme
+de couches d'informations superposées et reliées les unes aux autres par un
+référentiel cartographique [^Référentiel]. Les SIG sont devenus des outils
+essentiels dans de nombreux domaines tels que l'écologie, la médecine ou la
+sociologie.
+
+Pour aider les utilisateurs au traitement des données géospatiales, il existe de
+performants et très utilisés logiciels gratuits ou payants tels que
+[QGis](https://www.qgis.org/fr/site/) ou
+[ArcGIS](https://www.arcgis.com/index.html). Ces logiciels offrent une approche
+graphique à la lecture, l'écriture, la manipulation et la visualisation des
+données. Ceci peut néanmoins limiter la reproductibilité et l'automatisation des
+projets. Pour remédier à cela, de nombreux langages de programmation peuvent
+être utilisés pour écrire et partager des scripts. Parmi les plus utilisés, il y
+a [Python](https://www.python.org/) (qui est notamment utilisé pour la
+conception de plugins dans les logiciels de SIG) et
+[R](https://www.r-project.org/about.html) (dont les scripts sont maintenant
+exécutables dans QGis). En plus de cela, l'approche en lignes de commande permet
+de se libérer de certaines contraintes imposées par ces logiciels ainsi que
+d'avoir plus de contrôle sur ce que l'ont fait (même si ces logiciels sont de
+plus en plus performants).
+
+[^SI]: Cf. le cours sur
+[Openclassroom](https://openclassrooms.com/fr/courses/2100086-decouvrez-le-monde-des-systemes-dinformation).
+[^SIG]: Cf. la page Wikipédia sur le
+[Système d'Information Géographique](https://fr.wikipedia.org/wiki/Syst%C3%A8me_d%27information_g%C3%A9ographique).
+[^Référentiel]: Fond de carte représentant un territoire géographique sur lequel
+peuvent s'appuyer de nouvelles données cartographiques.
+
+## R en tant que SIG
+
+Ayant commencé à apprendre les analyses statistiques avec R, c'est naturellement
+que je me suis tourné vers ce langage pour la cartographie et l'analyse des
+données géospatiales. En effet, la communauté de R a créé de performants et
+magnifiques packages de cartographie et de géocalcul libres, gratuits et bien
+documentés. Je m'intéresserai donc de plus près à ce qu'offre par exemple Python
+lorsque j'aurai maîtrisé suffisamment R. Un autre langage élégant et très récent
+qui est à regarder de très près est [Julia](https://julialang.org/), qui offrira
+certainement des packages rapides et performants au fur et à mesure de sa
+maturité. Par ailleurs, même si des programmes manqueraient à R ou si d'autres
+langages possèdent des programmes plus adaptés pour certaines tâches, des
+packages R offrent la possibilité d'en faciliter l'accès. Par exemple, les
+packages tels que [**Rcpp**](https://github.com/RcppCore/Rcpp) et
+[**Reticulate**](https://rstudio.github.io/reticulate/) permettent l'utilisation
+de programmes écrits respectivement en C++ et Python.
+
+D'autres caractéristiques intéressantes de R sont sa flexibilité et sa constante
+évolution. Par exemple, il offre maintenant la possibilité de faire facilement
+des applications et des cartes interactives notamment via les packages
+[**Shiny**](https://shiny.rstudio.com/) et
+[**Leaflet**](https://rstudio.github.io/leaflet/). Il offre par la même occasion
+divers outils d'analyses avancées, de modélisation et de visualisation qui sont
+mis à jour et améliorés régulièrement.
+
+Pour plus d'informations concernant les atouts de R en tant que SIG ainsi qu'un
+bref aperçu de l'utilité des autres langages tels que Python, Java et C++, je
+vous invite à lire le chapitre [Why use R for
+geocomputation](https://geocompr.robinlovelace.net/intro.html#why-use-r-for-geocomputation)
+du livre de @geocomputation. <span style="font-variant:small-caps;">Alexis Mérot</span>
 
 ***
 
@@ -38,5 +105,5 @@ pour dessiner des cartes avec R, **sf** et **ggplot2**
 création de cartes en 2D et 3D
 * Manipulation et visualisation de données
 [LiDAR](https://github.com/Jean-Romain/lidR) pour la foresterie avec **lidr**
-
-***
+* [Blog français](https://www.sigterritoires.fr/index.php/concepts/) contenant
+divers tutoriels sur la SIG et QGis

@@ -6,4 +6,9 @@ Allaire, J., Xie, Y., McPherson, J., Luraschi, J., Ushey, K., Atkins, A.,
 \newblock {\em rmarkdown: Dynamic Documents for R}.
 \newblock R package version 2.3.3.
 
+\bibitem[Lovelace et~al., 2019]{geocomputation}
+Lovelace, R., Nowosad, J., and Muenchow, J. (2019).
+\newblock {\em Geocomputation with R}.
+\newblock Chapman \& Hall/CRC The R Series. CRC Press.
+
 \end{thebibliography}
