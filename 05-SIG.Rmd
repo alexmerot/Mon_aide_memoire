@@ -115,7 +115,12 @@ niveau de la mer).
 Les vecteurs permettent donc de représenter des **données discrètes** avec des
 **formes bien définies dans l'espace**.
 
-Pour stocker la géométrie de ces **entités géographiques**, l'OGC [^OGC] (*Open Geospatial Consortium*) a développé un modèle standardisé pour les Bases de Données Spatiales (BDS). Ce modèle s'appelle **Modèle d'Entité Simple** (SFS pour *Simple Feature for SQL* en anglais) et permet définir des fonctions pour accéder, faire des calculs et construire ces données. C'est un modèle de données très largement supportés dans la plupart des logiciels SIG (dont QGIS).
+Pour stocker la géométrie de ces **entités géographiques**, l'OGC [^OGC] (*Open
+Geospatial Consortium*) a développé un modèle standardisé pour les Bases de
+Données Spatiales (BDS). Ce modèle s'appelle **Modèle d'Entité Simple** (SFS
+pour *Simple Feature for SQL* en anglais) et permet définir des fonctions pour
+accéder, faire des calculs et construire ces données. C'est un modèle de données
+très largement supportés dans la plupart des logiciels SIG (dont QGIS).
 
 ### Les rasters
 
