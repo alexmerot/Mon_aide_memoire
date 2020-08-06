@@ -3,16 +3,30 @@ title: "Aide-mémoire : Analyses de données & Cartographie sur R"
 author: "Alexis Mérot"
 date: "Modifié le : `r Sys.Date()`"
 site: bookdown::bookdown_site
+lang: fr-FR
 documentclass: book
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 csl: chicago-author-date-fr.csl
 link-citations: yes
+nocite: |
+  @*
 github-repo: "alexmerot/Mon_aide_memoire"
 url: 'https\://alexmerot.github.io/Mon_aide_memoire/'
 favicon: "images/favicon_io/favicon.ico"
 description: "Ceci est l'ensemble de mes notes accumulées au fur et à mesure de mon apprentissage de différents outils et concepts qui sont nécessaires à mes besoins dans les analyses de données et la programmation. Cela me permet de les comprendre, les mémoriser, ainsi que de les partager."
 ---
+
+```{r include=FALSE}
+# Créer automatiquement une base de données '.bib' pour les packages R utilisés.
+knitr::write_bib(c(
+  .packages(), 'knitr', 'rmarkdown', 'blogdown'
+), 'packages.bib')
+
+# Ne pas supprimer les fichiers latex auxiliaires.
+# Permet de mettre à jour les références pour biblatex après un rebuild du livre.
+options(tinytex.clean = FALSE)
+```
 
 # Introduction {.unnumbered #introduction}
 
@@ -41,14 +55,4 @@ Toutes les sources qui m'ont été utiles pour acquérir ces connaissances seron
 accessibles dans les références bibliographiques ou dans les ressources Internet
 à la fin des chapitres.
 
-
-```{r include=FALSE}
-# Créer automatiquement une base de données '.bib' pour les packages R utilisés.
-knitr::write_bib(c(
-  .packages(), 'bookdown', 'knitr', 'rmarkdown', 'blogdown'
-), 'packages.bib')
-
-# Ne pas supprimer les fichiers latex auxiliaires.
-# Permet de mettre à jour les références pour biblatex après un rebuild du livre.
-options(tinytex.clean = FALSE)
-```
+Il n'y a pour l'instant qu'une version en ligne, mais une version PDF sera aussi disponible en téléchargement lorsque l'aide-mémoire sera plus mature.

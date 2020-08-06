@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="" xml:lang="">
+<html lang="fr-FR" xml:lang="fr-FR">
 <head>
 
   <meta charset="utf-8" />
@@ -94,6 +94,11 @@
 <ul>
 <li class="chapter" data-level="5.1" data-path="SIG.html"><a href="SIG.html#quest-ce-quun-sig"><i class="fa fa-check"></i><b>5.1</b> Qu’est-ce qu’un SIG ?</a></li>
 <li class="chapter" data-level="5.2" data-path="SIG.html"><a href="SIG.html#r-en-tant-que-sig"><i class="fa fa-check"></i><b>5.2</b> R en tant que SIG</a></li>
+<li class="chapter" data-level="5.3" data-path="SIG.html"><a href="SIG.html#la-représentation-des-données-les-vecteurs-et-les-rasters"><i class="fa fa-check"></i><b>5.3</b> La représentation des données : les <em>vecteurs</em> et les <em>rasters</em></a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="SIG.html"><a href="SIG.html#les-vecteurs"><i class="fa fa-check"></i><b>5.3.1</b> Les vecteurs</a></li>
+<li class="chapter" data-level="5.3.2" data-path="SIG.html"><a href="SIG.html#les-rasters"><i class="fa fa-check"></i><b>5.3.2</b> Les rasters</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="SIG.html"><a href="SIG.html#ref-sig"><i class="fa fa-check"></i>Liste de ressources Internet utiles</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="références.html"><a href="références.html"><i class="fa fa-check"></i>Références</a></li>
@@ -124,14 +129,15 @@
 </div>
 <div id="pourquoi-rmarkdown" class="section level2" number="1.1">
 <h2><span class="header-section-number">1.1</span> Pourquoi R Markdown ?</h2>
-<p>R Markdown est un format de fichier (à l’extension <strong>.Rmd</strong>) fournissant un cadre
-de création pour faire des rapports scientifiques automatisés. Ces documents
-peuvent ainsi être totalement reproductibles et plusieurs formats de rendu
-final (statiques ou dynamiques) sont supportés.</p>
+<p>R Markdown désigne un format de fichier (à l’extension <strong>.Rmd</strong>) et plus
+globalement le framework utilisé pour faire plus facilement des documents
+(généralement scientifiques) automatisés. Ces documents peuvent ainsi être
+totalement reproductibles et plusieurs formats de rendu final (statiques ou
+dynamiques) sont supportés.</p>
 <p>Le fichier est écrit via le langage Markdown et des sections de code R peuvent y
 être insérées facilement (ainsi que du code écrit via d’autres langages tels
 que Python ou SQL). Cela offre une syntaxe facile à lire et à écrire tout en
-permettant de générer un rapport structuré et élégant.</p>
+permettant de générer un document structuré et élégant.</p>
 <p>Pour que cela fonctionne, R Markdown est lié à deux packages : <strong>knitr</strong> et le
 convertisseur universel de document <strong>pandoc</strong> (Fig. <a href="rmarkdown.html#fig:rmarkdownflow">1.1</a>).<br />
 Le package <strong>knitr</strong> permet la création, à partir du fichier <strong>.Rmd</strong>, d’un fichier
@@ -147,8 +153,10 @@ Figure 1.1: <em>Source : <a href="https://rmarkdown.rstudio.com/lesson-2.html" c
 <p>Toutes mes notes seront donc écrites via R Markdown, et cette section intégrera
 toutes les astuces intéressantes que je rencontre au fur et à mesure des
 besoins.</p>
-<p>Pour ne pas paraphraser tout le livre de Yihui Xie, je vous invite à
-lire son excellent guide gratuit : <a href="https://bookdown.org/yihui/rmarkdown/" class="uri">https://bookdown.org/yihui/rmarkdown/</a>.</p>
+<p>Pour ne pas paraphraser tout l’excellent guide de <span class="citation">Xie, Allaire, et Grolemund (<a href="#ref-rmarkdown2018" role="doc-biblioref">2018</a>)</span>, je vous invite à
+lire leur excellent guide gratuit : <a href="https://bookdown.org/yihui/rmarkdown/" class="uri">https://bookdown.org/yihui/rmarkdown/</a>,
+ainsi que le livre en cours d’écriture
+<a href="https://bookdown.org/yihui/rmarkdown-cookbook/">R Markdown Cookbook</a>.</p>
 <hr />
 </div>
 <div id="ref-rmd" class="section level2 unnumbered">
@@ -194,6 +202,12 @@ package <strong>knitr</strong></li>
 </ul>
 <hr />
 
+</div>
+</div>
+<h3>Références</h3>
+<div id="refs" class="references">
+<div id="ref-rmarkdown2018">
+<p>Xie, Yihui, J. J. Allaire, et Garrett Grolemund. 2018. <em>R Markdown: The Definitive Guide</em>. Boca Raton, Florida : Chapman; Hall/CRC. <a href="https://bookdown.org/yihui/rmarkdown">https://bookdown.org/yihui/rmarkdown</a>.</p>
 </div>
 </div>
             </section>

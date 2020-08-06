@@ -1,7 +1,6 @@
 bookdown::gitbook:
   css: css/style.css
   highlight: default
-  clean: [packages.bib]
   config:
     toc:
       before: |

@@ -45,7 +45,9 @@ peuvent s'appuyer de nouvelles données cartographiques.
 Afin d'avoir un bon aperçu et une bonne base sur l'utilisation de R en tant que
 SIG, je vous invite à lire le livre *Geocomputation with R* de @geocomputation.
 Ce livre est mis à jour régulièrement et est mis à disposition gratuitement à
-cette adresse : <https://geocompr.robinlovelace.net/>.
+cette adresse : <https://geocompr.robinlovelace.net/> --- si vous préférez le
+format papier et/ou voulez soutenir les auteurs, il est bien sûr disponible à
+l'achat.
 
 Ayant commencé à apprendre les analyses statistiques avec R, c'est naturellement
 que je me suis tourné vers ce langage pour la cartographie et l'analyse des
@@ -76,9 +78,46 @@ vous invite à lire le chapitre [Why use R for
 geocomputation](https://geocompr.robinlovelace.net/intro.html#why-use-r-for-geocomputation)
 du livre de @geocomputation.
 
+## La représentation des données : les *vecteurs* et les *rasters*
+
+Pour représenter numériquement les données spatiales, deux modèles de base sont
+utilisés : les *vecteurs* (mode vectoriel) et les *rasters* (mode matriciel).
+L'une des principales différences entre ces deux modèles est qu'un vecteur est
+un *objet* tandis que le raster est une *image*. Ainsi, les vecteurs sont
+constitués de points, de lignes et de polygones créés à partir de formules
+mathématiques, tandis que les rasters sont des grilles constituées en cellules
+de même taille (les pixels). C'est cette différence qui fait que les vecteurs ne
+perdent pas en netteté lorsque l'on zoome dessus, tandis que les images
+deviennent floues (elles « pixelisent »).
+
+### Les vecteurs
+
+### Les rasters
+
+Un raster représente une image constituée de pixels (cellules) organisé(e)s sous
+la forme d'une grille. C'est la représentation que l'on a l'habitude de voir
+lorsque l'on parle d'une image numérique. Chaque pixel est unique et possède
+certaines valeurs le caractérisant (comme sa couleur, ses coordonnées, son
+altitude...). Les données sont ainsi organisées en **matrice**, où chaque
+**cellule** correspond à un pixel. Pour bien superposer le raster à la carte,
+les matrices possèdent une en-tête incluant le **système de coordonnées
+spatiales**, **l'origine** (généralement les coordonnées du coin inférieur droit
+de la matrice), ainsi que l'**étendue de la matrice** (le nombre de colonnes, de
+lignes et la résolution spatiale [^resolution]).
+
+[^resolution]: Globalement, la résolution spatiale est la **taille réelle du
+plus petit élément** représenté dans un jeu de données. Pour le *mode
+matriciel*, cela **correspond à la taille de la cellule de la grille**. Par
+exemple, si une cellule représente une surface réelle de 10 x 10 m, alors la
+résolution est de 10 m. La résolution spatiale permet donc de définir le niveau
+de détail du jeu de données. La netteté de l'image est ainsi dépendant de la
+résolution spatiale puisqu'il y aura plus de détails capturés avec des cellules de petite taille (résolution élevée ou fine) qu'avec des cellules de grande taille (résolution basse ou grossière).
+
 ***
 
 ## Liste de ressources Internet utiles {.unnumbered #ref-sig}
+
+<!-- TODO : Séparer les ressources de packages R pour plus de lisibilité -->
 
 * [Guide](https://geocompr.robinlovelace.net/) sur les analyses de données
 géographiques, leur visualisation et leur modélisation sur R
@@ -112,3 +151,4 @@ création de cartes en 2D et 3D
 [LiDAR](https://github.com/Jean-Romain/lidR) pour la foresterie avec **lidr**
 * [Blog français](https://www.sigterritoires.fr/index.php/concepts/) contenant
 divers tutoriels sur la SIG et QGis
+* [NaturaGIS](https://naturagis.fr/) : tutoriels et ressources sur la géomatique, les SIG et leurs usages pour l'environnement

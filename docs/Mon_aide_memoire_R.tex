@@ -3,6 +3,7 @@
 \PassOptionsToPackage{hyphens}{url}
 %
 \documentclass[
+  french,
 ]{book}
 \usepackage{lmodern}
 \usepackage{amssymb,amsmath}
@@ -38,6 +39,7 @@
 \hypersetup{
   pdftitle={Aide-mémoire : Analyses de données \& Cartographie sur R},
   pdfauthor={Alexis Mérot},
+  pdflang={fr-FR},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 \urlstyle{same} % disable monospaced font for URLs
@@ -96,6 +98,13 @@
   \end{blackbox}
   \end{itemize}
   }
+\ifxetex
+  % Load polyglossia as late as possible: uses bidi with RTL langages (e.g. Hebrew, Arabic)
+  \usepackage{polyglossia}
+  \setmainlanguage[]{french}
+\else
+  \usepackage[shorthands=off,main=french]{babel}
+\fi
 \ifluatex
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
@@ -144,6 +153,8 @@ Toutes les sources qui m'ont été utiles pour acquérir ces connaissances seron
 accessibles dans les références bibliographiques ou dans les ressources Internet
 à la fin des chapitres.
 
+Il n'y a pour l'instant qu'une version en ligne, mais une version PDF sera aussi disponible en téléchargement lorsque l'aide-mémoire sera plus mature.
+
 \hypertarget{rmarkdown}{%
 \chapter{R Markdown, Bookdown \& Blogdown}\label{rmarkdown}}
 
@@ -156,15 +167,16 @@ accessibles dans les références bibliographiques ou dans les ressources Intern
 \hypertarget{pourquoi-rmarkdown}{%
 \section{Pourquoi R Markdown ?}\label{pourquoi-rmarkdown}}
 
-R Markdown est un format de fichier (à l'extension \textbf{.Rmd}) fournissant un cadre
-de création pour faire des rapports scientifiques automatisés. Ces documents
-peuvent ainsi être totalement reproductibles et plusieurs formats de rendu
-final (statiques ou dynamiques) sont supportés.
+R Markdown désigne un format de fichier (à l'extension \textbf{.Rmd}) et plus
+globalement le framework utilisé pour faire plus facilement des documents
+(généralement scientifiques) automatisés. Ces documents peuvent ainsi être
+totalement reproductibles et plusieurs formats de rendu final (statiques ou
+dynamiques) sont supportés.
 
 Le fichier est écrit via le langage Markdown et des sections de code R peuvent y
 être insérées facilement (ainsi que du code écrit via d'autres langages tels
 que Python ou SQL). Cela offre une syntaxe facile à lire et à écrire tout en
-permettant de générer un rapport structuré et élégant.
+permettant de générer un document structuré et élégant.
 
 Pour que cela fonctionne, R Markdown est lié à deux packages : \textbf{knitr} et le
 convertisseur universel de document \textbf{pandoc} (Fig. \ref{fig:rmarkdownflow}).\\
@@ -187,8 +199,10 @@ Toutes mes notes seront donc écrites via R Markdown, et cette section intégrer
 toutes les astuces intéressantes que je rencontre au fur et à mesure des
 besoins.
 
-Pour ne pas paraphraser tout le livre de Yihui Xie, je vous invite à
-lire son excellent guide gratuit : \url{https://bookdown.org/yihui/rmarkdown/}.
+Pour ne pas paraphraser tout l'excellent guide de \citet{rmarkdown2018}, je vous invite à
+lire leur excellent guide gratuit : \url{https://bookdown.org/yihui/rmarkdown/},
+ainsi que le livre en cours d'écriture
+\href{https://bookdown.org/yihui/rmarkdown-cookbook/}{R Markdown Cookbook}.
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -389,7 +403,9 @@ plus en plus performants).
 Afin d'avoir un bon aperçu et une bonne base sur l'utilisation de R en tant que
 SIG, je vous invite à lire le livre \emph{Geocomputation with R} de \citet{geocomputation}.
 Ce livre est mis à jour régulièrement et est mis à disposition gratuitement à
-cette adresse : \url{https://geocompr.robinlovelace.net/}.
+cette adresse : \url{https://geocompr.robinlovelace.net/} --- si vous préférez le
+format papier et/ou voulez soutenir les auteurs, il est bien sûr disponible à
+l'achat.
 
 Ayant commencé à apprendre les analyses statistiques avec R, c'est naturellement
 que je me suis tourné vers ce langage pour la cartographie et l'analyse des
@@ -419,6 +435,42 @@ bref aperçu de l'utilité des autres langages tels que Python, Java et C++, je
 vous invite à lire le chapitre \href{https://geocompr.robinlovelace.net/intro.html\#why-use-r-for-geocomputation}{Why use R for
 geocomputation}
 du livre de \citet{geocomputation}.
+
+\hypertarget{la-repruxe9sentation-des-donnuxe9es-les-vecteurs-et-les-rasters}{%
+\section{\texorpdfstring{La représentation des données : les \emph{vecteurs} et les \emph{rasters}}{La représentation des données : les vecteurs et les rasters}}\label{la-repruxe9sentation-des-donnuxe9es-les-vecteurs-et-les-rasters}}
+
+Pour représenter numériquement les données spatiales, deux modèles de base sont
+utilisés : les \emph{vecteurs} (mode vectoriel) et les \emph{rasters} (mode matriciel).
+L'une des principales différences entre ces deux modèles est qu'un vecteur est
+un \emph{objet} tandis que le raster est une \emph{image}. Ainsi, les vecteurs sont
+constitués de points, de lignes et de polygones créés à partir de formules
+mathématiques, tandis que les rasters sont des grilles constituées en cellules
+de même taille (les pixels). C'est cette différence qui fait que les vecteurs ne
+perdent pas en netteté lorsque l'on zoome dessus, tandis que les images
+deviennent floues (elles « pixelisent »).
+
+\hypertarget{les-vecteurs}{%
+\subsection{Les vecteurs}\label{les-vecteurs}}
+
+\hypertarget{les-rasters}{%
+\subsection{Les rasters}\label{les-rasters}}
+
+Un raster représente une image constituée de pixels (cellules) organisé(e)s sous
+la forme d'une grille. C'est la représentation que l'on a l'habitude de voir
+lorsque l'on parle d'une image numérique. Chaque pixel est unique et possède
+certaines valeurs le caractérisant (comme sa couleur, ses coordonnées, son
+altitude\ldots). Les données sont ainsi organisées en \textbf{matrice}, où chaque
+\textbf{cellule} correspond à un pixel. Pour bien superposer le raster à la carte,
+les matrices possèdent une en-tête incluant le \textbf{système de coordonnées
+spatiales}, \textbf{l'origine} (généralement les coordonnées du coin inférieur droit
+de la matrice), ainsi que l'\textbf{étendue de la matrice} (le nombre de colonnes, de
+lignes et la résolution spatiale \footnote{Globalement, la résolution spatiale est la \textbf{taille réelle du
+  plus petit élément} représenté dans un jeu de données. Pour le \emph{mode
+  matriciel}, cela \textbf{correspond à la taille de la cellule de la grille}. Par
+  exemple, si une cellule représente une surface réelle de 10 x 10 m, alors la
+  résolution est de 10 m. La résolution spatiale permet donc de définir le niveau
+  de détail du jeu de données. La netteté de l'image est ainsi dépendant de la
+  résolution spatiale puisqu'il y aura plus de détails capturés avec des cellules de petite taille (résolution élevée ou fine) qu'avec des cellules de grande taille (résolution basse ou grossière).}).
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -477,6 +529,8 @@ du livre de \citet{geocomputation}.
 \item
   \href{https://www.sigterritoires.fr/index.php/concepts/}{Blog français} contenant
   divers tutoriels sur la SIG et QGis
+\item
+  \href{https://naturagis.fr/}{NaturaGIS} : tutoriels et ressources sur la géomatique, les SIG et leurs usages pour l'environnement
 \end{itemize}
 
   \bibliography{book.bib,packages.bib}
