@@ -98,13 +98,20 @@ Sous R, les vecteurs et les rasters sont travaillés respectivement avec les pac
 
 ### Les vecteurs
 
+```{r, include=FALSE}
+library("sf")
+library("spData")
+
+data(world)
+```
+
 Un vecteur est une image vectorielle ou dessin mathématique constitué de deux
 composantes : une **composante attributaire** permettant de l'identifier, et une
 **composante graphique** décrivant sa géométrie. Il est localisé grâce à un
 système de coordonnées spatiales (ou CRS pour *Coordinate Reference System* en
 anglais). Les vecteurs sont basiquement composés de nœuds ou sommets qui sont
 des **points dans l'espace**. À partir de ces sommets, des **formules
-mathématiques** sont calculées pour créer des **formes géométriques**. S'il n'y
+mathématiques** sont appliquées pour créer des **formes géométriques**. S'il n'y
 a qu'un sommet, le vecteur est simplement un point. S'il y a plusieurs sommets
 et que les liaisons ne forment pas une forme géométrique fermée, alors cela
 forme une ligne. Si la forme est fermée, le vecteur est un polygone. La
@@ -115,12 +122,66 @@ niveau de la mer).
 Les vecteurs permettent donc de représenter des **données discrètes** avec des
 **formes bien définies dans l'espace**.
 
-Pour stocker la géométrie de ces **entités géographiques**, l'OGC [^OGC] (*Open
-Geospatial Consortium*) a développé un modèle standardisé pour les Bases de
-Données Spatiales (BDS). Ce modèle s'appelle **Modèle d'Entité Simple** (SFS
-pour *Simple Feature for SQL* en anglais) et permet définir des fonctions pour
-accéder, faire des calculs et construire ces données. C'est un modèle de données
-très largement supportés dans la plupart des logiciels SIG (dont QGIS).
+Pour stocker la géométrie de ces **entités géographiques**,
+l'OGC [^OGC] ([*Open Geospatial Consortium*](https://www.ogc.org/)) a développé
+un modèle standardisé pour les Bases de Données Spatiales (BDS). Ce modèle
+s'appelle **Modèle d'Entité Simple** (SFA pour [*Simple Feature
+Access*](https://www.ogc.org/standards/sfa) en anglais) et permet de définir des
+fonctions pour accéder, faire des calculs et construire les données, dans le but
+de représenter les objets dans la réalité. C'est un modèle de données très
+largement supportés dans la plupart des logiciels SIG (dont QGIS) et a
+l'avantage de rendre le travail totalement transférable d'un projet à un autre
+grâce à une architecture commune.
+
+Pour amener ce modèle dans R, le package `sf` a ainsi été créé pour succéder au
+package `sp` sur le long terme [^sf-vignette]. Les différents **types de
+géométrie** définis par la norme standardisée de l'OGC sont donc inclus dans ce
+package (fig. \@ref(fig:sfclasses)). Ces types de géométrie permettent de créer les
+entités, qui sont la **représentation d'un objet dans le monde réel** (comme un
+bâtiment, un champ ou un arbre). Chaque entité peut alors faire parti par
+exemple du type `POINT`, `POLYLIGNE` (`LINESTRING`) ou `POLYGONE`. En plus de
+cela, il est possible de créer d'autres entités à partir de l'agrégation de ces
+entités basiques (formant des `MULITPOINTS`, des `MULTIPOLYLIGNES` et des
+`MULTIPOLYGONES`). Une seule entité contenant plusieurs types de géométrie
+différents est alors de type « collection de géométrie » (`GEOMETRYCOLLECTION`).  
+Ces 7 types de géométrie précédemment cités font partis des types les plus
+utilisés. Dans le package `sf`, ces types sont représentés sous la forme de
+*classes*.
+
+(ref:sfclasses) Exemple des différents types de géométrie supportés par le package `sf` (source : <https://geocompr.robinlovelace.net/spatial-class.html#intro-sf>)
+
+```{r sfclasses, echo=FALSE, fig.cap='(ref:sfclasses)'}
+knitr::include_graphics("images/sf-classes.png")
+```
+
+Le package `sf` est multitâche, il permet de : lire et écrire des fichiers de
+données spatiales via la bibliothèque
+[GEOS](https://www.osgeo.org/projects/geos/) ; faire des opérations géométriques
+via la bibliothèque [GDAL](https://gdal.org/) ; mais aussi représenter et
+transformer des systèmes de coordonnées géographiques projetés via la
+bibliothèque [PROJ](https://proj.org/).
+
+Pour commencer, nous allons prendre pour exemple le jeu de données `world` du
+package `sf`. Ce jeu de données provenant de [Natural
+Earth](https://www.naturalearthdata.com/) est un objet `sf` contenant la carte
+du monde ainsi que quelques données de banques mondiales (tableau
+\@ref(tab:dataworld)).
+
+(ref:dataworld) Aperçu du jeu de données `world` inclus dans le package `spData`. 
+
+```{r dataworld}
+knitr::kable(head(world), caption = "(ref:dataworld)") %>%
+  kableExtra::kable_styling(
+    latex_options = c("striped", "hovered", "condensed", "responsive")
+  ) %>%
+  kableExtra::scroll_box(width = "100%")
+```
+
+[^OGC]: L'OGC est un consortium international qui développe des standards ouverts
+(OpenGIS) dans les domaines de la géomatique et de l'information géographique.
+
+[^sf-vignette]: Cf. la [vignette](https://r-spatial.github.io/sf/articles/sf1.html)
+du package `sf` parlant de ce sujet.
 
 ### Les rasters
 
@@ -137,8 +198,6 @@ lignes et la résolution spatiale [^resolution]).
 De par leurs caractéristiques, les rasters permettent de définir des **données
 discrètes** ainsi que des **données continues**.
 
-[^OGC]: L'OGC est un consortium international qui développe des standards ouverts
-(OpenGIS) dans les domaines de la géomatique et de l'information géographique.
 [^resolution]: Globalement, la résolution spatiale est la **taille réelle du
 plus petit élément** représenté dans un jeu de données. Pour le *mode
 matriciel*, cela **correspond à la taille de la cellule de la grille**. Par
@@ -148,6 +207,8 @@ niveau de détail** du jeu de données. La netteté de l'image est ainsi dépend
 de la résolution spatiale puisqu'il y aura plus de détails capturés avec des
 cellules de petite taille (résolution élevée ou fine) qu'avec des cellules de
 grande taille (résolution basse ou grossière).
+
+
 
 ***
 

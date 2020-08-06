@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.2)  6 AUG 2020 18:23
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.2)  6 AUG 2020 21:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -350,47 +350,62 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 ) (/home/alexis/texlive/2020/texmf-dist/tex/latex/bookmark/bkm-dvipdfm.def
 File: bkm-dvipdfm.def 2019/12/03 v1.28 bookmark driver for dvipdfm (HO)
 \BKM@id=\count286
-)) (/home/alexis/texlive/2020/texmf-dist/tex/latex/tools/longtable.sty
+)) (/home/alexis/texlive/2020/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2020/01/13 v3.5 verbatim text (tvz,hv)
+\FV@CodeLineNo=\count287
+\FV@InFile=\read2
+\FV@TabBox=\box49
+\c@FancyVerbLine=\count288
+\FV@StepNumber=\count289
+\FV@OutFile=\write3
+) (/home/alexis/texlive/2020/texmf-dist/tex/latex/framed/framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip53
+\fb@frw=\dimen152
+\fb@frh=\dimen153
+\FrameRule=\dimen154
+\FrameSep=\dimen155
+) (/home/alexis/texlive/2020/texmf-dist/tex/latex/tools/longtable.sty
 Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
-\LTleft=\skip53
-\LTright=\skip54
-\LTpre=\skip55
-\LTpost=\skip56
-\LTchunksize=\count287
-\LTcapwidth=\dimen152
-\LT@head=\box49
-\LT@firsthead=\box50
-\LT@foot=\box51
-\LT@lastfoot=\box52
-\LT@cols=\count288
-\LT@rows=\count289
-\c@LT@tables=\count290
-\c@LT@chunks=\count291
+\LTleft=\skip54
+\LTright=\skip55
+\LTpre=\skip56
+\LTpost=\skip57
+\LTchunksize=\count290
+\LTcapwidth=\dimen156
+\LT@head=\box50
+\LT@firsthead=\box51
+\LT@foot=\box52
+\LT@lastfoot=\box53
+\LT@cols=\count291
+\LT@rows=\count292
+\c@LT@tables=\count293
+\c@LT@chunks=\count294
 \LT@p@ftn=\toks23
 ) (/home/alexis/texlive/2020/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen153
-\lightrulewidth=\dimen154
-\cmidrulewidth=\dimen155
-\belowrulesep=\dimen156
-\belowbottomsep=\dimen157
-\aboverulesep=\dimen158
-\abovetopsep=\dimen159
-\cmidrulesep=\dimen160
-\cmidrulekern=\dimen161
-\defaultaddspace=\dimen162
-\@cmidla=\count292
-\@cmidlb=\count293
-\@aboverulesep=\dimen163
-\@belowrulesep=\dimen164
-\@thisruleclass=\count294
-\@lastruleclass=\count295
-\@thisrulewidth=\dimen165
+\heavyrulewidth=\dimen157
+\lightrulewidth=\dimen158
+\cmidrulewidth=\dimen159
+\belowrulesep=\dimen160
+\belowbottomsep=\dimen161
+\aboverulesep=\dimen162
+\abovetopsep=\dimen163
+\cmidrulesep=\dimen164
+\cmidrulekern=\dimen165
+\defaultaddspace=\dimen166
+\@cmidla=\count295
+\@cmidlb=\count296
+\@aboverulesep=\dimen167
+\@belowrulesep=\dimen168
+\@thisruleclass=\count297
+\@lastruleclass=\count298
+\@thisrulewidth=\dimen169
 )
 (/home/alexis/texlive/2020/texmf-dist/tex/latex/footnotehyper/footnotehyper.sty
 Package: footnotehyper 2019/11/07 v1.1a hyperref aware footnote.sty (JFB)
-\FNH@notes=\box53
-\FNH@width=\dimen166
+\FNH@notes=\box54
+\FNH@width=\dimen170
 ) (/home/alexis/texlive/2020/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
 (/home/alexis/texlive/2020/texmf-dist/tex/latex/graphics/graphics.sty
@@ -402,16 +417,16 @@ File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: xetex.def on input line 105.
 )
-\Gin@req@height=\dimen167
-\Gin@req@width=\dimen168
+\Gin@req@height=\dimen171
+\Gin@req@width=\dimen172
 ) (/home/alexis/texlive/2020/texmf-dist/tex/latex/csquotes/csquotes.sty
 Package: csquotes 2019-12-06 v5.2j context-sensitive quotations (JAW)
-\csq@reset=\count296
-\csq@gtype=\count297
-\csq@glevel=\count298
-\csq@qlevel=\count299
-\csq@maxlvl=\count300
-\csq@tshold=\count301
+\csq@reset=\count299
+\csq@gtype=\count300
+\csq@glevel=\count301
+\csq@qlevel=\count302
+\csq@maxlvl=\count303
+\csq@tshold=\count304
 \csq@ltx@everypar=\toks24
 (/home/alexis/texlive/2020/texmf-dist/tex/latex/csquotes/csquotes.def
 File: csquotes.def 2019-12-06 v5.2j csquotes generic definitions (JAW)
@@ -424,20 +439,20 @@ File: csquotes.cfg
 Package: babel 2020/04/28 3.43 The Babel package
 (/home/alexis/texlive/2020/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2020/04/28 3.43 Babel common definitions
-\babel@savecnt=\count302
-\U@D=\dimen169
+\babel@savecnt=\count305
+\U@D=\dimen173
 (/home/alexis/texlive/2020/texmf-dist/tex/generic/babel/xebabel.def (/home/alex
 is/texlive/2020/texmf-dist/tex/generic/babel/txtbabel.def))
-\bbl@readstream=\read2
+\bbl@readstream=\read3
 )
-\bbl@dirlevel=\count303
+\bbl@dirlevel=\count306
 (/home/alexis/texlive/2020/texmf-dist/tex/generic/babel-french/french.ldf
 Language: french 2020/04/18 v3.5h French support from the babel system
 Package babel Info: \l@acadian = using hyphenrules for french
 (babel)             (\language28) on input line 91.
 Package babel Info: \l@canadien = using hyphenrules for french
 (babel)             (\language28) on input line 92.
-\FB@nonchar=\count304
+\FB@nonchar=\count307
 Package french.ldf Info: No need for active punctuation characters
 (french.ldf)             with this version of XeTeX!
 (french.ldf)             reported on input line 332.
@@ -447,23 +462,23 @@ Package french.ldf Info: No need for active punctuation characters
 \FB@guilo=\XeTeXcharclass4
 \FB@guilf=\XeTeXcharclass5
 \FB@guilnul=\XeTeXcharclass6
-\FBguill@level=\count305
+\FBguill@level=\count308
 \FBold@everypar=\toks25
-\FB@Mht=\dimen170
+\FB@Mht=\dimen174
 LaTeX Info: Redefining \degres on input line 785.
-\mc@charclass=\count306
-\mc@charfam=\count307
-\mc@charslot=\count308
-\std@mcc=\count309
-\dec@mcc=\count310
-\c@FBcaption@count=\count311
-\listindentFB=\dimen171
-\descindentFB=\dimen172
-\labelindentFB=\dimen173
-\labelwidthFB=\dimen174
-\leftmarginFB=\dimen175
-\parindentFFN=\dimen176
-\FBfnindent=\dimen177
+\mc@charclass=\count309
+\mc@charfam=\count310
+\mc@charslot=\count311
+\std@mcc=\count312
+\dec@mcc=\count313
+\c@FBcaption@count=\count314
+\listindentFB=\dimen175
+\descindentFB=\dimen176
+\labelindentFB=\dimen177
+\labelwidthFB=\dimen178
+\leftmarginFB=\dimen179
+\parindentFFN=\dimen180
+\FBfnindent=\dimen181
 )) (/home/alexis/texlive/2020/texmf-dist/tex/latex/carlisle/scalefnt.sty) (/hom
 e/alexis/texlive/2020/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
 Package: tcolorbox 2020/04/28 version 4.30 text color boxes
@@ -472,14 +487,14 @@ lexis/texlive/2020/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
 (/home/alexis/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.
 tex
 \pgfutil@everybye=\toks26
-\pgfutil@tempdima=\dimen178
-\pgfutil@tempdimb=\dimen179
+\pgfutil@tempdima=\dimen182
+\pgfutil@tempdimb=\dimen183
 
 (/home/alexis/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-
 lists.tex))
 (/home/alexis/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.d
 ef
-\pgfutil@abb=\box54
+\pgfutil@abb=\box55
 (/home/alexis/texlive/2020/texmf-dist/tex/latex/ms/everyshi.sty
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
 ))
@@ -503,26 +518,26 @@ x
 .code.tex
 \pgfkeys@tmptoks=\toks29
 ))
-\pgf@x=\dimen180
-\pgf@y=\dimen181
-\pgf@xa=\dimen182
-\pgf@ya=\dimen183
-\pgf@xb=\dimen184
-\pgf@yb=\dimen185
-\pgf@xc=\dimen186
-\pgf@yc=\dimen187
-\pgf@xd=\dimen188
-\pgf@yd=\dimen189
-\w@pgf@writea=\write3
-\r@pgf@reada=\read3
-\c@pgf@counta=\count312
-\c@pgf@countb=\count313
-\c@pgf@countc=\count314
-\c@pgf@countd=\count315
+\pgf@x=\dimen184
+\pgf@y=\dimen185
+\pgf@xa=\dimen186
+\pgf@ya=\dimen187
+\pgf@xb=\dimen188
+\pgf@yb=\dimen189
+\pgf@xc=\dimen190
+\pgf@yc=\dimen191
+\pgf@xd=\dimen192
+\pgf@yd=\dimen193
+\w@pgf@writea=\write4
+\r@pgf@reada=\read4
+\c@pgf@counta=\count315
+\c@pgf@countb=\count316
+\c@pgf@countc=\count317
+\c@pgf@countd=\count318
 \t@pgf@toka=\toks30
 \t@pgf@tokb=\toks31
 \t@pgf@tokc=\toks32
-\pgf@sys@id@count=\count316
+\pgf@sys@id@count=\count319
 (/home/alexis/texlive/2020/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2020/01/08 v3.1.5b (3.1.5b)
 )
@@ -540,13 +555,13 @@ File: pgfsys-dvipdfmx.def 2020/01/08 v3.1.5b (3.1.5b)
 -pdf.def
 File: pgfsys-common-pdf.def 2020/01/08 v3.1.5b (3.1.5b)
 )
-\pgfsys@objnum=\count317
+\pgfsys@objnum=\count320
 )))
 (/home/alexis/texlive/2020/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpat
 h.code.tex
 File: pgfsyssoftpath.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfsyssoftpath@smallbuffer@items=\count318
-\pgfsyssoftpath@bigbuffer@items=\count319
+\pgfsyssoftpath@smallbuffer@items=\count321
+\pgfsyssoftpath@bigbuffer@items=\count322
 )
 (/home/alexis/texlive/2020/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotoco
 l.code.tex
@@ -562,9 +577,9 @@ Package: pgfcore 2020/01/08 v3.1.5b (3.1.5b)
 )
 (/home/alexis/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.t
 ex
-\pgfmath@dimen=\dimen190
-\pgfmath@count=\count320
-\pgfmath@box=\box55
+\pgfmath@dimen=\dimen194
+\pgfmath@count=\count323
+\pgfmath@box=\box56
 \pgfmath@toks=\toks33
 \pgfmath@stack@operand=\toks34
 \pgfmath@stack@operation=\toks35
@@ -589,57 +604,57 @@ c.code.tex)
 egerarithmetics.code.tex)))
 (/home/alexis/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.te
 x
-\c@pgfmathroundto@lastzeros=\count321
+\c@pgfmathroundto@lastzeros=\count324
 )) (/home/alexis/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
 (/home/alexis/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.
 code.tex
 File: pgfcorepoints.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@picminx=\dimen191
-\pgf@picmaxx=\dimen192
-\pgf@picminy=\dimen193
-\pgf@picmaxy=\dimen194
-\pgf@pathminx=\dimen195
-\pgf@pathmaxx=\dimen196
-\pgf@pathminy=\dimen197
-\pgf@pathmaxy=\dimen198
-\pgf@xx=\dimen199
-\pgf@xy=\dimen256
-\pgf@yx=\dimen257
-\pgf@yy=\dimen258
-\pgf@zx=\dimen259
-\pgf@zy=\dimen260
+\pgf@picminx=\dimen195
+\pgf@picmaxx=\dimen196
+\pgf@picminy=\dimen197
+\pgf@picmaxy=\dimen198
+\pgf@pathminx=\dimen199
+\pgf@pathmaxx=\dimen256
+\pgf@pathminy=\dimen257
+\pgf@pathmaxy=\dimen258
+\pgf@xx=\dimen259
+\pgf@xy=\dimen260
+\pgf@yx=\dimen261
+\pgf@yy=\dimen262
+\pgf@zx=\dimen263
+\pgf@zy=\dimen264
 )
 (/home/alexis/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathcon
 struct.code.tex
 File: pgfcorepathconstruct.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@path@lastx=\dimen261
-\pgf@path@lasty=\dimen262
+\pgf@path@lastx=\dimen265
+\pgf@path@lasty=\dimen266
 )
 (/home/alexis/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusa
 ge.code.tex
 File: pgfcorepathusage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@shorten@end@additional=\dimen263
-\pgf@shorten@start@additional=\dimen264
+\pgf@shorten@end@additional=\dimen267
+\pgf@shorten@start@additional=\dimen268
 )
 (/home/alexis/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.
 code.tex
 File: pgfcorescopes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfpic=\box56
-\pgf@hbox=\box57
-\pgf@layerbox@main=\box58
-\pgf@picture@serial@count=\count322
+\pgfpic=\box57
+\pgf@hbox=\box58
+\pgf@layerbox@main=\box59
+\pgf@picture@serial@count=\count325
 )
 (/home/alexis/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphic
 state.code.tex
 File: pgfcoregraphicstate.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgflinewidth=\dimen265
+\pgflinewidth=\dimen269
 )
 (/home/alexis/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransfo
 rmations.code.tex
 File: pgfcoretransformations.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@pt@x=\dimen266
-\pgf@pt@y=\dimen267
-\pgf@pt@temp=\dimen268
+\pgf@pt@x=\dimen270
+\pgf@pt@y=\dimen271
+\pgf@pt@temp=\dimen272
 )
 (/home/alexis/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.c
 ode.tex
@@ -656,14 +671,14 @@ File: pgfcorepathprocessing.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 (/home/alexis/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.
 code.tex
 File: pgfcorearrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfarrowsep=\dimen269
+\pgfarrowsep=\dimen273
 )
 (/home/alexis/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.c
 ode.tex
 File: pgfcoreshade.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@max=\dimen270
-\pgf@sys@shading@range@num=\count323
-\pgf@shadingcount=\count324
+\pgf@max=\dimen274
+\pgf@sys@shading@range@num=\count326
+\pgf@shadingcount=\count327
 )
 (/home/alexis/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.c
 ode.tex
@@ -672,7 +687,7 @@ File: pgfcoreimage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 (/home/alexis/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexterna
 l.code.tex
 File: pgfcoreexternal.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfexternal@startupbox=\box59
+\pgfexternal@startupbox=\box60
 ))
 (/home/alexis/texlive/2020/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.
 code.tex
@@ -693,7 +708,7 @@ File: pgfcorerdf.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 (/home/alexis/texlive/2020/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.c
 ode.tex
 File: pgfmoduleshapes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfnodeparttextbox=\box60
+\pgfnodeparttextbox=\box61
 )
 (/home/alexis/texlive/2020/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.cod
 e.tex
@@ -702,8 +717,8 @@ File: pgfmoduleplot.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 (/home/alexis/texlive/2020/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-versi
 on-0-65.sty
 Package: pgfcomp-version-0-65 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@nodesepstart=\dimen271
-\pgf@nodesepend=\dimen272
+\pgf@nodesepstart=\dimen275
+\pgf@nodesepend=\dimen276
 )
 (/home/alexis/texlive/2020/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-versi
 on-1-18.sty
@@ -712,25 +727,25 @@ Package: pgfcomp-version-1-18 2020/01/08 v3.1.5b (3.1.5b)
 Package: verbatim 2019/11/10 v1.5r LaTeX2e package for verbatim enhancements
 \every@verbatim=\toks36
 \verbatim@line=\toks37
-\verbatim@in@stream=\read4
+\verbatim@in@stream=\read5
 ) (/home/alexis/texlive/2020/texmf-dist/tex/latex/environ/environ.sty
 Package: environ 2014/05/04 v0.3 A new way to define environments
 (/home/alexis/texlive/2020/texmf-dist/tex/latex/trimspaces/trimspaces.sty
 Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 ))
-\tcb@titlebox=\box61
-\tcb@upperbox=\box62
-\tcb@lowerbox=\box63
-\tcb@phantombox=\box64
-\c@tcbbreakpart=\count325
-\c@tcblayer=\count326
-\c@tcolorbox@number=\count327
-\tcb@temp=\box65
+\tcb@titlebox=\box62
+\tcb@upperbox=\box63
+\tcb@lowerbox=\box64
+\tcb@phantombox=\box65
+\c@tcbbreakpart=\count328
+\c@tcblayer=\count329
+\c@tcolorbox@number=\count330
 \tcb@temp=\box66
 \tcb@temp=\box67
 \tcb@temp=\box68
-\tcb@out=\write4
-\tcb@record@out=\write5
+\tcb@temp=\box69
+\tcb@out=\write5
+\tcb@record@out=\write6
 ) (/home/alexis/texlive/2020/texmf-dist/tex/latex/polyglossia/polyglossia.sty
 Package: polyglossia 2020/04/08 v1.49 Modern multilingual typesetting with XeLa
 TeX and LuaLaTeX
@@ -743,7 +758,7 @@ exis/texlive/2020/texmf-dist/tex/generic/xkeyval/xkvutils.tex
 \XKV@toks=\toks38
 \XKV@tempa@toks=\toks39
 )
-\XKV@depth=\count328
+\XKV@depth=\count331
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 )) (/home/alexis/texlive/2020/texmf-dist/tex/latex/filehook/filehook.sty
 Package: filehook 2020/02/03 v0.7 Hooks for input files
@@ -819,10 +834,10 @@ Package polyglossia Info: Option: French, variant=french.
 Package polyglossia Info: Default language is french.
 (/home/alexis/texlive/2020/texmf-dist/tex/latex/natbib/natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
-\bibhang=\skip57
-\bibsep=\skip58
+\bibhang=\skip58
+\bibsep=\skip59
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count329
+\c@NAT@ctr=\count332
 )
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'polyglossia' package.
@@ -838,40 +853,40 @@ LaTeX Info: Redefining \ttfamily on input line 25.
 )
 \openout1 = `Mon_aide_memoire_R.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 118.
-LaTeX Font Info:    ... okay on input line 118.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 118.
-LaTeX Font Info:    ... okay on input line 118.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 118.
-LaTeX Font Info:    ... okay on input line 118.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 118.
-LaTeX Font Info:    ... okay on input line 118.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 118.
-LaTeX Font Info:    ... okay on input line 118.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 118.
-LaTeX Font Info:    ... okay on input line 118.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 118.
-LaTeX Font Info:    ... okay on input line 118.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 118.
-LaTeX Font Info:    ... okay on input line 118.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 118.
-LaTeX Font Info:    ... okay on input line 118.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 118.
-LaTeX Font Info:    ... okay on input line 118.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 158.
+LaTeX Font Info:    ... okay on input line 158.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 158.
+LaTeX Font Info:    ... okay on input line 158.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 158.
+LaTeX Font Info:    ... okay on input line 158.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 158.
+LaTeX Font Info:    ... okay on input line 158.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 158.
+LaTeX Font Info:    ... okay on input line 158.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 158.
+LaTeX Font Info:    ... okay on input line 158.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 158.
+LaTeX Font Info:    ... okay on input line 158.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 158.
+LaTeX Font Info:    ... okay on input line 158.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 158.
+LaTeX Font Info:    ... okay on input line 158.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 158.
+LaTeX Font Info:    ... okay on input line 158.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 118.
+(Font)                  OT1/lmr/m/n --> TU/lmr/m/n on input line 158.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 118.
+(Font)                  OT1/lmr/m/it --> TU/lmr/m/it on input line 158.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 118.
+(Font)                  OT1/lmr/bx/n --> TU/lmr/bx/n on input line 158.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 118.
+(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 158.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> TU/lmss/bx/n on input line 118.
+(Font)                  OT1/lmss/bx/n --> TU/lmss/bx/n on input line 158.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 118.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 158.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/bx/n on input line 118.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/bx/n on input line 158.
 
 Package fontspec Info: latinmodern-math scale = 0.9999964596882403.
 
@@ -900,7 +915,7 @@ pt=math;language=dflt;"
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(0)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 118.
+(Font)              scaled to size 10.0pt on input line 158.
 
 Package fontspec Info: latinmodern-math scale = 0.9999964596882403.
 
@@ -939,18 +954,18 @@ pt=math;language=dflt;"
 (fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 118.
+(Font)              scaled to size 10.0pt on input line 158.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 118.
+(Font)              `operators' in the math version `normal' on input line 158.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/lmr/m/n --> TU/latinmodern-math.otf(1)/m/n on input
- line 118.
+ line 158.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 118.
+(Font)              `operators' in the math version `bold' on input line 158.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  OT1/lmr/bx/n --> TU/latinmodern-math.otf(1)/b/n on inpu
-t line 118.
+t line 158.
 
 Package fontspec Info: latinmodern-math scale = 0.9999964596882403.
 
@@ -1037,15 +1052,15 @@ t=math;language=dflt;"
 (fontspec)             \fontdimen 21\font =0pt\relax 
 
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 118.
+(Font)              `symbols' in the math version `normal' on input line 158.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
 (Font)                  OMS/lmsy/m/n --> TU/latinmodern-math.otf(2)/m/n on inpu
-t line 118.
+t line 158.
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 118.
+(Font)              `symbols' in the math version `bold' on input line 158.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
 (Font)                  OMS/lmsy/b/n --> TU/latinmodern-math.otf(2)/b/n on inpu
-t line 118.
+t line 158.
 
 Package fontspec Info: latinmodern-math scale = 0.9999964596882403.
 
@@ -1115,17 +1130,17 @@ pt=math;language=dflt;"
 
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
 (Font)              `largesymbols' in the math version `normal' on input line 1
-18.
+58.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
 (Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/m/n on inpu
-t line 118.
+t line 158.
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 118
+(Font)              `largesymbols' in the math version `bold' on input line 158
 .
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/b/n on inpu
-t line 118.
-LaTeX Info: Redefining \microtypecontext on input line 118.
+t line 158.
+LaTeX Info: Redefining \microtypecontext on input line 158.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
 Package microtype Info: No adjustment of tracking.
@@ -1137,8 +1152,8 @@ fg
 File: mt-LatinModernRoman.cfg 2013/03/13 v1.0 microtype config. file: Latin Mod
 ern Roman (RS)
 )
-\AtBeginShipoutBox=\box69
-Package hyperref Info: Link coloring OFF on input line 118.
+\AtBeginShipoutBox=\box70
+Package hyperref Info: Link coloring OFF on input line 158.
 (/home/alexis/texlive/2020/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
 (/home/alexis/texlive/2020/texmf-dist/tex/latex/refcount/refcount.sty
@@ -1148,51 +1163,51 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 .sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count330
+\c@section@level=\count333
 )
-LaTeX Info: Redefining \ref on input line 118.
-LaTeX Info: Redefining \pageref on input line 118.
-LaTeX Info: Redefining \nameref on input line 118.
-LaTeX Info: Redefining \rmfamily on input line 118.
-LaTeX Info: Redefining \sffamily on input line 118.
-LaTeX Info: Redefining \ttfamily on input line 118.
-LaTeX Info: Redefining \dots on input line 118.
-LaTeX Info: Redefining \up on input line 118.
+LaTeX Info: Redefining \ref on input line 158.
+LaTeX Info: Redefining \pageref on input line 158.
+LaTeX Info: Redefining \nameref on input line 158.
+LaTeX Info: Redefining \rmfamily on input line 158.
+LaTeX Info: Redefining \sffamily on input line 158.
+LaTeX Info: Redefining \ttfamily on input line 158.
+LaTeX Info: Redefining \dots on input line 158.
+LaTeX Info: Redefining \up on input line 158.
 ABD: EveryShipout initializing macros
-LaTeX Info: Redefining \rmfamily on input line 118.
-LaTeX Info: Redefining \sffamily on input line 118.
-LaTeX Info: Redefining \ttfamily on input line 118.
+LaTeX Info: Redefining \rmfamily on input line 158.
+LaTeX Info: Redefining \sffamily on input line 158.
+LaTeX Info: Redefining \ttfamily on input line 158.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 12.0pt on input line 120.
+(Font)              scaled to size 12.0pt on input line 160.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 8.0pt on input line 120.
+(Font)              scaled to size 8.0pt on input line 160.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 6.0pt on input line 120.
+(Font)              scaled to size 6.0pt on input line 160.
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
-20.
+60.
 (/home/alexis/texlive/2020/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 12.0011pt on input line 120.
+(Font)              scaled to size 12.0011pt on input line 160.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 8.00073pt on input line 120.
+(Font)              scaled to size 8.00073pt on input line 160.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 6.00055pt on input line 120.
+(Font)              scaled to size 6.00055pt on input line 160.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 11.99872pt on input line 120.
+(Font)              scaled to size 11.99872pt on input line 160.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 7.99915pt on input line 120.
+(Font)              scaled to size 7.99915pt on input line 160.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.99936pt on input line 120.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 120
+(Font)              scaled to size 5.99936pt on input line 160.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 160
 .
 (/home/alexis/texlive/2020/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/home/alexis/texlive/2020/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 120
+LaTeX Font Info:    Trying to load font information for U+msb on input line 160
 .
 (/home/alexis/texlive/2020/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1227,22 +1242,22 @@ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 (Font)              scaled to size 4.99947pt on input line 5.
 )
-\tf@toc=\write6
-\openout6 = `Mon_aide_memoire_R.toc'.
+\tf@toc=\write7
+\openout7 = `Mon_aide_memoire_R.toc'.
 
 [3]
-LaTeX Info: Redefining \rmfamily on input line 126.
-LaTeX Info: Redefining \sffamily on input line 126.
-LaTeX Info: Redefining \ttfamily on input line 126.
+LaTeX Info: Redefining \rmfamily on input line 166.
+LaTeX Info: Redefining \sffamily on input line 166.
+LaTeX Info: Redefining \ttfamily on input line 166.
 [4
 
 ]
 File: images/caution.png Graphic file (type bmp)
 <images/caution.png>
 [5]
-LaTeX Info: Redefining \rmfamily on input line 159.
-LaTeX Info: Redefining \sffamily on input line 159.
-LaTeX Info: Redefining \ttfamily on input line 159.
+LaTeX Info: Redefining \rmfamily on input line 199.
+LaTeX Info: Redefining \sffamily on input line 199.
+LaTeX Info: Redefining \ttfamily on input line 199.
 [6
 
 ]
@@ -1251,15 +1266,10 @@ File: images/caution.png Graphic file (type bmp)
 <images/caution.png>
 File: images/rmarkdownflow.png Graphic file (type bmp)
 <images/rmarkdownflow.png>
-
-Overfull \hbox (366.67873pt too wide) in paragraph at lines 191--192
- [][] 
- []
-
 [7]
-LaTeX Info: Redefining \rmfamily on input line 284.
-LaTeX Info: Redefining \sffamily on input line 284.
-LaTeX Info: Redefining \ttfamily on input line 284.
+LaTeX Info: Redefining \rmfamily on input line 324.
+LaTeX Info: Redefining \sffamily on input line 324.
+LaTeX Info: Redefining \ttfamily on input line 324.
 [8]
 Chapitre 2.
 File: images/caution.png Graphic file (type bmp)
@@ -1267,9 +1277,9 @@ File: images/caution.png Graphic file (type bmp)
 [9
 
 ]
-LaTeX Info: Redefining \rmfamily on input line 303.
-LaTeX Info: Redefining \sffamily on input line 303.
-LaTeX Info: Redefining \ttfamily on input line 303.
+LaTeX Info: Redefining \rmfamily on input line 343.
+LaTeX Info: Redefining \sffamily on input line 343.
+LaTeX Info: Redefining \ttfamily on input line 343.
 
 Overfull \hbox (118.17334pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 10 \TU/lmr/m/sl/10 CHAPITRE 2.  EXTRACTION/IMPORTATION, NETTOYAG
@@ -1283,9 +1293,9 @@ Chapitre 3.
 File: images/caution.png Graphic file (type bmp)
 <images/caution.png>
 [11]
-LaTeX Info: Redefining \rmfamily on input line 352.
-LaTeX Info: Redefining \sffamily on input line 352.
-LaTeX Info: Redefining \ttfamily on input line 352.
+LaTeX Info: Redefining \rmfamily on input line 392.
+LaTeX Info: Redefining \sffamily on input line 392.
+LaTeX Info: Redefining \ttfamily on input line 392.
 [12]
 Chapitre 4.
 File: images/caution.png Graphic file (type bmp)
@@ -1293,9 +1303,9 @@ File: images/caution.png Graphic file (type bmp)
 [13
 
 ]
-LaTeX Info: Redefining \rmfamily on input line 361.
-LaTeX Info: Redefining \sffamily on input line 361.
-LaTeX Info: Redefining \ttfamily on input line 361.
+LaTeX Info: Redefining \rmfamily on input line 401.
+LaTeX Info: Redefining \sffamily on input line 401.
+LaTeX Info: Redefining \ttfamily on input line 401.
 [14
 
 ]
@@ -1303,24 +1313,56 @@ Chapitre 5.
 File: images/caution.png Graphic file (type bmp)
 <images/caution.png>
 [15]
-LaTeX Info: Redefining \rmfamily on input line 453.
-LaTeX Info: Redefining \sffamily on input line 453.
-LaTeX Info: Redefining \ttfamily on input line 453.
+LaTeX Info: Redefining \rmfamily on input line 493.
+LaTeX Info: Redefining \sffamily on input line 493.
+LaTeX Info: Redefining \ttfamily on input line 493.
 [16]
-LaTeX Info: Redefining \rmfamily on input line 505.
-LaTeX Info: Redefining \sffamily on input line 505.
-LaTeX Info: Redefining \ttfamily on input line 505.
+LaTeX Info: Redefining \rmfamily on input line 541.
+LaTeX Info: Redefining \sffamily on input line 541.
+LaTeX Info: Redefining \ttfamily on input line 541.
 
 Overfull \hbox (40.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
 RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 17
  []
 
-[17] (./Mon_aide_memoire_R.bbl
+[17]
+File: images/sf-classes.png Graphic file (type bmp)
+<images/sf-classes.png>
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 570.
+LaTeX Info: Redefining \rmfamily on input line 584.
+LaTeX Info: Redefining \sffamily on input line 584.
+LaTeX Info: Redefining \ttfamily on input line 584.
+[18]
+LaTeX Info: Redefining \rmfamily on input line 646.
+LaTeX Info: Redefining \sffamily on input line 646.
+LaTeX Info: Redefining \ttfamily on input line 646.
+
+Overfull \hbox (40.61224pt too wide) has occurred while \output is active
+\TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
+RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 19
+ []
+
+[19]
+LaTeX Info: Redefining \rmfamily on input line 708.
+LaTeX Info: Redefining \sffamily on input line 708.
+LaTeX Info: Redefining \ttfamily on input line 708.
+[20]
+LaTeX Info: Redefining \rmfamily on input line 770.
+LaTeX Info: Redefining \sffamily on input line 770.
+LaTeX Info: Redefining \ttfamily on input line 770.
+
+Overfull \hbox (40.61224pt too wide) has occurred while \output is active
+\TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
+RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 21
+ []
+
+[21] (./Mon_aide_memoire_R.bbl
 LaTeX Info: Redefining \rmfamily on input line 1.
 LaTeX Info: Redefining \sffamily on input line 1.
 LaTeX Info: Redefining \ttfamily on input line 1.
-[18])
+[22])
 The property list \polyglossia@langsetup contains the pairs (without outer
 braces):
 >  {latex/script}  =>  {latin}
@@ -1355,11 +1397,11 @@ braces):
 >  {french/babelname}  =>  {french}
 >  {french/localnumeral}  =>  {polyglossia@C@localnumeral}
 >  {french/Localnumeral}  =>  {polyglossia@C@localnumeral}.
-[19
+[23
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 571.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 571.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 823.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 823.
 (./Mon_aide_memoire_R.aux
 LaTeX Info: Redefining \rmfamily on input line 21.
 LaTeX Info: Redefining \sffamily on input line 21.
@@ -1368,16 +1410,16 @@ LaTeX Info: Redefining \rmfamily on input line 25.
 LaTeX Info: Redefining \sffamily on input line 25.
 LaTeX Info: Redefining \ttfamily on input line 25.
 )
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 571.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 571.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 823.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 823.
  ) 
 Here is how much of TeX's memory you used:
- 30479 strings out of 479488
- 582361 string characters out of 5884709
- 1029780 words of memory out of 5000000
- 47386 multiletter control sequences out of 15000+600000
- 538869 words of font info for 87 fonts, out of 8000000 for 9000
+ 30964 strings out of 479488
+ 589767 string characters out of 5884709
+ 1040941 words of memory out of 5000000
+ 47858 multiletter control sequences out of 15000+600000
+ 538885 words of font info for 89 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 59i,8n,118p,817b,567s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 59i,8n,118p,817b,575s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Mon_aide_memoire_R.pdf (19 pages).
+Output written on Mon_aide_memoire_R.pdf (23 pages).

@@ -50,8 +50,72 @@
 
 
 
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
 
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <link rel="stylesheet" href="css/style.css" type="text/css" />
 </head>
@@ -213,7 +277,7 @@ composantes : une <strong>composante attributaire</strong> permettant de l’ide
 système de coordonnées spatiales (ou CRS pour <em>Coordinate Reference System</em> en
 anglais). Les vecteurs sont basiquement composés de nœuds ou sommets qui sont
 des <strong>points dans l’espace</strong>. À partir de ces sommets, des <strong>formules
-mathématiques</strong> sont calculées pour créer des <strong>formes géométriques</strong>. S’il n’y
+mathématiques</strong> sont appliquées pour créer des <strong>formes géométriques</strong>. S’il n’y
 a qu’un sommet, le vecteur est simplement un point. S’il y a plusieurs sommets
 et que les liaisons ne forment pas une forme géométrique fermée, alors cela
 forme une ligne. Si la forme est fermée, le vecteur est un polygone. La
@@ -223,12 +287,310 @@ additionnelle est ajoutée (notamment pour représenter la hauteur au-dessus du
 niveau de la mer).<br />
 Les vecteurs permettent donc de représenter des <strong>données discrètes</strong> avec des
 <strong>formes bien définies dans l’espace</strong>.</p>
-<p>Pour stocker la géométrie de ces <strong>entités géographiques</strong>, l’OGC<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> (<em>Open
-Geospatial Consortium</em>) a développé un modèle standardisé pour les Bases de
-Données Spatiales (BDS). Ce modèle s’appelle <strong>Modèle d’Entité Simple</strong> (SFS
-pour <em>Simple Feature for SQL</em> en anglais) et permet définir des fonctions pour
-accéder, faire des calculs et construire ces données. C’est un modèle de données
-très largement supportés dans la plupart des logiciels SIG (dont QGIS).</p>
+<p>Pour stocker la géométrie de ces <strong>entités géographiques</strong>,
+l’OGC<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> (<a href="https://www.ogc.org/"><em>Open Geospatial Consortium</em></a>) a développé
+un modèle standardisé pour les Bases de Données Spatiales (BDS). Ce modèle
+s’appelle <strong>Modèle d’Entité Simple</strong> (SFA pour <a href="https://www.ogc.org/standards/sfa"><em>Simple Feature
+Access</em></a> en anglais) et permet de définir des
+fonctions pour accéder, faire des calculs et construire les données, dans le but
+de représenter les objets dans la réalité. C’est un modèle de données très
+largement supportés dans la plupart des logiciels SIG (dont QGIS) et a
+l’avantage de rendre le travail totalement transférable d’un projet à un autre
+grâce à une architecture commune.</p>
+<p>Pour amener ce modèle dans R, le package <code>sf</code> a ainsi été créé pour succéder au
+package <code>sp</code> sur le long terme.<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a> Les différents <strong>types de
+géométrie</strong> définis par la norme standardisée de l’OGC sont donc inclus dans ce
+package (fig. <a href="SIG.html#fig:sfclasses">5.1</a>). Ces types de géométrie permettent de créer les
+entités, qui sont la <strong>représentation d’un objet dans le monde réel</strong> (comme un
+bâtiment, un champ ou un arbre). Chaque entité peut alors faire parti par
+exemple du type <code>POINT</code>, <code>POLYLIGNE</code> (<code>LINESTRING</code>) ou <code>POLYGONE</code>. En plus de
+cela, il est possible de créer d’autres entités à partir de l’agrégation de ces
+entités basiques (formant des <code>MULITPOINTS</code>, des <code>MULTIPOLYLIGNES</code> et des
+<code>MULTIPOLYGONES</code>). Une seule entité contenant plusieurs types de géométrie
+différents est alors de type « collection de géométrie » (<code>GEOMETRYCOLLECTION</code>).<br />
+Ces 7 types de géométrie précédemment cités font partis des types les plus
+utilisés. Dans le package <code>sf</code>, ces types sont représentés sous la forme de
+<em>classes</em>.</p>
+
+<div class="figure" style="text-align: center"><span id="fig:sfclasses"></span>
+<img src="images/sf-classes.png" alt="Exemple des différents types de géométrie supportés par le package sf (source : https://geocompr.robinlovelace.net/spatial-class.html#intro-sf)" width="60%" />
+<p class="caption">
+Figure 5.1: Exemple des différents types de géométrie supportés par le package <code>sf</code> (source : <a href="https://geocompr.robinlovelace.net/spatial-class.html#intro-sf" class="uri">https://geocompr.robinlovelace.net/spatial-class.html#intro-sf</a>)
+</p>
+</div>
+<p>Le package <code>sf</code> est multitâche, il permet de : lire et écrire des fichiers de
+données spatiales via la bibliothèque
+<a href="https://www.osgeo.org/projects/geos/">GEOS</a> ; faire des opérations géométriques
+via la bibliothèque <a href="https://gdal.org/">GDAL</a> ; mais aussi représenter et
+transformer des systèmes de coordonnées géographiques projetés via la
+bibliothèque <a href="https://proj.org/">PROJ</a>.</p>
+<p>Pour commencer, nous allons prendre pour exemple le jeu de données <code>world</code> du
+package <code>sf</code>. Ce jeu de données provenant de <a href="https://www.naturalearthdata.com/">Natural
+Earth</a> est un objet <code>sf</code> contenant la carte
+du monde ainsi que quelques données de banques mondiales (tableau
+<a href="SIG.html#tab:dataworld">5.1</a>).</p>
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="SIG.html#cb1-1" aria-hidden="true"></a>knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">head</span>(world), <span class="dt">caption =</span> <span class="st">&quot;Aperçu du jeu de données <code>world</code> inclus dans le package <code>spData</code>.&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb1-2"><a href="SIG.html#cb1-2" aria-hidden="true"></a><span class="st">  </span>kableExtra<span class="op">::</span><span class="kw">kable_styling</span>(</span>
+<span id="cb1-3"><a href="SIG.html#cb1-3" aria-hidden="true"></a>    <span class="dt">latex_options =</span> <span class="kw">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hovered&quot;</span>, <span class="st">&quot;condensed&quot;</span>, <span class="st">&quot;responsive&quot;</span>)</span>
+<span id="cb1-4"><a href="SIG.html#cb1-4" aria-hidden="true"></a>  ) <span class="op">%&gt;%</span></span>
+<span id="cb1-5"><a href="SIG.html#cb1-5" aria-hidden="true"></a><span class="st">  </span>kableExtra<span class="op">::</span><span class="kw">scroll_box</span>(<span class="dt">width =</span> <span class="st">&quot;100%&quot;</span>)</span></code></pre></div>
+<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; ">
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:dataworld">Tableau 5.1: </span>Aperçu du jeu de données <code>world</code> inclus dans le package <code>spData</code>.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+iso_a2
+</th>
+<th style="text-align:left;">
+name_long
+</th>
+<th style="text-align:left;">
+continent
+</th>
+<th style="text-align:left;">
+region_un
+</th>
+<th style="text-align:left;">
+subregion
+</th>
+<th style="text-align:left;">
+type
+</th>
+<th style="text-align:right;">
+area_km2
+</th>
+<th style="text-align:right;">
+pop
+</th>
+<th style="text-align:right;">
+lifeExp
+</th>
+<th style="text-align:right;">
+gdpPercap
+</th>
+<th style="text-align:left;">
+geom
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+FJ
+</td>
+<td style="text-align:left;">
+Fiji
+</td>
+<td style="text-align:left;">
+Oceania
+</td>
+<td style="text-align:left;">
+Oceania
+</td>
+<td style="text-align:left;">
+Melanesia
+</td>
+<td style="text-align:left;">
+Sovereign country
+</td>
+<td style="text-align:right;">
+19289.97
+</td>
+<td style="text-align:right;">
+885806
+</td>
+<td style="text-align:right;">
+69.96000
+</td>
+<td style="text-align:right;">
+8222.254
+</td>
+<td style="text-align:left;">
+MULTIPOLYGON (((180 -16.067…
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TZ
+</td>
+<td style="text-align:left;">
+Tanzania
+</td>
+<td style="text-align:left;">
+Africa
+</td>
+<td style="text-align:left;">
+Africa
+</td>
+<td style="text-align:left;">
+Eastern Africa
+</td>
+<td style="text-align:left;">
+Sovereign country
+</td>
+<td style="text-align:right;">
+932745.79
+</td>
+<td style="text-align:right;">
+52234869
+</td>
+<td style="text-align:right;">
+64.16300
+</td>
+<td style="text-align:right;">
+2402.099
+</td>
+<td style="text-align:left;">
+MULTIPOLYGON (((33.90371 -0…
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+EH
+</td>
+<td style="text-align:left;">
+Western Sahara
+</td>
+<td style="text-align:left;">
+Africa
+</td>
+<td style="text-align:left;">
+Africa
+</td>
+<td style="text-align:left;">
+Northern Africa
+</td>
+<td style="text-align:left;">
+Indeterminate
+</td>
+<td style="text-align:right;">
+96270.60
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:left;">
+MULTIPOLYGON (((-8.66559 27…
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CA
+</td>
+<td style="text-align:left;">
+Canada
+</td>
+<td style="text-align:left;">
+North America
+</td>
+<td style="text-align:left;">
+Americas
+</td>
+<td style="text-align:left;">
+Northern America
+</td>
+<td style="text-align:left;">
+Sovereign country
+</td>
+<td style="text-align:right;">
+10036042.98
+</td>
+<td style="text-align:right;">
+35535348
+</td>
+<td style="text-align:right;">
+81.95305
+</td>
+<td style="text-align:right;">
+43079.143
+</td>
+<td style="text-align:left;">
+MULTIPOLYGON (((-122.84 49,…
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+US
+</td>
+<td style="text-align:left;">
+United States
+</td>
+<td style="text-align:left;">
+North America
+</td>
+<td style="text-align:left;">
+Americas
+</td>
+<td style="text-align:left;">
+Northern America
+</td>
+<td style="text-align:left;">
+Country
+</td>
+<td style="text-align:right;">
+9510743.74
+</td>
+<td style="text-align:right;">
+318622525
+</td>
+<td style="text-align:right;">
+78.84146
+</td>
+<td style="text-align:right;">
+51921.985
+</td>
+<td style="text-align:left;">
+MULTIPOLYGON (((-122.84 49,…
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+KZ
+</td>
+<td style="text-align:left;">
+Kazakhstan
+</td>
+<td style="text-align:left;">
+Asia
+</td>
+<td style="text-align:left;">
+Asia
+</td>
+<td style="text-align:left;">
+Central Asia
+</td>
+<td style="text-align:left;">
+Sovereign country
+</td>
+<td style="text-align:right;">
+2729810.51
+</td>
+<td style="text-align:right;">
+17288285
+</td>
+<td style="text-align:right;">
+71.62000
+</td>
+<td style="text-align:right;">
+23587.338
+</td>
+<td style="text-align:left;">
+MULTIPOLYGON (((87.35997 49…
+</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 <div id="les-rasters" class="section level3" number="5.3.2">
 <h3><span class="header-section-number">5.3.2</span> Les rasters</h3>
@@ -241,7 +603,7 @@ altitude…). Les données sont ainsi organisées en <strong>matrice</strong>, o
 les matrices possèdent une en-tête incluant le <strong>système de coordonnées
 spatiales</strong>, <strong>l’origine</strong> (généralement les coordonnées du coin inférieur droit
 de la matrice), ainsi que l’<strong>étendue de la matrice</strong> (le nombre de colonnes, de
-lignes et la résolution spatiale<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a>).<br />
+lignes et la résolution spatiale<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a>).<br />
 De par leurs caractéristiques, les rasters permettent de définir des <strong>données
 discrètes</strong> ainsi que des <strong>données continues</strong>.</p>
 <hr />
@@ -306,7 +668,9 @@ divers tutoriels sur la SIG et QGis</li>
 peuvent s’appuyer de nouvelles données cartographiques.<a href="SIG.html#fnref3" class="footnote-back">↩︎</a></p></li>
 <li id="fn4"><p>L’OGC est un consortium international qui développe des standards ouverts
 (OpenGIS) dans les domaines de la géomatique et de l’information géographique.<a href="SIG.html#fnref4" class="footnote-back">↩︎</a></p></li>
-<li id="fn5"><p>Globalement, la résolution spatiale est la <strong>taille réelle du
+<li id="fn5"><p>Cf. la <a href="https://r-spatial.github.io/sf/articles/sf1.html">vignette</a>
+du package <code>sf</code> parlant de ce sujet.<a href="SIG.html#fnref5" class="footnote-back">↩︎</a></p></li>
+<li id="fn6"><p>Globalement, la résolution spatiale est la <strong>taille réelle du
 plus petit élément</strong> représenté dans un jeu de données. Pour le <em>mode
 matriciel</em>, cela <strong>correspond à la taille de la cellule de la grille</strong>. Par
 exemple, si une cellule représente une surface réelle de 10 x 10 m, alors la
@@ -314,7 +678,7 @@ résolution est de 10 m. La résolution spatiale permet donc de <strong>définir
 niveau de détail</strong> du jeu de données. La netteté de l’image est ainsi dépendante
 de la résolution spatiale puisqu’il y aura plus de détails capturés avec des
 cellules de petite taille (résolution élevée ou fine) qu’avec des cellules de
-grande taille (résolution basse ou grossière).<a href="SIG.html#fnref5" class="footnote-back">↩︎</a></p></li>
+grande taille (résolution basse ou grossière).<a href="SIG.html#fnref6" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

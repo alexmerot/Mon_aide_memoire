@@ -25,7 +25,7 @@ dans le format de rendu final voulu via `pandoc` (**.html**, **.pdf**, etc).
 
 (ref:rmarkdownflow) *Source : <https://rmarkdown.rstudio.com/lesson-2.html>*
 
-```{r rmarkdownflow, echo=FALSE, fig.cap='(ref:rmarkdownflow)', fig.align='center'}
+```{r rmarkdownflow, echo=FALSE, fig.cap='(ref:rmarkdownflow)'}
 knitr::include_graphics("images/rmarkdownflow.png")
 ```
 

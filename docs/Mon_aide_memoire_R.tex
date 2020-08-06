@@ -43,6 +43,46 @@
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 \urlstyle{same} % disable monospaced font for URLs
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \usepackage{longtable,booktabs}
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
@@ -188,7 +228,7 @@ dans le format de rendu final voulu via \texttt{pandoc} (\textbf{.html}, \textbf
 
 \begin{figure}
 
-{\centering \includegraphics[width=9.85in]{images/rmarkdownflow} 
+{\centering \includegraphics[width=0.6\linewidth]{images/rmarkdownflow} 
 
 }
 
@@ -460,7 +500,7 @@ composantes : une \textbf{composante attributaire} permettant de l'identifier, e
 système de coordonnées spatiales (ou CRS pour \emph{Coordinate Reference System} en
 anglais). Les vecteurs sont basiquement composés de nœuds ou sommets qui sont
 des \textbf{points dans l'espace}. À partir de ces sommets, des \textbf{formules
-mathématiques} sont calculées pour créer des \textbf{formes géométriques}. S'il n'y
+mathématiques} sont appliquées pour créer des \textbf{formes géométriques}. S'il n'y
 a qu'un sommet, le vecteur est simplement un point. S'il y a plusieurs sommets
 et que les liaisons ne forment pas une forme géométrique fermée, alors cela
 forme une ligne. Si la forme est fermée, le vecteur est un polygone. La
@@ -471,13 +511,225 @@ niveau de la mer).\\
 Les vecteurs permettent donc de représenter des \textbf{données discrètes} avec des
 \textbf{formes bien définies dans l'espace}.
 
-Pour stocker la géométrie de ces \textbf{entités géographiques}, l'OGC \footnote{L'OGC est un consortium international qui développe des standards ouverts
-  (OpenGIS) dans les domaines de la géomatique et de l'information géographique.} (\emph{Open
-Geospatial Consortium}) a développé un modèle standardisé pour les Bases de
-Données Spatiales (BDS). Ce modèle s'appelle \textbf{Modèle d'Entité Simple} (SFS
-pour \emph{Simple Feature for SQL} en anglais) et permet définir des fonctions pour
-accéder, faire des calculs et construire ces données. C'est un modèle de données
-très largement supportés dans la plupart des logiciels SIG (dont QGIS).
+Pour stocker la géométrie de ces \textbf{entités géographiques},
+l'OGC \footnote{L'OGC est un consortium international qui développe des standards ouverts
+  (OpenGIS) dans les domaines de la géomatique et de l'information géographique.} (\href{https://www.ogc.org/}{\emph{Open Geospatial Consortium}}) a développé
+un modèle standardisé pour les Bases de Données Spatiales (BDS). Ce modèle
+s'appelle \textbf{Modèle d'Entité Simple} (SFA pour \href{https://www.ogc.org/standards/sfa}{\emph{Simple Feature
+Access}} en anglais) et permet de définir des
+fonctions pour accéder, faire des calculs et construire les données, dans le but
+de représenter les objets dans la réalité. C'est un modèle de données très
+largement supportés dans la plupart des logiciels SIG (dont QGIS) et a
+l'avantage de rendre le travail totalement transférable d'un projet à un autre
+grâce à une architecture commune.
+
+Pour amener ce modèle dans R, le package \texttt{sf} a ainsi été créé pour succéder au
+package \texttt{sp} sur le long terme \footnote{Cf. la \href{https://r-spatial.github.io/sf/articles/sf1.html}{vignette}
+  du package \texttt{sf} parlant de ce sujet.}. Les différents \textbf{types de
+géométrie} définis par la norme standardisée de l'OGC sont donc inclus dans ce
+package (fig.~\ref{fig:sfclasses}). Ces types de géométrie permettent de créer les
+entités, qui sont la \textbf{représentation d'un objet dans le monde réel} (comme un
+bâtiment, un champ ou un arbre). Chaque entité peut alors faire parti par
+exemple du type \texttt{POINT}, \texttt{POLYLIGNE} (\texttt{LINESTRING}) ou \texttt{POLYGONE}. En plus de
+cela, il est possible de créer d'autres entités à partir de l'agrégation de ces
+entités basiques (formant des \texttt{MULITPOINTS}, des \texttt{MULTIPOLYLIGNES} et des
+\texttt{MULTIPOLYGONES}). Une seule entité contenant plusieurs types de géométrie
+différents est alors de type « collection de géométrie » (\texttt{GEOMETRYCOLLECTION}).\\
+Ces 7 types de géométrie précédemment cités font partis des types les plus
+utilisés. Dans le package \texttt{sf}, ces types sont représentés sous la forme de
+\emph{classes}.
+
+
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.6\linewidth]{images/sf-classes} 
+
+}
+
+\caption{Exemple des différents types de géométrie supportés par le package \texttt{sf} (source : \url{https://geocompr.robinlovelace.net/spatial-class.html\#intro-sf})}\label{fig:sfclasses}
+\end{figure}
+
+Le package \texttt{sf} est multitâche, il permet de : lire et écrire des fichiers de
+données spatiales via la bibliothèque
+\href{https://www.osgeo.org/projects/geos/}{GEOS} ; faire des opérations géométriques
+via la bibliothèque \href{https://gdal.org/}{GDAL} ; mais aussi représenter et
+transformer des systèmes de coordonnées géographiques projetés via la
+bibliothèque \href{https://proj.org/}{PROJ}.
+
+Pour commencer, nous allons prendre pour exemple le jeu de données \texttt{world} du
+package \texttt{sf}. Ce jeu de données provenant de \href{https://www.naturalearthdata.com/}{Natural
+Earth} est un objet \texttt{sf} contenant la carte
+du monde ainsi que quelques données de banques mondiales (tableau
+\ref{tab:dataworld}).
+
+
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{knitr}\OperatorTok{::}\KeywordTok{kable}\NormalTok{(}\KeywordTok{head}\NormalTok{(world), }\DataTypeTok{caption =} \StringTok{"Aperçu du jeu de données \texttt{world} inclus dans le package \texttt{spData}."}\NormalTok{) }\OperatorTok{\%\textgreater{}\%}
+\StringTok{  }\NormalTok{kableExtra}\OperatorTok{::}\KeywordTok{kable\_styling}\NormalTok{(}
+    \DataTypeTok{latex\_options =} \KeywordTok{c}\NormalTok{(}\StringTok{"striped"}\NormalTok{, }\StringTok{"hovered"}\NormalTok{, }\StringTok{"condensed"}\NormalTok{, }\StringTok{"responsive"}\NormalTok{)}
+\NormalTok{  ) }\OperatorTok{\%\textgreater{}\%}
+\StringTok{  }\NormalTok{kableExtra}\OperatorTok{::}\KeywordTok{scroll\_box}\NormalTok{(}\DataTypeTok{width =} \StringTok{"100\%"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\label{tab:dataworld}Aperçu du jeu de données \texttt{world} inclus dans le package \texttt{spData}.
+
+iso\_a2
+
+name\_long
+
+continent
+
+region\_un
+
+subregion
+
+type
+
+area\_km2
+
+pop
+
+lifeExp
+
+gdpPercap
+
+geom
+
+FJ
+
+Fiji
+
+Oceania
+
+Oceania
+
+Melanesia
+
+Sovereign country
+
+19289.97
+
+885806
+
+69.96000
+
+8222.254
+
+MULTIPOLYGON (((180 -16.067\ldots{}
+
+TZ
+
+Tanzania
+
+Africa
+
+Africa
+
+Eastern Africa
+
+Sovereign country
+
+932745.79
+
+52234869
+
+64.16300
+
+2402.099
+
+MULTIPOLYGON (((33.90371 -0\ldots{}
+
+EH
+
+Western Sahara
+
+Africa
+
+Africa
+
+Northern Africa
+
+Indeterminate
+
+96270.60
+
+NA
+
+NA
+
+NA
+
+MULTIPOLYGON (((-8.66559 27\ldots{}
+
+CA
+
+Canada
+
+North America
+
+Americas
+
+Northern America
+
+Sovereign country
+
+10036042.98
+
+35535348
+
+81.95305
+
+43079.143
+
+MULTIPOLYGON (((-122.84 49,\ldots{}
+
+US
+
+United States
+
+North America
+
+Americas
+
+Northern America
+
+Country
+
+9510743.74
+
+318622525
+
+78.84146
+
+51921.985
+
+MULTIPOLYGON (((-122.84 49,\ldots{}
+
+KZ
+
+Kazakhstan
+
+Asia
+
+Asia
+
+Central Asia
+
+Sovereign country
+
+2729810.51
+
+17288285
+
+71.62000
+
+23587.338
+
+MULTIPOLYGON (((87.35997 49\ldots{}
 
 \hypertarget{les-rasters}{%
 \subsection{Les rasters}\label{les-rasters}}

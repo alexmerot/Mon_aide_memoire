@@ -11,11 +11,22 @@ csl: chicago-author-date-fr.csl
 link-citations: yes
 nocite: |
   @*
+always_allow_html: true
 github-repo: "alexmerot/Mon_aide_memoire"
 url: 'https\://alexmerot.github.io/Mon_aide_memoire/'
 favicon: "images/favicon_io/favicon.ico"
 description: "Ceci est l'ensemble de mes notes accumulées au fur et à mesure de mon apprentissage de différents outils et concepts qui sont nécessaires à mes besoins dans les analyses de données et la programmation. Cela me permet de les comprendre, les mémoriser, ainsi que de les partager."
 ---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+ fig.width = 7,
+ fig.asp = 0.8,
+ out.width = "60%",
+ fig.align='center'
+)
+options(knitr.table.format = "html")
+```
 
 ```{r include=FALSE}
 # Créer automatiquement une base de données '.bib' pour les packages R utilisés.
@@ -27,6 +38,8 @@ knitr::write_bib(c(
 # Permet de mettre à jour les références pour biblatex après un rebuild du livre.
 options(tinytex.clean = FALSE)
 ```
+
+
 
 # Introduction {.unnumbered #introduction}
 
