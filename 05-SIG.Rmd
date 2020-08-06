@@ -172,7 +172,7 @@ du monde ainsi que quelques données de banques mondiales (tableau
 ```{r dataworld}
 knitr::kable(head(world), caption = "(ref:dataworld)") %>%
   kableExtra::kable_styling(
-    latex_options = c("striped", "hovered", "condensed", "responsive")
+    bootstrap_options = c("striped", "hovered", "condensed", "responsive")
   ) %>%
   kableExtra::scroll_box(width = "100%")
 ```
