@@ -1,5 +1,9 @@
 # R Markdown, Bookdown & Blogdown {#rmarkdown}
 
+::: {.infobox .caution data-latex="{caution}"}
+**Work In Progress**
+:::
+
 ## Pourquoi R Markdown ? {#pourquoi-rmarkdown}
 
 R Markdown est un format de fichier (à l'extension **.Rmd**) fournissant un cadre

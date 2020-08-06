@@ -36,7 +36,7 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \hypersetup{
-  pdftitle={Aide-mémoire : Théories et pratiques sur R},
+  pdftitle={Aide-mémoire : Analyses de données \& Cartographie sur R},
   pdfauthor={Alexis Mérot},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
@@ -102,9 +102,9 @@
 \usepackage[]{natbib}
 \bibliographystyle{apalike}
 
-\title{Aide-mémoire : Théories et pratiques sur R}
+\title{Aide-mémoire : Analyses de données \& Cartographie sur R}
 \author{Alexis Mérot}
-\date{Modifié le : 2020-08-04}
+\date{Modifié le : 2020-08-06}
 
 \begin{document}
 \maketitle
@@ -117,19 +117,41 @@
 \chapter*{Introduction}\label{introduction}}
 \addcontentsline{toc}{chapter}{Introduction}
 
+\begin{infobox}{caution}
+
+Cet aide-mémoire n'est pour l'instant qu'un brouillon. Il est donc loin d'être complet et l'écriture est pour l'instant très succincte.
+
+\end{infobox}
+
 Ce projet est un ensemble de notes écrites en R Markdown \citep{R-rmarkdown} et via
 le package \textbf{bookdown} (\url{https://github.com/rstudio/bookdown}). Ces notes
 s'accumuleront au fur et à mesure de mon apprentissage des différents outils et
 concepts dont j'ai besoin pour les analyses de données et la programmation. Cela
 me permet de les comprendre, les mémoriser, ainsi que de les partager.
 
-Le projet s'insérera peut-être dans un autre plus gros projet : la création d'un
-blog répertoriant tous mes projets et mon CV. Il commencera certainement lorsque
-je démarrerai la lecture de la documentation de l'excellent package \textbf{blogdown}
-(\url{https://bookdown.org/yihui/blogdown/}).
+L'aide-mémoire s'insérera peut-être dans un autre plus gros projet : la création
+d'un blog répertoriant tous mes projets et mon CV. Il commencera certainement
+lorsque je pourrai démarrer la lecture de la documentation de l'excellent
+package \textbf{blogdown} (\url{https://bookdown.org/yihui/blogdown/}).
+
+Cet aide-mémoire intégrera les notions théoriques indispensables en statistique
+et en cartographie, ainsi que les outils proposés par R (et si besoin d'autres
+langages) pour la mise en pratique à travers d'exemples. Étant principalement
+intéressé par la Biologie de la conservation et globalement l'Écologie, les
+exemples se focaliseront pour la plupart sur des données en lien à ces domaines.
+
+Toutes les sources qui m'ont été utiles pour acquérir ces connaissances seront
+accessibles dans les références bibliographiques ou dans les ressources Internet
+à la fin des chapitres.
 
 \hypertarget{rmarkdown}{%
 \chapter{R Markdown, Bookdown \& Blogdown}\label{rmarkdown}}
+
+\begin{infobox}{caution}
+
+\textbf{Work In Progress}
+
+\end{infobox}
 
 \hypertarget{pourquoi-rmarkdown}{%
 \section{Pourquoi R Markdown ?}\label{pourquoi-rmarkdown}}
@@ -364,6 +386,11 @@ plus en plus performants).
 \hypertarget{r-en-tant-que-sig}{%
 \section{R en tant que SIG}\label{r-en-tant-que-sig}}
 
+Afin d'avoir un bon aperçu et une bonne base sur l'utilisation de R en tant que
+SIG, je vous invite à lire le livre \emph{Geocomputation with R} de \citet{geocomputation}.
+Ce livre est mis à jour régulièrement et est mis à disposition gratuitement à
+cette adresse : \url{https://geocompr.robinlovelace.net/}.
+
 Ayant commencé à apprendre les analyses statistiques avec R, c'est naturellement
 que je me suis tourné vers ce langage pour la cartographie et l'analyse des
 données géospatiales. En effet, la communauté de R a créé de performants et
@@ -381,7 +408,7 @@ de programmes écrits respectivement en C++ et Python.
 
 D'autres caractéristiques intéressantes de R sont sa flexibilité et sa constante
 évolution. Par exemple, il offre maintenant la possibilité de faire facilement
-des applications et des cartes interactives notamment via les packages
+des applications web et des cartes interactives notamment via les packages
 \href{https://shiny.rstudio.com/}{\textbf{Shiny}} et
 \href{https://rstudio.github.io/leaflet/}{\textbf{Leaflet}}. Il offre par la même occasion
 divers outils d'analyses avancées, de modélisation et de visualisation qui sont

@@ -42,6 +42,11 @@ peuvent s'appuyer de nouvelles données cartographiques.
 
 ## R en tant que SIG
 
+Afin d'avoir un bon aperçu et une bonne base sur l'utilisation de R en tant que
+SIG, je vous invite à lire le livre *Geocomputation with R* de @geocomputation.
+Ce livre est mis à jour régulièrement et est mis à disposition gratuitement à
+cette adresse : <https://geocompr.robinlovelace.net/>.
+
 Ayant commencé à apprendre les analyses statistiques avec R, c'est naturellement
 que je me suis tourné vers ce langage pour la cartographie et l'analyse des
 données géospatiales. En effet, la communauté de R a créé de performants et
@@ -59,7 +64,7 @@ de programmes écrits respectivement en C++ et Python.
 
 D'autres caractéristiques intéressantes de R sont sa flexibilité et sa constante
 évolution. Par exemple, il offre maintenant la possibilité de faire facilement
-des applications et des cartes interactives notamment via les packages
+des applications web et des cartes interactives notamment via les packages
 [**Shiny**](https://shiny.rstudio.com/) et
 [**Leaflet**](https://rstudio.github.io/leaflet/). Il offre par la même occasion
 divers outils d'analyses avancées, de modélisation et de visualisation qui sont

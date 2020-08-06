@@ -1,11 +1,12 @@
 --- 
-title: "Aide-mémoire : Théories et pratiques sur R"
+title: "Aide-mémoire : Analyses de données & Cartographie sur R"
 author: "Alexis Mérot"
 date: "Modifié le : `r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
+csl: chicago-author-date-fr.csl
 link-citations: yes
 github-repo: "alexmerot/Mon_aide_memoire"
 url: 'https\://alexmerot.github.io/Mon_aide_memoire/'
@@ -13,7 +14,11 @@ favicon: "images/favicon_io/favicon.ico"
 description: "Ceci est l'ensemble de mes notes accumulées au fur et à mesure de mon apprentissage de différents outils et concepts qui sont nécessaires à mes besoins dans les analyses de données et la programmation. Cela me permet de les comprendre, les mémoriser, ainsi que de les partager."
 ---
 
-# Introduction {-}
+# Introduction {.unnumbered #introduction}
+
+::: {.infobox .caution data-latex="{caution}"}
+Cet aide-mémoire n'est pour l'instant qu'un brouillon. Il est donc loin d'être complet et l'écriture est pour l'instant très succincte. 
+:::
 
 Ce projet est un ensemble de notes écrites en R Markdown [@R-rmarkdown] et via
 le package **bookdown** (<https://github.com/rstudio/bookdown>). Ces notes
@@ -21,10 +26,20 @@ s'accumuleront au fur et à mesure de mon apprentissage des différents outils e
 concepts dont j'ai besoin pour les analyses de données et la programmation. Cela
 me permet de les comprendre, les mémoriser, ainsi que de les partager.
 
-Le projet s'insérera peut-être dans un autre plus gros projet : la création d'un
-blog répertoriant tous mes projets et mon CV. Il commencera certainement lorsque
-je démarrerai la lecture de la documentation de l'excellent package **blogdown**
-(<https://bookdown.org/yihui/blogdown/>).
+L'aide-mémoire s'insérera peut-être dans un autre plus gros projet : la création
+d'un blog répertoriant tous mes projets et mon CV. Il commencera certainement
+lorsque je pourrai démarrer la lecture de la documentation de l'excellent
+package **blogdown** (<https://bookdown.org/yihui/blogdown/>).
+
+Cet aide-mémoire intégrera les notions théoriques indispensables en statistique
+et en cartographie, ainsi que les outils proposés par R (et si besoin d'autres
+langages) pour la mise en pratique à travers d'exemples. Étant principalement
+intéressé par la Biologie de la conservation et globalement l'Écologie, les
+exemples se focaliseront pour la plupart sur des données en lien à ces domaines.
+
+Toutes les sources qui m'ont été utiles pour acquérir ces connaissances seront
+accessibles dans les références bibliographiques ou dans les ressources Internet
+à la fin des chapitres.
 
 
 ```{r include=FALSE}
