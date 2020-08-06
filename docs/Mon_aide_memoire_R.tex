@@ -441,15 +441,38 @@ du livre de \citet{geocomputation}.
 Pour représenter numériquement les données spatiales, deux modèles de base sont
 utilisés : les \emph{vecteurs} (mode vectoriel) et les \emph{rasters} (mode matriciel).
 L'une des principales différences entre ces deux modèles est qu'un vecteur est
-un \emph{objet} tandis que le raster est une \emph{image}. Ainsi, les vecteurs sont
-constitués de points, de lignes et de polygones créés à partir de formules
+un \emph{objet} (ou entité) tandis que le raster est une \emph{image}. Ainsi, les vecteurs
+sont constitués de points, de lignes et de polygones créés à partir d'équations
 mathématiques, tandis que les rasters sont des grilles constituées de cellules
 de même taille (les pixels). C'est cette différence qui fait que les vecteurs ne
 perdent pas en netteté lorsque l'on zoome dessus, tandis que les images
-deviennent floues (elles « pixelisent »).
+deviennent floues (elles « pixelisent »). Par ailleurs, la différence dans la
+manière de stocker ces deux modèles fait que les fichiers liés aux vecteurs ont
+une taille bien inférieure que ceux liés aux raster.\\
+Sous R, les vecteurs et les rasters sont travaillés respectivement avec les packages \texttt{sf} et \texttt{raster}.
 
 \hypertarget{les-vecteurs}{%
 \subsection{Les vecteurs}\label{les-vecteurs}}
+
+Un vecteur est une image vectorielle ou dessin mathématique constitué de deux
+composantes : une \textbf{composante attributaire} permettant de l'identifier, et une
+\textbf{composante graphique} décrivant sa géométrie. Il est localisé grâce à un
+système de coordonnées spatiales (ou CRS pour \emph{Coordinate Reference System} en
+anglais). Les vecteurs sont basiquement composés de nœuds ou sommets qui sont
+des \textbf{points dans l'espace}. À partir de ces sommets, des \textbf{formules
+mathématiques} sont calculées pour créer des \textbf{formes géométriques}. S'il n'y
+a qu'un sommet, le vecteur est simplement un point. S'il y a plusieurs sommets
+et que les liaisons ne forment pas une forme géométrique fermée, alors cela
+forme une ligne. Si la forme est fermée, le vecteur est un polygone. La
+géométrie des points est généralement en deux dimensions (\(x =\) longitude, \(y =\)
+latitude), mais peut être parfois en trois dimensions si une valeur \(z\)
+additionnelle est ajoutée (notamment pour représenter la hauteur au-dessus du
+niveau de la mer).\\
+Les vecteurs permettent donc de représenter des \textbf{données discrètes} avec des
+\textbf{formes bien définies dans l'espace}.
+
+Pour stocker la géométrie de ces \textbf{entités géographiques}, l'OGC \footnote{L'OGC est un consortium international qui développe des standards ouverts
+  (OpenGIS) dans les domaines de la géomatique et de l'information géographique.} (\emph{Open Geospatial Consortium}) a développé un modèle standardisé pour les Bases de Données Spatiales (BDS). Ce modèle s'appelle \textbf{Modèle d'Entité Simple} (SFS pour \emph{Simple Feature for SQL} en anglais) et permet définir des fonctions pour accéder, faire des calculs et construire ces données. C'est un modèle de données très largement supportés dans la plupart des logiciels SIG (dont QGis)
 
 \hypertarget{les-rasters}{%
 \subsection{Les rasters}\label{les-rasters}}
@@ -471,7 +494,9 @@ lignes et la résolution spatiale \footnote{Globalement, la résolution spatiale
   niveau de détail} du jeu de données. La netteté de l'image est ainsi dépendante
   de la résolution spatiale puisqu'il y aura plus de détails capturés avec des
   cellules de petite taille (résolution élevée ou fine) qu'avec des cellules de
-  grande taille (résolution basse ou grossière).}).
+  grande taille (résolution basse ou grossière).}).\\
+De par leurs caractéristiques, les rasters permettent de définir des \textbf{données
+discrètes} ainsi que des \textbf{données continues}.
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -532,6 +557,8 @@ lignes et la résolution spatiale \footnote{Globalement, la résolution spatiale
   divers tutoriels sur la SIG et QGis
 \item
   \href{https://naturagis.fr/}{NaturaGIS} : tutoriels et ressources sur la géomatique, les SIG et leurs usages pour l'environnement
+\item
+  \href{https://docs.qgis.org/3.10/fr/docs/}{Documentation officielle} de QGIS
 \end{itemize}
 
   \bibliography{book.bib,packages.bib}

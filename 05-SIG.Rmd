@@ -6,7 +6,11 @@
 
 ## Qu'est-ce qu'un SIG ?
 
- <!-- TODO : Développer l'utilité des SIG dans les prises de décision --> 
+<!-- TODO : Développer l'utilité des SIG dans les prises de décision --> 
+<!-- 
+    TODO : Ajouter des infos provenant de
+    https://www.notre-planete.info/terre/outils/sig.php
+-->
 
 Un Système d'Information Géographique est, comme tout Système d'Information
 [^SI], un ensemble organisé de ressources ayant pour fonction de collecter,
@@ -82,14 +86,36 @@ du livre de @geocomputation.
 Pour représenter numériquement les données spatiales, deux modèles de base sont
 utilisés : les *vecteurs* (mode vectoriel) et les *rasters* (mode matriciel).
 L'une des principales différences entre ces deux modèles est qu'un vecteur est
-un *objet* tandis que le raster est une *image*. Ainsi, les vecteurs sont
-constitués de points, de lignes et de polygones créés à partir de formules
+un *objet* (ou entité) tandis que le raster est une *image*. Ainsi, les vecteurs
+sont constitués de points, de lignes et de polygones créés à partir d'équations
 mathématiques, tandis que les rasters sont des grilles constituées de cellules
 de même taille (les pixels). C'est cette différence qui fait que les vecteurs ne
 perdent pas en netteté lorsque l'on zoome dessus, tandis que les images
-deviennent floues (elles « pixelisent »).
+deviennent floues (elles « pixelisent »). Par ailleurs, la différence dans la
+manière de stocker ces deux modèles fait que les fichiers liés aux vecteurs ont
+une taille bien inférieure que ceux liés aux raster.  
+Sous R, les vecteurs et les rasters sont travaillés respectivement avec les packages `sf` et `raster`.
 
 ### Les vecteurs
+
+Un vecteur est une image vectorielle ou dessin mathématique constitué de deux
+composantes : une **composante attributaire** permettant de l'identifier, et une
+**composante graphique** décrivant sa géométrie. Il est localisé grâce à un
+système de coordonnées spatiales (ou CRS pour *Coordinate Reference System* en
+anglais). Les vecteurs sont basiquement composés de nœuds ou sommets qui sont
+des **points dans l'espace**. À partir de ces sommets, des **formules
+mathématiques** sont calculées pour créer des **formes géométriques**. S'il n'y
+a qu'un sommet, le vecteur est simplement un point. S'il y a plusieurs sommets
+et que les liaisons ne forment pas une forme géométrique fermée, alors cela
+forme une ligne. Si la forme est fermée, le vecteur est un polygone. La
+géométrie des points est généralement en deux dimensions ($x =$ longitude, $y =$
+latitude), mais peut être parfois en trois dimensions si une valeur $z$
+additionnelle est ajoutée (notamment pour représenter la hauteur au-dessus du
+niveau de la mer).  
+Les vecteurs permettent donc de représenter des **données discrètes** avec des
+**formes bien définies dans l'espace**.
+
+Pour stocker la géométrie de ces **entités géographiques**, l'OGC [^OGC] (*Open Geospatial Consortium*) a développé un modèle standardisé pour les Bases de Données Spatiales (BDS). Ce modèle s'appelle **Modèle d'Entité Simple** (SFS pour *Simple Feature for SQL* en anglais) et permet définir des fonctions pour accéder, faire des calculs et construire ces données. C'est un modèle de données très largement supportés dans la plupart des logiciels SIG (dont QGIS).
 
 ### Les rasters
 
@@ -102,8 +128,12 @@ altitude...). Les données sont ainsi organisées en **matrice**, où chaque
 les matrices possèdent une en-tête incluant le **système de coordonnées
 spatiales**, **l'origine** (généralement les coordonnées du coin inférieur droit
 de la matrice), ainsi que l'**étendue de la matrice** (le nombre de colonnes, de
-lignes et la résolution spatiale [^resolution]).
+lignes et la résolution spatiale [^resolution]).  
+De par leurs caractéristiques, les rasters permettent de définir des **données
+discrètes** ainsi que des **données continues**.
 
+[^OGC]: L'OGC est un consortium international qui développe des standards ouverts
+(OpenGIS) dans les domaines de la géomatique et de l'information géographique.
 [^resolution]: Globalement, la résolution spatiale est la **taille réelle du
 plus petit élément** représenté dans un jeu de données. Pour le *mode
 matriciel*, cela **correspond à la taille de la cellule de la grille**. Par
@@ -153,3 +183,4 @@ création de cartes en 2D et 3D
 * [Blog français](https://www.sigterritoires.fr/index.php/concepts/) contenant
 divers tutoriels sur la SIG et QGis
 * [NaturaGIS](https://naturagis.fr/) : tutoriels et ressources sur la géomatique, les SIG et leurs usages pour l'environnement
+* [Documentation officielle](https://docs.qgis.org/3.10/fr/docs/) de QGIS

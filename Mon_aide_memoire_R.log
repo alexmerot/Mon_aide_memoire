@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.2)  6 AUG 2020 16:04
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.2)  6 AUG 2020 18:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1303,13 +1303,13 @@ Chapitre 5.
 File: images/caution.png Graphic file (type bmp)
 <images/caution.png>
 [15]
-LaTeX Info: Redefining \rmfamily on input line 450.
-LaTeX Info: Redefining \sffamily on input line 450.
-LaTeX Info: Redefining \ttfamily on input line 450.
+LaTeX Info: Redefining \rmfamily on input line 453.
+LaTeX Info: Redefining \sffamily on input line 453.
+LaTeX Info: Redefining \ttfamily on input line 453.
 [16]
-LaTeX Info: Redefining \rmfamily on input line 535.
-LaTeX Info: Redefining \sffamily on input line 535.
-LaTeX Info: Redefining \ttfamily on input line 535.
+LaTeX Info: Redefining \rmfamily on input line 500.
+LaTeX Info: Redefining \sffamily on input line 500.
+LaTeX Info: Redefining \ttfamily on input line 500.
 
 Overfull \hbox (40.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -1358,8 +1358,8 @@ braces):
 [19
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 539.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 539.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 566.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 566.
 (./Mon_aide_memoire_R.aux
 LaTeX Info: Redefining \rmfamily on input line 21.
 LaTeX Info: Redefining \sffamily on input line 21.
@@ -1368,8 +1368,8 @@ LaTeX Info: Redefining \rmfamily on input line 25.
 LaTeX Info: Redefining \sffamily on input line 25.
 LaTeX Info: Redefining \ttfamily on input line 25.
 )
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 539.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 539.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 566.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 566.
  ) 
 Here is how much of TeX's memory you used:
  30479 strings out of 479488

@@ -129,7 +129,11 @@
 </div>
 <div id="quest-ce-quun-sig" class="section level2" number="5.1">
 <h2><span class="header-section-number">5.1</span> Qu’est-ce qu’un SIG ?</h2>
-<p><!-- TODO : Développer l'utilité des SIG dans les prises de décision --></p>
+<!-- TODO : Développer l'utilité des SIG dans les prises de décision -->
+<!-- 
+    TODO : Ajouter des infos provenant de
+    https://www.notre-planete.info/terre/outils/sig.php
+-->
 <p>Un Système d’Information Géographique est, comme tout Système d’Information,<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> un ensemble organisé de ressources ayant pour fonction de collecter,
 stocker, traiter et diffuser des informations.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> Ici, ces informations
 (généralement informatisées) sont des données géospatiales stockées sous forme
@@ -192,14 +196,34 @@ du livre de <span class="citation">Lovelace, Nowosad, et Muenchow (<a href="#ref
 <p>Pour représenter numériquement les données spatiales, deux modèles de base sont
 utilisés : les <em>vecteurs</em> (mode vectoriel) et les <em>rasters</em> (mode matriciel).
 L’une des principales différences entre ces deux modèles est qu’un vecteur est
-un <em>objet</em> tandis que le raster est une <em>image</em>. Ainsi, les vecteurs sont
-constitués de points, de lignes et de polygones créés à partir de formules
+un <em>objet</em> (ou entité) tandis que le raster est une <em>image</em>. Ainsi, les vecteurs
+sont constitués de points, de lignes et de polygones créés à partir d’équations
 mathématiques, tandis que les rasters sont des grilles constituées de cellules
 de même taille (les pixels). C’est cette différence qui fait que les vecteurs ne
 perdent pas en netteté lorsque l’on zoome dessus, tandis que les images
-deviennent floues (elles « pixelisent »).</p>
+deviennent floues (elles « pixelisent »). Par ailleurs, la différence dans la
+manière de stocker ces deux modèles fait que les fichiers liés aux vecteurs ont
+une taille bien inférieure que ceux liés aux raster.<br />
+Sous R, les vecteurs et les rasters sont travaillés respectivement avec les packages <code>sf</code> et <code>raster</code>.</p>
 <div id="les-vecteurs" class="section level3" number="5.3.1">
 <h3><span class="header-section-number">5.3.1</span> Les vecteurs</h3>
+<p>Un vecteur est une image vectorielle ou dessin mathématique constitué de deux
+composantes : une <strong>composante attributaire</strong> permettant de l’identifier, et une
+<strong>composante graphique</strong> décrivant sa géométrie. Il est localisé grâce à un
+système de coordonnées spatiales (ou CRS pour <em>Coordinate Reference System</em> en
+anglais). Les vecteurs sont basiquement composés de nœuds ou sommets qui sont
+des <strong>points dans l’espace</strong>. À partir de ces sommets, des <strong>formules
+mathématiques</strong> sont calculées pour créer des <strong>formes géométriques</strong>. S’il n’y
+a qu’un sommet, le vecteur est simplement un point. S’il y a plusieurs sommets
+et que les liaisons ne forment pas une forme géométrique fermée, alors cela
+forme une ligne. Si la forme est fermée, le vecteur est un polygone. La
+géométrie des points est généralement en deux dimensions (<span class="math inline">\(x =\)</span> longitude, <span class="math inline">\(y =\)</span>
+latitude), mais peut être parfois en trois dimensions si une valeur <span class="math inline">\(z\)</span>
+additionnelle est ajoutée (notamment pour représenter la hauteur au-dessus du
+niveau de la mer).<br />
+Les vecteurs permettent donc de représenter des <strong>données discrètes</strong> avec des
+<strong>formes bien définies dans l’espace</strong>.</p>
+<p>Pour stocker la géométrie de ces <strong>entités géographiques</strong>, l’OGC<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> (<em>Open Geospatial Consortium</em>) a développé un modèle standardisé pour les Bases de Données Spatiales (BDS). Ce modèle s’appelle <strong>Modèle d’Entité Simple</strong> (SFS pour <em>Simple Feature for SQL</em> en anglais) et permet définir des fonctions pour accéder, faire des calculs et construire ces données. C’est un modèle de données très largement supportés dans la plupart des logiciels SIG (dont QGis)</p>
 </div>
 <div id="les-rasters" class="section level3" number="5.3.2">
 <h3><span class="header-section-number">5.3.2</span> Les rasters</h3>
@@ -212,7 +236,9 @@ altitude…). Les données sont ainsi organisées en <strong>matrice</strong>, o
 les matrices possèdent une en-tête incluant le <strong>système de coordonnées
 spatiales</strong>, <strong>l’origine</strong> (généralement les coordonnées du coin inférieur droit
 de la matrice), ainsi que l’<strong>étendue de la matrice</strong> (le nombre de colonnes, de
-lignes et la résolution spatiale<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>).</p>
+lignes et la résolution spatiale<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a>).<br />
+De par leurs caractéristiques, les rasters permettent de définir des <strong>données
+discrètes</strong> ainsi que des <strong>données continues</strong>.</p>
 <hr />
 </div>
 </div>
@@ -253,6 +279,7 @@ création de cartes en 2D et 3D</li>
 <li><a href="https://www.sigterritoires.fr/index.php/concepts/">Blog français</a> contenant
 divers tutoriels sur la SIG et QGis</li>
 <li><a href="https://naturagis.fr/">NaturaGIS</a> : tutoriels et ressources sur la géomatique, les SIG et leurs usages pour l’environnement</li>
+<li><a href="https://docs.qgis.org/3.10/fr/docs/">Documentation officielle</a> de QGIS</li>
 </ul>
 
 </div>
@@ -272,7 +299,9 @@ divers tutoriels sur la SIG et QGis</li>
 <a href="https://fr.wikipedia.org/wiki/Syst%C3%A8me_d%27information_g%C3%A9ographique">Système d’Information Géographique</a>.<a href="SIG.html#fnref2" class="footnote-back">↩︎</a></p></li>
 <li id="fn3"><p>Fond de carte représentant un territoire géographique sur lequel
 peuvent s’appuyer de nouvelles données cartographiques.<a href="SIG.html#fnref3" class="footnote-back">↩︎</a></p></li>
-<li id="fn4"><p>Globalement, la résolution spatiale est la <strong>taille réelle du
+<li id="fn4"><p>L’OGC est un consortium international qui développe des standards ouverts
+(OpenGIS) dans les domaines de la géomatique et de l’information géographique.<a href="SIG.html#fnref4" class="footnote-back">↩︎</a></p></li>
+<li id="fn5"><p>Globalement, la résolution spatiale est la <strong>taille réelle du
 plus petit élément</strong> représenté dans un jeu de données. Pour le <em>mode
 matriciel</em>, cela <strong>correspond à la taille de la cellule de la grille</strong>. Par
 exemple, si une cellule représente une surface réelle de 10 x 10 m, alors la
@@ -280,7 +309,7 @@ résolution est de 10 m. La résolution spatiale permet donc de <strong>définir
 niveau de détail</strong> du jeu de données. La netteté de l’image est ainsi dépendante
 de la résolution spatiale puisqu’il y aura plus de détails capturés avec des
 cellules de petite taille (résolution élevée ou fine) qu’avec des cellules de
-grande taille (résolution basse ou grossière).<a href="SIG.html#fnref4" class="footnote-back">↩︎</a></p></li>
+grande taille (résolution basse ou grossière).<a href="SIG.html#fnref5" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
@@ -339,6 +368,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
