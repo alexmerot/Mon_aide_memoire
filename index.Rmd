@@ -35,7 +35,7 @@ Cet aide-mémoire n'est pour l'instant qu'un brouillon. Il est donc loin d'être
 :::
 
 Ce projet est un ensemble de notes écrites en R Markdown [@R-rmarkdown] et via
-le package **bookdown** (<https://github.com/rstudio/bookdown>). Ces notes
+le package `bookdown` (<https://github.com/rstudio/bookdown>). Ces notes
 s'accumuleront au fur et à mesure de mon apprentissage des différents outils et
 concepts dont j'ai besoin pour les analyses de données et la programmation. Cela
 me permet de les comprendre, les mémoriser, ainsi que de les partager.
@@ -43,7 +43,7 @@ me permet de les comprendre, les mémoriser, ainsi que de les partager.
 L'aide-mémoire s'insérera peut-être dans un autre plus gros projet : la création
 d'un blog répertoriant tous mes projets et mon CV. Il commencera certainement
 lorsque je pourrai démarrer la lecture de la documentation de l'excellent
-package **blogdown** (<https://bookdown.org/yihui/blogdown/>).
+package `blogdown` (<https://bookdown.org/yihui/blogdown/>).
 
 Cet aide-mémoire intégrera les notions théoriques indispensables en statistique
 et en cartographie, ainsi que les outils proposés par R (et si besoin d'autres

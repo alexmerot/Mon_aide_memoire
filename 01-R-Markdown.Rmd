@@ -7,7 +7,7 @@
 ## Pourquoi R Markdown ? {#pourquoi-rmarkdown}
 
 R Markdown désigne un format de fichier (à l'extension **.Rmd**) et plus
-globalement le framework utilisé pour faire plus facilement des documents
+globalement le framework utilisé pour créer plus facilement des documents
 (généralement scientifiques) automatisés. Ces documents peuvent ainsi être
 totalement reproductibles et plusieurs formats de rendu final (statiques ou
 dynamiques) sont supportés.
@@ -17,11 +17,11 @@ Le fichier est écrit via le langage Markdown et des sections de code R peuvent 
 que Python ou SQL). Cela offre une syntaxe facile à lire et à écrire tout en
 permettant de générer un document structuré et élégant.
 
-Pour que cela fonctionne, R Markdown est lié à deux packages : **knitr** et le
-convertisseur universel de document **pandoc** (Fig. \@ref(fig:rmarkdownflow)).  
-Le package **knitr** permet la création, à partir du fichier **.Rmd**, d'un fichier
+Pour que cela fonctionne, R Markdown est lié à deux packages : `knitr` et le
+convertisseur universel de document `pandoc` (Fig. \@ref(fig:rmarkdownflow)).  
+Le package `knitr` permet la création, à partir du fichier **.Rmd**, d'un fichier
 au format **md** contenant le code et sa sortie. Ce fichier est alors converti
-dans le format de rendu final voulu via **pandoc** (**.html**, **.pdf**, etc).
+dans le format de rendu final voulu via `pandoc` (**.html**, **.pdf**, etc).
 
 (ref:rmarkdownflow) *Source : <https://rmarkdown.rstudio.com/lesson-2.html>*
 
@@ -59,19 +59,19 @@ ainsi que le livre en cours d'écriture
   - [Création d'un template](https://danawanzer.com/using-r-for-immediate-reporting-in-evaluation/)
    R Markdown
 * Bookdown :
-  - [Site officiel](https://bookdown.org/home/about/) de Bookdown
-  - [Guide complet](https://bookdown.org/yihui/bookdown/) de Bookdown
-  - Extension à Bookdown : [**bookdownplus**](https://bookdown.org/baydap/bookdownplus/)
+  - [Site officiel](https://bookdown.org/home/about/) de `bookdown`
+  - [Guide complet](https://bookdown.org/yihui/bookdown/) de `bookdown`
+  - Extension à `bookdown` : [`bookdownplus`](https://bookdown.org/baydap/bookdownplus/)
   - [Guide en français](https://statistique-et-logiciel-r.com/creer-un-livre-document-avec-bookdown/)
-  de Bookdown
+  de `bookdown`
   - [Introduction en français](https://thinkr.fr/rediger-avec-bookdown-pourquoi-comment/)
-   à Bookdown
+   à `bookdown`
 * Blogdown :
-  - [Guide complet](https://bookdown.org/yihui/blogdown/) sur Blogdown
+  - [Guide complet](https://bookdown.org/yihui/blogdown/) sur `blogdown`
 * Court [tutoriel](https://slides.yihui.org/2017-rmarkdown-UNL-Yihui-Xie.html#1)
- d'introduction sur R Markdown, Bookdown et Blogdown
-* Guide pour le package [**knitr**](https://yihui.org/knitr/)
-* [Options](https://yihui.org/knitr/options/) valables pour les *chunks* et le
-package **knitr**
+ d'introduction sur R Markdown, `bookdown` et `blogdown`
+* Guide pour le package [`knitr`](https://yihui.org/knitr/)
+* [Options](https://yihui.org/knitr/options/) valables pour les *chunks* de code
+et le package `knitr`
 
 ***

@@ -44,10 +44,9 @@ peuvent s'appuyer de nouvelles données cartographiques.
 
 Afin d'avoir un bon aperçu et une bonne base sur l'utilisation de R en tant que
 SIG, je vous invite à lire le livre *Geocomputation with R* de @geocomputation.
-Ce livre est mis à jour régulièrement et est mis à disposition gratuitement à
-cette adresse : <https://geocompr.robinlovelace.net/> --- si vous préférez le
-format papier et/ou voulez soutenir les auteurs, il est bien sûr disponible à
-l'achat.
+Ce livre est mis à jour régulièrement et consultable gratuitement à cette
+adresse : <https://geocompr.robinlovelace.net/>. Si vous préférez le format
+papier et/ou voulez soutenir les auteurs, il est bien sûr disponible à l'achat.
 
 Ayant commencé à apprendre les analyses statistiques avec R, c'est naturellement
 que je me suis tourné vers ce langage pour la cartographie et l'analyse des
@@ -60,15 +59,15 @@ certainement des packages rapides et performants au fur et à mesure de sa
 maturité. Par ailleurs, même si des programmes manqueraient à R ou si d'autres
 langages possèdent des programmes plus adaptés pour certaines tâches, des
 packages R offrent la possibilité d'en faciliter l'accès. Par exemple, les
-packages tels que [**Rcpp**](https://github.com/RcppCore/Rcpp) et
-[**Reticulate**](https://rstudio.github.io/reticulate/) permettent l'utilisation
+packages tels que [`Rcpp`](https://github.com/RcppCore/Rcpp) et
+[`Reticulate`](https://rstudio.github.io/reticulate/) permettent l'utilisation
 de programmes écrits respectivement en C++ et Python.
 
 D'autres caractéristiques intéressantes de R sont sa flexibilité et sa constante
 évolution. Par exemple, il offre maintenant la possibilité de faire facilement
 des applications web et des cartes interactives notamment via les packages
-[**Shiny**](https://shiny.rstudio.com/) et
-[**Leaflet**](https://rstudio.github.io/leaflet/). Il offre par la même occasion
+[`Shiny`](https://shiny.rstudio.com/) et
+[`Leaflet`](https://rstudio.github.io/leaflet/). Il offre par la même occasion
 divers outils d'analyses avancées, de modélisation et de visualisation qui sont
 mis à jour et améliorés régulièrement.
 
@@ -85,7 +84,7 @@ utilisés : les *vecteurs* (mode vectoriel) et les *rasters* (mode matriciel).
 L'une des principales différences entre ces deux modèles est qu'un vecteur est
 un *objet* tandis que le raster est une *image*. Ainsi, les vecteurs sont
 constitués de points, de lignes et de polygones créés à partir de formules
-mathématiques, tandis que les rasters sont des grilles constituées en cellules
+mathématiques, tandis que les rasters sont des grilles constituées de cellules
 de même taille (les pixels). C'est cette différence qui fait que les vecteurs ne
 perdent pas en netteté lorsque l'on zoome dessus, tandis que les images
 deviennent floues (elles « pixelisent »).
@@ -109,9 +108,11 @@ lignes et la résolution spatiale [^resolution]).
 plus petit élément** représenté dans un jeu de données. Pour le *mode
 matriciel*, cela **correspond à la taille de la cellule de la grille**. Par
 exemple, si une cellule représente une surface réelle de 10 x 10 m, alors la
-résolution est de 10 m. La résolution spatiale permet donc de définir le niveau
-de détail du jeu de données. La netteté de l'image est ainsi dépendant de la
-résolution spatiale puisqu'il y aura plus de détails capturés avec des cellules de petite taille (résolution élevée ou fine) qu'avec des cellules de grande taille (résolution basse ou grossière).
+résolution est de 10 m. La résolution spatiale permet donc de **définir le
+niveau de détail** du jeu de données. La netteté de l'image est ainsi dépendante
+de la résolution spatiale puisqu'il y aura plus de détails capturés avec des
+cellules de petite taille (résolution élevée ou fine) qu'avec des cellules de
+grande taille (résolution basse ou grossière).
 
 ***
 
@@ -124,9 +125,9 @@ géographiques, leur visualisation et leur modélisation sur R
 * [Introduction](https://statnmap.com/2018-07-14-introduction-to-mapping-with-sf-and-co/)
 à l'utilisation des packages de cartographie sur R
 * [Introduction](https://www.infoworld.com/article/3505897/how-to-do-spatial-analysis-in-r-with-sf.amp.html)
-au package **sf**
+au package `sf`
 * [Édition](https://github.com/r-spatial/mapedit) interactive de cartes avec
-**mapedit**
+`mapedit`
 * [introduction](https://mhallwor.github.io/_pages/welcome) à l'utilisation de R
 comme un SIG
 * [Introduction](http://eriqande.github.io/rep-res-web/lectures/making-maps-with-R.html)
@@ -134,21 +135,21 @@ pour créer des cartes avec R
 * [Introduction](https://thinkr.fr/sil-te-plait-dessine-moi-carte-r/)
 en français pour créer des cartes avec R
 * Introduction en français sur le package 
-[**rgeoapi**](https://colinfay.me/carte-r-rgeoapi-ggplot2/)
+[`rgeoapi`](https://colinfay.me/carte-r-rgeoapi-ggplot2/)
 * [Zoomer](https://rgeomatic.hypotheses.org/tag/sf) sur une carte avec R
-* [Tracer des cartes avec **ggplot2**](https://rpubs.com/huanfaChen/ggplotShapefile)
+* [Tracer des cartes avec `ggplot2`](https://rpubs.com/huanfaChen/ggplotShapefile)
 via des fichiers *shapefiles*
 * [Tutoriel](https://www.r-spatial.org/r/2018/10/25/ggplot2-sf.html)
-pour dessiner des cartes avec R, **sf** et **ggplot2**
-* [Cartes interactives](https://r-spatial.github.io/mapview/) avec **mapview**
-* [Cartes interactives](https://rstudio.github.io/leaflet/) avec **leaflet**
+pour dessiner des cartes avec R, `sf` et `ggplot2`
+* [Cartes interactives](https://r-spatial.github.io/mapview/) avec `mapview`
+* [Cartes interactives](https://rstudio.github.io/leaflet/) avec `leaflet`
 * Guide pour faire des
 [cartes en 3D](https://www.tylermw.com/a-step-by-step-guide-to-making-3d-maps-with-satellite-imagery-in-r/)
 à partir d'une imagerie satellite
-* Utilisation du package [**rayshader**](https://www.rayshader.com/) pour la
+* Utilisation du package [`rayshader`](https://www.rayshader.com/) pour la
 création de cartes en 2D et 3D
 * Manipulation et visualisation de données
-[LiDAR](https://github.com/Jean-Romain/lidR) pour la foresterie avec **lidr**
+[LiDAR](https://github.com/Jean-Romain/lidR) pour la foresterie avec `lidr`
 * [Blog français](https://www.sigterritoires.fr/index.php/concepts/) contenant
 divers tutoriels sur la SIG et QGis
 * [NaturaGIS](https://naturagis.fr/) : tutoriels et ressources sur la géomatique, les SIG et leurs usages pour l'environnement

@@ -133,7 +133,7 @@ Cet aide-mémoire n'est pour l'instant qu'un brouillon. Il est donc loin d'être
 \end{infobox}
 
 Ce projet est un ensemble de notes écrites en R Markdown \citep{R-rmarkdown} et via
-le package \textbf{bookdown} (\url{https://github.com/rstudio/bookdown}). Ces notes
+le package \texttt{bookdown} (\url{https://github.com/rstudio/bookdown}). Ces notes
 s'accumuleront au fur et à mesure de mon apprentissage des différents outils et
 concepts dont j'ai besoin pour les analyses de données et la programmation. Cela
 me permet de les comprendre, les mémoriser, ainsi que de les partager.
@@ -141,7 +141,7 @@ me permet de les comprendre, les mémoriser, ainsi que de les partager.
 L'aide-mémoire s'insérera peut-être dans un autre plus gros projet : la création
 d'un blog répertoriant tous mes projets et mon CV. Il commencera certainement
 lorsque je pourrai démarrer la lecture de la documentation de l'excellent
-package \textbf{blogdown} (\url{https://bookdown.org/yihui/blogdown/}).
+package \texttt{blogdown} (\url{https://bookdown.org/yihui/blogdown/}).
 
 Cet aide-mémoire intégrera les notions théoriques indispensables en statistique
 et en cartographie, ainsi que les outils proposés par R (et si besoin d'autres
@@ -168,7 +168,7 @@ Il n'y a pour l'instant qu'une version en ligne, mais une version PDF sera aussi
 \section{Pourquoi R Markdown ?}\label{pourquoi-rmarkdown}}
 
 R Markdown désigne un format de fichier (à l'extension \textbf{.Rmd}) et plus
-globalement le framework utilisé pour faire plus facilement des documents
+globalement le framework utilisé pour créer plus facilement des documents
 (généralement scientifiques) automatisés. Ces documents peuvent ainsi être
 totalement reproductibles et plusieurs formats de rendu final (statiques ou
 dynamiques) sont supportés.
@@ -178,11 +178,11 @@ Le fichier est écrit via le langage Markdown et des sections de code R peuvent 
 que Python ou SQL). Cela offre une syntaxe facile à lire et à écrire tout en
 permettant de générer un document structuré et élégant.
 
-Pour que cela fonctionne, R Markdown est lié à deux packages : \textbf{knitr} et le
-convertisseur universel de document \textbf{pandoc} (Fig. \ref{fig:rmarkdownflow}).\\
-Le package \textbf{knitr} permet la création, à partir du fichier \textbf{.Rmd}, d'un fichier
+Pour que cela fonctionne, R Markdown est lié à deux packages : \texttt{knitr} et le
+convertisseur universel de document \texttt{pandoc} (Fig. \ref{fig:rmarkdownflow}).\\
+Le package \texttt{knitr} permet la création, à partir du fichier \textbf{.Rmd}, d'un fichier
 au format \textbf{md} contenant le code et sa sortie. Ce fichier est alors converti
-dans le format de rendu final voulu via \textbf{pandoc} (\textbf{.html}, \textbf{.pdf}, etc).
+dans le format de rendu final voulu via \texttt{pandoc} (\textbf{.html}, \textbf{.pdf}, etc).
 
 
 
@@ -248,17 +248,17 @@ ainsi que le livre en cours d'écriture
   \begin{itemize}
   \tightlist
   \item
-    \href{https://bookdown.org/home/about/}{Site officiel} de Bookdown
+    \href{https://bookdown.org/home/about/}{Site officiel} de \texttt{bookdown}
   \item
-    \href{https://bookdown.org/yihui/bookdown/}{Guide complet} de Bookdown
+    \href{https://bookdown.org/yihui/bookdown/}{Guide complet} de \texttt{bookdown}
   \item
-    Extension à Bookdown : \href{https://bookdown.org/baydap/bookdownplus/}{\textbf{bookdownplus}}
+    Extension à \texttt{bookdown} : \href{https://bookdown.org/baydap/bookdownplus/}{\texttt{bookdownplus}}
   \item
     \href{https://statistique-et-logiciel-r.com/creer-un-livre-document-avec-bookdown/}{Guide en français}
-    de Bookdown
+    de \texttt{bookdown}
   \item
     \href{https://thinkr.fr/rediger-avec-bookdown-pourquoi-comment/}{Introduction en français}
-    à Bookdown
+    à \texttt{bookdown}
   \end{itemize}
 \item
   Blogdown :
@@ -266,16 +266,16 @@ ainsi que le livre en cours d'écriture
   \begin{itemize}
   \tightlist
   \item
-    \href{https://bookdown.org/yihui/blogdown/}{Guide complet} sur Blogdown
+    \href{https://bookdown.org/yihui/blogdown/}{Guide complet} sur \texttt{blogdown}
   \end{itemize}
 \item
   Court \href{https://slides.yihui.org/2017-rmarkdown-UNL-Yihui-Xie.html\#1}{tutoriel}
-  d'introduction sur R Markdown, Bookdown et Blogdown
+  d'introduction sur R Markdown, \texttt{bookdown} et \texttt{blogdown}
 \item
-  Guide pour le package \href{https://yihui.org/knitr/}{\textbf{knitr}}
+  Guide pour le package \href{https://yihui.org/knitr/}{\texttt{knitr}}
 \item
-  \href{https://yihui.org/knitr/options/}{Options} valables pour les \emph{chunks} et le
-  package \textbf{knitr}
+  \href{https://yihui.org/knitr/options/}{Options} valables pour les \emph{chunks} de code
+  et le package \texttt{knitr}
 \end{itemize}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
@@ -402,10 +402,9 @@ plus en plus performants).
 
 Afin d'avoir un bon aperçu et une bonne base sur l'utilisation de R en tant que
 SIG, je vous invite à lire le livre \emph{Geocomputation with R} de \citet{geocomputation}.
-Ce livre est mis à jour régulièrement et est mis à disposition gratuitement à
-cette adresse : \url{https://geocompr.robinlovelace.net/} --- si vous préférez le
-format papier et/ou voulez soutenir les auteurs, il est bien sûr disponible à
-l'achat.
+Ce livre est mis à jour régulièrement et consultable gratuitement à cette
+adresse : \url{https://geocompr.robinlovelace.net/}. Si vous préférez le format
+papier et/ou voulez soutenir les auteurs, il est bien sûr disponible à l'achat.
 
 Ayant commencé à apprendre les analyses statistiques avec R, c'est naturellement
 que je me suis tourné vers ce langage pour la cartographie et l'analyse des
@@ -418,15 +417,15 @@ certainement des packages rapides et performants au fur et à mesure de sa
 maturité. Par ailleurs, même si des programmes manqueraient à R ou si d'autres
 langages possèdent des programmes plus adaptés pour certaines tâches, des
 packages R offrent la possibilité d'en faciliter l'accès. Par exemple, les
-packages tels que \href{https://github.com/RcppCore/Rcpp}{\textbf{Rcpp}} et
-\href{https://rstudio.github.io/reticulate/}{\textbf{Reticulate}} permettent l'utilisation
+packages tels que \href{https://github.com/RcppCore/Rcpp}{\texttt{Rcpp}} et
+\href{https://rstudio.github.io/reticulate/}{\texttt{Reticulate}} permettent l'utilisation
 de programmes écrits respectivement en C++ et Python.
 
 D'autres caractéristiques intéressantes de R sont sa flexibilité et sa constante
 évolution. Par exemple, il offre maintenant la possibilité de faire facilement
 des applications web et des cartes interactives notamment via les packages
-\href{https://shiny.rstudio.com/}{\textbf{Shiny}} et
-\href{https://rstudio.github.io/leaflet/}{\textbf{Leaflet}}. Il offre par la même occasion
+\href{https://shiny.rstudio.com/}{\texttt{Shiny}} et
+\href{https://rstudio.github.io/leaflet/}{\texttt{Leaflet}}. Il offre par la même occasion
 divers outils d'analyses avancées, de modélisation et de visualisation qui sont
 mis à jour et améliorés régulièrement.
 
@@ -444,7 +443,7 @@ utilisés : les \emph{vecteurs} (mode vectoriel) et les \emph{rasters} (mode mat
 L'une des principales différences entre ces deux modèles est qu'un vecteur est
 un \emph{objet} tandis que le raster est une \emph{image}. Ainsi, les vecteurs sont
 constitués de points, de lignes et de polygones créés à partir de formules
-mathématiques, tandis que les rasters sont des grilles constituées en cellules
+mathématiques, tandis que les rasters sont des grilles constituées de cellules
 de même taille (les pixels). C'est cette différence qui fait que les vecteurs ne
 perdent pas en netteté lorsque l'on zoome dessus, tandis que les images
 deviennent floues (elles « pixelisent »).
@@ -468,9 +467,11 @@ lignes et la résolution spatiale \footnote{Globalement, la résolution spatiale
   plus petit élément} représenté dans un jeu de données. Pour le \emph{mode
   matriciel}, cela \textbf{correspond à la taille de la cellule de la grille}. Par
   exemple, si une cellule représente une surface réelle de 10 x 10 m, alors la
-  résolution est de 10 m. La résolution spatiale permet donc de définir le niveau
-  de détail du jeu de données. La netteté de l'image est ainsi dépendant de la
-  résolution spatiale puisqu'il y aura plus de détails capturés avec des cellules de petite taille (résolution élevée ou fine) qu'avec des cellules de grande taille (résolution basse ou grossière).}).
+  résolution est de 10 m. La résolution spatiale permet donc de \textbf{définir le
+  niveau de détail} du jeu de données. La netteté de l'image est ainsi dépendante
+  de la résolution spatiale puisqu'il y aura plus de détails capturés avec des
+  cellules de petite taille (résolution élevée ou fine) qu'avec des cellules de
+  grande taille (résolution basse ou grossière).}).
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -488,10 +489,10 @@ lignes et la résolution spatiale \footnote{Globalement, la résolution spatiale
   à l'utilisation des packages de cartographie sur R
 \item
   \href{https://www.infoworld.com/article/3505897/how-to-do-spatial-analysis-in-r-with-sf.amp.html}{Introduction}
-  au package \textbf{sf}
+  au package \texttt{sf}
 \item
   \href{https://github.com/r-spatial/mapedit}{Édition} interactive de cartes avec
-  \textbf{mapedit}
+  \texttt{mapedit}
 \item
   \href{https://mhallwor.github.io/_pages/welcome}{introduction} à l'utilisation de R
   comme un SIG
@@ -503,29 +504,29 @@ lignes et la résolution spatiale \footnote{Globalement, la résolution spatiale
   en français pour créer des cartes avec R
 \item
   Introduction en français sur le package
-  \href{https://colinfay.me/carte-r-rgeoapi-ggplot2/}{\textbf{rgeoapi}}
+  \href{https://colinfay.me/carte-r-rgeoapi-ggplot2/}{\texttt{rgeoapi}}
 \item
   \href{https://rgeomatic.hypotheses.org/tag/sf}{Zoomer} sur une carte avec R
 \item
-  \href{https://rpubs.com/huanfaChen/ggplotShapefile}{Tracer des cartes avec \textbf{ggplot2}}
+  \href{https://rpubs.com/huanfaChen/ggplotShapefile}{Tracer des cartes avec \texttt{ggplot2}}
   via des fichiers \emph{shapefiles}
 \item
   \href{https://www.r-spatial.org/r/2018/10/25/ggplot2-sf.html}{Tutoriel}
-  pour dessiner des cartes avec R, \textbf{sf} et \textbf{ggplot2}
+  pour dessiner des cartes avec R, \texttt{sf} et \texttt{ggplot2}
 \item
-  \href{https://r-spatial.github.io/mapview/}{Cartes interactives} avec \textbf{mapview}
+  \href{https://r-spatial.github.io/mapview/}{Cartes interactives} avec \texttt{mapview}
 \item
-  \href{https://rstudio.github.io/leaflet/}{Cartes interactives} avec \textbf{leaflet}
+  \href{https://rstudio.github.io/leaflet/}{Cartes interactives} avec \texttt{leaflet}
 \item
   Guide pour faire des
   \href{https://www.tylermw.com/a-step-by-step-guide-to-making-3d-maps-with-satellite-imagery-in-r/}{cartes en 3D}
   à partir d'une imagerie satellite
 \item
-  Utilisation du package \href{https://www.rayshader.com/}{\textbf{rayshader}} pour la
+  Utilisation du package \href{https://www.rayshader.com/}{\texttt{rayshader}} pour la
   création de cartes en 2D et 3D
 \item
   Manipulation et visualisation de données
-  \href{https://github.com/Jean-Romain/lidR}{LiDAR} pour la foresterie avec \textbf{lidr}
+  \href{https://github.com/Jean-Romain/lidR}{LiDAR} pour la foresterie avec \texttt{lidr}
 \item
   \href{https://www.sigterritoires.fr/index.php/concepts/}{Blog français} contenant
   divers tutoriels sur la SIG et QGis
