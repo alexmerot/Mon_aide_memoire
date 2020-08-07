@@ -91,19 +91,13 @@ sont constitués de points, de lignes et de polygones créés à partir d'équat
 mathématiques, tandis que les rasters sont des grilles constituées de cellules
 de même taille (les pixels). C'est cette différence qui fait que les vecteurs ne
 perdent pas en netteté lorsque l'on zoome dessus, tandis que les images
-deviennent floues (elles « pixelisent »). Par ailleurs, la différence dans la
-manière de stocker ces deux modèles fait que les fichiers liés aux vecteurs ont
-une taille bien inférieure que ceux liés aux raster.  
-Sous R, les vecteurs et les rasters sont travaillés respectivement avec les packages `sf` et `raster`.
+(rasters) deviennent floues (elles « pixelisent »). Par ailleurs, la différence
+dans la manière de stocker ces deux modèles fait que les fichiers liés aux
+vecteurs ont une taille bien inférieure que ceux liés aux raster.  
+Sous R, les vecteurs et les rasters sont travaillés respectivement avec les
+packages `sf` et `raster`.
 
 ### Les vecteurs
-
-```{r, include=FALSE}
-library("sf")
-library("spData")
-
-data(world)
-```
 
 Un vecteur est une image vectorielle ou dessin mathématique constitué de deux
 composantes : une **composante attributaire** permettant de l'identifier, et une
@@ -161,21 +155,98 @@ via la bibliothèque [GDAL](https://gdal.org/) ; mais aussi représenter et
 transformer des systèmes de coordonnées géographiques projetés via la
 bibliothèque [PROJ](https://proj.org/).
 
-Pour commencer, nous allons prendre pour exemple le jeu de données `world` du
-package `sf`. Ce jeu de données provenant de [Natural
-Earth](https://www.naturalearthdata.com/) est un objet `sf` contenant la carte
-du monde ainsi que quelques données de banques mondiales (tableau
-\@ref(tab:dataworld)).
+Pour avoir un aperçu des objets `sf` sous R, nous allons prendre pour exemple
+les données des Réserves Naturelles Nationales (RNN) de la France métropolitaine
+(Tableau \@ref(tab:data-rnn)). Ces données proviennent de l'Inventaire National
+du Patrimoine Naturel ([INPN](https://inpn.mnhn.fr/accueil/index)) et elles sont
+trouvables sur le [site du gouvernement](https://www.data.gouv.fr/fr/datasets/inpn-donnees-du-programme-espaces-proteges/).
 
-(ref:dataworld) Aperçu du jeu de données `world` inclus dans le package `spData`. 
+Plusieurs formats de fichier peuvent être utilisés pour stocker les données des
+vecteurs. Les plus utilisés sont le format *Shapefile* (**.shp**) de la société
+ESRI, les formats *Keyhole Markup Language* (**.kml**) de Google (et qui peut être
+compressé sous le format **.kmz**), ou aussi le format *Geographic Markup
+Language* (**.gml**) développé par l'OGC.
 
-```{r dataworld}
-knitr::kable(head(world), caption = "(ref:dataworld)") %>%
-  kableExtra::kable_styling(
-    bootstrap_options = c("striped", "hovered", "condensed", "responsive")
-  ) %>%
-  kableExtra::scroll_box(width = "100%")
+Concernant les données spatiales des RNN, elles sont téléchargeables au format
+*Shapefile*. Il faut alors savoir que le format *Shapefile* est toujours
+accompagné d'autres fichiers, dont les plus importants sont le fichier **.dbf**
+contenant les données attributaires, ainsi que le fichier **.shx** contenant
+l'index de la géométrie. Le fichier **.shp** contient, lui, les caractéristiques
+géométriques des différentes entités. C'est pour cela que lorsqu'on télécharge
+des données au format *Shapefile*, on télécharge en réalité tout un dossier
+contenant plusieurs fichiers.
+
+(ref:data-rnn) Jeu de données spatiales montrant les Réserves Naturelles Nationales de la France métropolitaine. 
+
+Une fois le package `sf` chargé, pour lire les données spatiales il faut
+utiliser la fonction `st_read()`. Pour ce cas là, il suffit alors de lui donner
+le chemin d'accès au fichier **.shp**. Les autres fichiers qui lui sont liés
+doivent être à la racine du même dossier. Pour plus d'informations sur les
+différents paramètres et les différentes possibilités de cette fonction, il ne
+faut pas hésiter à aller lire sa documentation.
+
+```{r load-rnn, warning=FALSE, message=FALSE}
+library("sf")
+
+data_rnn <- st_read("examples/rnn2019_12/N_ENP_RNN_S_000.shp")
 ```
+
+Des informations intéressantes sont affichées lors de la lecture du fichier.
+
+En regardant l'objet `sf` alors créé, on peut s'apercevoir qu'il a la forme d'un
+tableau de données comme on a l'habitude de voir. Cette caractéristique permet
+de le manipuler facilement, notamment via le package
+[`dplyr`](http://larmarange.github.io/analyse-R/manipuler-les-donnees-avec-dplyr.html).
+
+```{r data-rnn}
+knitr::kable(data_rnn, caption = "(ref:data-rnn)") %>%
+  kableExtra::kable_styling(
+    bootstrap_options = c("striped", "hovered", "condensed", "responsive"),
+    font_size = 12,
+    fixed_thead = TRUE
+  ) %>%
+  kableExtra::scroll_box(width = "100%", height = "400px")
+```
+
+(ref:plot-rnn) Carte des Réserves Naturelles de la France métropolitaine
+
+```{r plot-rnn, fig.cap='(ref:plot-rnn)', include=FALSE, eval=FALSE}
+library("ggplot2")
+library("ggthemes") # Ajoute d'autres thèmes à ggplot2
+library("patchwork") # Permet de modifier la disposition des graphiques
+library("dplyr") # Permet la manipulation des données
+
+# Ajout des départements français
+regions <- st_read("examples/regions-20180101-shp/regions-20180101.shp") %>%
+  filter(code_insee %in% 1:95)
+
+knitr::kable(regions) %>%
+  kableExtra::kable_styling(
+    bootstrap_options = c("striped", "hovered", "condensed", "responsive"),
+    font_size = 12,
+    fixed_thead = TRUE
+  ) %>%
+  kableExtra::scroll_box(width = "100%", height = "400px")
+
+st_crs(regions)
+st_crs(data_rnn)
+
+# Création de cartes avec ggplot2
+rnn_france <- ggplot() +
+  geom_sf(data = regions, colour = "black", fill = "white", size = 1.1) +
+  geom_sf(data = data_rnn) +
+  theme_map()
+
+rnn_jura <- ggplot() +
+    geom_sf(data = filter(regions, code_insee %in% c("84")), colour = "black", fill = "white", size = 1.1) +
+  geom_sf(data = filter(data_rnn, ID_LOCAL == "RNN112")) +
+  theme_map()
+
+# Disposition des cartes
+rnn_jura
+```
+
+
 
 [^OGC]: L'OGC est un consortium international qui développe des standards ouverts
 (OpenGIS) dans les domaines de la géomatique et de l'information géographique.
