@@ -188,8 +188,9 @@ différents paramètres et les différentes possibilités de cette fonction, il 
 faut pas hésiter à aller lire sa documentation.
 
 ```{r load-rnn, warning=FALSE, message=FALSE}
-library("sf")
+library("sf") # Chargement du package sf
 
+# Lecture de la base de données
 data_rnn <- st_read("examples/rnn2019_12/N_ENP_RNN_S_000.shp")
 ```
 
@@ -222,7 +223,7 @@ st_crs(data_rnn)$proj4string
 
 #### Création de cartes à partir de vecteurs
 
-(ref:plot-rnn) (A) Carte des Réserves Naturelles de la France métropolitaine. (B) Carte montrant la délimitation de la Réserve Naturelle Nationale de la Haute Chaîne du Jura.
+(ref:plot-rnn) (A) Carte des Réserves Naturelles de la France métropolitaine. (B) Carte montrant la délimitation (en rouge) de la Réserve Naturelle Nationale de la Haute Chaîne du Jura.
 
 ```{r plot-rnn, fig.cap='(ref:plot-rnn)', fig.show = "hold", out.width="100%", message=FALSE, warning=FALSE}
 library("ggplot2")
@@ -241,20 +242,34 @@ regions <- st_read("examples/regions-20180101-shp/regions-20180101.shp") %>%
 
 data_rnn <- st_transform(data_rnn, 4326)
 
+# Ajout des coordonnées dans le tableau pour faciliter la création des labels
+# Vu que ce sont des polygones, on calcule leur centre pour avoir un point.
+data_rnn <- cbind(data_rnn, st_coordinates(st_point_on_surface(data_rnn)))
+
 # Création de cartes avec ggplot2.
 
 # Localisation des réserves en France métropolitaine
 rnn_france <- ggplot() +
-  annotation_map_tile(zoomin = -1, type = "stamenwatercolor") +
+  annotation_spatial(regions) +
+  annotation_map_tile(zoom = 5, zoomin = 0, type = "stamenwatercolor") +
   geom_sf(
     data = regions,
     aes(fill = nom),
     colour = "black",
-    size = 1.1,
     alpha = 0.2,
     show.legend = FALSE
   ) +
-  stat_sf_coordinates(data = data_rnn, colour = "darkred", size = 1.5) +
+  geom_label_repel(
+    data = filter(data_rnn, ID_LOCAL == "RNN112"),
+    aes(x = X, y = Y, label = "Haute Chaîne\ndu Jura"),
+    size = 3,
+    nudge_x = 4,
+    nudge_y = 0.3,
+    segment.curvature = 0.5,
+    segment.ncp = 1,
+    segment.angle = 10,
+  ) +
+  stat_sf_coordinates(data = data_rnn, colour = "darkred", size = 2) +
   annotation_north_arrow(
     location = "bl",
     which_north = "true",
@@ -278,8 +293,9 @@ crop_limits <- st_bbox(filter(data_rnn, ID_LOCAL == "RNN112"))
 crop_regions <- st_crop(regions, crop_limits + c(-0.1, -0.1, 0.15, 0.1))
 
 rnn_jura <- ggplot() +
+  annotation_spatial(crop_regions) +
   annotation_map_tile(zoomin = -1, type = "stamenwatercolor") +
-  geom_sf(data = crop_regions, colour = "black", fill = NA, size = 1.1) +
+  geom_sf(data = crop_regions, colour = "black", fill = NA, size = 1.05) +
   geom_sf(data = filter(data_rnn, ID_LOCAL == "RNN112"), fill = "darkred") +
   annotation_north_arrow(
     location = "bl",

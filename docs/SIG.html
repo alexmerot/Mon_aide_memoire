@@ -354,9 +354,10 @@ donner le chemin d’accès au fichier <strong>.shp</strong>. Les autres fichier
 liés doivent être stockés au même endroit. Pour plus d’informations sur les
 différents paramètres et les différentes possibilités de cette fonction, il ne
 faut pas hésiter à aller lire sa documentation.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="SIG.html#cb1-1" aria-hidden="true"></a><span class="kw">library</span>(<span class="st">&quot;sf&quot;</span>)</span>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="SIG.html#cb1-1" aria-hidden="true"></a><span class="kw">library</span>(<span class="st">&quot;sf&quot;</span>) <span class="co"># Chargement du package sf</span></span>
 <span id="cb1-2"><a href="SIG.html#cb1-2" aria-hidden="true"></a></span>
-<span id="cb1-3"><a href="SIG.html#cb1-3" aria-hidden="true"></a>data_rnn &lt;-<span class="st"> </span><span class="kw">st_read</span>(<span class="st">&quot;examples/rnn2019_12/N_ENP_RNN_S_000.shp&quot;</span>)</span></code></pre></div>
+<span id="cb1-3"><a href="SIG.html#cb1-3" aria-hidden="true"></a><span class="co"># Lecture de la base de données</span></span>
+<span id="cb1-4"><a href="SIG.html#cb1-4" aria-hidden="true"></a>data_rnn &lt;-<span class="st"> </span><span class="kw">st_read</span>(<span class="st">&quot;examples/rnn2019_12/N_ENP_RNN_S_000.shp&quot;</span>)</span></code></pre></div>
 <pre><code>## Reading layer `N_ENP_RNN_S_000&#39; from data source `/home/alexis/Documents/doc Alexis Merot/Mon_aide_memoire/examples/rnn2019_12/N_ENP_RNN_S_000.shp&#39; using driver `ESRI Shapefile&#39;
 ## Simple feature collection with 151 features and 30 fields
 ## geometry type:  MULTIPOLYGON
@@ -14955,63 +14956,78 @@ MULTIPOLYGON (((855064 6269…
 <span id="cb14-4"><a href="SIG.html#cb14-4" aria-hidden="true"></a></span>
 <span id="cb14-5"><a href="SIG.html#cb14-5" aria-hidden="true"></a>data_rnn &lt;-<span class="st"> </span><span class="kw">st_transform</span>(data_rnn, <span class="dv">4326</span>)</span>
 <span id="cb14-6"><a href="SIG.html#cb14-6" aria-hidden="true"></a></span>
-<span id="cb14-7"><a href="SIG.html#cb14-7" aria-hidden="true"></a><span class="co"># Création de cartes avec ggplot2.</span></span>
-<span id="cb14-8"><a href="SIG.html#cb14-8" aria-hidden="true"></a></span>
-<span id="cb14-9"><a href="SIG.html#cb14-9" aria-hidden="true"></a><span class="co"># Localisation des réserves en France métropolitaine</span></span>
-<span id="cb14-10"><a href="SIG.html#cb14-10" aria-hidden="true"></a>rnn_france &lt;-<span class="st"> </span><span class="kw">ggplot</span>() <span class="op">+</span></span>
-<span id="cb14-11"><a href="SIG.html#cb14-11" aria-hidden="true"></a><span class="st">  </span><span class="kw">annotation_map_tile</span>(<span class="dt">zoomin =</span> <span class="dv">-1</span>, <span class="dt">type =</span> <span class="st">&quot;stamenwatercolor&quot;</span>) <span class="op">+</span></span>
-<span id="cb14-12"><a href="SIG.html#cb14-12" aria-hidden="true"></a><span class="st">  </span><span class="kw">geom_sf</span>(</span>
-<span id="cb14-13"><a href="SIG.html#cb14-13" aria-hidden="true"></a>    <span class="dt">data =</span> regions,</span>
-<span id="cb14-14"><a href="SIG.html#cb14-14" aria-hidden="true"></a>    <span class="kw">aes</span>(<span class="dt">fill =</span> nom),</span>
-<span id="cb14-15"><a href="SIG.html#cb14-15" aria-hidden="true"></a>    <span class="dt">colour =</span> <span class="st">&quot;black&quot;</span>,</span>
-<span id="cb14-16"><a href="SIG.html#cb14-16" aria-hidden="true"></a>    <span class="dt">size =</span> <span class="fl">1.1</span>,</span>
-<span id="cb14-17"><a href="SIG.html#cb14-17" aria-hidden="true"></a>    <span class="dt">alpha =</span> <span class="fl">0.2</span>,</span>
-<span id="cb14-18"><a href="SIG.html#cb14-18" aria-hidden="true"></a>    <span class="dt">show.legend =</span> <span class="ot">FALSE</span></span>
-<span id="cb14-19"><a href="SIG.html#cb14-19" aria-hidden="true"></a>  ) <span class="op">+</span></span>
-<span id="cb14-20"><a href="SIG.html#cb14-20" aria-hidden="true"></a><span class="st">  </span><span class="kw">stat_sf_coordinates</span>(<span class="dt">data =</span> data_rnn, <span class="dt">colour =</span> <span class="st">&quot;darkred&quot;</span>, <span class="dt">size =</span> <span class="fl">1.5</span>) <span class="op">+</span></span>
-<span id="cb14-21"><a href="SIG.html#cb14-21" aria-hidden="true"></a><span class="st">  </span><span class="kw">annotation_north_arrow</span>(</span>
-<span id="cb14-22"><a href="SIG.html#cb14-22" aria-hidden="true"></a>    <span class="dt">location =</span> <span class="st">&quot;bl&quot;</span>,</span>
-<span id="cb14-23"><a href="SIG.html#cb14-23" aria-hidden="true"></a>    <span class="dt">which_north =</span> <span class="st">&quot;true&quot;</span>,</span>
-<span id="cb14-24"><a href="SIG.html#cb14-24" aria-hidden="true"></a>    <span class="dt">style =</span> <span class="kw">north_arrow_nautical</span>()</span>
-<span id="cb14-25"><a href="SIG.html#cb14-25" aria-hidden="true"></a>  ) <span class="op">+</span></span>
-<span id="cb14-26"><a href="SIG.html#cb14-26" aria-hidden="true"></a><span class="st">  </span><span class="kw">coord_sf</span>(<span class="dt">datum =</span> <span class="kw">st_crs</span>(<span class="dv">4326</span>)) <span class="op">+</span></span>
-<span id="cb14-27"><a href="SIG.html#cb14-27" aria-hidden="true"></a><span class="st">  </span><span class="kw">theme_linedraw</span>() <span class="op">+</span></span>
-<span id="cb14-28"><a href="SIG.html#cb14-28" aria-hidden="true"></a><span class="st">  </span><span class="kw">theme</span>(</span>
-<span id="cb14-29"><a href="SIG.html#cb14-29" aria-hidden="true"></a>    <span class="dt">panel.ontop =</span> <span class="ot">TRUE</span>,</span>
-<span id="cb14-30"><a href="SIG.html#cb14-30" aria-hidden="true"></a>    <span class="dt">panel.background =</span> <span class="kw">element_blank</span>(),</span>
-<span id="cb14-31"><a href="SIG.html#cb14-31" aria-hidden="true"></a>    <span class="dt">axis.title =</span> <span class="kw">element_blank</span>()</span>
-<span id="cb14-32"><a href="SIG.html#cb14-32" aria-hidden="true"></a>  )</span>
-<span id="cb14-33"><a href="SIG.html#cb14-33" aria-hidden="true"></a></span>
-<span id="cb14-34"><a href="SIG.html#cb14-34" aria-hidden="true"></a>rnn_france <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">tag =</span> <span class="st">&quot;A&quot;</span>)</span>
-<span id="cb14-35"><a href="SIG.html#cb14-35" aria-hidden="true"></a></span>
-<span id="cb14-36"><a href="SIG.html#cb14-36" aria-hidden="true"></a><span class="co"># On récupère les limites inférieures et supérieures de la RNN de la haute</span></span>
-<span id="cb14-37"><a href="SIG.html#cb14-37" aria-hidden="true"></a><span class="co"># chaîne du Jura.</span></span>
-<span id="cb14-38"><a href="SIG.html#cb14-38" aria-hidden="true"></a>crop_limits &lt;-<span class="st"> </span><span class="kw">st_bbox</span>(<span class="kw">filter</span>(data_rnn, ID_LOCAL <span class="op">==</span><span class="st"> &quot;RNN112&quot;</span>))</span>
-<span id="cb14-39"><a href="SIG.html#cb14-39" aria-hidden="true"></a></span>
-<span id="cb14-40"><a href="SIG.html#cb14-40" aria-hidden="true"></a><span class="co"># On zoome sur la carte des régions en augmentant les limites précédentes par 10 km.</span></span>
-<span id="cb14-41"><a href="SIG.html#cb14-41" aria-hidden="true"></a>crop_regions &lt;-<span class="st"> </span><span class="kw">st_crop</span>(regions, crop_limits <span class="op">+</span><span class="st"> </span><span class="kw">c</span>(<span class="op">-</span><span class="fl">0.1</span>, <span class="fl">-0.1</span>, <span class="fl">0.15</span>, <span class="fl">0.1</span>))</span>
-<span id="cb14-42"><a href="SIG.html#cb14-42" aria-hidden="true"></a></span>
-<span id="cb14-43"><a href="SIG.html#cb14-43" aria-hidden="true"></a>rnn_jura &lt;-<span class="st"> </span><span class="kw">ggplot</span>() <span class="op">+</span></span>
-<span id="cb14-44"><a href="SIG.html#cb14-44" aria-hidden="true"></a><span class="st">  </span><span class="kw">annotation_map_tile</span>(<span class="dt">zoomin =</span> <span class="dv">-1</span>, <span class="dt">type =</span> <span class="st">&quot;stamenwatercolor&quot;</span>) <span class="op">+</span></span>
-<span id="cb14-45"><a href="SIG.html#cb14-45" aria-hidden="true"></a><span class="st">  </span><span class="kw">geom_sf</span>(<span class="dt">data =</span> crop_regions, <span class="dt">colour =</span> <span class="st">&quot;black&quot;</span>, <span class="dt">fill =</span> <span class="ot">NA</span>, <span class="dt">size =</span> <span class="fl">1.1</span>) <span class="op">+</span></span>
-<span id="cb14-46"><a href="SIG.html#cb14-46" aria-hidden="true"></a><span class="st">  </span><span class="kw">geom_sf</span>(<span class="dt">data =</span> <span class="kw">filter</span>(data_rnn, ID_LOCAL <span class="op">==</span><span class="st"> &quot;RNN112&quot;</span>), <span class="dt">fill =</span> <span class="st">&quot;darkred&quot;</span>) <span class="op">+</span></span>
-<span id="cb14-47"><a href="SIG.html#cb14-47" aria-hidden="true"></a><span class="st">  </span><span class="kw">annotation_north_arrow</span>(</span>
-<span id="cb14-48"><a href="SIG.html#cb14-48" aria-hidden="true"></a>    <span class="dt">location =</span> <span class="st">&quot;bl&quot;</span>,</span>
-<span id="cb14-49"><a href="SIG.html#cb14-49" aria-hidden="true"></a>    <span class="dt">which_north =</span> <span class="st">&quot;true&quot;</span>,</span>
-<span id="cb14-50"><a href="SIG.html#cb14-50" aria-hidden="true"></a>    <span class="dt">style =</span> <span class="kw">north_arrow_nautical</span>()</span>
-<span id="cb14-51"><a href="SIG.html#cb14-51" aria-hidden="true"></a>  ) <span class="op">+</span></span>
-<span id="cb14-52"><a href="SIG.html#cb14-52" aria-hidden="true"></a><span class="st">  </span><span class="kw">coord_sf</span>(<span class="dt">expand =</span> <span class="ot">FALSE</span>, <span class="dt">datum =</span> <span class="kw">st_crs</span>(<span class="dv">4326</span>)) <span class="op">+</span></span>
-<span id="cb14-53"><a href="SIG.html#cb14-53" aria-hidden="true"></a><span class="st">  </span><span class="kw">theme_linedraw</span>() <span class="op">+</span></span>
-<span id="cb14-54"><a href="SIG.html#cb14-54" aria-hidden="true"></a><span class="st">  </span><span class="kw">theme</span>(</span>
-<span id="cb14-55"><a href="SIG.html#cb14-55" aria-hidden="true"></a>    <span class="dt">panel.ontop =</span> <span class="ot">TRUE</span>,</span>
-<span id="cb14-56"><a href="SIG.html#cb14-56" aria-hidden="true"></a>    <span class="dt">panel.background =</span> <span class="kw">element_blank</span>()</span>
-<span id="cb14-57"><a href="SIG.html#cb14-57" aria-hidden="true"></a>  )</span>
-<span id="cb14-58"><a href="SIG.html#cb14-58" aria-hidden="true"></a></span>
-<span id="cb14-59"><a href="SIG.html#cb14-59" aria-hidden="true"></a>rnn_jura <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">tag =</span> <span class="st">&quot;B&quot;</span>)</span></code></pre></div>
+<span id="cb14-7"><a href="SIG.html#cb14-7" aria-hidden="true"></a><span class="co"># Ajout des coordonnées dans le tableau pour faciliter la création des labels</span></span>
+<span id="cb14-8"><a href="SIG.html#cb14-8" aria-hidden="true"></a><span class="co"># Vu que ce sont des polygones, on calcule leur centre pour avoir un point.</span></span>
+<span id="cb14-9"><a href="SIG.html#cb14-9" aria-hidden="true"></a>data_rnn &lt;-<span class="st"> </span><span class="kw">cbind</span>(data_rnn, <span class="kw">st_coordinates</span>(<span class="kw">st_point_on_surface</span>(data_rnn)))</span>
+<span id="cb14-10"><a href="SIG.html#cb14-10" aria-hidden="true"></a></span>
+<span id="cb14-11"><a href="SIG.html#cb14-11" aria-hidden="true"></a><span class="co"># Création de cartes avec ggplot2.</span></span>
+<span id="cb14-12"><a href="SIG.html#cb14-12" aria-hidden="true"></a></span>
+<span id="cb14-13"><a href="SIG.html#cb14-13" aria-hidden="true"></a><span class="co"># Localisation des réserves en France métropolitaine</span></span>
+<span id="cb14-14"><a href="SIG.html#cb14-14" aria-hidden="true"></a>rnn_france &lt;-<span class="st"> </span><span class="kw">ggplot</span>() <span class="op">+</span></span>
+<span id="cb14-15"><a href="SIG.html#cb14-15" aria-hidden="true"></a><span class="st">  </span><span class="kw">annotation_spatial</span>(regions) <span class="op">+</span></span>
+<span id="cb14-16"><a href="SIG.html#cb14-16" aria-hidden="true"></a><span class="st">  </span><span class="kw">annotation_map_tile</span>(<span class="dt">zoom =</span> <span class="dv">5</span>, <span class="dt">zoomin =</span> <span class="dv">0</span>, <span class="dt">type =</span> <span class="st">&quot;stamenwatercolor&quot;</span>) <span class="op">+</span></span>
+<span id="cb14-17"><a href="SIG.html#cb14-17" aria-hidden="true"></a><span class="st">  </span><span class="kw">geom_sf</span>(</span>
+<span id="cb14-18"><a href="SIG.html#cb14-18" aria-hidden="true"></a>    <span class="dt">data =</span> regions,</span>
+<span id="cb14-19"><a href="SIG.html#cb14-19" aria-hidden="true"></a>    <span class="kw">aes</span>(<span class="dt">fill =</span> nom),</span>
+<span id="cb14-20"><a href="SIG.html#cb14-20" aria-hidden="true"></a>    <span class="dt">colour =</span> <span class="st">&quot;black&quot;</span>,</span>
+<span id="cb14-21"><a href="SIG.html#cb14-21" aria-hidden="true"></a>    <span class="dt">alpha =</span> <span class="fl">0.2</span>,</span>
+<span id="cb14-22"><a href="SIG.html#cb14-22" aria-hidden="true"></a>    <span class="dt">show.legend =</span> <span class="ot">FALSE</span></span>
+<span id="cb14-23"><a href="SIG.html#cb14-23" aria-hidden="true"></a>  ) <span class="op">+</span></span>
+<span id="cb14-24"><a href="SIG.html#cb14-24" aria-hidden="true"></a><span class="st">  </span><span class="kw">geom_label_repel</span>(</span>
+<span id="cb14-25"><a href="SIG.html#cb14-25" aria-hidden="true"></a>    <span class="dt">data =</span> <span class="kw">filter</span>(data_rnn, ID_LOCAL <span class="op">==</span><span class="st"> &quot;RNN112&quot;</span>),</span>
+<span id="cb14-26"><a href="SIG.html#cb14-26" aria-hidden="true"></a>    <span class="kw">aes</span>(<span class="dt">x =</span> X, <span class="dt">y =</span> Y, <span class="dt">label =</span> <span class="st">&quot;Haute Chaîne</span><span class="ch">\n</span><span class="st">du Jura&quot;</span>),</span>
+<span id="cb14-27"><a href="SIG.html#cb14-27" aria-hidden="true"></a>    <span class="dt">size =</span> <span class="dv">3</span>,</span>
+<span id="cb14-28"><a href="SIG.html#cb14-28" aria-hidden="true"></a>    <span class="dt">nudge_x =</span> <span class="dv">4</span>,</span>
+<span id="cb14-29"><a href="SIG.html#cb14-29" aria-hidden="true"></a>    <span class="dt">nudge_y =</span> <span class="fl">0.3</span>,</span>
+<span id="cb14-30"><a href="SIG.html#cb14-30" aria-hidden="true"></a>    <span class="dt">segment.curvature =</span> <span class="fl">0.5</span>,</span>
+<span id="cb14-31"><a href="SIG.html#cb14-31" aria-hidden="true"></a>    <span class="dt">segment.ncp =</span> <span class="dv">1</span>,</span>
+<span id="cb14-32"><a href="SIG.html#cb14-32" aria-hidden="true"></a>    <span class="dt">segment.angle =</span> <span class="dv">10</span>,</span>
+<span id="cb14-33"><a href="SIG.html#cb14-33" aria-hidden="true"></a>  ) <span class="op">+</span></span>
+<span id="cb14-34"><a href="SIG.html#cb14-34" aria-hidden="true"></a><span class="st">  </span><span class="kw">stat_sf_coordinates</span>(<span class="dt">data =</span> data_rnn, <span class="dt">colour =</span> <span class="st">&quot;darkred&quot;</span>, <span class="dt">size =</span> <span class="dv">2</span>) <span class="op">+</span></span>
+<span id="cb14-35"><a href="SIG.html#cb14-35" aria-hidden="true"></a><span class="st">  </span><span class="kw">annotation_north_arrow</span>(</span>
+<span id="cb14-36"><a href="SIG.html#cb14-36" aria-hidden="true"></a>    <span class="dt">location =</span> <span class="st">&quot;bl&quot;</span>,</span>
+<span id="cb14-37"><a href="SIG.html#cb14-37" aria-hidden="true"></a>    <span class="dt">which_north =</span> <span class="st">&quot;true&quot;</span>,</span>
+<span id="cb14-38"><a href="SIG.html#cb14-38" aria-hidden="true"></a>    <span class="dt">style =</span> <span class="kw">north_arrow_nautical</span>()</span>
+<span id="cb14-39"><a href="SIG.html#cb14-39" aria-hidden="true"></a>  ) <span class="op">+</span></span>
+<span id="cb14-40"><a href="SIG.html#cb14-40" aria-hidden="true"></a><span class="st">  </span><span class="kw">coord_sf</span>(<span class="dt">datum =</span> <span class="kw">st_crs</span>(<span class="dv">4326</span>)) <span class="op">+</span></span>
+<span id="cb14-41"><a href="SIG.html#cb14-41" aria-hidden="true"></a><span class="st">  </span><span class="kw">theme_linedraw</span>() <span class="op">+</span></span>
+<span id="cb14-42"><a href="SIG.html#cb14-42" aria-hidden="true"></a><span class="st">  </span><span class="kw">theme</span>(</span>
+<span id="cb14-43"><a href="SIG.html#cb14-43" aria-hidden="true"></a>    <span class="dt">panel.ontop =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb14-44"><a href="SIG.html#cb14-44" aria-hidden="true"></a>    <span class="dt">panel.background =</span> <span class="kw">element_blank</span>(),</span>
+<span id="cb14-45"><a href="SIG.html#cb14-45" aria-hidden="true"></a>    <span class="dt">axis.title =</span> <span class="kw">element_blank</span>()</span>
+<span id="cb14-46"><a href="SIG.html#cb14-46" aria-hidden="true"></a>  )</span>
+<span id="cb14-47"><a href="SIG.html#cb14-47" aria-hidden="true"></a></span>
+<span id="cb14-48"><a href="SIG.html#cb14-48" aria-hidden="true"></a>rnn_france <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">tag =</span> <span class="st">&quot;A&quot;</span>)</span>
+<span id="cb14-49"><a href="SIG.html#cb14-49" aria-hidden="true"></a></span>
+<span id="cb14-50"><a href="SIG.html#cb14-50" aria-hidden="true"></a><span class="co"># On récupère les limites inférieures et supérieures de la RNN de la haute</span></span>
+<span id="cb14-51"><a href="SIG.html#cb14-51" aria-hidden="true"></a><span class="co"># chaîne du Jura.</span></span>
+<span id="cb14-52"><a href="SIG.html#cb14-52" aria-hidden="true"></a>crop_limits &lt;-<span class="st"> </span><span class="kw">st_bbox</span>(<span class="kw">filter</span>(data_rnn, ID_LOCAL <span class="op">==</span><span class="st"> &quot;RNN112&quot;</span>))</span>
+<span id="cb14-53"><a href="SIG.html#cb14-53" aria-hidden="true"></a></span>
+<span id="cb14-54"><a href="SIG.html#cb14-54" aria-hidden="true"></a><span class="co"># On zoome sur la carte des régions en augmentant les limites précédentes par 10 km.</span></span>
+<span id="cb14-55"><a href="SIG.html#cb14-55" aria-hidden="true"></a>crop_regions &lt;-<span class="st"> </span><span class="kw">st_crop</span>(regions, crop_limits <span class="op">+</span><span class="st"> </span><span class="kw">c</span>(<span class="op">-</span><span class="fl">0.1</span>, <span class="fl">-0.1</span>, <span class="fl">0.15</span>, <span class="fl">0.1</span>))</span>
+<span id="cb14-56"><a href="SIG.html#cb14-56" aria-hidden="true"></a></span>
+<span id="cb14-57"><a href="SIG.html#cb14-57" aria-hidden="true"></a>rnn_jura &lt;-<span class="st"> </span><span class="kw">ggplot</span>() <span class="op">+</span></span>
+<span id="cb14-58"><a href="SIG.html#cb14-58" aria-hidden="true"></a><span class="st">  </span><span class="kw">annotation_spatial</span>(crop_regions) <span class="op">+</span></span>
+<span id="cb14-59"><a href="SIG.html#cb14-59" aria-hidden="true"></a><span class="st">  </span><span class="kw">annotation_map_tile</span>(<span class="dt">zoomin =</span> <span class="dv">-1</span>, <span class="dt">type =</span> <span class="st">&quot;stamenwatercolor&quot;</span>) <span class="op">+</span></span>
+<span id="cb14-60"><a href="SIG.html#cb14-60" aria-hidden="true"></a><span class="st">  </span><span class="kw">geom_sf</span>(<span class="dt">data =</span> crop_regions, <span class="dt">colour =</span> <span class="st">&quot;black&quot;</span>, <span class="dt">fill =</span> <span class="ot">NA</span>, <span class="dt">size =</span> <span class="fl">1.05</span>) <span class="op">+</span></span>
+<span id="cb14-61"><a href="SIG.html#cb14-61" aria-hidden="true"></a><span class="st">  </span><span class="kw">geom_sf</span>(<span class="dt">data =</span> <span class="kw">filter</span>(data_rnn, ID_LOCAL <span class="op">==</span><span class="st"> &quot;RNN112&quot;</span>), <span class="dt">fill =</span> <span class="st">&quot;darkred&quot;</span>) <span class="op">+</span></span>
+<span id="cb14-62"><a href="SIG.html#cb14-62" aria-hidden="true"></a><span class="st">  </span><span class="kw">annotation_north_arrow</span>(</span>
+<span id="cb14-63"><a href="SIG.html#cb14-63" aria-hidden="true"></a>    <span class="dt">location =</span> <span class="st">&quot;bl&quot;</span>,</span>
+<span id="cb14-64"><a href="SIG.html#cb14-64" aria-hidden="true"></a>    <span class="dt">which_north =</span> <span class="st">&quot;true&quot;</span>,</span>
+<span id="cb14-65"><a href="SIG.html#cb14-65" aria-hidden="true"></a>    <span class="dt">style =</span> <span class="kw">north_arrow_nautical</span>()</span>
+<span id="cb14-66"><a href="SIG.html#cb14-66" aria-hidden="true"></a>  ) <span class="op">+</span></span>
+<span id="cb14-67"><a href="SIG.html#cb14-67" aria-hidden="true"></a><span class="st">  </span><span class="kw">coord_sf</span>(<span class="dt">expand =</span> <span class="ot">FALSE</span>, <span class="dt">datum =</span> <span class="kw">st_crs</span>(<span class="dv">4326</span>)) <span class="op">+</span></span>
+<span id="cb14-68"><a href="SIG.html#cb14-68" aria-hidden="true"></a><span class="st">  </span><span class="kw">theme_linedraw</span>() <span class="op">+</span></span>
+<span id="cb14-69"><a href="SIG.html#cb14-69" aria-hidden="true"></a><span class="st">  </span><span class="kw">theme</span>(</span>
+<span id="cb14-70"><a href="SIG.html#cb14-70" aria-hidden="true"></a>    <span class="dt">panel.ontop =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb14-71"><a href="SIG.html#cb14-71" aria-hidden="true"></a>    <span class="dt">panel.background =</span> <span class="kw">element_blank</span>()</span>
+<span id="cb14-72"><a href="SIG.html#cb14-72" aria-hidden="true"></a>  )</span>
+<span id="cb14-73"><a href="SIG.html#cb14-73" aria-hidden="true"></a></span>
+<span id="cb14-74"><a href="SIG.html#cb14-74" aria-hidden="true"></a>rnn_jura <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">tag =</span> <span class="st">&quot;B&quot;</span>)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:plot-rnn"></span>
-<img src="Mon_aide_memoire_R_files/figure-html/plot-rnn-1.png" alt="(A) Carte des Réserves Naturelles de la France métropolitaine. (B) Carte montrant la délimitation de la Réserve Naturelle Nationale de la Haute Chaîne du Jura." width="100%" /><img src="Mon_aide_memoire_R_files/figure-html/plot-rnn-2.png" alt="(A) Carte des Réserves Naturelles de la France métropolitaine. (B) Carte montrant la délimitation de la Réserve Naturelle Nationale de la Haute Chaîne du Jura." width="100%" />
+<img src="Mon_aide_memoire_R_files/figure-html/plot-rnn-1.png" alt="(A) Carte des Réserves Naturelles de la France métropolitaine. (B) Carte montrant la délimitation (en rouge) de la Réserve Naturelle Nationale de la Haute Chaîne du Jura." width="100%" /><img src="Mon_aide_memoire_R_files/figure-html/plot-rnn-2.png" alt="(A) Carte des Réserves Naturelles de la France métropolitaine. (B) Carte montrant la délimitation (en rouge) de la Réserve Naturelle Nationale de la Haute Chaîne du Jura." width="100%" />
 <p class="caption">
-Figure 5.2: (A) Carte des Réserves Naturelles de la France métropolitaine. (B) Carte montrant la délimitation de la Réserve Naturelle Nationale de la Haute Chaîne du Jura.
+Figure 5.2: (A) Carte des Réserves Naturelles de la France métropolitaine. (B) Carte montrant la délimitation (en rouge) de la Réserve Naturelle Nationale de la Haute Chaîne du Jura.
 </p>
 </div>
 </div>
