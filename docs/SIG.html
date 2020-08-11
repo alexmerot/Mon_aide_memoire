@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>5 Les Systèmes d’Information Géographiques | Aide-mémoire : Analyses de données &amp; Cartographie sur R</title>
+  <title>5 Systèmes d’Information Géographique &amp; Cartographie | Aide-mémoire : Analyses de données &amp; Cartographie sur R</title>
   <meta name="description" content="Ceci est l’ensemble de mes notes accumulées au fur et à mesure de mon apprentissage de différents outils et concepts qui sont nécessaires à mes besoins dans les analyses de données et la programmation. Cela me permet de les comprendre, les mémoriser, ainsi que de les partager." />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="5 Les Systèmes d’Information Géographiques | Aide-mémoire : Analyses de données &amp; Cartographie sur R" />
+  <meta property="og:title" content="5 Systèmes d’Information Géographique &amp; Cartographie | Aide-mémoire : Analyses de données &amp; Cartographie sur R" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://alexmerot.github.io/Mon_aide_memoire/" />
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="alexmerot/Mon_aide_memoire" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="5 Les Systèmes d’Information Géographiques | Aide-mémoire : Analyses de données &amp; Cartographie sur R" />
+  <meta name="twitter:title" content="5 Systèmes d’Information Géographique &amp; Cartographie | Aide-mémoire : Analyses de données &amp; Cartographie sur R" />
   
   <meta name="twitter:description" content="Ceci est l’ensemble de mes notes accumulées au fur et à mesure de mon apprentissage de différents outils et concepts qui sont nécessaires à mes besoins dans les analyses de données et la programmation. Cela me permet de les comprendre, les mémoriser, ainsi que de les partager." />
   
@@ -154,15 +154,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="statistique.html"><a href="statistique.html#ref-stat-bayes"><i class="fa fa-check"></i>Liste de ressources Internet utiles</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="dataviz.html"><a href="dataviz.html"><i class="fa fa-check"></i><b>4</b> Visualisation des données : la <em>Dataviz</em></a></li>
-<li class="chapter" data-level="5" data-path="SIG.html"><a href="SIG.html"><i class="fa fa-check"></i><b>5</b> Les Systèmes d’Information Géographiques</a>
+<li class="chapter" data-level="5" data-path="SIG.html"><a href="SIG.html"><i class="fa fa-check"></i><b>5</b> Systèmes d’Information Géographique &amp; Cartographie</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="SIG.html"><a href="SIG.html#quest-ce-quun-sig"><i class="fa fa-check"></i><b>5.1</b> Qu’est-ce qu’un SIG ?</a></li>
-<li class="chapter" data-level="5.2" data-path="SIG.html"><a href="SIG.html#r-en-tant-que-sig"><i class="fa fa-check"></i><b>5.2</b> R en tant que SIG</a></li>
-<li class="chapter" data-level="5.3" data-path="SIG.html"><a href="SIG.html#la-représentation-des-données-les-vecteurs-et-les-rasters"><i class="fa fa-check"></i><b>5.3</b> La représentation des données : les <em>vecteurs</em> et les <em>rasters</em></a>
+<li class="chapter" data-level="5.1" data-path="SIG.html"><a href="SIG.html#whatis-sig"><i class="fa fa-check"></i><b>5.1</b> Qu’est-ce qu’un SIG ?</a></li>
+<li class="chapter" data-level="5.2" data-path="SIG.html"><a href="SIG.html#R-sig"><i class="fa fa-check"></i><b>5.2</b> R en tant que SIG</a></li>
+<li class="chapter" data-level="5.3" data-path="SIG.html"><a href="SIG.html#data-sig"><i class="fa fa-check"></i><b>5.3</b> La représentation des données : les <em>vecteurs</em> et les <em>rasters</em></a>
 <ul>
-<li class="chapter" data-level="5.3.1" data-path="SIG.html"><a href="SIG.html#les-vecteurs"><i class="fa fa-check"></i><b>5.3.1</b> Les vecteurs</a></li>
-<li class="chapter" data-level="5.3.2" data-path="SIG.html"><a href="SIG.html#les-rasters"><i class="fa fa-check"></i><b>5.3.2</b> Les rasters</a></li>
+<li class="chapter" data-level="5.3.1" data-path="SIG.html"><a href="SIG.html#vectors"><i class="fa fa-check"></i><b>5.3.1</b> Les vecteurs</a></li>
+<li class="chapter" data-level="5.3.2" data-path="SIG.html"><a href="SIG.html#rasters"><i class="fa fa-check"></i><b>5.3.2</b> Les rasters</a></li>
 </ul></li>
+<li class="chapter" data-level="5.4" data-path="SIG.html"><a href="SIG.html#CRS"><i class="fa fa-check"></i><b>5.4</b> Les Systèmes de Coordonnées de Référence Géographiques et Projetées</a></li>
 <li class="chapter" data-level="" data-path="SIG.html"><a href="SIG.html#ref-sig"><i class="fa fa-check"></i>Liste de ressources Internet utiles</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="références.html"><a href="références.html"><i class="fa fa-check"></i>Références</a></li>
@@ -187,11 +188,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="SIG" class="section level1" number="5">
-<h1><span class="header-section-number">5</span> Les Systèmes d’Information Géographiques</h1>
+<h1><span class="header-section-number">5</span> Systèmes d’Information Géographique &amp; Cartographie</h1>
 <div class="infobox caution">
 <p><strong>Work In Progress</strong></p>
 </div>
-<div id="quest-ce-quun-sig" class="section level2" number="5.1">
+<div id="whatis-sig" class="section level2" number="5.1">
 <h2><span class="header-section-number">5.1</span> Qu’est-ce qu’un SIG ?</h2>
 <!-- TODO : Développer l'utilité des SIG dans les prises de décision -->
 <!-- 
@@ -221,7 +222,7 @@ de se libérer de certaines contraintes imposées par ces logiciels ainsi que
 d’avoir plus de contrôle sur ce que l’ont fait (même si ces logiciels sont de
 plus en plus performants).</p>
 </div>
-<div id="r-en-tant-que-sig" class="section level2" number="5.2">
+<div id="R-sig" class="section level2" number="5.2">
 <h2><span class="header-section-number">5.2</span> R en tant que SIG</h2>
 <p>Afin d’avoir un bon aperçu et une bonne base sur l’utilisation de R en tant que
 SIG, je vous invite à lire le livre <em>Geocomputation with R</em> de <span class="citation">Lovelace, Nowosad, et Muenchow (<a href="#ref-geocomputation" role="doc-biblioref">2019</a>)</span>.
@@ -255,7 +256,7 @@ vous invite à lire le chapitre <a href="https://geocompr.robinlovelace.net/intr
 geocomputation</a>
 du livre de <span class="citation">Lovelace, Nowosad, et Muenchow (<a href="#ref-geocomputation" role="doc-biblioref">2019</a>)</span>.</p>
 </div>
-<div id="la-représentation-des-données-les-vecteurs-et-les-rasters" class="section level2" number="5.3">
+<div id="data-sig" class="section level2" number="5.3">
 <h2><span class="header-section-number">5.3</span> La représentation des données : les <em>vecteurs</em> et les <em>rasters</em></h2>
 <p>Pour représenter numériquement les données spatiales, deux modèles de base sont
 utilisés : les <em>vecteurs</em> (mode vectoriel) et les <em>rasters</em> (mode matriciel).
@@ -270,13 +271,13 @@ dans la manière de stocker ces deux modèles fait que les fichiers liés aux
 vecteurs ont une taille bien inférieure que ceux liés aux raster.<br />
 Sous R, les vecteurs et les rasters sont travaillés respectivement avec les
 packages <code>sf</code> et <code>raster</code>.</p>
-<div id="les-vecteurs" class="section level3" number="5.3.1">
+<div id="vectors" class="section level3" number="5.3.1">
 <h3><span class="header-section-number">5.3.1</span> Les vecteurs</h3>
 <p>Un vecteur est une image vectorielle ou dessin mathématique constitué de deux
 composantes : une <strong>composante attributaire</strong> permettant de l’identifier, et une
 <strong>composante graphique</strong> décrivant sa géométrie. Il est localisé grâce à un
-système de coordonnées spatiales (ou CRS pour <em>Coordinate Reference System</em> en
-anglais). Les vecteurs sont basiquement composés de nœuds ou sommets qui sont
+Système de Coordonnées de Référence (ou CRS pour <em>Coordinate Reference System</em>
+en anglais). Les vecteurs sont basiquement composés de nœuds ou sommets qui sont
 des <strong>points dans l’espace</strong>. À partir de ces sommets, des <strong>formules
 mathématiques</strong> sont appliquées pour créer des <strong>formes géométriques</strong>. S’il n’y
 a qu’un sommet, le vecteur est simplement un point. S’il y a plusieurs sommets
@@ -295,23 +296,22 @@ s’appelle <strong>Modèle d’Entité Simple</strong> (SFA pour <a href="https
 Access</em></a> en anglais) et permet de définir des
 fonctions pour accéder, faire des calculs et construire les données, dans le but
 de représenter les objets dans la réalité. C’est un modèle de données très
-largement supportés dans la plupart des logiciels SIG (dont QGIS) et a
+largement supporté dans la plupart des logiciels SIG (dont QGIS) et a
 l’avantage de rendre le travail totalement transférable d’un projet à un autre
 grâce à une architecture commune.</p>
 <p>Pour amener ce modèle dans R, le package <code>sf</code> a ainsi été créé pour succéder au
 package <code>sp</code> sur le long terme.<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a> Les différents <strong>types de
 géométrie</strong> définis par la norme standardisée de l’OGC sont donc inclus dans ce
-package (fig. <a href="SIG.html#fig:sfclasses">5.1</a>). Ces types de géométrie permettent de créer les
-entités, qui sont la <strong>représentation d’un objet dans le monde réel</strong> (comme un
-bâtiment, un champ ou un arbre). Chaque entité peut alors faire parti par
+package (fig. <a href="SIG.html#fig:sfclasses">5.1</a>). Ces types de géométrie permettent de créer
+les entités, qui sont la <strong>représentation d’un objet dans le monde réel</strong> (comme
+un bâtiment, un champ ou un arbre). Chaque entité peut alors faire partie par
 exemple du type <code>POINT</code>, <code>POLYLIGNE</code> (<code>LINESTRING</code>) ou <code>POLYGONE</code>. En plus de
 cela, il est possible de créer d’autres entités à partir de l’agrégation de ces
 entités basiques (formant des <code>MULITPOINTS</code>, des <code>MULTIPOLYLIGNES</code> et des
 <code>MULTIPOLYGONES</code>). Une seule entité contenant plusieurs types de géométrie
 différents est alors de type « collection de géométrie » (<code>GEOMETRYCOLLECTION</code>).<br />
 Ces 7 types de géométrie précédemment cités font partis des types les plus
-utilisés. Dans le package <code>sf</code>, ces types sont représentés sous la forme de
-<em>classes</em>.</p>
+utilisés.</p>
 
 <div class="figure" style="text-align: center"><span id="fig:sfclasses"></span>
 <img src="images/sf-classes.png" alt="Exemple des différents types de géométrie supportés par le package sf (source : https://geocompr.robinlovelace.net/spatial-class.html#intro-sf)" width="60%" />
@@ -323,17 +323,20 @@ Figure 5.1: Exemple des différents types de géométrie supportés par le packa
 données spatiales via la bibliothèque
 <a href="https://www.osgeo.org/projects/geos/">GEOS</a> ; faire des opérations géométriques
 via la bibliothèque <a href="https://gdal.org/">GDAL</a> ; mais aussi représenter et
-transformer des systèmes de coordonnées géographiques projetés via la
+transformer des systèmes de coordonnées projetées, à partir de la
 bibliothèque <a href="https://proj.org/">PROJ</a>.</p>
+<div id="lecture-des-fichiers-de-données-spatiales-pour-les-vecteurs" class="section level4" number="5.3.1.1">
+<h4><span class="header-section-number">5.3.1.1</span> Lecture des fichiers de données spatiales pour les vecteurs</h4>
 <p>Pour avoir un aperçu des objets <code>sf</code> sous R, nous allons prendre pour exemple
-les données des Réserves Naturelles Nationales (RNN) de la France métropolitaine
-(Tableau <a href="SIG.html#tab:data-rnn">5.1</a>). Ces données proviennent de l’Inventaire National
-du Patrimoine Naturel (<a href="https://inpn.mnhn.fr/accueil/index">INPN</a>) et elles sont
-trouvables sur le <a href="https://www.data.gouv.fr/fr/datasets/inpn-donnees-du-programme-espaces-proteges/">site du gouvernement</a>.</p>
+les données de localisation des Réserves Naturelles Nationales (RNN) de la
+France métropolitaine (Tableau <a href="SIG.html#tab:data-rnn">5.1</a>). Ces données proviennent de
+l’Inventaire National du Patrimoine Naturel
+(<a href="https://inpn.mnhn.fr/accueil/index">INPN</a>) et elles sont trouvables sur le
+<a href="https://www.data.gouv.fr/fr/datasets/inpn-donnees-du-programme-espaces-proteges/">site du gouvernement</a>.</p>
 <p>Plusieurs formats de fichier peuvent être utilisés pour stocker les données des
 vecteurs. Les plus utilisés sont le format <em>Shapefile</em> (<strong>.shp</strong>) de la société
-ESRI, les formats <em>Keyhole Markup Language</em> (<strong>.kml</strong>) de Google (et qui peut être
-compressé sous le format <strong>.kmz</strong>), ou aussi le format <em>Geographic Markup
+ESRI, les formats <em>Keyhole Markup Language</em> (<strong>.kml</strong>) de Google (et qui peut
+être compressé sous le format <strong>.kmz</strong>), ou aussi le format <em>Geographic Markup
 Language</em> (<strong>.gml</strong>) développé par l’OGC.</p>
 <p>Concernant les données spatiales des RNN, elles sont téléchargeables au format
 <em>Shapefile</em>. Il faut alors savoir que le format <em>Shapefile</em> est toujours
@@ -345,9 +348,9 @@ des données au format <em>Shapefile</em>, on télécharge en réalité tout un 
 contenant plusieurs fichiers.</p>
 
 <p>Une fois le package <code>sf</code> chargé, pour lire les données spatiales il faut
-utiliser la fonction <code>st_read()</code>. Pour ce cas là, il suffit alors de lui donner
-le chemin d’accès au fichier <strong>.shp</strong>. Les autres fichiers qui lui sont liés
-doivent être à la racine du même dossier. Pour plus d’informations sur les
+utiliser la fonction <code>st_read()</code>. Pour cet exemple, il suffit alors de lui
+donner le chemin d’accès au fichier <strong>.shp</strong>. Les autres fichiers qui lui sont
+liés doivent être stockés au même endroit. Pour plus d’informations sur les
 différents paramètres et les différentes possibilités de cette fonction, il ne
 faut pas hésiter à aller lire sa documentation.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="SIG.html#cb1-1" aria-hidden="true"></a><span class="kw">library</span>(<span class="st">&quot;sf&quot;</span>)</span>
@@ -364,13 +367,14 @@ faut pas hésiter à aller lire sa documentation.</p>
 tableau de données comme on a l’habitude de voir. Cette caractéristique permet
 de le manipuler facilement, notamment via le package
 <a href="http://larmarange.github.io/analyse-R/manipuler-les-donnees-avec-dplyr.html"><code>dplyr</code></a>.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="SIG.html#cb3-1" aria-hidden="true"></a>knitr<span class="op">::</span><span class="kw">kable</span>(data_rnn, <span class="dt">caption =</span> <span class="st">&quot;Jeu de données spatiales montrant les Réserves Naturelles Nationales de la France métropolitaine.&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb3-2"><a href="SIG.html#cb3-2" aria-hidden="true"></a><span class="st">  </span>kableExtra<span class="op">::</span><span class="kw">kable_styling</span>(</span>
-<span id="cb3-3"><a href="SIG.html#cb3-3" aria-hidden="true"></a>    <span class="dt">bootstrap_options =</span> <span class="kw">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hovered&quot;</span>, <span class="st">&quot;condensed&quot;</span>, <span class="st">&quot;responsive&quot;</span>),</span>
-<span id="cb3-4"><a href="SIG.html#cb3-4" aria-hidden="true"></a>    <span class="dt">font_size =</span> <span class="dv">12</span>,</span>
-<span id="cb3-5"><a href="SIG.html#cb3-5" aria-hidden="true"></a>    <span class="dt">fixed_thead =</span> <span class="ot">TRUE</span></span>
-<span id="cb3-6"><a href="SIG.html#cb3-6" aria-hidden="true"></a>  ) <span class="op">%&gt;%</span></span>
-<span id="cb3-7"><a href="SIG.html#cb3-7" aria-hidden="true"></a><span class="st">  </span>kableExtra<span class="op">::</span><span class="kw">scroll_box</span>(<span class="dt">width =</span> <span class="st">&quot;100%&quot;</span>, <span class="dt">height =</span> <span class="st">&quot;400px&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="SIG.html#cb3-1" aria-hidden="true"></a><span class="co"># Visualisation du tableau de données</span></span>
+<span id="cb3-2"><a href="SIG.html#cb3-2" aria-hidden="true"></a>knitr<span class="op">::</span><span class="kw">kable</span>(data_rnn, <span class="dt">caption =</span> <span class="st">&quot;Jeu de données spatiales montrant les Réserves Naturelles Nationales de la France métropolitaine.&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb3-3"><a href="SIG.html#cb3-3" aria-hidden="true"></a><span class="st">  </span>kableExtra<span class="op">::</span><span class="kw">kable_styling</span>(</span>
+<span id="cb3-4"><a href="SIG.html#cb3-4" aria-hidden="true"></a>    <span class="dt">bootstrap_options =</span> <span class="kw">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hovered&quot;</span>, <span class="st">&quot;condensed&quot;</span>, <span class="st">&quot;responsive&quot;</span>),</span>
+<span id="cb3-5"><a href="SIG.html#cb3-5" aria-hidden="true"></a>    <span class="dt">font_size =</span> <span class="dv">12</span>,</span>
+<span id="cb3-6"><a href="SIG.html#cb3-6" aria-hidden="true"></a>    <span class="dt">fixed_thead =</span> <span class="ot">TRUE</span></span>
+<span id="cb3-7"><a href="SIG.html#cb3-7" aria-hidden="true"></a>  ) <span class="op">%&gt;%</span></span>
+<span id="cb3-8"><a href="SIG.html#cb3-8" aria-hidden="true"></a><span class="st">  </span>kableExtra<span class="op">::</span><span class="kw">scroll_box</span>(<span class="dt">width =</span> <span class="st">&quot;100%&quot;</span>, <span class="dt">height =</span> <span class="st">&quot;400px&quot;</span>)</span></code></pre></div>
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:400px; overflow-x: scroll; width:100%; ">
 <table class="table table-striped table-condensed table-responsive" style="font-size: 12px; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
@@ -14822,9 +14826,196 @@ MULTIPOLYGON (((855064 6269…
 </tbody>
 </table>
 </div>
-
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="SIG.html#cb4-1" aria-hidden="true"></a><span class="co"># Visualisation de la structure du tableau de données</span></span>
+<span id="cb4-2"><a href="SIG.html#cb4-2" aria-hidden="true"></a><span class="kw">str</span>(data_rnn)</span></code></pre></div>
+<pre><code>## Classes &#39;sf&#39; and &#39;data.frame&#39;:	151 obs. of  31 variables:
+##  $ ID_LOCAL  : chr  &quot;RNN70&quot; &quot;RNN71&quot; &quot;RNN72&quot; &quot;RNN73&quot; ...
+##  $ PRN_ASSO  : chr  NA NA NA NA ...
+##  $ CODE_R_ENP: chr  &quot;RNN&quot; &quot;RNN&quot; &quot;RNN&quot; &quot;RNN&quot; ...
+##  $ NOM_SITE  : chr  &quot;Mas Larrieu&quot; &quot;Py&quot; &quot;Mantet&quot; &quot;Région De Digne&quot; ...
+##  $ DATE_CREA : Date, format: &quot;1984-07-17&quot; &quot;1984-09-17&quot; ...
+##  $ MODIF_ADM : Date, format: NA NA ...
+##  $ MODIF_GEO : Date, format: &quot;2011-10-19&quot; &quot;2011-10-19&quot; ...
+##  $ URL_FICHE : chr  &quot;https://inpn.mnhn.fr/espace/protege/FR3600070&quot; &quot;https://inpn.mnhn.fr/espace/protege/FR3600071&quot; &quot;https://inpn.mnhn.fr/espace/protege/FR3600072&quot; &quot;https://inpn.mnhn.fr/espace/protege/FR3600073&quot; ...
+##  $ SURF_OFF  : num  145 3930 3028 269 16662 ...
+##  $ ACTE_DEB  : chr  &quot;FR360006719840722&quot; &quot;FR360007119840919&quot; &quot;FR360007119840919&quot; &quot;FR360007319841106&quot; ...
+##  $ ACTE_FIN  : chr  NA NA NA NA ...
+##  $ GEST_SITE : chr  NA NA NA NA ...
+##  $ OPERATEUR : chr  &quot;DREAL LANGUEDOC-ROUSSILLON&quot; &quot;DREAL LANGUEDOC-ROUSSILLON&quot; &quot;DREAL LANGUEDOC-ROUSSILLON&quot; &quot;DREAL PROVENCE-ALPES-COTE-D&#39;AZUR&quot; ...
+##  $ SRC_GEOM  : chr  &quot;BDP /TCHV2&quot; &quot;BDP&quot; &quot;BDP&quot; NA ...
+##  $ SRC_ANNEE : chr  &quot;2010&quot; &quot;2010&quot; &quot;2010&quot; NA ...
+##  $ MARIN     : chr  &quot;F&quot; &quot;F&quot; &quot;F&quot; &quot;F&quot; ...
+##  $ P1_NATURE : chr  &quot;N&quot; &quot;N&quot; &quot;N&quot; &quot;N&quot; ...
+##  $ P2_CULTURE: chr  &quot;N&quot; &quot;N&quot; &quot;N&quot; &quot;N&quot; ...
+##  $ P3_PAYSAGE: chr  &quot;N&quot; &quot;N&quot; &quot;N&quot; &quot;N&quot; ...
+##  $ P4_GEOLOGI: chr  &quot;N&quot; &quot;N&quot; &quot;N&quot; &quot;N&quot; ...
+##  $ P5_SPELEO : chr  &quot;N&quot; &quot;N&quot; &quot;N&quot; &quot;N&quot; ...
+##  $ P6_ARCHEO : chr  &quot;N&quot; &quot;N&quot; &quot;N&quot; &quot;N&quot; ...
+##  $ P7_PALEOB : chr  &quot;N&quot; &quot;N&quot; &quot;N&quot; &quot;N&quot; ...
+##  $ P8_ANTHROP: chr  &quot;N&quot; &quot;N&quot; &quot;N&quot; &quot;N&quot; ...
+##  $ P9_SCIENCE: chr  &quot;N&quot; &quot;N&quot; &quot;N&quot; &quot;N&quot; ...
+##  $ P10_PUBLIC: chr  &quot;N&quot; &quot;N&quot; &quot;N&quot; &quot;N&quot; ...
+##  $ P11_DD    : chr  &quot;N&quot; &quot;N&quot; &quot;N&quot; &quot;N&quot; ...
+##  $ P12_AUTRE : chr  &quot;N&quot; &quot;N&quot; &quot;N&quot; &quot;N&quot; ...
+##  $ ID_MNHN   : chr  &quot;FR3600070&quot; &quot;FR3600071&quot; &quot;FR3600072&quot; &quot;FR3600073&quot; ...
+##  $ PRECISION : chr  &quot;M&quot; &quot;M&quot; &quot;M&quot; NA ...
+##  $ geometry  :sfc_MULTIPOLYGON of length 151; first list element: List of 1
+##   ..$ :List of 1
+##   .. ..$ : num [1:254, 1:2] 703769 703771 703769 703767 703764 ...
+##   ..- attr(*, &quot;class&quot;)= chr [1:3] &quot;XY&quot; &quot;MULTIPOLYGON&quot; &quot;sfg&quot;
+##  - attr(*, &quot;sf_column&quot;)= chr &quot;geometry&quot;
+##  - attr(*, &quot;agr&quot;)= Factor w/ 3 levels &quot;constant&quot;,&quot;aggregate&quot;,..: NA NA NA NA NA NA NA NA NA NA ...
+##   ..- attr(*, &quot;names&quot;)= chr [1:30] &quot;ID_LOCAL&quot; &quot;PRN_ASSO&quot; &quot;CODE_R_ENP&quot; &quot;NOM_SITE&quot; ...</code></pre>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="SIG.html#cb6-1" aria-hidden="true"></a><span class="kw">class</span>(data_rnn<span class="op">$</span>geometry)</span></code></pre></div>
+<pre><code>## [1] &quot;sfc_MULTIPOLYGON&quot; &quot;sfc&quot;</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="SIG.html#cb8-1" aria-hidden="true"></a><span class="kw">attributes</span>(data_rnn<span class="op">$</span>geometry)</span></code></pre></div>
+<pre><code>## $n_empty
+## [1] 0
+## 
+## $crs
+## Coordinate Reference System:
+##   User input: RGF93 / Lambert-93 
+##   wkt:
+## PROJCRS[&quot;RGF93 / Lambert-93&quot;,
+##     BASEGEOGCRS[&quot;RGF93&quot;,
+##         DATUM[&quot;Reseau Geodesique Francais 1993&quot;,
+##             ELLIPSOID[&quot;GRS 1980&quot;,6378137,298.257222101,
+##                 LENGTHUNIT[&quot;metre&quot;,1]]],
+##         PRIMEM[&quot;Greenwich&quot;,0,
+##             ANGLEUNIT[&quot;degree&quot;,0.0174532925199433]],
+##         ID[&quot;EPSG&quot;,4171]],
+##     CONVERSION[&quot;Lambert-93&quot;,
+##         METHOD[&quot;Lambert Conic Conformal (2SP)&quot;,
+##             ID[&quot;EPSG&quot;,9802]],
+##         PARAMETER[&quot;Latitude of false origin&quot;,46.5,
+##             ANGLEUNIT[&quot;degree&quot;,0.0174532925199433],
+##             ID[&quot;EPSG&quot;,8821]],
+##         PARAMETER[&quot;Longitude of false origin&quot;,3,
+##             ANGLEUNIT[&quot;degree&quot;,0.0174532925199433],
+##             ID[&quot;EPSG&quot;,8822]],
+##         PARAMETER[&quot;Latitude of 1st standard parallel&quot;,49,
+##             ANGLEUNIT[&quot;degree&quot;,0.0174532925199433],
+##             ID[&quot;EPSG&quot;,8823]],
+##         PARAMETER[&quot;Latitude of 2nd standard parallel&quot;,44,
+##             ANGLEUNIT[&quot;degree&quot;,0.0174532925199433],
+##             ID[&quot;EPSG&quot;,8824]],
+##         PARAMETER[&quot;Easting at false origin&quot;,700000,
+##             LENGTHUNIT[&quot;metre&quot;,1],
+##             ID[&quot;EPSG&quot;,8826]],
+##         PARAMETER[&quot;Northing at false origin&quot;,6600000,
+##             LENGTHUNIT[&quot;metre&quot;,1],
+##             ID[&quot;EPSG&quot;,8827]]],
+##     CS[Cartesian,2],
+##         AXIS[&quot;easting (X)&quot;,east,
+##             ORDER[1],
+##             LENGTHUNIT[&quot;metre&quot;,1]],
+##         AXIS[&quot;northing (Y)&quot;,north,
+##             ORDER[2],
+##             LENGTHUNIT[&quot;metre&quot;,1]],
+##     USAGE[
+##         SCOPE[&quot;unknown&quot;],
+##         AREA[&quot;France&quot;],
+##         BBOX[41.15,-9.86,51.56,10.38]],
+##     ID[&quot;EPSG&quot;,2154]]
+## 
+## $class
+## [1] &quot;sfc_MULTIPOLYGON&quot; &quot;sfc&quot;             
+## 
+## $precision
+## [1] 0
+## 
+## $bbox
+##      xmin      ymin      xmax      ymax 
+##  107791.7 6145088.5 1077645.6 7109090.0</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="SIG.html#cb10-1" aria-hidden="true"></a><span class="kw">st_crs</span>(data_rnn)<span class="op">$</span>proj4string</span></code></pre></div>
+<pre><code>## [1] &quot;+proj=lcc +lat_0=46.5 +lon_0=3 +lat_1=49 +lat_2=44 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs&quot;</code></pre>
 </div>
-<div id="les-rasters" class="section level3" number="5.3.2">
+<div id="création-de-cartes-à-partir-de-vecteurs" class="section level4" number="5.3.1.2">
+<h4><span class="header-section-number">5.3.1.2</span> Création de cartes à partir de vecteurs</h4>
+
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="SIG.html#cb12-1" aria-hidden="true"></a><span class="kw">library</span>(<span class="st">&quot;ggplot2&quot;</span>)</span>
+<span id="cb12-2"><a href="SIG.html#cb12-2" aria-hidden="true"></a><span class="kw">library</span>(<span class="st">&quot;ggthemes&quot;</span>) <span class="co"># Ajoute d&#39;autres thèmes à ggplot2</span></span>
+<span id="cb12-3"><a href="SIG.html#cb12-3" aria-hidden="true"></a><span class="kw">library</span>(<span class="st">&quot;ggrepel&quot;</span>)</span>
+<span id="cb12-4"><a href="SIG.html#cb12-4" aria-hidden="true"></a><span class="kw">library</span>(<span class="st">&quot;dplyr&quot;</span>) <span class="co"># Permet la manipulation des données</span></span>
+<span id="cb12-5"><a href="SIG.html#cb12-5" aria-hidden="true"></a><span class="kw">library</span>(<span class="st">&quot;ggspatial&quot;</span>)</span>
+<span id="cb12-6"><a href="SIG.html#cb12-6" aria-hidden="true"></a></span>
+<span id="cb12-7"><a href="SIG.html#cb12-7" aria-hidden="true"></a><span class="co"># Ajout des départements français.</span></span>
+<span id="cb12-8"><a href="SIG.html#cb12-8" aria-hidden="true"></a>regions &lt;-<span class="st"> </span><span class="kw">st_read</span>(<span class="st">&quot;examples/regions-20180101-shp/regions-20180101.shp&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb12-9"><a href="SIG.html#cb12-9" aria-hidden="true"></a><span class="st">  </span><span class="kw">filter</span>(code_insee <span class="op">%in%</span><span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">95</span>)</span></code></pre></div>
+<pre><code>## Reading layer `regions-20180101&#39; from data source `/home/alexis/Documents/doc Alexis Merot/Mon_aide_memoire/examples/regions-20180101-shp/regions-20180101.shp&#39; using driver `ESRI Shapefile&#39;
+## Simple feature collection with 18 features and 5 fields
+## geometry type:  MULTIPOLYGON
+## dimension:      XY
+## bbox:           xmin: -61.80976 ymin: -21.38973 xmax: 55.83669 ymax: 51.08899
+## geographic CRS: WGS 84</code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="SIG.html#cb14-1" aria-hidden="true"></a><span class="co"># Les données ne sont pas dans le bon référentiel (WGS 84).</span></span>
+<span id="cb14-2"><a href="SIG.html#cb14-2" aria-hidden="true"></a><span class="co"># La projection Lambert 93 du référentiel RGF93 a pour référence EPSG:2154.</span></span>
+<span id="cb14-3"><a href="SIG.html#cb14-3" aria-hidden="true"></a><span class="co"># regions &lt;- st_transform(regions, 2154)</span></span>
+<span id="cb14-4"><a href="SIG.html#cb14-4" aria-hidden="true"></a></span>
+<span id="cb14-5"><a href="SIG.html#cb14-5" aria-hidden="true"></a>data_rnn &lt;-<span class="st"> </span><span class="kw">st_transform</span>(data_rnn, <span class="dv">4326</span>)</span>
+<span id="cb14-6"><a href="SIG.html#cb14-6" aria-hidden="true"></a></span>
+<span id="cb14-7"><a href="SIG.html#cb14-7" aria-hidden="true"></a><span class="co"># Création de cartes avec ggplot2.</span></span>
+<span id="cb14-8"><a href="SIG.html#cb14-8" aria-hidden="true"></a></span>
+<span id="cb14-9"><a href="SIG.html#cb14-9" aria-hidden="true"></a><span class="co"># Localisation des réserves en France métropolitaine</span></span>
+<span id="cb14-10"><a href="SIG.html#cb14-10" aria-hidden="true"></a>rnn_france &lt;-<span class="st"> </span><span class="kw">ggplot</span>() <span class="op">+</span></span>
+<span id="cb14-11"><a href="SIG.html#cb14-11" aria-hidden="true"></a><span class="st">  </span><span class="kw">annotation_map_tile</span>(<span class="dt">zoomin =</span> <span class="dv">-1</span>, <span class="dt">type =</span> <span class="st">&quot;stamenwatercolor&quot;</span>) <span class="op">+</span></span>
+<span id="cb14-12"><a href="SIG.html#cb14-12" aria-hidden="true"></a><span class="st">  </span><span class="kw">geom_sf</span>(</span>
+<span id="cb14-13"><a href="SIG.html#cb14-13" aria-hidden="true"></a>    <span class="dt">data =</span> regions,</span>
+<span id="cb14-14"><a href="SIG.html#cb14-14" aria-hidden="true"></a>    <span class="kw">aes</span>(<span class="dt">fill =</span> nom),</span>
+<span id="cb14-15"><a href="SIG.html#cb14-15" aria-hidden="true"></a>    <span class="dt">colour =</span> <span class="st">&quot;black&quot;</span>,</span>
+<span id="cb14-16"><a href="SIG.html#cb14-16" aria-hidden="true"></a>    <span class="dt">size =</span> <span class="fl">1.1</span>,</span>
+<span id="cb14-17"><a href="SIG.html#cb14-17" aria-hidden="true"></a>    <span class="dt">alpha =</span> <span class="fl">0.2</span>,</span>
+<span id="cb14-18"><a href="SIG.html#cb14-18" aria-hidden="true"></a>    <span class="dt">show.legend =</span> <span class="ot">FALSE</span></span>
+<span id="cb14-19"><a href="SIG.html#cb14-19" aria-hidden="true"></a>  ) <span class="op">+</span></span>
+<span id="cb14-20"><a href="SIG.html#cb14-20" aria-hidden="true"></a><span class="st">  </span><span class="kw">stat_sf_coordinates</span>(<span class="dt">data =</span> data_rnn, <span class="dt">colour =</span> <span class="st">&quot;darkred&quot;</span>, <span class="dt">size =</span> <span class="fl">1.5</span>) <span class="op">+</span></span>
+<span id="cb14-21"><a href="SIG.html#cb14-21" aria-hidden="true"></a><span class="st">  </span><span class="kw">annotation_north_arrow</span>(</span>
+<span id="cb14-22"><a href="SIG.html#cb14-22" aria-hidden="true"></a>    <span class="dt">location =</span> <span class="st">&quot;bl&quot;</span>,</span>
+<span id="cb14-23"><a href="SIG.html#cb14-23" aria-hidden="true"></a>    <span class="dt">which_north =</span> <span class="st">&quot;true&quot;</span>,</span>
+<span id="cb14-24"><a href="SIG.html#cb14-24" aria-hidden="true"></a>    <span class="dt">style =</span> <span class="kw">north_arrow_nautical</span>()</span>
+<span id="cb14-25"><a href="SIG.html#cb14-25" aria-hidden="true"></a>  ) <span class="op">+</span></span>
+<span id="cb14-26"><a href="SIG.html#cb14-26" aria-hidden="true"></a><span class="st">  </span><span class="kw">coord_sf</span>(<span class="dt">datum =</span> <span class="kw">st_crs</span>(<span class="dv">4326</span>)) <span class="op">+</span></span>
+<span id="cb14-27"><a href="SIG.html#cb14-27" aria-hidden="true"></a><span class="st">  </span><span class="kw">theme_linedraw</span>() <span class="op">+</span></span>
+<span id="cb14-28"><a href="SIG.html#cb14-28" aria-hidden="true"></a><span class="st">  </span><span class="kw">theme</span>(</span>
+<span id="cb14-29"><a href="SIG.html#cb14-29" aria-hidden="true"></a>    <span class="dt">panel.ontop =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb14-30"><a href="SIG.html#cb14-30" aria-hidden="true"></a>    <span class="dt">panel.background =</span> <span class="kw">element_blank</span>(),</span>
+<span id="cb14-31"><a href="SIG.html#cb14-31" aria-hidden="true"></a>    <span class="dt">axis.title =</span> <span class="kw">element_blank</span>()</span>
+<span id="cb14-32"><a href="SIG.html#cb14-32" aria-hidden="true"></a>  )</span>
+<span id="cb14-33"><a href="SIG.html#cb14-33" aria-hidden="true"></a></span>
+<span id="cb14-34"><a href="SIG.html#cb14-34" aria-hidden="true"></a>rnn_france <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">tag =</span> <span class="st">&quot;A&quot;</span>)</span>
+<span id="cb14-35"><a href="SIG.html#cb14-35" aria-hidden="true"></a></span>
+<span id="cb14-36"><a href="SIG.html#cb14-36" aria-hidden="true"></a><span class="co"># On récupère les limites inférieures et supérieures de la RNN de la haute</span></span>
+<span id="cb14-37"><a href="SIG.html#cb14-37" aria-hidden="true"></a><span class="co"># chaîne du Jura.</span></span>
+<span id="cb14-38"><a href="SIG.html#cb14-38" aria-hidden="true"></a>crop_limits &lt;-<span class="st"> </span><span class="kw">st_bbox</span>(<span class="kw">filter</span>(data_rnn, ID_LOCAL <span class="op">==</span><span class="st"> &quot;RNN112&quot;</span>))</span>
+<span id="cb14-39"><a href="SIG.html#cb14-39" aria-hidden="true"></a></span>
+<span id="cb14-40"><a href="SIG.html#cb14-40" aria-hidden="true"></a><span class="co"># On zoome sur la carte des régions en augmentant les limites précédentes par 10 km.</span></span>
+<span id="cb14-41"><a href="SIG.html#cb14-41" aria-hidden="true"></a>crop_regions &lt;-<span class="st"> </span><span class="kw">st_crop</span>(regions, crop_limits <span class="op">+</span><span class="st"> </span><span class="kw">c</span>(<span class="op">-</span><span class="fl">0.1</span>, <span class="fl">-0.1</span>, <span class="fl">0.15</span>, <span class="fl">0.1</span>))</span>
+<span id="cb14-42"><a href="SIG.html#cb14-42" aria-hidden="true"></a></span>
+<span id="cb14-43"><a href="SIG.html#cb14-43" aria-hidden="true"></a>rnn_jura &lt;-<span class="st"> </span><span class="kw">ggplot</span>() <span class="op">+</span></span>
+<span id="cb14-44"><a href="SIG.html#cb14-44" aria-hidden="true"></a><span class="st">  </span><span class="kw">annotation_map_tile</span>(<span class="dt">zoomin =</span> <span class="dv">-1</span>, <span class="dt">type =</span> <span class="st">&quot;stamenwatercolor&quot;</span>) <span class="op">+</span></span>
+<span id="cb14-45"><a href="SIG.html#cb14-45" aria-hidden="true"></a><span class="st">  </span><span class="kw">geom_sf</span>(<span class="dt">data =</span> crop_regions, <span class="dt">colour =</span> <span class="st">&quot;black&quot;</span>, <span class="dt">fill =</span> <span class="ot">NA</span>, <span class="dt">size =</span> <span class="fl">1.1</span>) <span class="op">+</span></span>
+<span id="cb14-46"><a href="SIG.html#cb14-46" aria-hidden="true"></a><span class="st">  </span><span class="kw">geom_sf</span>(<span class="dt">data =</span> <span class="kw">filter</span>(data_rnn, ID_LOCAL <span class="op">==</span><span class="st"> &quot;RNN112&quot;</span>), <span class="dt">fill =</span> <span class="st">&quot;darkred&quot;</span>) <span class="op">+</span></span>
+<span id="cb14-47"><a href="SIG.html#cb14-47" aria-hidden="true"></a><span class="st">  </span><span class="kw">annotation_north_arrow</span>(</span>
+<span id="cb14-48"><a href="SIG.html#cb14-48" aria-hidden="true"></a>    <span class="dt">location =</span> <span class="st">&quot;bl&quot;</span>,</span>
+<span id="cb14-49"><a href="SIG.html#cb14-49" aria-hidden="true"></a>    <span class="dt">which_north =</span> <span class="st">&quot;true&quot;</span>,</span>
+<span id="cb14-50"><a href="SIG.html#cb14-50" aria-hidden="true"></a>    <span class="dt">style =</span> <span class="kw">north_arrow_nautical</span>()</span>
+<span id="cb14-51"><a href="SIG.html#cb14-51" aria-hidden="true"></a>  ) <span class="op">+</span></span>
+<span id="cb14-52"><a href="SIG.html#cb14-52" aria-hidden="true"></a><span class="st">  </span><span class="kw">coord_sf</span>(<span class="dt">expand =</span> <span class="ot">FALSE</span>, <span class="dt">datum =</span> <span class="kw">st_crs</span>(<span class="dv">4326</span>)) <span class="op">+</span></span>
+<span id="cb14-53"><a href="SIG.html#cb14-53" aria-hidden="true"></a><span class="st">  </span><span class="kw">theme_linedraw</span>() <span class="op">+</span></span>
+<span id="cb14-54"><a href="SIG.html#cb14-54" aria-hidden="true"></a><span class="st">  </span><span class="kw">theme</span>(</span>
+<span id="cb14-55"><a href="SIG.html#cb14-55" aria-hidden="true"></a>    <span class="dt">panel.ontop =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb14-56"><a href="SIG.html#cb14-56" aria-hidden="true"></a>    <span class="dt">panel.background =</span> <span class="kw">element_blank</span>()</span>
+<span id="cb14-57"><a href="SIG.html#cb14-57" aria-hidden="true"></a>  )</span>
+<span id="cb14-58"><a href="SIG.html#cb14-58" aria-hidden="true"></a></span>
+<span id="cb14-59"><a href="SIG.html#cb14-59" aria-hidden="true"></a>rnn_jura <span class="op">+</span><span class="st"> </span><span class="kw">labs</span>(<span class="dt">tag =</span> <span class="st">&quot;B&quot;</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:plot-rnn"></span>
+<img src="Mon_aide_memoire_R_files/figure-html/plot-rnn-1.png" alt="(A) Carte des Réserves Naturelles de la France métropolitaine. (B) Carte montrant la délimitation de la Réserve Naturelle Nationale de la Haute Chaîne du Jura." width="100%" /><img src="Mon_aide_memoire_R_files/figure-html/plot-rnn-2.png" alt="(A) Carte des Réserves Naturelles de la France métropolitaine. (B) Carte montrant la délimitation de la Réserve Naturelle Nationale de la Haute Chaîne du Jura." width="100%" />
+<p class="caption">
+Figure 5.2: (A) Carte des Réserves Naturelles de la France métropolitaine. (B) Carte montrant la délimitation de la Réserve Naturelle Nationale de la Haute Chaîne du Jura.
+</p>
+</div>
+</div>
+</div>
+<div id="rasters" class="section level3" number="5.3.2">
 <h3><span class="header-section-number">5.3.2</span> Les rasters</h3>
 <p>Un raster représente une image constituée de pixels (cellules) organisé(e)s sous
 la forme d’une grille. C’est la représentation que l’on a l’habitude de voir
@@ -14832,14 +15023,17 @@ lorsque l’on parle d’une image numérique. Chaque pixel est unique et possè
 certaines valeurs le caractérisant (comme sa couleur, ses coordonnées, son
 altitude…). Les données sont ainsi organisées en <strong>matrice</strong>, où chaque
 <strong>cellule</strong> correspond à un pixel. Pour bien superposer le raster à la carte,
-les matrices possèdent une en-tête incluant le <strong>système de coordonnées
-spatiales</strong>, <strong>l’origine</strong> (généralement les coordonnées du coin inférieur droit
+les matrices possèdent une en-tête incluant le <strong>Système de Coordonnées de
+Référence</strong>, <strong>l’origine</strong> (généralement les coordonnées du coin inférieur droit
 de la matrice), ainsi que l’<strong>étendue de la matrice</strong> (le nombre de colonnes, de
 lignes et la résolution spatiale<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a>).<br />
 De par leurs caractéristiques, les rasters permettent de définir des <strong>données
 discrètes</strong> ainsi que des <strong>données continues</strong>.</p>
-<hr />
 </div>
+</div>
+<div id="CRS" class="section level2" number="5.4">
+<h2><span class="header-section-number">5.4</span> Les Systèmes de Coordonnées de Référence Géographiques et Projetées</h2>
+<hr />
 </div>
 <div id="ref-sig" class="section level2 unnumbered">
 <h2>Liste de ressources Internet utiles</h2>
@@ -14897,7 +15091,7 @@ divers tutoriels sur la SIG et QGis</li>
 <li id="fn2"><p>Cf. la page Wikipédia sur le
 <a href="https://fr.wikipedia.org/wiki/Syst%C3%A8me_d%27information_g%C3%A9ographique">Système d’Information Géographique</a>.<a href="SIG.html#fnref2" class="footnote-back">↩︎</a></p></li>
 <li id="fn3"><p>Fond de carte représentant un territoire géographique sur lequel
-peuvent s’appuyer de nouvelles données cartographiques.<a href="SIG.html#fnref3" class="footnote-back">↩︎</a></p></li>
+peuvent venir s’insérer de nouvelles données cartographiques.<a href="SIG.html#fnref3" class="footnote-back">↩︎</a></p></li>
 <li id="fn4"><p>L’OGC est un consortium international qui développe des standards ouverts
 (OpenGIS) dans les domaines de la géomatique et de l’information géographique.<a href="SIG.html#fnref4" class="footnote-back">↩︎</a></p></li>
 <li id="fn5"><p>Cf. la <a href="https://r-spatial.github.io/sf/articles/sf1.html">vignette</a>

@@ -153,7 +153,7 @@
 
 \title{Aide-mémoire : Analyses de données \& Cartographie sur R}
 \author{Alexis Mérot}
-\date{Modifié le : 2020-08-07}
+\date{Modifié le : 2020-08-11}
 
 \begin{document}
 \maketitle
@@ -398,7 +398,7 @@ Concepts à comprendre :
 \end{infobox}
 
 \hypertarget{SIG}{%
-\chapter{Les Systèmes d'Information Géographiques}\label{SIG}}
+\chapter{Systèmes d'Information Géographique \& Cartographie}\label{SIG}}
 
 \begin{infobox}{caution}
 
@@ -406,8 +406,8 @@ Concepts à comprendre :
 
 \end{infobox}
 
-\hypertarget{quest-ce-quun-sig}{%
-\section{Qu'est-ce qu'un SIG ?}\label{quest-ce-quun-sig}}
+\hypertarget{whatis-sig}{%
+\section{Qu'est-ce qu'un SIG ?}\label{whatis-sig}}
 
 Un Système d'Information Géographique est, comme tout Système d'Information
 \footnote{Cf. le cours sur
@@ -417,7 +417,7 @@ stocker, traiter et diffuser des informations \footnote{Cf. la page Wikipédia s
 (généralement informatisées) sont des données géospatiales stockées sous forme
 de couches d'informations superposées et reliées les unes aux autres par un
 référentiel cartographique \footnote{Fond de carte représentant un territoire géographique sur lequel
-  peuvent s'appuyer de nouvelles données cartographiques.}. Les SIG sont devenus des outils
+  peuvent venir s'insérer de nouvelles données cartographiques.}. Les SIG sont devenus des outils
 essentiels dans de nombreux domaines tels que l'écologie, la médecine ou la
 sociologie.
 
@@ -437,8 +437,8 @@ de se libérer de certaines contraintes imposées par ces logiciels ainsi que
 d'avoir plus de contrôle sur ce que l'ont fait (même si ces logiciels sont de
 plus en plus performants).
 
-\hypertarget{r-en-tant-que-sig}{%
-\section{R en tant que SIG}\label{r-en-tant-que-sig}}
+\hypertarget{R-sig}{%
+\section{R en tant que SIG}\label{R-sig}}
 
 Afin d'avoir un bon aperçu et une bonne base sur l'utilisation de R en tant que
 SIG, je vous invite à lire le livre \emph{Geocomputation with R} de \citet{geocomputation}.
@@ -475,8 +475,8 @@ vous invite à lire le chapitre \href{https://geocompr.robinlovelace.net/intro.h
 geocomputation}
 du livre de \citet{geocomputation}.
 
-\hypertarget{la-repruxe9sentation-des-donnuxe9es-les-vecteurs-et-les-rasters}{%
-\section{\texorpdfstring{La représentation des données : les \emph{vecteurs} et les \emph{rasters}}{La représentation des données : les vecteurs et les rasters}}\label{la-repruxe9sentation-des-donnuxe9es-les-vecteurs-et-les-rasters}}
+\hypertarget{data-sig}{%
+\section{\texorpdfstring{La représentation des données : les \emph{vecteurs} et les \emph{rasters}}{La représentation des données : les vecteurs et les rasters}}\label{data-sig}}
 
 Pour représenter numériquement les données spatiales, deux modèles de base sont
 utilisés : les \emph{vecteurs} (mode vectoriel) et les \emph{rasters} (mode matriciel).
@@ -492,14 +492,14 @@ vecteurs ont une taille bien inférieure que ceux liés aux raster.\\
 Sous R, les vecteurs et les rasters sont travaillés respectivement avec les
 packages \texttt{sf} et \texttt{raster}.
 
-\hypertarget{les-vecteurs}{%
-\subsection{Les vecteurs}\label{les-vecteurs}}
+\hypertarget{vectors}{%
+\subsection{Les vecteurs}\label{vectors}}
 
 Un vecteur est une image vectorielle ou dessin mathématique constitué de deux
 composantes : une \textbf{composante attributaire} permettant de l'identifier, et une
 \textbf{composante graphique} décrivant sa géométrie. Il est localisé grâce à un
-système de coordonnées spatiales (ou CRS pour \emph{Coordinate Reference System} en
-anglais). Les vecteurs sont basiquement composés de nœuds ou sommets qui sont
+Système de Coordonnées de Référence (ou CRS pour \emph{Coordinate Reference System}
+en anglais). Les vecteurs sont basiquement composés de nœuds ou sommets qui sont
 des \textbf{points dans l'espace}. À partir de ces sommets, des \textbf{formules
 mathématiques} sont appliquées pour créer des \textbf{formes géométriques}. S'il n'y
 a qu'un sommet, le vecteur est simplement un point. S'il y a plusieurs sommets
@@ -520,7 +520,7 @@ s'appelle \textbf{Modèle d'Entité Simple} (SFA pour \href{https://www.ogc.org/
 Access}} en anglais) et permet de définir des
 fonctions pour accéder, faire des calculs et construire les données, dans le but
 de représenter les objets dans la réalité. C'est un modèle de données très
-largement supportés dans la plupart des logiciels SIG (dont QGIS) et a
+largement supporté dans la plupart des logiciels SIG (dont QGIS) et a
 l'avantage de rendre le travail totalement transférable d'un projet à un autre
 grâce à une architecture commune.
 
@@ -528,17 +528,16 @@ Pour amener ce modèle dans R, le package \texttt{sf} a ainsi été créé pour 
 package \texttt{sp} sur le long terme \footnote{Cf. la \href{https://r-spatial.github.io/sf/articles/sf1.html}{vignette}
   du package \texttt{sf} parlant de ce sujet.}. Les différents \textbf{types de
 géométrie} définis par la norme standardisée de l'OGC sont donc inclus dans ce
-package (fig.~\ref{fig:sfclasses}). Ces types de géométrie permettent de créer les
-entités, qui sont la \textbf{représentation d'un objet dans le monde réel} (comme un
-bâtiment, un champ ou un arbre). Chaque entité peut alors faire parti par
+package (fig.~\ref{fig:sfclasses}). Ces types de géométrie permettent de créer
+les entités, qui sont la \textbf{représentation d'un objet dans le monde réel} (comme
+un bâtiment, un champ ou un arbre). Chaque entité peut alors faire partie par
 exemple du type \texttt{POINT}, \texttt{POLYLIGNE} (\texttt{LINESTRING}) ou \texttt{POLYGONE}. En plus de
 cela, il est possible de créer d'autres entités à partir de l'agrégation de ces
 entités basiques (formant des \texttt{MULITPOINTS}, des \texttt{MULTIPOLYLIGNES} et des
 \texttt{MULTIPOLYGONES}). Une seule entité contenant plusieurs types de géométrie
 différents est alors de type « collection de géométrie » (\texttt{GEOMETRYCOLLECTION}).\\
 Ces 7 types de géométrie précédemment cités font partis des types les plus
-utilisés. Dans le package \texttt{sf}, ces types sont représentés sous la forme de
-\emph{classes}.
+utilisés.
 
 
 
@@ -555,19 +554,23 @@ Le package \texttt{sf} est multitâche, il permet de : lire et écrire des fichi
 données spatiales via la bibliothèque
 \href{https://www.osgeo.org/projects/geos/}{GEOS} ; faire des opérations géométriques
 via la bibliothèque \href{https://gdal.org/}{GDAL} ; mais aussi représenter et
-transformer des systèmes de coordonnées géographiques projetés via la
+transformer des systèmes de coordonnées projetées, à partir de la
 bibliothèque \href{https://proj.org/}{PROJ}.
 
+\hypertarget{lecture-des-fichiers-de-donnuxe9es-spatiales-pour-les-vecteurs}{%
+\subsubsection{Lecture des fichiers de données spatiales pour les vecteurs}\label{lecture-des-fichiers-de-donnuxe9es-spatiales-pour-les-vecteurs}}
+
 Pour avoir un aperçu des objets \texttt{sf} sous R, nous allons prendre pour exemple
-les données des Réserves Naturelles Nationales (RNN) de la France métropolitaine
-(Tableau \ref{tab:data-rnn}). Ces données proviennent de l'Inventaire National
-du Patrimoine Naturel (\href{https://inpn.mnhn.fr/accueil/index}{INPN}) et elles sont
-trouvables sur le \href{https://www.data.gouv.fr/fr/datasets/inpn-donnees-du-programme-espaces-proteges/}{site du gouvernement}.
+les données de localisation des Réserves Naturelles Nationales (RNN) de la
+France métropolitaine (Tableau \ref{tab:data-rnn}). Ces données proviennent de
+l'Inventaire National du Patrimoine Naturel
+(\href{https://inpn.mnhn.fr/accueil/index}{INPN}) et elles sont trouvables sur le
+\href{https://www.data.gouv.fr/fr/datasets/inpn-donnees-du-programme-espaces-proteges/}{site du gouvernement}.
 
 Plusieurs formats de fichier peuvent être utilisés pour stocker les données des
 vecteurs. Les plus utilisés sont le format \emph{Shapefile} (\textbf{.shp}) de la société
-ESRI, les formats \emph{Keyhole Markup Language} (\textbf{.kml}) de Google (et qui peut être
-compressé sous le format \textbf{.kmz}), ou aussi le format \emph{Geographic Markup
+ESRI, les formats \emph{Keyhole Markup Language} (\textbf{.kml}) de Google (et qui peut
+être compressé sous le format \textbf{.kmz}), ou aussi le format \emph{Geographic Markup
 Language} (\textbf{.gml}) développé par l'OGC.
 
 Concernant les données spatiales des RNN, elles sont téléchargeables au format
@@ -582,9 +585,9 @@ contenant plusieurs fichiers.
 
 
 Une fois le package \texttt{sf} chargé, pour lire les données spatiales il faut
-utiliser la fonction \texttt{st\_read()}. Pour ce cas là, il suffit alors de lui donner
-le chemin d'accès au fichier \textbf{.shp}. Les autres fichiers qui lui sont liés
-doivent être à la racine du même dossier. Pour plus d'informations sur les
+utiliser la fonction \texttt{st\_read()}. Pour cet exemple, il suffit alors de lui
+donner le chemin d'accès au fichier \textbf{.shp}. Les autres fichiers qui lui sont
+liés doivent être stockés au même endroit. Pour plus d'informations sur les
 différents paramètres et les différentes possibilités de cette fonction, il ne
 faut pas hésiter à aller lire sa documentation.
 
@@ -614,6 +617,7 @@ de le manipuler facilement, notamment via le package
 
 \begin{Shaded}
 \begin{Highlighting}[]
+\CommentTok{\# Visualisation du tableau de données}
 \NormalTok{knitr}\OperatorTok{::}\KeywordTok{kable}\NormalTok{(data\_rnn, }\DataTypeTok{caption =} \StringTok{"(ref:data{-}rnn)"}\NormalTok{) }\OperatorTok{\%\textgreater{}\%}
 \StringTok{  }\NormalTok{kableExtra}\OperatorTok{::}\KeywordTok{kable\_styling}\NormalTok{(}
     \DataTypeTok{bootstrap\_options =} \KeywordTok{c}\NormalTok{(}\StringTok{"striped"}\NormalTok{, }\StringTok{"hovered"}\NormalTok{, }\StringTok{"condensed"}\NormalTok{, }\StringTok{"responsive"}\NormalTok{),}
@@ -10050,10 +10054,244 @@ NA
 
 MULTIPOLYGON (((855064 6269\ldots{}
 
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Visualisation de la structure du tableau de données}
+\KeywordTok{str}\NormalTok{(data\_rnn)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Classes 'sf' and 'data.frame':	151 obs. of  31 variables:
+##  $ ID_LOCAL  : chr  "RNN70" "RNN71" "RNN72" "RNN73" ...
+##  $ PRN_ASSO  : chr  NA NA NA NA ...
+##  $ CODE_R_ENP: chr  "RNN" "RNN" "RNN" "RNN" ...
+##  $ NOM_SITE  : chr  "Mas Larrieu" "Py" "Mantet" "Région De Digne" ...
+##  $ DATE_CREA : Date, format: "1984-07-17" "1984-09-17" ...
+##  $ MODIF_ADM : Date, format: NA NA ...
+##  $ MODIF_GEO : Date, format: "2011-10-19" "2011-10-19" ...
+##  $ URL_FICHE : chr  "https://inpn.mnhn.fr/espace/protege/FR3600070" "https://inpn.mnhn.fr/espace/protege/FR3600071" "https://inpn.mnhn.fr/espace/protege/FR3600072" "https://inpn.mnhn.fr/espace/protege/FR3600073" ...
+##  $ SURF_OFF  : num  145 3930 3028 269 16662 ...
+##  $ ACTE_DEB  : chr  "FR360006719840722" "FR360007119840919" "FR360007119840919" "FR360007319841106" ...
+##  $ ACTE_FIN  : chr  NA NA NA NA ...
+##  $ GEST_SITE : chr  NA NA NA NA ...
+##  $ OPERATEUR : chr  "DREAL LANGUEDOC-ROUSSILLON" "DREAL LANGUEDOC-ROUSSILLON" "DREAL LANGUEDOC-ROUSSILLON" "DREAL PROVENCE-ALPES-COTE-D'AZUR" ...
+##  $ SRC_GEOM  : chr  "BDP /TCHV2" "BDP" "BDP" NA ...
+##  $ SRC_ANNEE : chr  "2010" "2010" "2010" NA ...
+##  $ MARIN     : chr  "F" "F" "F" "F" ...
+##  $ P1_NATURE : chr  "N" "N" "N" "N" ...
+##  $ P2_CULTURE: chr  "N" "N" "N" "N" ...
+##  $ P3_PAYSAGE: chr  "N" "N" "N" "N" ...
+##  $ P4_GEOLOGI: chr  "N" "N" "N" "N" ...
+##  $ P5_SPELEO : chr  "N" "N" "N" "N" ...
+##  $ P6_ARCHEO : chr  "N" "N" "N" "N" ...
+##  $ P7_PALEOB : chr  "N" "N" "N" "N" ...
+##  $ P8_ANTHROP: chr  "N" "N" "N" "N" ...
+##  $ P9_SCIENCE: chr  "N" "N" "N" "N" ...
+##  $ P10_PUBLIC: chr  "N" "N" "N" "N" ...
+##  $ P11_DD    : chr  "N" "N" "N" "N" ...
+##  $ P12_AUTRE : chr  "N" "N" "N" "N" ...
+##  $ ID_MNHN   : chr  "FR3600070" "FR3600071" "FR3600072" "FR3600073" ...
+##  $ PRECISION : chr  "M" "M" "M" NA ...
+##  $ geometry  :sfc_MULTIPOLYGON of length 151; first list element: List of 1
+##   ..$ :List of 1
+##   .. ..$ : num [1:254, 1:2] 703769 703771 703769 703767 703764 ...
+##   ..- attr(*, "class")= chr [1:3] "XY" "MULTIPOLYGON" "sfg"
+##  - attr(*, "sf_column")= chr "geometry"
+##  - attr(*, "agr")= Factor w/ 3 levels "constant","aggregate",..: NA NA NA NA NA NA NA NA NA NA ...
+##   ..- attr(*, "names")= chr [1:30] "ID_LOCAL" "PRN_ASSO" "CODE_R_ENP" "NOM_SITE" ...
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{class}\NormalTok{(data\_rnn}\OperatorTok{$}\NormalTok{geometry)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "sfc_MULTIPOLYGON" "sfc"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{attributes}\NormalTok{(data\_rnn}\OperatorTok{$}\NormalTok{geometry)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## $n_empty
+## [1] 0
+## 
+## $crs
+## Coordinate Reference System:
+##   User input: RGF93 / Lambert-93 
+##   wkt:
+## PROJCRS["RGF93 / Lambert-93",
+##     BASEGEOGCRS["RGF93",
+##         DATUM["Reseau Geodesique Francais 1993",
+##             ELLIPSOID["GRS 1980",6378137,298.257222101,
+##                 LENGTHUNIT["metre",1]]],
+##         PRIMEM["Greenwich",0,
+##             ANGLEUNIT["degree",0.0174532925199433]],
+##         ID["EPSG",4171]],
+##     CONVERSION["Lambert-93",
+##         METHOD["Lambert Conic Conformal (2SP)",
+##             ID["EPSG",9802]],
+##         PARAMETER["Latitude of false origin",46.5,
+##             ANGLEUNIT["degree",0.0174532925199433],
+##             ID["EPSG",8821]],
+##         PARAMETER["Longitude of false origin",3,
+##             ANGLEUNIT["degree",0.0174532925199433],
+##             ID["EPSG",8822]],
+##         PARAMETER["Latitude of 1st standard parallel",49,
+##             ANGLEUNIT["degree",0.0174532925199433],
+##             ID["EPSG",8823]],
+##         PARAMETER["Latitude of 2nd standard parallel",44,
+##             ANGLEUNIT["degree",0.0174532925199433],
+##             ID["EPSG",8824]],
+##         PARAMETER["Easting at false origin",700000,
+##             LENGTHUNIT["metre",1],
+##             ID["EPSG",8826]],
+##         PARAMETER["Northing at false origin",6600000,
+##             LENGTHUNIT["metre",1],
+##             ID["EPSG",8827]]],
+##     CS[Cartesian,2],
+##         AXIS["easting (X)",east,
+##             ORDER[1],
+##             LENGTHUNIT["metre",1]],
+##         AXIS["northing (Y)",north,
+##             ORDER[2],
+##             LENGTHUNIT["metre",1]],
+##     USAGE[
+##         SCOPE["unknown"],
+##         AREA["France"],
+##         BBOX[41.15,-9.86,51.56,10.38]],
+##     ID["EPSG",2154]]
+## 
+## $class
+## [1] "sfc_MULTIPOLYGON" "sfc"             
+## 
+## $precision
+## [1] 0
+## 
+## $bbox
+##      xmin      ymin      xmax      ymax 
+##  107791.7 6145088.5 1077645.6 7109090.0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{st\_crs}\NormalTok{(data\_rnn)}\OperatorTok{$}\NormalTok{proj4string}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "+proj=lcc +lat_0=46.5 +lon_0=3 +lat_1=49 +lat_2=44 +x_0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
+\end{verbatim}
+
+\hypertarget{cruxe9ation-de-cartes-uxe0-partir-de-vecteurs}{%
+\subsubsection{Création de cartes à partir de vecteurs}\label{cruxe9ation-de-cartes-uxe0-partir-de-vecteurs}}
 
 
-\hypertarget{les-rasters}{%
-\subsection{Les rasters}\label{les-rasters}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(}\StringTok{"ggplot2"}\NormalTok{)}
+\KeywordTok{library}\NormalTok{(}\StringTok{"ggthemes"}\NormalTok{) }\CommentTok{\# Ajoute d\textquotesingle{}autres thèmes à ggplot2}
+\KeywordTok{library}\NormalTok{(}\StringTok{"ggrepel"}\NormalTok{)}
+\KeywordTok{library}\NormalTok{(}\StringTok{"dplyr"}\NormalTok{) }\CommentTok{\# Permet la manipulation des données}
+\KeywordTok{library}\NormalTok{(}\StringTok{"ggspatial"}\NormalTok{)}
+
+\CommentTok{\# Ajout des départements français.}
+\NormalTok{regions \textless{}{-}}\StringTok{ }\KeywordTok{st\_read}\NormalTok{(}\StringTok{"examples/regions{-}20180101{-}shp/regions{-}20180101.shp"}\NormalTok{) }\OperatorTok{\%\textgreater{}\%}
+\StringTok{  }\KeywordTok{filter}\NormalTok{(code\_insee }\OperatorTok{\%in\%}\StringTok{ }\DecValTok{1}\OperatorTok{:}\DecValTok{95}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Reading layer `regions-20180101' from data source `/home/alexis/Documents/doc Alexis Merot/Mon_aide_memoire/examples/regions-20180101-shp/regions-20180101.shp' using driver `ESRI Shapefile'
+## Simple feature collection with 18 features and 5 fields
+## geometry type:  MULTIPOLYGON
+## dimension:      XY
+## bbox:           xmin: -61.80976 ymin: -21.38973 xmax: 55.83669 ymax: 51.08899
+## geographic CRS: WGS 84
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Les données ne sont pas dans le bon référentiel (WGS 84).}
+\CommentTok{\# La projection Lambert 93 du référentiel RGF93 a pour référence EPSG:2154.}
+\CommentTok{\# regions \textless{}{-} st\_transform(regions, 2154)}
+
+\NormalTok{data\_rnn \textless{}{-}}\StringTok{ }\KeywordTok{st\_transform}\NormalTok{(data\_rnn, }\DecValTok{4326}\NormalTok{)}
+
+\CommentTok{\# Création de cartes avec ggplot2.}
+
+\CommentTok{\# Localisation des réserves en France métropolitaine}
+\NormalTok{rnn\_france \textless{}{-}}\StringTok{ }\KeywordTok{ggplot}\NormalTok{() }\OperatorTok{+}
+\StringTok{  }\KeywordTok{annotation\_map\_tile}\NormalTok{(}\DataTypeTok{zoomin =} \DecValTok{{-}1}\NormalTok{, }\DataTypeTok{type =} \StringTok{"stamenwatercolor"}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom\_sf}\NormalTok{(}
+    \DataTypeTok{data =}\NormalTok{ regions,}
+    \KeywordTok{aes}\NormalTok{(}\DataTypeTok{fill =}\NormalTok{ nom),}
+    \DataTypeTok{colour =} \StringTok{"black"}\NormalTok{,}
+    \DataTypeTok{size =} \FloatTok{1.1}\NormalTok{,}
+    \DataTypeTok{alpha =} \FloatTok{0.2}\NormalTok{,}
+    \DataTypeTok{show.legend =} \OtherTok{FALSE}
+\NormalTok{  ) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{stat\_sf\_coordinates}\NormalTok{(}\DataTypeTok{data =}\NormalTok{ data\_rnn, }\DataTypeTok{colour =} \StringTok{"darkred"}\NormalTok{, }\DataTypeTok{size =} \FloatTok{1.5}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{annotation\_north\_arrow}\NormalTok{(}
+    \DataTypeTok{location =} \StringTok{"bl"}\NormalTok{,}
+    \DataTypeTok{which\_north =} \StringTok{"true"}\NormalTok{,}
+    \DataTypeTok{style =} \KeywordTok{north\_arrow\_nautical}\NormalTok{()}
+\NormalTok{  ) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{coord\_sf}\NormalTok{(}\DataTypeTok{datum =} \KeywordTok{st\_crs}\NormalTok{(}\DecValTok{4326}\NormalTok{)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{theme\_linedraw}\NormalTok{() }\OperatorTok{+}
+\StringTok{  }\KeywordTok{theme}\NormalTok{(}
+    \DataTypeTok{panel.ontop =} \OtherTok{TRUE}\NormalTok{,}
+    \DataTypeTok{panel.background =} \KeywordTok{element\_blank}\NormalTok{(),}
+    \DataTypeTok{axis.title =} \KeywordTok{element\_blank}\NormalTok{()}
+\NormalTok{  )}
+
+\NormalTok{rnn\_france }\OperatorTok{+}\StringTok{ }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{tag =} \StringTok{"A"}\NormalTok{)}
+
+\CommentTok{\# On récupère les limites inférieures et supérieures de la RNN de la haute}
+\CommentTok{\# chaîne du Jura.}
+\NormalTok{crop\_limits \textless{}{-}}\StringTok{ }\KeywordTok{st\_bbox}\NormalTok{(}\KeywordTok{filter}\NormalTok{(data\_rnn, ID\_LOCAL }\OperatorTok{==}\StringTok{ "RNN112"}\NormalTok{))}
+
+\CommentTok{\# On zoome sur la carte des régions en augmentant les limites précédentes par 10 km.}
+\NormalTok{crop\_regions \textless{}{-}}\StringTok{ }\KeywordTok{st\_crop}\NormalTok{(regions, crop\_limits }\OperatorTok{+}\StringTok{ }\KeywordTok{c}\NormalTok{(}\OperatorTok{{-}}\FloatTok{0.1}\NormalTok{, }\FloatTok{{-}0.1}\NormalTok{, }\FloatTok{0.15}\NormalTok{, }\FloatTok{0.1}\NormalTok{))}
+
+\NormalTok{rnn\_jura \textless{}{-}}\StringTok{ }\KeywordTok{ggplot}\NormalTok{() }\OperatorTok{+}
+\StringTok{  }\KeywordTok{annotation\_map\_tile}\NormalTok{(}\DataTypeTok{zoomin =} \DecValTok{{-}1}\NormalTok{, }\DataTypeTok{type =} \StringTok{"stamenwatercolor"}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom\_sf}\NormalTok{(}\DataTypeTok{data =}\NormalTok{ crop\_regions, }\DataTypeTok{colour =} \StringTok{"black"}\NormalTok{, }\DataTypeTok{fill =} \OtherTok{NA}\NormalTok{, }\DataTypeTok{size =} \FloatTok{1.1}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom\_sf}\NormalTok{(}\DataTypeTok{data =} \KeywordTok{filter}\NormalTok{(data\_rnn, ID\_LOCAL }\OperatorTok{==}\StringTok{ "RNN112"}\NormalTok{), }\DataTypeTok{fill =} \StringTok{"darkred"}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{annotation\_north\_arrow}\NormalTok{(}
+    \DataTypeTok{location =} \StringTok{"bl"}\NormalTok{,}
+    \DataTypeTok{which\_north =} \StringTok{"true"}\NormalTok{,}
+    \DataTypeTok{style =} \KeywordTok{north\_arrow\_nautical}\NormalTok{()}
+\NormalTok{  ) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{coord\_sf}\NormalTok{(}\DataTypeTok{expand =} \OtherTok{FALSE}\NormalTok{, }\DataTypeTok{datum =} \KeywordTok{st\_crs}\NormalTok{(}\DecValTok{4326}\NormalTok{)) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{theme\_linedraw}\NormalTok{() }\OperatorTok{+}
+\StringTok{  }\KeywordTok{theme}\NormalTok{(}
+    \DataTypeTok{panel.ontop =} \OtherTok{TRUE}\NormalTok{,}
+    \DataTypeTok{panel.background =} \KeywordTok{element\_blank}\NormalTok{()}
+\NormalTok{  )}
+
+\NormalTok{rnn\_jura }\OperatorTok{+}\StringTok{ }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{tag =} \StringTok{"B"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{Mon_aide_memoire_R_files/figure-latex/plot-rnn-1} \includegraphics[width=1\linewidth]{Mon_aide_memoire_R_files/figure-latex/plot-rnn-2} 
+
+}
+
+\caption{(A) Carte des Réserves Naturelles de la France métropolitaine. (B) Carte montrant la délimitation de la Réserve Naturelle Nationale de la Haute Chaîne du Jura.}\label{fig:plot-rnn}
+\end{figure}
+
+\hypertarget{rasters}{%
+\subsection{Les rasters}\label{rasters}}
 
 Un raster représente une image constituée de pixels (cellules) organisé(e)s sous
 la forme d'une grille. C'est la représentation que l'on a l'habitude de voir
@@ -10061,8 +10299,8 @@ lorsque l'on parle d'une image numérique. Chaque pixel est unique et possède
 certaines valeurs le caractérisant (comme sa couleur, ses coordonnées, son
 altitude\ldots). Les données sont ainsi organisées en \textbf{matrice}, où chaque
 \textbf{cellule} correspond à un pixel. Pour bien superposer le raster à la carte,
-les matrices possèdent une en-tête incluant le \textbf{système de coordonnées
-spatiales}, \textbf{l'origine} (généralement les coordonnées du coin inférieur droit
+les matrices possèdent une en-tête incluant le \textbf{Système de Coordonnées de
+Référence}, \textbf{l'origine} (généralement les coordonnées du coin inférieur droit
 de la matrice), ainsi que l'\textbf{étendue de la matrice} (le nombre de colonnes, de
 lignes et la résolution spatiale \footnote{Globalement, la résolution spatiale est la \textbf{taille réelle du
   plus petit élément} représenté dans un jeu de données. Pour le \emph{mode
@@ -10075,6 +10313,9 @@ lignes et la résolution spatiale \footnote{Globalement, la résolution spatiale
   grande taille (résolution basse ou grossière).}).\\
 De par leurs caractéristiques, les rasters permettent de définir des \textbf{données
 discrètes} ainsi que des \textbf{données continues}.
+
+\hypertarget{CRS}{%
+\section{Les Systèmes de Coordonnées de Référence Géographiques et Projetées}\label{CRS}}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 

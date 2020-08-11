@@ -1,10 +1,10 @@
-# Les Systèmes d'Information Géographiques {#SIG}
+# Systèmes d'Information Géographique & Cartographie {#SIG}
 
 ::: {.infobox .caution data-latex="{caution}"}
 **Work In Progress**
 :::
 
-## Qu'est-ce qu'un SIG ?
+## Qu'est-ce qu'un SIG ? {#whatis-sig}
 
 <!-- TODO : Développer l'utilité des SIG dans les prises de décision --> 
 <!-- 
@@ -42,9 +42,9 @@ plus en plus performants).
 [^SIG]: Cf. la page Wikipédia sur le
 [Système d'Information Géographique](https://fr.wikipedia.org/wiki/Syst%C3%A8me_d%27information_g%C3%A9ographique).
 [^Référentiel]: Fond de carte représentant un territoire géographique sur lequel
-peuvent s'appuyer de nouvelles données cartographiques.
+peuvent venir s'insérer de nouvelles données cartographiques.
 
-## R en tant que SIG
+## R en tant que SIG {#R-sig}
 
 Afin d'avoir un bon aperçu et une bonne base sur l'utilisation de R en tant que
 SIG, je vous invite à lire le livre *Geocomputation with R* de @geocomputation.
@@ -81,7 +81,7 @@ vous invite à lire le chapitre [Why use R for
 geocomputation](https://geocompr.robinlovelace.net/intro.html#why-use-r-for-geocomputation)
 du livre de @geocomputation.
 
-## La représentation des données : les *vecteurs* et les *rasters*
+## La représentation des données : les *vecteurs* et les *rasters* {#data-sig}
 
 Pour représenter numériquement les données spatiales, deux modèles de base sont
 utilisés : les *vecteurs* (mode vectoriel) et les *rasters* (mode matriciel).
@@ -97,13 +97,13 @@ vecteurs ont une taille bien inférieure que ceux liés aux raster.
 Sous R, les vecteurs et les rasters sont travaillés respectivement avec les
 packages `sf` et `raster`.
 
-### Les vecteurs
+### Les vecteurs {#vectors}
 
 Un vecteur est une image vectorielle ou dessin mathématique constitué de deux
 composantes : une **composante attributaire** permettant de l'identifier, et une
 **composante graphique** décrivant sa géométrie. Il est localisé grâce à un
-système de coordonnées spatiales (ou CRS pour *Coordinate Reference System* en
-anglais). Les vecteurs sont basiquement composés de nœuds ou sommets qui sont
+Système de Coordonnées de Référence (ou CRS pour *Coordinate Reference System*
+en anglais). Les vecteurs sont basiquement composés de nœuds ou sommets qui sont
 des **points dans l'espace**. À partir de ces sommets, des **formules
 mathématiques** sont appliquées pour créer des **formes géométriques**. S'il n'y
 a qu'un sommet, le vecteur est simplement un point. S'il y a plusieurs sommets
@@ -123,24 +123,23 @@ s'appelle **Modèle d'Entité Simple** (SFA pour [*Simple Feature
 Access*](https://www.ogc.org/standards/sfa) en anglais) et permet de définir des
 fonctions pour accéder, faire des calculs et construire les données, dans le but
 de représenter les objets dans la réalité. C'est un modèle de données très
-largement supportés dans la plupart des logiciels SIG (dont QGIS) et a
+largement supporté dans la plupart des logiciels SIG (dont QGIS) et a
 l'avantage de rendre le travail totalement transférable d'un projet à un autre
 grâce à une architecture commune.
 
 Pour amener ce modèle dans R, le package `sf` a ainsi été créé pour succéder au
 package `sp` sur le long terme [^sf-vignette]. Les différents **types de
 géométrie** définis par la norme standardisée de l'OGC sont donc inclus dans ce
-package (fig. \@ref(fig:sfclasses)). Ces types de géométrie permettent de créer les
-entités, qui sont la **représentation d'un objet dans le monde réel** (comme un
-bâtiment, un champ ou un arbre). Chaque entité peut alors faire parti par
+package (fig. \@ref(fig:sfclasses)). Ces types de géométrie permettent de créer
+les entités, qui sont la **représentation d'un objet dans le monde réel** (comme
+un bâtiment, un champ ou un arbre). Chaque entité peut alors faire partie par
 exemple du type `POINT`, `POLYLIGNE` (`LINESTRING`) ou `POLYGONE`. En plus de
 cela, il est possible de créer d'autres entités à partir de l'agrégation de ces
 entités basiques (formant des `MULITPOINTS`, des `MULTIPOLYLIGNES` et des
 `MULTIPOLYGONES`). Une seule entité contenant plusieurs types de géométrie
 différents est alors de type « collection de géométrie » (`GEOMETRYCOLLECTION`).  
 Ces 7 types de géométrie précédemment cités font partis des types les plus
-utilisés. Dans le package `sf`, ces types sont représentés sous la forme de
-*classes*.
+utilisés.
 
 (ref:sfclasses) Exemple des différents types de géométrie supportés par le package `sf` (source : <https://geocompr.robinlovelace.net/spatial-class.html#intro-sf>)
 
@@ -152,19 +151,22 @@ Le package `sf` est multitâche, il permet de : lire et écrire des fichiers de
 données spatiales via la bibliothèque
 [GEOS](https://www.osgeo.org/projects/geos/) ; faire des opérations géométriques
 via la bibliothèque [GDAL](https://gdal.org/) ; mais aussi représenter et
-transformer des systèmes de coordonnées géographiques projetés via la
+transformer des systèmes de coordonnées projetées, à partir de la
 bibliothèque [PROJ](https://proj.org/).
 
+#### Lecture des fichiers de données spatiales pour les vecteurs
+
 Pour avoir un aperçu des objets `sf` sous R, nous allons prendre pour exemple
-les données des Réserves Naturelles Nationales (RNN) de la France métropolitaine
-(Tableau \@ref(tab:data-rnn)). Ces données proviennent de l'Inventaire National
-du Patrimoine Naturel ([INPN](https://inpn.mnhn.fr/accueil/index)) et elles sont
-trouvables sur le [site du gouvernement](https://www.data.gouv.fr/fr/datasets/inpn-donnees-du-programme-espaces-proteges/).
+les données de localisation des Réserves Naturelles Nationales (RNN) de la
+France métropolitaine (Tableau \@ref(tab:data-rnn)). Ces données proviennent de
+l'Inventaire National du Patrimoine Naturel
+([INPN](https://inpn.mnhn.fr/accueil/index)) et elles sont trouvables sur le
+[site du gouvernement](https://www.data.gouv.fr/fr/datasets/inpn-donnees-du-programme-espaces-proteges/).
 
 Plusieurs formats de fichier peuvent être utilisés pour stocker les données des
 vecteurs. Les plus utilisés sont le format *Shapefile* (**.shp**) de la société
-ESRI, les formats *Keyhole Markup Language* (**.kml**) de Google (et qui peut être
-compressé sous le format **.kmz**), ou aussi le format *Geographic Markup
+ESRI, les formats *Keyhole Markup Language* (**.kml**) de Google (et qui peut
+être compressé sous le format **.kmz**), ou aussi le format *Geographic Markup
 Language* (**.gml**) développé par l'OGC.
 
 Concernant les données spatiales des RNN, elles sont téléchargeables au format
@@ -179,9 +181,9 @@ contenant plusieurs fichiers.
 (ref:data-rnn) Jeu de données spatiales montrant les Réserves Naturelles Nationales de la France métropolitaine. 
 
 Une fois le package `sf` chargé, pour lire les données spatiales il faut
-utiliser la fonction `st_read()`. Pour ce cas là, il suffit alors de lui donner
-le chemin d'accès au fichier **.shp**. Les autres fichiers qui lui sont liés
-doivent être à la racine du même dossier. Pour plus d'informations sur les
+utiliser la fonction `st_read()`. Pour cet exemple, il suffit alors de lui
+donner le chemin d'accès au fichier **.shp**. Les autres fichiers qui lui sont
+liés doivent être stockés au même endroit. Pour plus d'informations sur les
 différents paramètres et les différentes possibilités de cette fonction, il ne
 faut pas hésiter à aller lire sa documentation.
 
@@ -199,6 +201,7 @@ de le manipuler facilement, notamment via le package
 [`dplyr`](http://larmarange.github.io/analyse-R/manipuler-les-donnees-avec-dplyr.html).
 
 ```{r data-rnn}
+# Visualisation du tableau de données
 knitr::kable(data_rnn, caption = "(ref:data-rnn)") %>%
   kableExtra::kable_styling(
     bootstrap_options = c("striped", "hovered", "condensed", "responsive"),
@@ -208,44 +211,90 @@ knitr::kable(data_rnn, caption = "(ref:data-rnn)") %>%
   kableExtra::scroll_box(width = "100%", height = "400px")
 ```
 
-(ref:plot-rnn) Carte des Réserves Naturelles de la France métropolitaine
+```{r str-data-rnn}
+# Visualisation de la structure du tableau de données
+str(data_rnn)
+class(data_rnn$geometry)
+attributes(data_rnn$geometry)
+st_crs(data_rnn)$proj4string
+```
 
-```{r plot-rnn, fig.cap='(ref:plot-rnn)', include=FALSE, eval=FALSE}
+
+#### Création de cartes à partir de vecteurs
+
+(ref:plot-rnn) (A) Carte des Réserves Naturelles de la France métropolitaine. (B) Carte montrant la délimitation de la Réserve Naturelle Nationale de la Haute Chaîne du Jura.
+
+```{r plot-rnn, fig.cap='(ref:plot-rnn)', fig.show = "hold", out.width="100%", message=FALSE, warning=FALSE}
 library("ggplot2")
 library("ggthemes") # Ajoute d'autres thèmes à ggplot2
-library("patchwork") # Permet de modifier la disposition des graphiques
+library("ggrepel")
 library("dplyr") # Permet la manipulation des données
+library("ggspatial")
 
-# Ajout des départements français
+# Ajout des départements français.
 regions <- st_read("examples/regions-20180101-shp/regions-20180101.shp") %>%
   filter(code_insee %in% 1:95)
 
-knitr::kable(regions) %>%
-  kableExtra::kable_styling(
-    bootstrap_options = c("striped", "hovered", "condensed", "responsive"),
-    font_size = 12,
-    fixed_thead = TRUE
-  ) %>%
-  kableExtra::scroll_box(width = "100%", height = "400px")
+# Les données ne sont pas dans le bon référentiel (WGS 84).
+# La projection Lambert 93 du référentiel RGF93 a pour référence EPSG:2154.
+# regions <- st_transform(regions, 2154)
 
-st_crs(regions)
-st_crs(data_rnn)
+data_rnn <- st_transform(data_rnn, 4326)
 
-# Création de cartes avec ggplot2
+# Création de cartes avec ggplot2.
+
+# Localisation des réserves en France métropolitaine
 rnn_france <- ggplot() +
-  geom_sf(data = regions, colour = "black", fill = "white", size = 1.1) +
-  geom_sf(data = data_rnn) +
-  theme_map()
+  annotation_map_tile(zoomin = -1, type = "stamenwatercolor") +
+  geom_sf(
+    data = regions,
+    aes(fill = nom),
+    colour = "black",
+    size = 1.1,
+    alpha = 0.2,
+    show.legend = FALSE
+  ) +
+  stat_sf_coordinates(data = data_rnn, colour = "darkred", size = 1.5) +
+  annotation_north_arrow(
+    location = "bl",
+    which_north = "true",
+    style = north_arrow_nautical()
+  ) +
+  coord_sf(datum = st_crs(4326)) +
+  theme_linedraw() +
+  theme(
+    panel.ontop = TRUE,
+    panel.background = element_blank(),
+    axis.title = element_blank()
+  )
+
+rnn_france + labs(tag = "A")
+
+# On récupère les limites inférieures et supérieures de la RNN de la haute
+# chaîne du Jura.
+crop_limits <- st_bbox(filter(data_rnn, ID_LOCAL == "RNN112"))
+
+# On zoome sur la carte des régions en augmentant les limites précédentes par 10 km.
+crop_regions <- st_crop(regions, crop_limits + c(-0.1, -0.1, 0.15, 0.1))
 
 rnn_jura <- ggplot() +
-    geom_sf(data = filter(regions, code_insee %in% c("84")), colour = "black", fill = "white", size = 1.1) +
-  geom_sf(data = filter(data_rnn, ID_LOCAL == "RNN112")) +
-  theme_map()
+  annotation_map_tile(zoomin = -1, type = "stamenwatercolor") +
+  geom_sf(data = crop_regions, colour = "black", fill = NA, size = 1.1) +
+  geom_sf(data = filter(data_rnn, ID_LOCAL == "RNN112"), fill = "darkred") +
+  annotation_north_arrow(
+    location = "bl",
+    which_north = "true",
+    style = north_arrow_nautical()
+  ) +
+  coord_sf(expand = FALSE, datum = st_crs(4326)) +
+  theme_linedraw() +
+  theme(
+    panel.ontop = TRUE,
+    panel.background = element_blank()
+  )
 
-# Disposition des cartes
-rnn_jura
+rnn_jura + labs(tag = "B")
 ```
-
 
 
 [^OGC]: L'OGC est un consortium international qui développe des standards ouverts
@@ -254,7 +303,7 @@ rnn_jura
 [^sf-vignette]: Cf. la [vignette](https://r-spatial.github.io/sf/articles/sf1.html)
 du package `sf` parlant de ce sujet.
 
-### Les rasters
+### Les rasters {#rasters}
 
 Un raster représente une image constituée de pixels (cellules) organisé(e)s sous
 la forme d'une grille. C'est la représentation que l'on a l'habitude de voir
@@ -262,8 +311,8 @@ lorsque l'on parle d'une image numérique. Chaque pixel est unique et possède
 certaines valeurs le caractérisant (comme sa couleur, ses coordonnées, son
 altitude...). Les données sont ainsi organisées en **matrice**, où chaque
 **cellule** correspond à un pixel. Pour bien superposer le raster à la carte,
-les matrices possèdent une en-tête incluant le **système de coordonnées
-spatiales**, **l'origine** (généralement les coordonnées du coin inférieur droit
+les matrices possèdent une en-tête incluant le **Système de Coordonnées de
+Référence**, **l'origine** (généralement les coordonnées du coin inférieur droit
 de la matrice), ainsi que l'**étendue de la matrice** (le nombre de colonnes, de
 lignes et la résolution spatiale [^resolution]).  
 De par leurs caractéristiques, les rasters permettent de définir des **données
@@ -279,6 +328,8 @@ de la résolution spatiale puisqu'il y aura plus de détails capturés avec des
 cellules de petite taille (résolution élevée ou fine) qu'avec des cellules de
 grande taille (résolution basse ou grossière).
 
+
+## Les Systèmes de Coordonnées de Référence Géographiques et Projetées {#CRS}
 
 
 ***
