@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.2)  11 AUG 2020 10:48
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.2)  11 AUG 2020 12:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1360,9 +1360,9 @@ Overfull \hbox (48.75pt too wide) in paragraph at lines 607--607
  ymax: 7109090[] 
  []
 
-LaTeX Info: Redefining \rmfamily on input line 641.
-LaTeX Info: Redefining \sffamily on input line 641.
-LaTeX Info: Redefining \ttfamily on input line 641.
+LaTeX Info: Redefining \rmfamily on input line 637.
+LaTeX Info: Redefining \sffamily on input line 637.
+LaTeX Info: Redefining \ttfamily on input line 637.
 
 Overfull \hbox (40.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -1370,9 +1370,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 19
  []
 
 [19]
-LaTeX Info: Redefining \rmfamily on input line 703.
-LaTeX Info: Redefining \sffamily on input line 703.
-LaTeX Info: Redefining \ttfamily on input line 703.
+LaTeX Info: Redefining \rmfamily on input line 699.
+LaTeX Info: Redefining \sffamily on input line 699.
+LaTeX Info: Redefining \ttfamily on input line 699.
 
 Overfull \hbox (58.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 20 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPHI
@@ -1380,9 +1380,9 @@ QUE & CARTOGRAPHIE
  []
 
 [20]
-LaTeX Info: Redefining \rmfamily on input line 765.
-LaTeX Info: Redefining \sffamily on input line 765.
-LaTeX Info: Redefining \ttfamily on input line 765.
+LaTeX Info: Redefining \rmfamily on input line 761.
+LaTeX Info: Redefining \sffamily on input line 761.
+LaTeX Info: Redefining \ttfamily on input line 761.
 
 Overfull \hbox (40.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -1390,9 +1390,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 21
  []
 
 [21]
-LaTeX Info: Redefining \rmfamily on input line 827.
-LaTeX Info: Redefining \sffamily on input line 827.
-LaTeX Info: Redefining \ttfamily on input line 827.
+LaTeX Info: Redefining \rmfamily on input line 823.
+LaTeX Info: Redefining \sffamily on input line 823.
+LaTeX Info: Redefining \ttfamily on input line 823.
 
 Overfull \hbox (58.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 22 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPHI
@@ -1400,9 +1400,9 @@ QUE & CARTOGRAPHIE
  []
 
 [22]
-LaTeX Info: Redefining \rmfamily on input line 889.
-LaTeX Info: Redefining \sffamily on input line 889.
-LaTeX Info: Redefining \ttfamily on input line 889.
+LaTeX Info: Redefining \rmfamily on input line 885.
+LaTeX Info: Redefining \sffamily on input line 885.
+LaTeX Info: Redefining \ttfamily on input line 885.
 
 Overfull \hbox (40.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -1410,9 +1410,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 23
  []
 
 [23]
-LaTeX Info: Redefining \rmfamily on input line 951.
-LaTeX Info: Redefining \sffamily on input line 951.
-LaTeX Info: Redefining \ttfamily on input line 951.
+LaTeX Info: Redefining \rmfamily on input line 947.
+LaTeX Info: Redefining \sffamily on input line 947.
+LaTeX Info: Redefining \ttfamily on input line 947.
 
 Overfull \hbox (58.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 24 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPHI
@@ -1420,9 +1420,9 @@ QUE & CARTOGRAPHIE
  []
 
 [24]
-LaTeX Info: Redefining \rmfamily on input line 1013.
-LaTeX Info: Redefining \sffamily on input line 1013.
-LaTeX Info: Redefining \ttfamily on input line 1013.
+LaTeX Info: Redefining \rmfamily on input line 1009.
+LaTeX Info: Redefining \sffamily on input line 1009.
+LaTeX Info: Redefining \ttfamily on input line 1009.
 
 Overfull \hbox (40.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -1430,9 +1430,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 25
  []
 
 [25]
-LaTeX Info: Redefining \rmfamily on input line 1075.
-LaTeX Info: Redefining \sffamily on input line 1075.
-LaTeX Info: Redefining \ttfamily on input line 1075.
+LaTeX Info: Redefining \rmfamily on input line 1071.
+LaTeX Info: Redefining \sffamily on input line 1071.
+LaTeX Info: Redefining \ttfamily on input line 1071.
 
 Overfull \hbox (58.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 26 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPHI
@@ -1440,9 +1440,9 @@ QUE & CARTOGRAPHIE
  []
 
 [26]
-LaTeX Info: Redefining \rmfamily on input line 1137.
-LaTeX Info: Redefining \sffamily on input line 1137.
-LaTeX Info: Redefining \ttfamily on input line 1137.
+LaTeX Info: Redefining \rmfamily on input line 1133.
+LaTeX Info: Redefining \sffamily on input line 1133.
+LaTeX Info: Redefining \ttfamily on input line 1133.
 
 Overfull \hbox (40.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -1450,9 +1450,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 27
  []
 
 [27]
-LaTeX Info: Redefining \rmfamily on input line 1199.
-LaTeX Info: Redefining \sffamily on input line 1199.
-LaTeX Info: Redefining \ttfamily on input line 1199.
+LaTeX Info: Redefining \rmfamily on input line 1195.
+LaTeX Info: Redefining \sffamily on input line 1195.
+LaTeX Info: Redefining \ttfamily on input line 1195.
 
 Overfull \hbox (58.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 28 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPHI
@@ -1460,9 +1460,9 @@ QUE & CARTOGRAPHIE
  []
 
 [28]
-LaTeX Info: Redefining \rmfamily on input line 1261.
-LaTeX Info: Redefining \sffamily on input line 1261.
-LaTeX Info: Redefining \ttfamily on input line 1261.
+LaTeX Info: Redefining \rmfamily on input line 1257.
+LaTeX Info: Redefining \sffamily on input line 1257.
+LaTeX Info: Redefining \ttfamily on input line 1257.
 
 Overfull \hbox (40.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -1470,9 +1470,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 29
  []
 
 [29]
-LaTeX Info: Redefining \rmfamily on input line 1323.
-LaTeX Info: Redefining \sffamily on input line 1323.
-LaTeX Info: Redefining \ttfamily on input line 1323.
+LaTeX Info: Redefining \rmfamily on input line 1319.
+LaTeX Info: Redefining \sffamily on input line 1319.
+LaTeX Info: Redefining \ttfamily on input line 1319.
 
 Overfull \hbox (58.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 30 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPHI
@@ -1480,9 +1480,9 @@ QUE & CARTOGRAPHIE
  []
 
 [30]
-LaTeX Info: Redefining \rmfamily on input line 1385.
-LaTeX Info: Redefining \sffamily on input line 1385.
-LaTeX Info: Redefining \ttfamily on input line 1385.
+LaTeX Info: Redefining \rmfamily on input line 1381.
+LaTeX Info: Redefining \sffamily on input line 1381.
+LaTeX Info: Redefining \ttfamily on input line 1381.
 
 Overfull \hbox (40.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -1490,9 +1490,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 31
  []
 
 [31]
-LaTeX Info: Redefining \rmfamily on input line 1447.
-LaTeX Info: Redefining \sffamily on input line 1447.
-LaTeX Info: Redefining \ttfamily on input line 1447.
+LaTeX Info: Redefining \rmfamily on input line 1443.
+LaTeX Info: Redefining \sffamily on input line 1443.
+LaTeX Info: Redefining \ttfamily on input line 1443.
 
 Overfull \hbox (58.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 32 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPHI
@@ -1500,9 +1500,9 @@ QUE & CARTOGRAPHIE
  []
 
 [32]
-LaTeX Info: Redefining \rmfamily on input line 1509.
-LaTeX Info: Redefining \sffamily on input line 1509.
-LaTeX Info: Redefining \ttfamily on input line 1509.
+LaTeX Info: Redefining \rmfamily on input line 1505.
+LaTeX Info: Redefining \sffamily on input line 1505.
+LaTeX Info: Redefining \ttfamily on input line 1505.
 
 Overfull \hbox (40.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -1510,9 +1510,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 33
  []
 
 [33]
-LaTeX Info: Redefining \rmfamily on input line 1571.
-LaTeX Info: Redefining \sffamily on input line 1571.
-LaTeX Info: Redefining \ttfamily on input line 1571.
+LaTeX Info: Redefining \rmfamily on input line 1567.
+LaTeX Info: Redefining \sffamily on input line 1567.
+LaTeX Info: Redefining \ttfamily on input line 1567.
 
 Overfull \hbox (58.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 34 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPHI
@@ -1520,9 +1520,9 @@ QUE & CARTOGRAPHIE
  []
 
 [34]
-LaTeX Info: Redefining \rmfamily on input line 1633.
-LaTeX Info: Redefining \sffamily on input line 1633.
-LaTeX Info: Redefining \ttfamily on input line 1633.
+LaTeX Info: Redefining \rmfamily on input line 1629.
+LaTeX Info: Redefining \sffamily on input line 1629.
+LaTeX Info: Redefining \ttfamily on input line 1629.
 
 Overfull \hbox (40.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -1530,9 +1530,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 35
  []
 
 [35]
-LaTeX Info: Redefining \rmfamily on input line 1695.
-LaTeX Info: Redefining \sffamily on input line 1695.
-LaTeX Info: Redefining \ttfamily on input line 1695.
+LaTeX Info: Redefining \rmfamily on input line 1691.
+LaTeX Info: Redefining \sffamily on input line 1691.
+LaTeX Info: Redefining \ttfamily on input line 1691.
 
 Overfull \hbox (58.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 36 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPHI
@@ -1540,9 +1540,9 @@ QUE & CARTOGRAPHIE
  []
 
 [36]
-LaTeX Info: Redefining \rmfamily on input line 1757.
-LaTeX Info: Redefining \sffamily on input line 1757.
-LaTeX Info: Redefining \ttfamily on input line 1757.
+LaTeX Info: Redefining \rmfamily on input line 1753.
+LaTeX Info: Redefining \sffamily on input line 1753.
+LaTeX Info: Redefining \ttfamily on input line 1753.
 
 Overfull \hbox (40.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -1550,9 +1550,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 37
  []
 
 [37]
-LaTeX Info: Redefining \rmfamily on input line 1819.
-LaTeX Info: Redefining \sffamily on input line 1819.
-LaTeX Info: Redefining \ttfamily on input line 1819.
+LaTeX Info: Redefining \rmfamily on input line 1815.
+LaTeX Info: Redefining \sffamily on input line 1815.
+LaTeX Info: Redefining \ttfamily on input line 1815.
 
 Overfull \hbox (58.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 38 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPHI
@@ -1560,9 +1560,9 @@ QUE & CARTOGRAPHIE
  []
 
 [38]
-LaTeX Info: Redefining \rmfamily on input line 1881.
-LaTeX Info: Redefining \sffamily on input line 1881.
-LaTeX Info: Redefining \ttfamily on input line 1881.
+LaTeX Info: Redefining \rmfamily on input line 1877.
+LaTeX Info: Redefining \sffamily on input line 1877.
+LaTeX Info: Redefining \ttfamily on input line 1877.
 
 Overfull \hbox (40.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -1570,9 +1570,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 39
  []
 
 [39]
-LaTeX Info: Redefining \rmfamily on input line 1943.
-LaTeX Info: Redefining \sffamily on input line 1943.
-LaTeX Info: Redefining \ttfamily on input line 1943.
+LaTeX Info: Redefining \rmfamily on input line 1939.
+LaTeX Info: Redefining \sffamily on input line 1939.
+LaTeX Info: Redefining \ttfamily on input line 1939.
 
 Overfull \hbox (58.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 40 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPHI
@@ -1580,9 +1580,9 @@ QUE & CARTOGRAPHIE
  []
 
 [40]
-LaTeX Info: Redefining \rmfamily on input line 2005.
-LaTeX Info: Redefining \sffamily on input line 2005.
-LaTeX Info: Redefining \ttfamily on input line 2005.
+LaTeX Info: Redefining \rmfamily on input line 2001.
+LaTeX Info: Redefining \sffamily on input line 2001.
+LaTeX Info: Redefining \ttfamily on input line 2001.
 
 Overfull \hbox (40.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -1590,9 +1590,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 41
  []
 
 [41]
-LaTeX Info: Redefining \rmfamily on input line 2067.
-LaTeX Info: Redefining \sffamily on input line 2067.
-LaTeX Info: Redefining \ttfamily on input line 2067.
+LaTeX Info: Redefining \rmfamily on input line 2063.
+LaTeX Info: Redefining \sffamily on input line 2063.
+LaTeX Info: Redefining \ttfamily on input line 2063.
 
 Overfull \hbox (58.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 42 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPHI
@@ -1600,9 +1600,9 @@ QUE & CARTOGRAPHIE
  []
 
 [42]
-LaTeX Info: Redefining \rmfamily on input line 2129.
-LaTeX Info: Redefining \sffamily on input line 2129.
-LaTeX Info: Redefining \ttfamily on input line 2129.
+LaTeX Info: Redefining \rmfamily on input line 2125.
+LaTeX Info: Redefining \sffamily on input line 2125.
+LaTeX Info: Redefining \ttfamily on input line 2125.
 
 Overfull \hbox (40.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -1610,9 +1610,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 43
  []
 
 [43]
-LaTeX Info: Redefining \rmfamily on input line 2191.
-LaTeX Info: Redefining \sffamily on input line 2191.
-LaTeX Info: Redefining \ttfamily on input line 2191.
+LaTeX Info: Redefining \rmfamily on input line 2187.
+LaTeX Info: Redefining \sffamily on input line 2187.
+LaTeX Info: Redefining \ttfamily on input line 2187.
 
 Overfull \hbox (58.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 44 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPHI
@@ -1620,9 +1620,9 @@ QUE & CARTOGRAPHIE
  []
 
 [44]
-LaTeX Info: Redefining \rmfamily on input line 2253.
-LaTeX Info: Redefining \sffamily on input line 2253.
-LaTeX Info: Redefining \ttfamily on input line 2253.
+LaTeX Info: Redefining \rmfamily on input line 2249.
+LaTeX Info: Redefining \sffamily on input line 2249.
+LaTeX Info: Redefining \ttfamily on input line 2249.
 
 Overfull \hbox (40.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -1630,9 +1630,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 45
  []
 
 [45]
-LaTeX Info: Redefining \rmfamily on input line 2315.
-LaTeX Info: Redefining \sffamily on input line 2315.
-LaTeX Info: Redefining \ttfamily on input line 2315.
+LaTeX Info: Redefining \rmfamily on input line 2311.
+LaTeX Info: Redefining \sffamily on input line 2311.
+LaTeX Info: Redefining \ttfamily on input line 2311.
 
 Overfull \hbox (58.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 46 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPHI
@@ -1640,9 +1640,9 @@ QUE & CARTOGRAPHIE
  []
 
 [46]
-LaTeX Info: Redefining \rmfamily on input line 2377.
-LaTeX Info: Redefining \sffamily on input line 2377.
-LaTeX Info: Redefining \ttfamily on input line 2377.
+LaTeX Info: Redefining \rmfamily on input line 2373.
+LaTeX Info: Redefining \sffamily on input line 2373.
+LaTeX Info: Redefining \ttfamily on input line 2373.
 
 Overfull \hbox (40.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -1650,9 +1650,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 47
  []
 
 [47]
-LaTeX Info: Redefining \rmfamily on input line 2439.
-LaTeX Info: Redefining \sffamily on input line 2439.
-LaTeX Info: Redefining \ttfamily on input line 2439.
+LaTeX Info: Redefining \rmfamily on input line 2435.
+LaTeX Info: Redefining \sffamily on input line 2435.
+LaTeX Info: Redefining \ttfamily on input line 2435.
 
 Overfull \hbox (58.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 48 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPHI
@@ -1660,9 +1660,9 @@ QUE & CARTOGRAPHIE
  []
 
 [48]
-LaTeX Info: Redefining \rmfamily on input line 2501.
-LaTeX Info: Redefining \sffamily on input line 2501.
-LaTeX Info: Redefining \ttfamily on input line 2501.
+LaTeX Info: Redefining \rmfamily on input line 2497.
+LaTeX Info: Redefining \sffamily on input line 2497.
+LaTeX Info: Redefining \ttfamily on input line 2497.
 
 Overfull \hbox (40.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -1670,9 +1670,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 49
  []
 
 [49]
-LaTeX Info: Redefining \rmfamily on input line 2563.
-LaTeX Info: Redefining \sffamily on input line 2563.
-LaTeX Info: Redefining \ttfamily on input line 2563.
+LaTeX Info: Redefining \rmfamily on input line 2559.
+LaTeX Info: Redefining \sffamily on input line 2559.
+LaTeX Info: Redefining \ttfamily on input line 2559.
 
 Overfull \hbox (58.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 50 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPHI
@@ -1680,9 +1680,9 @@ QUE & CARTOGRAPHIE
  []
 
 [50]
-LaTeX Info: Redefining \rmfamily on input line 2625.
-LaTeX Info: Redefining \sffamily on input line 2625.
-LaTeX Info: Redefining \ttfamily on input line 2625.
+LaTeX Info: Redefining \rmfamily on input line 2621.
+LaTeX Info: Redefining \sffamily on input line 2621.
+LaTeX Info: Redefining \ttfamily on input line 2621.
 
 Overfull \hbox (40.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -1690,9 +1690,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 51
  []
 
 [51]
-LaTeX Info: Redefining \rmfamily on input line 2687.
-LaTeX Info: Redefining \sffamily on input line 2687.
-LaTeX Info: Redefining \ttfamily on input line 2687.
+LaTeX Info: Redefining \rmfamily on input line 2683.
+LaTeX Info: Redefining \sffamily on input line 2683.
+LaTeX Info: Redefining \ttfamily on input line 2683.
 
 Overfull \hbox (58.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 52 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPHI
@@ -1700,9 +1700,9 @@ QUE & CARTOGRAPHIE
  []
 
 [52]
-LaTeX Info: Redefining \rmfamily on input line 2749.
-LaTeX Info: Redefining \sffamily on input line 2749.
-LaTeX Info: Redefining \ttfamily on input line 2749.
+LaTeX Info: Redefining \rmfamily on input line 2745.
+LaTeX Info: Redefining \sffamily on input line 2745.
+LaTeX Info: Redefining \ttfamily on input line 2745.
 
 Overfull \hbox (40.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -1710,9 +1710,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 53
  []
 
 [53]
-LaTeX Info: Redefining \rmfamily on input line 2811.
-LaTeX Info: Redefining \sffamily on input line 2811.
-LaTeX Info: Redefining \ttfamily on input line 2811.
+LaTeX Info: Redefining \rmfamily on input line 2807.
+LaTeX Info: Redefining \sffamily on input line 2807.
+LaTeX Info: Redefining \ttfamily on input line 2807.
 
 Overfull \hbox (58.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 54 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPHI
@@ -1720,9 +1720,9 @@ QUE & CARTOGRAPHIE
  []
 
 [54]
-LaTeX Info: Redefining \rmfamily on input line 2873.
-LaTeX Info: Redefining \sffamily on input line 2873.
-LaTeX Info: Redefining \ttfamily on input line 2873.
+LaTeX Info: Redefining \rmfamily on input line 2869.
+LaTeX Info: Redefining \sffamily on input line 2869.
+LaTeX Info: Redefining \ttfamily on input line 2869.
 
 Overfull \hbox (40.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -1730,9 +1730,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 55
  []
 
 [55]
-LaTeX Info: Redefining \rmfamily on input line 2935.
-LaTeX Info: Redefining \sffamily on input line 2935.
-LaTeX Info: Redefining \ttfamily on input line 2935.
+LaTeX Info: Redefining \rmfamily on input line 2931.
+LaTeX Info: Redefining \sffamily on input line 2931.
+LaTeX Info: Redefining \ttfamily on input line 2931.
 
 Overfull \hbox (58.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 56 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPHI
@@ -1740,9 +1740,9 @@ QUE & CARTOGRAPHIE
  []
 
 [56]
-LaTeX Info: Redefining \rmfamily on input line 2997.
-LaTeX Info: Redefining \sffamily on input line 2997.
-LaTeX Info: Redefining \ttfamily on input line 2997.
+LaTeX Info: Redefining \rmfamily on input line 2993.
+LaTeX Info: Redefining \sffamily on input line 2993.
+LaTeX Info: Redefining \ttfamily on input line 2993.
 
 Overfull \hbox (40.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -1750,9 +1750,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 57
  []
 
 [57]
-LaTeX Info: Redefining \rmfamily on input line 3059.
-LaTeX Info: Redefining \sffamily on input line 3059.
-LaTeX Info: Redefining \ttfamily on input line 3059.
+LaTeX Info: Redefining \rmfamily on input line 3055.
+LaTeX Info: Redefining \sffamily on input line 3055.
+LaTeX Info: Redefining \ttfamily on input line 3055.
 
 Overfull \hbox (58.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 58 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPHI
@@ -1760,9 +1760,9 @@ QUE & CARTOGRAPHIE
  []
 
 [58]
-LaTeX Info: Redefining \rmfamily on input line 3121.
-LaTeX Info: Redefining \sffamily on input line 3121.
-LaTeX Info: Redefining \ttfamily on input line 3121.
+LaTeX Info: Redefining \rmfamily on input line 3117.
+LaTeX Info: Redefining \sffamily on input line 3117.
+LaTeX Info: Redefining \ttfamily on input line 3117.
 
 Overfull \hbox (40.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -1770,9 +1770,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 59
  []
 
 [59]
-LaTeX Info: Redefining \rmfamily on input line 3183.
-LaTeX Info: Redefining \sffamily on input line 3183.
-LaTeX Info: Redefining \ttfamily on input line 3183.
+LaTeX Info: Redefining \rmfamily on input line 3179.
+LaTeX Info: Redefining \sffamily on input line 3179.
+LaTeX Info: Redefining \ttfamily on input line 3179.
 
 Overfull \hbox (58.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 60 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPHI
@@ -1780,9 +1780,9 @@ QUE & CARTOGRAPHIE
  []
 
 [60]
-LaTeX Info: Redefining \rmfamily on input line 3245.
-LaTeX Info: Redefining \sffamily on input line 3245.
-LaTeX Info: Redefining \ttfamily on input line 3245.
+LaTeX Info: Redefining \rmfamily on input line 3241.
+LaTeX Info: Redefining \sffamily on input line 3241.
+LaTeX Info: Redefining \ttfamily on input line 3241.
 
 Overfull \hbox (40.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -1790,9 +1790,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 61
  []
 
 [61]
-LaTeX Info: Redefining \rmfamily on input line 3307.
-LaTeX Info: Redefining \sffamily on input line 3307.
-LaTeX Info: Redefining \ttfamily on input line 3307.
+LaTeX Info: Redefining \rmfamily on input line 3303.
+LaTeX Info: Redefining \sffamily on input line 3303.
+LaTeX Info: Redefining \ttfamily on input line 3303.
 
 Overfull \hbox (58.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 62 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPHI
@@ -1800,9 +1800,9 @@ QUE & CARTOGRAPHIE
  []
 
 [62]
-LaTeX Info: Redefining \rmfamily on input line 3369.
-LaTeX Info: Redefining \sffamily on input line 3369.
-LaTeX Info: Redefining \ttfamily on input line 3369.
+LaTeX Info: Redefining \rmfamily on input line 3365.
+LaTeX Info: Redefining \sffamily on input line 3365.
+LaTeX Info: Redefining \ttfamily on input line 3365.
 
 Overfull \hbox (40.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -1810,9 +1810,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 63
  []
 
 [63]
-LaTeX Info: Redefining \rmfamily on input line 3431.
-LaTeX Info: Redefining \sffamily on input line 3431.
-LaTeX Info: Redefining \ttfamily on input line 3431.
+LaTeX Info: Redefining \rmfamily on input line 3427.
+LaTeX Info: Redefining \sffamily on input line 3427.
+LaTeX Info: Redefining \ttfamily on input line 3427.
 
 Overfull \hbox (58.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 64 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPHI
@@ -1820,9 +1820,9 @@ QUE & CARTOGRAPHIE
  []
 
 [64]
-LaTeX Info: Redefining \rmfamily on input line 3493.
-LaTeX Info: Redefining \sffamily on input line 3493.
-LaTeX Info: Redefining \ttfamily on input line 3493.
+LaTeX Info: Redefining \rmfamily on input line 3489.
+LaTeX Info: Redefining \sffamily on input line 3489.
+LaTeX Info: Redefining \ttfamily on input line 3489.
 
 Overfull \hbox (40.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -1830,9 +1830,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 65
  []
 
 [65]
-LaTeX Info: Redefining \rmfamily on input line 3555.
-LaTeX Info: Redefining \sffamily on input line 3555.
-LaTeX Info: Redefining \ttfamily on input line 3555.
+LaTeX Info: Redefining \rmfamily on input line 3551.
+LaTeX Info: Redefining \sffamily on input line 3551.
+LaTeX Info: Redefining \ttfamily on input line 3551.
 
 Overfull \hbox (58.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 66 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPHI
@@ -1840,9 +1840,9 @@ QUE & CARTOGRAPHIE
  []
 
 [66]
-LaTeX Info: Redefining \rmfamily on input line 3617.
-LaTeX Info: Redefining \sffamily on input line 3617.
-LaTeX Info: Redefining \ttfamily on input line 3617.
+LaTeX Info: Redefining \rmfamily on input line 3613.
+LaTeX Info: Redefining \sffamily on input line 3613.
+LaTeX Info: Redefining \ttfamily on input line 3613.
 
 Overfull \hbox (40.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -1850,9 +1850,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 67
  []
 
 [67]
-LaTeX Info: Redefining \rmfamily on input line 3679.
-LaTeX Info: Redefining \sffamily on input line 3679.
-LaTeX Info: Redefining \ttfamily on input line 3679.
+LaTeX Info: Redefining \rmfamily on input line 3675.
+LaTeX Info: Redefining \sffamily on input line 3675.
+LaTeX Info: Redefining \ttfamily on input line 3675.
 
 Overfull \hbox (58.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 68 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPHI
@@ -1860,9 +1860,9 @@ QUE & CARTOGRAPHIE
  []
 
 [68]
-LaTeX Info: Redefining \rmfamily on input line 3741.
-LaTeX Info: Redefining \sffamily on input line 3741.
-LaTeX Info: Redefining \ttfamily on input line 3741.
+LaTeX Info: Redefining \rmfamily on input line 3737.
+LaTeX Info: Redefining \sffamily on input line 3737.
+LaTeX Info: Redefining \ttfamily on input line 3737.
 
 Overfull \hbox (40.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -1870,9 +1870,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 69
  []
 
 [69]
-LaTeX Info: Redefining \rmfamily on input line 3803.
-LaTeX Info: Redefining \sffamily on input line 3803.
-LaTeX Info: Redefining \ttfamily on input line 3803.
+LaTeX Info: Redefining \rmfamily on input line 3799.
+LaTeX Info: Redefining \sffamily on input line 3799.
+LaTeX Info: Redefining \ttfamily on input line 3799.
 
 Overfull \hbox (58.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 70 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPHI
@@ -1880,9 +1880,9 @@ QUE & CARTOGRAPHIE
  []
 
 [70]
-LaTeX Info: Redefining \rmfamily on input line 3865.
-LaTeX Info: Redefining \sffamily on input line 3865.
-LaTeX Info: Redefining \ttfamily on input line 3865.
+LaTeX Info: Redefining \rmfamily on input line 3861.
+LaTeX Info: Redefining \sffamily on input line 3861.
+LaTeX Info: Redefining \ttfamily on input line 3861.
 
 Overfull \hbox (40.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -1890,9 +1890,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 71
  []
 
 [71]
-LaTeX Info: Redefining \rmfamily on input line 3927.
-LaTeX Info: Redefining \sffamily on input line 3927.
-LaTeX Info: Redefining \ttfamily on input line 3927.
+LaTeX Info: Redefining \rmfamily on input line 3923.
+LaTeX Info: Redefining \sffamily on input line 3923.
+LaTeX Info: Redefining \ttfamily on input line 3923.
 
 Overfull \hbox (58.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 72 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPHI
@@ -1900,9 +1900,9 @@ QUE & CARTOGRAPHIE
  []
 
 [72]
-LaTeX Info: Redefining \rmfamily on input line 3989.
-LaTeX Info: Redefining \sffamily on input line 3989.
-LaTeX Info: Redefining \ttfamily on input line 3989.
+LaTeX Info: Redefining \rmfamily on input line 3985.
+LaTeX Info: Redefining \sffamily on input line 3985.
+LaTeX Info: Redefining \ttfamily on input line 3985.
 
 Overfull \hbox (40.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -1910,9 +1910,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 73
  []
 
 [73]
-LaTeX Info: Redefining \rmfamily on input line 4051.
-LaTeX Info: Redefining \sffamily on input line 4051.
-LaTeX Info: Redefining \ttfamily on input line 4051.
+LaTeX Info: Redefining \rmfamily on input line 4047.
+LaTeX Info: Redefining \sffamily on input line 4047.
+LaTeX Info: Redefining \ttfamily on input line 4047.
 
 Overfull \hbox (58.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 74 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPHI
@@ -1920,9 +1920,9 @@ QUE & CARTOGRAPHIE
  []
 
 [74]
-LaTeX Info: Redefining \rmfamily on input line 4113.
-LaTeX Info: Redefining \sffamily on input line 4113.
-LaTeX Info: Redefining \ttfamily on input line 4113.
+LaTeX Info: Redefining \rmfamily on input line 4109.
+LaTeX Info: Redefining \sffamily on input line 4109.
+LaTeX Info: Redefining \ttfamily on input line 4109.
 
 Overfull \hbox (40.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -1930,9 +1930,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 75
  []
 
 [75]
-LaTeX Info: Redefining \rmfamily on input line 4175.
-LaTeX Info: Redefining \sffamily on input line 4175.
-LaTeX Info: Redefining \ttfamily on input line 4175.
+LaTeX Info: Redefining \rmfamily on input line 4171.
+LaTeX Info: Redefining \sffamily on input line 4171.
+LaTeX Info: Redefining \ttfamily on input line 4171.
 
 Overfull \hbox (58.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 76 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPHI
@@ -1940,9 +1940,9 @@ QUE & CARTOGRAPHIE
  []
 
 [76]
-LaTeX Info: Redefining \rmfamily on input line 4237.
-LaTeX Info: Redefining \sffamily on input line 4237.
-LaTeX Info: Redefining \ttfamily on input line 4237.
+LaTeX Info: Redefining \rmfamily on input line 4233.
+LaTeX Info: Redefining \sffamily on input line 4233.
+LaTeX Info: Redefining \ttfamily on input line 4233.
 
 Overfull \hbox (40.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -1950,9 +1950,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 77
  []
 
 [77]
-LaTeX Info: Redefining \rmfamily on input line 4299.
-LaTeX Info: Redefining \sffamily on input line 4299.
-LaTeX Info: Redefining \ttfamily on input line 4299.
+LaTeX Info: Redefining \rmfamily on input line 4295.
+LaTeX Info: Redefining \sffamily on input line 4295.
+LaTeX Info: Redefining \ttfamily on input line 4295.
 
 Overfull \hbox (58.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 78 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPHI
@@ -1960,9 +1960,9 @@ QUE & CARTOGRAPHIE
  []
 
 [78]
-LaTeX Info: Redefining \rmfamily on input line 4361.
-LaTeX Info: Redefining \sffamily on input line 4361.
-LaTeX Info: Redefining \ttfamily on input line 4361.
+LaTeX Info: Redefining \rmfamily on input line 4357.
+LaTeX Info: Redefining \sffamily on input line 4357.
+LaTeX Info: Redefining \ttfamily on input line 4357.
 
 Overfull \hbox (40.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -1970,9 +1970,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 79
  []
 
 [79]
-LaTeX Info: Redefining \rmfamily on input line 4423.
-LaTeX Info: Redefining \sffamily on input line 4423.
-LaTeX Info: Redefining \ttfamily on input line 4423.
+LaTeX Info: Redefining \rmfamily on input line 4419.
+LaTeX Info: Redefining \sffamily on input line 4419.
+LaTeX Info: Redefining \ttfamily on input line 4419.
 
 Overfull \hbox (58.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 80 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPHI
@@ -1980,9 +1980,9 @@ QUE & CARTOGRAPHIE
  []
 
 [80]
-LaTeX Info: Redefining \rmfamily on input line 4485.
-LaTeX Info: Redefining \sffamily on input line 4485.
-LaTeX Info: Redefining \ttfamily on input line 4485.
+LaTeX Info: Redefining \rmfamily on input line 4481.
+LaTeX Info: Redefining \sffamily on input line 4481.
+LaTeX Info: Redefining \ttfamily on input line 4481.
 
 Overfull \hbox (40.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -1990,9 +1990,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 81
  []
 
 [81]
-LaTeX Info: Redefining \rmfamily on input line 4547.
-LaTeX Info: Redefining \sffamily on input line 4547.
-LaTeX Info: Redefining \ttfamily on input line 4547.
+LaTeX Info: Redefining \rmfamily on input line 4543.
+LaTeX Info: Redefining \sffamily on input line 4543.
+LaTeX Info: Redefining \ttfamily on input line 4543.
 
 Overfull \hbox (58.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 82 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPHI
@@ -2000,9 +2000,9 @@ QUE & CARTOGRAPHIE
  []
 
 [82]
-LaTeX Info: Redefining \rmfamily on input line 4609.
-LaTeX Info: Redefining \sffamily on input line 4609.
-LaTeX Info: Redefining \ttfamily on input line 4609.
+LaTeX Info: Redefining \rmfamily on input line 4605.
+LaTeX Info: Redefining \sffamily on input line 4605.
+LaTeX Info: Redefining \ttfamily on input line 4605.
 
 Overfull \hbox (40.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -2010,9 +2010,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 83
  []
 
 [83]
-LaTeX Info: Redefining \rmfamily on input line 4671.
-LaTeX Info: Redefining \sffamily on input line 4671.
-LaTeX Info: Redefining \ttfamily on input line 4671.
+LaTeX Info: Redefining \rmfamily on input line 4667.
+LaTeX Info: Redefining \sffamily on input line 4667.
+LaTeX Info: Redefining \ttfamily on input line 4667.
 
 Overfull \hbox (58.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 84 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPHI
@@ -2020,9 +2020,9 @@ QUE & CARTOGRAPHIE
  []
 
 [84]
-LaTeX Info: Redefining \rmfamily on input line 4733.
-LaTeX Info: Redefining \sffamily on input line 4733.
-LaTeX Info: Redefining \ttfamily on input line 4733.
+LaTeX Info: Redefining \rmfamily on input line 4729.
+LaTeX Info: Redefining \sffamily on input line 4729.
+LaTeX Info: Redefining \ttfamily on input line 4729.
 
 Overfull \hbox (40.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -2030,9 +2030,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 85
  []
 
 [85]
-LaTeX Info: Redefining \rmfamily on input line 4795.
-LaTeX Info: Redefining \sffamily on input line 4795.
-LaTeX Info: Redefining \ttfamily on input line 4795.
+LaTeX Info: Redefining \rmfamily on input line 4791.
+LaTeX Info: Redefining \sffamily on input line 4791.
+LaTeX Info: Redefining \ttfamily on input line 4791.
 
 Overfull \hbox (58.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 86 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPHI
@@ -2040,9 +2040,9 @@ QUE & CARTOGRAPHIE
  []
 
 [86]
-LaTeX Info: Redefining \rmfamily on input line 4857.
-LaTeX Info: Redefining \sffamily on input line 4857.
-LaTeX Info: Redefining \ttfamily on input line 4857.
+LaTeX Info: Redefining \rmfamily on input line 4853.
+LaTeX Info: Redefining \sffamily on input line 4853.
+LaTeX Info: Redefining \ttfamily on input line 4853.
 
 Overfull \hbox (40.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -2050,9 +2050,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 87
  []
 
 [87]
-LaTeX Info: Redefining \rmfamily on input line 4919.
-LaTeX Info: Redefining \sffamily on input line 4919.
-LaTeX Info: Redefining \ttfamily on input line 4919.
+LaTeX Info: Redefining \rmfamily on input line 4915.
+LaTeX Info: Redefining \sffamily on input line 4915.
+LaTeX Info: Redefining \ttfamily on input line 4915.
 
 Overfull \hbox (58.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 88 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPHI
@@ -2060,9 +2060,9 @@ QUE & CARTOGRAPHIE
  []
 
 [88]
-LaTeX Info: Redefining \rmfamily on input line 4981.
-LaTeX Info: Redefining \sffamily on input line 4981.
-LaTeX Info: Redefining \ttfamily on input line 4981.
+LaTeX Info: Redefining \rmfamily on input line 4977.
+LaTeX Info: Redefining \sffamily on input line 4977.
+LaTeX Info: Redefining \ttfamily on input line 4977.
 
 Overfull \hbox (40.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -2070,9 +2070,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 89
  []
 
 [89]
-LaTeX Info: Redefining \rmfamily on input line 5043.
-LaTeX Info: Redefining \sffamily on input line 5043.
-LaTeX Info: Redefining \ttfamily on input line 5043.
+LaTeX Info: Redefining \rmfamily on input line 5039.
+LaTeX Info: Redefining \sffamily on input line 5039.
+LaTeX Info: Redefining \ttfamily on input line 5039.
 
 Overfull \hbox (58.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 90 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPHI
@@ -2080,9 +2080,9 @@ QUE & CARTOGRAPHIE
  []
 
 [90]
-LaTeX Info: Redefining \rmfamily on input line 5105.
-LaTeX Info: Redefining \sffamily on input line 5105.
-LaTeX Info: Redefining \ttfamily on input line 5105.
+LaTeX Info: Redefining \rmfamily on input line 5101.
+LaTeX Info: Redefining \sffamily on input line 5101.
+LaTeX Info: Redefining \ttfamily on input line 5101.
 
 Overfull \hbox (40.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -2090,9 +2090,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 91
  []
 
 [91]
-LaTeX Info: Redefining \rmfamily on input line 5167.
-LaTeX Info: Redefining \sffamily on input line 5167.
-LaTeX Info: Redefining \ttfamily on input line 5167.
+LaTeX Info: Redefining \rmfamily on input line 5163.
+LaTeX Info: Redefining \sffamily on input line 5163.
+LaTeX Info: Redefining \ttfamily on input line 5163.
 
 Overfull \hbox (58.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 92 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPHI
@@ -2100,9 +2100,9 @@ QUE & CARTOGRAPHIE
  []
 
 [92]
-LaTeX Info: Redefining \rmfamily on input line 5229.
-LaTeX Info: Redefining \sffamily on input line 5229.
-LaTeX Info: Redefining \ttfamily on input line 5229.
+LaTeX Info: Redefining \rmfamily on input line 5225.
+LaTeX Info: Redefining \sffamily on input line 5225.
+LaTeX Info: Redefining \ttfamily on input line 5225.
 
 Overfull \hbox (40.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -2110,9 +2110,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 93
  []
 
 [93]
-LaTeX Info: Redefining \rmfamily on input line 5291.
-LaTeX Info: Redefining \sffamily on input line 5291.
-LaTeX Info: Redefining \ttfamily on input line 5291.
+LaTeX Info: Redefining \rmfamily on input line 5287.
+LaTeX Info: Redefining \sffamily on input line 5287.
+LaTeX Info: Redefining \ttfamily on input line 5287.
 
 Overfull \hbox (58.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 94 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPHI
@@ -2120,9 +2120,9 @@ QUE & CARTOGRAPHIE
  []
 
 [94]
-LaTeX Info: Redefining \rmfamily on input line 5353.
-LaTeX Info: Redefining \sffamily on input line 5353.
-LaTeX Info: Redefining \ttfamily on input line 5353.
+LaTeX Info: Redefining \rmfamily on input line 5349.
+LaTeX Info: Redefining \sffamily on input line 5349.
+LaTeX Info: Redefining \ttfamily on input line 5349.
 
 Overfull \hbox (40.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -2130,9 +2130,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 95
  []
 
 [95]
-LaTeX Info: Redefining \rmfamily on input line 5415.
-LaTeX Info: Redefining \sffamily on input line 5415.
-LaTeX Info: Redefining \ttfamily on input line 5415.
+LaTeX Info: Redefining \rmfamily on input line 5411.
+LaTeX Info: Redefining \sffamily on input line 5411.
+LaTeX Info: Redefining \ttfamily on input line 5411.
 
 Overfull \hbox (58.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 96 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPHI
@@ -2140,9 +2140,9 @@ QUE & CARTOGRAPHIE
  []
 
 [96]
-LaTeX Info: Redefining \rmfamily on input line 5477.
-LaTeX Info: Redefining \sffamily on input line 5477.
-LaTeX Info: Redefining \ttfamily on input line 5477.
+LaTeX Info: Redefining \rmfamily on input line 5473.
+LaTeX Info: Redefining \sffamily on input line 5473.
+LaTeX Info: Redefining \ttfamily on input line 5473.
 
 Overfull \hbox (40.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -2150,9 +2150,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 97
  []
 
 [97]
-LaTeX Info: Redefining \rmfamily on input line 5539.
-LaTeX Info: Redefining \sffamily on input line 5539.
-LaTeX Info: Redefining \ttfamily on input line 5539.
+LaTeX Info: Redefining \rmfamily on input line 5535.
+LaTeX Info: Redefining \sffamily on input line 5535.
+LaTeX Info: Redefining \ttfamily on input line 5535.
 
 Overfull \hbox (58.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 98 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPHI
@@ -2160,9 +2160,9 @@ QUE & CARTOGRAPHIE
  []
 
 [98]
-LaTeX Info: Redefining \rmfamily on input line 5601.
-LaTeX Info: Redefining \sffamily on input line 5601.
-LaTeX Info: Redefining \ttfamily on input line 5601.
+LaTeX Info: Redefining \rmfamily on input line 5597.
+LaTeX Info: Redefining \sffamily on input line 5597.
+LaTeX Info: Redefining \ttfamily on input line 5597.
 
 Overfull \hbox (40.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -2170,9 +2170,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 99
  []
 
 [99]
-LaTeX Info: Redefining \rmfamily on input line 5663.
-LaTeX Info: Redefining \sffamily on input line 5663.
-LaTeX Info: Redefining \ttfamily on input line 5663.
+LaTeX Info: Redefining \rmfamily on input line 5659.
+LaTeX Info: Redefining \sffamily on input line 5659.
+LaTeX Info: Redefining \ttfamily on input line 5659.
 
 Overfull \hbox (63.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 100 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPH
@@ -2180,9 +2180,9 @@ IQUE & CARTOGRAPHIE
  []
 
 [100]
-LaTeX Info: Redefining \rmfamily on input line 5725.
-LaTeX Info: Redefining \sffamily on input line 5725.
-LaTeX Info: Redefining \ttfamily on input line 5725.
+LaTeX Info: Redefining \rmfamily on input line 5721.
+LaTeX Info: Redefining \sffamily on input line 5721.
+LaTeX Info: Redefining \ttfamily on input line 5721.
 
 Overfull \hbox (45.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -2190,9 +2190,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 101
  []
 
 [101]
-LaTeX Info: Redefining \rmfamily on input line 5787.
-LaTeX Info: Redefining \sffamily on input line 5787.
-LaTeX Info: Redefining \ttfamily on input line 5787.
+LaTeX Info: Redefining \rmfamily on input line 5783.
+LaTeX Info: Redefining \sffamily on input line 5783.
+LaTeX Info: Redefining \ttfamily on input line 5783.
 
 Overfull \hbox (63.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 102 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPH
@@ -2200,9 +2200,9 @@ IQUE & CARTOGRAPHIE
  []
 
 [102]
-LaTeX Info: Redefining \rmfamily on input line 5849.
-LaTeX Info: Redefining \sffamily on input line 5849.
-LaTeX Info: Redefining \ttfamily on input line 5849.
+LaTeX Info: Redefining \rmfamily on input line 5845.
+LaTeX Info: Redefining \sffamily on input line 5845.
+LaTeX Info: Redefining \ttfamily on input line 5845.
 
 Overfull \hbox (45.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -2210,9 +2210,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 103
  []
 
 [103]
-LaTeX Info: Redefining \rmfamily on input line 5911.
-LaTeX Info: Redefining \sffamily on input line 5911.
-LaTeX Info: Redefining \ttfamily on input line 5911.
+LaTeX Info: Redefining \rmfamily on input line 5907.
+LaTeX Info: Redefining \sffamily on input line 5907.
+LaTeX Info: Redefining \ttfamily on input line 5907.
 
 Overfull \hbox (63.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 104 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPH
@@ -2220,9 +2220,9 @@ IQUE & CARTOGRAPHIE
  []
 
 [104]
-LaTeX Info: Redefining \rmfamily on input line 5973.
-LaTeX Info: Redefining \sffamily on input line 5973.
-LaTeX Info: Redefining \ttfamily on input line 5973.
+LaTeX Info: Redefining \rmfamily on input line 5969.
+LaTeX Info: Redefining \sffamily on input line 5969.
+LaTeX Info: Redefining \ttfamily on input line 5969.
 
 Overfull \hbox (45.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -2230,9 +2230,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 105
  []
 
 [105]
-LaTeX Info: Redefining \rmfamily on input line 6035.
-LaTeX Info: Redefining \sffamily on input line 6035.
-LaTeX Info: Redefining \ttfamily on input line 6035.
+LaTeX Info: Redefining \rmfamily on input line 6031.
+LaTeX Info: Redefining \sffamily on input line 6031.
+LaTeX Info: Redefining \ttfamily on input line 6031.
 
 Overfull \hbox (63.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 106 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPH
@@ -2240,9 +2240,9 @@ IQUE & CARTOGRAPHIE
  []
 
 [106]
-LaTeX Info: Redefining \rmfamily on input line 6097.
-LaTeX Info: Redefining \sffamily on input line 6097.
-LaTeX Info: Redefining \ttfamily on input line 6097.
+LaTeX Info: Redefining \rmfamily on input line 6093.
+LaTeX Info: Redefining \sffamily on input line 6093.
+LaTeX Info: Redefining \ttfamily on input line 6093.
 
 Overfull \hbox (45.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -2250,9 +2250,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 107
  []
 
 [107]
-LaTeX Info: Redefining \rmfamily on input line 6159.
-LaTeX Info: Redefining \sffamily on input line 6159.
-LaTeX Info: Redefining \ttfamily on input line 6159.
+LaTeX Info: Redefining \rmfamily on input line 6155.
+LaTeX Info: Redefining \sffamily on input line 6155.
+LaTeX Info: Redefining \ttfamily on input line 6155.
 
 Overfull \hbox (63.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 108 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPH
@@ -2260,9 +2260,9 @@ IQUE & CARTOGRAPHIE
  []
 
 [108]
-LaTeX Info: Redefining \rmfamily on input line 6221.
-LaTeX Info: Redefining \sffamily on input line 6221.
-LaTeX Info: Redefining \ttfamily on input line 6221.
+LaTeX Info: Redefining \rmfamily on input line 6217.
+LaTeX Info: Redefining \sffamily on input line 6217.
+LaTeX Info: Redefining \ttfamily on input line 6217.
 
 Overfull \hbox (45.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -2270,9 +2270,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 109
  []
 
 [109]
-LaTeX Info: Redefining \rmfamily on input line 6283.
-LaTeX Info: Redefining \sffamily on input line 6283.
-LaTeX Info: Redefining \ttfamily on input line 6283.
+LaTeX Info: Redefining \rmfamily on input line 6279.
+LaTeX Info: Redefining \sffamily on input line 6279.
+LaTeX Info: Redefining \ttfamily on input line 6279.
 
 Overfull \hbox (63.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 110 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPH
@@ -2280,9 +2280,9 @@ IQUE & CARTOGRAPHIE
  []
 
 [110]
-LaTeX Info: Redefining \rmfamily on input line 6345.
-LaTeX Info: Redefining \sffamily on input line 6345.
-LaTeX Info: Redefining \ttfamily on input line 6345.
+LaTeX Info: Redefining \rmfamily on input line 6341.
+LaTeX Info: Redefining \sffamily on input line 6341.
+LaTeX Info: Redefining \ttfamily on input line 6341.
 
 Overfull \hbox (45.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -2290,9 +2290,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 111
  []
 
 [111]
-LaTeX Info: Redefining \rmfamily on input line 6407.
-LaTeX Info: Redefining \sffamily on input line 6407.
-LaTeX Info: Redefining \ttfamily on input line 6407.
+LaTeX Info: Redefining \rmfamily on input line 6403.
+LaTeX Info: Redefining \sffamily on input line 6403.
+LaTeX Info: Redefining \ttfamily on input line 6403.
 
 Overfull \hbox (63.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 112 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPH
@@ -2300,9 +2300,9 @@ IQUE & CARTOGRAPHIE
  []
 
 [112]
-LaTeX Info: Redefining \rmfamily on input line 6469.
-LaTeX Info: Redefining \sffamily on input line 6469.
-LaTeX Info: Redefining \ttfamily on input line 6469.
+LaTeX Info: Redefining \rmfamily on input line 6465.
+LaTeX Info: Redefining \sffamily on input line 6465.
+LaTeX Info: Redefining \ttfamily on input line 6465.
 
 Overfull \hbox (45.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -2310,9 +2310,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 113
  []
 
 [113]
-LaTeX Info: Redefining \rmfamily on input line 6531.
-LaTeX Info: Redefining \sffamily on input line 6531.
-LaTeX Info: Redefining \ttfamily on input line 6531.
+LaTeX Info: Redefining \rmfamily on input line 6527.
+LaTeX Info: Redefining \sffamily on input line 6527.
+LaTeX Info: Redefining \ttfamily on input line 6527.
 
 Overfull \hbox (63.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 114 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPH
@@ -2320,9 +2320,9 @@ IQUE & CARTOGRAPHIE
  []
 
 [114]
-LaTeX Info: Redefining \rmfamily on input line 6593.
-LaTeX Info: Redefining \sffamily on input line 6593.
-LaTeX Info: Redefining \ttfamily on input line 6593.
+LaTeX Info: Redefining \rmfamily on input line 6589.
+LaTeX Info: Redefining \sffamily on input line 6589.
+LaTeX Info: Redefining \ttfamily on input line 6589.
 
 Overfull \hbox (45.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -2330,9 +2330,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 115
  []
 
 [115]
-LaTeX Info: Redefining \rmfamily on input line 6655.
-LaTeX Info: Redefining \sffamily on input line 6655.
-LaTeX Info: Redefining \ttfamily on input line 6655.
+LaTeX Info: Redefining \rmfamily on input line 6651.
+LaTeX Info: Redefining \sffamily on input line 6651.
+LaTeX Info: Redefining \ttfamily on input line 6651.
 
 Overfull \hbox (63.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 116 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPH
@@ -2340,9 +2340,9 @@ IQUE & CARTOGRAPHIE
  []
 
 [116]
-LaTeX Info: Redefining \rmfamily on input line 6717.
-LaTeX Info: Redefining \sffamily on input line 6717.
-LaTeX Info: Redefining \ttfamily on input line 6717.
+LaTeX Info: Redefining \rmfamily on input line 6713.
+LaTeX Info: Redefining \sffamily on input line 6713.
+LaTeX Info: Redefining \ttfamily on input line 6713.
 
 Overfull \hbox (45.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -2350,9 +2350,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 117
  []
 
 [117]
-LaTeX Info: Redefining \rmfamily on input line 6779.
-LaTeX Info: Redefining \sffamily on input line 6779.
-LaTeX Info: Redefining \ttfamily on input line 6779.
+LaTeX Info: Redefining \rmfamily on input line 6775.
+LaTeX Info: Redefining \sffamily on input line 6775.
+LaTeX Info: Redefining \ttfamily on input line 6775.
 
 Overfull \hbox (63.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 118 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPH
@@ -2360,9 +2360,9 @@ IQUE & CARTOGRAPHIE
  []
 
 [118]
-LaTeX Info: Redefining \rmfamily on input line 6841.
-LaTeX Info: Redefining \sffamily on input line 6841.
-LaTeX Info: Redefining \ttfamily on input line 6841.
+LaTeX Info: Redefining \rmfamily on input line 6837.
+LaTeX Info: Redefining \sffamily on input line 6837.
+LaTeX Info: Redefining \ttfamily on input line 6837.
 
 Overfull \hbox (45.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -2370,9 +2370,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 119
  []
 
 [119]
-LaTeX Info: Redefining \rmfamily on input line 6903.
-LaTeX Info: Redefining \sffamily on input line 6903.
-LaTeX Info: Redefining \ttfamily on input line 6903.
+LaTeX Info: Redefining \rmfamily on input line 6899.
+LaTeX Info: Redefining \sffamily on input line 6899.
+LaTeX Info: Redefining \ttfamily on input line 6899.
 
 Overfull \hbox (63.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 120 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPH
@@ -2380,9 +2380,9 @@ IQUE & CARTOGRAPHIE
  []
 
 [120]
-LaTeX Info: Redefining \rmfamily on input line 6965.
-LaTeX Info: Redefining \sffamily on input line 6965.
-LaTeX Info: Redefining \ttfamily on input line 6965.
+LaTeX Info: Redefining \rmfamily on input line 6961.
+LaTeX Info: Redefining \sffamily on input line 6961.
+LaTeX Info: Redefining \ttfamily on input line 6961.
 
 Overfull \hbox (45.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -2390,9 +2390,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 121
  []
 
 [121]
-LaTeX Info: Redefining \rmfamily on input line 7027.
-LaTeX Info: Redefining \sffamily on input line 7027.
-LaTeX Info: Redefining \ttfamily on input line 7027.
+LaTeX Info: Redefining \rmfamily on input line 7023.
+LaTeX Info: Redefining \sffamily on input line 7023.
+LaTeX Info: Redefining \ttfamily on input line 7023.
 
 Overfull \hbox (63.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 122 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPH
@@ -2400,9 +2400,9 @@ IQUE & CARTOGRAPHIE
  []
 
 [122]
-LaTeX Info: Redefining \rmfamily on input line 7089.
-LaTeX Info: Redefining \sffamily on input line 7089.
-LaTeX Info: Redefining \ttfamily on input line 7089.
+LaTeX Info: Redefining \rmfamily on input line 7085.
+LaTeX Info: Redefining \sffamily on input line 7085.
+LaTeX Info: Redefining \ttfamily on input line 7085.
 
 Overfull \hbox (45.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -2410,9 +2410,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 123
  []
 
 [123]
-LaTeX Info: Redefining \rmfamily on input line 7151.
-LaTeX Info: Redefining \sffamily on input line 7151.
-LaTeX Info: Redefining \ttfamily on input line 7151.
+LaTeX Info: Redefining \rmfamily on input line 7147.
+LaTeX Info: Redefining \sffamily on input line 7147.
+LaTeX Info: Redefining \ttfamily on input line 7147.
 
 Overfull \hbox (63.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 124 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPH
@@ -2420,9 +2420,9 @@ IQUE & CARTOGRAPHIE
  []
 
 [124]
-LaTeX Info: Redefining \rmfamily on input line 7213.
-LaTeX Info: Redefining \sffamily on input line 7213.
-LaTeX Info: Redefining \ttfamily on input line 7213.
+LaTeX Info: Redefining \rmfamily on input line 7209.
+LaTeX Info: Redefining \sffamily on input line 7209.
+LaTeX Info: Redefining \ttfamily on input line 7209.
 
 Overfull \hbox (45.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -2430,9 +2430,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 125
  []
 
 [125]
-LaTeX Info: Redefining \rmfamily on input line 7275.
-LaTeX Info: Redefining \sffamily on input line 7275.
-LaTeX Info: Redefining \ttfamily on input line 7275.
+LaTeX Info: Redefining \rmfamily on input line 7271.
+LaTeX Info: Redefining \sffamily on input line 7271.
+LaTeX Info: Redefining \ttfamily on input line 7271.
 
 Overfull \hbox (63.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 126 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPH
@@ -2440,9 +2440,9 @@ IQUE & CARTOGRAPHIE
  []
 
 [126]
-LaTeX Info: Redefining \rmfamily on input line 7337.
-LaTeX Info: Redefining \sffamily on input line 7337.
-LaTeX Info: Redefining \ttfamily on input line 7337.
+LaTeX Info: Redefining \rmfamily on input line 7333.
+LaTeX Info: Redefining \sffamily on input line 7333.
+LaTeX Info: Redefining \ttfamily on input line 7333.
 
 Overfull \hbox (45.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -2450,9 +2450,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 127
  []
 
 [127]
-LaTeX Info: Redefining \rmfamily on input line 7399.
-LaTeX Info: Redefining \sffamily on input line 7399.
-LaTeX Info: Redefining \ttfamily on input line 7399.
+LaTeX Info: Redefining \rmfamily on input line 7395.
+LaTeX Info: Redefining \sffamily on input line 7395.
+LaTeX Info: Redefining \ttfamily on input line 7395.
 
 Overfull \hbox (63.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 128 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPH
@@ -2460,9 +2460,9 @@ IQUE & CARTOGRAPHIE
  []
 
 [128]
-LaTeX Info: Redefining \rmfamily on input line 7461.
-LaTeX Info: Redefining \sffamily on input line 7461.
-LaTeX Info: Redefining \ttfamily on input line 7461.
+LaTeX Info: Redefining \rmfamily on input line 7457.
+LaTeX Info: Redefining \sffamily on input line 7457.
+LaTeX Info: Redefining \ttfamily on input line 7457.
 
 Overfull \hbox (45.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -2470,9 +2470,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 129
  []
 
 [129]
-LaTeX Info: Redefining \rmfamily on input line 7523.
-LaTeX Info: Redefining \sffamily on input line 7523.
-LaTeX Info: Redefining \ttfamily on input line 7523.
+LaTeX Info: Redefining \rmfamily on input line 7519.
+LaTeX Info: Redefining \sffamily on input line 7519.
+LaTeX Info: Redefining \ttfamily on input line 7519.
 
 Overfull \hbox (63.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 130 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPH
@@ -2480,9 +2480,9 @@ IQUE & CARTOGRAPHIE
  []
 
 [130]
-LaTeX Info: Redefining \rmfamily on input line 7585.
-LaTeX Info: Redefining \sffamily on input line 7585.
-LaTeX Info: Redefining \ttfamily on input line 7585.
+LaTeX Info: Redefining \rmfamily on input line 7581.
+LaTeX Info: Redefining \sffamily on input line 7581.
+LaTeX Info: Redefining \ttfamily on input line 7581.
 
 Overfull \hbox (45.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -2490,9 +2490,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 131
  []
 
 [131]
-LaTeX Info: Redefining \rmfamily on input line 7647.
-LaTeX Info: Redefining \sffamily on input line 7647.
-LaTeX Info: Redefining \ttfamily on input line 7647.
+LaTeX Info: Redefining \rmfamily on input line 7643.
+LaTeX Info: Redefining \sffamily on input line 7643.
+LaTeX Info: Redefining \ttfamily on input line 7643.
 
 Overfull \hbox (63.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 132 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPH
@@ -2500,9 +2500,9 @@ IQUE & CARTOGRAPHIE
  []
 
 [132]
-LaTeX Info: Redefining \rmfamily on input line 7709.
-LaTeX Info: Redefining \sffamily on input line 7709.
-LaTeX Info: Redefining \ttfamily on input line 7709.
+LaTeX Info: Redefining \rmfamily on input line 7705.
+LaTeX Info: Redefining \sffamily on input line 7705.
+LaTeX Info: Redefining \ttfamily on input line 7705.
 
 Overfull \hbox (45.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -2510,9 +2510,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 133
  []
 
 [133]
-LaTeX Info: Redefining \rmfamily on input line 7771.
-LaTeX Info: Redefining \sffamily on input line 7771.
-LaTeX Info: Redefining \ttfamily on input line 7771.
+LaTeX Info: Redefining \rmfamily on input line 7767.
+LaTeX Info: Redefining \sffamily on input line 7767.
+LaTeX Info: Redefining \ttfamily on input line 7767.
 
 Overfull \hbox (63.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 134 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPH
@@ -2520,9 +2520,9 @@ IQUE & CARTOGRAPHIE
  []
 
 [134]
-LaTeX Info: Redefining \rmfamily on input line 7833.
-LaTeX Info: Redefining \sffamily on input line 7833.
-LaTeX Info: Redefining \ttfamily on input line 7833.
+LaTeX Info: Redefining \rmfamily on input line 7829.
+LaTeX Info: Redefining \sffamily on input line 7829.
+LaTeX Info: Redefining \ttfamily on input line 7829.
 
 Overfull \hbox (45.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -2530,9 +2530,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 135
  []
 
 [135]
-LaTeX Info: Redefining \rmfamily on input line 7895.
-LaTeX Info: Redefining \sffamily on input line 7895.
-LaTeX Info: Redefining \ttfamily on input line 7895.
+LaTeX Info: Redefining \rmfamily on input line 7891.
+LaTeX Info: Redefining \sffamily on input line 7891.
+LaTeX Info: Redefining \ttfamily on input line 7891.
 
 Overfull \hbox (63.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 136 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPH
@@ -2540,9 +2540,9 @@ IQUE & CARTOGRAPHIE
  []
 
 [136]
-LaTeX Info: Redefining \rmfamily on input line 7957.
-LaTeX Info: Redefining \sffamily on input line 7957.
-LaTeX Info: Redefining \ttfamily on input line 7957.
+LaTeX Info: Redefining \rmfamily on input line 7953.
+LaTeX Info: Redefining \sffamily on input line 7953.
+LaTeX Info: Redefining \ttfamily on input line 7953.
 
 Overfull \hbox (45.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -2550,9 +2550,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 137
  []
 
 [137]
-LaTeX Info: Redefining \rmfamily on input line 8019.
-LaTeX Info: Redefining \sffamily on input line 8019.
-LaTeX Info: Redefining \ttfamily on input line 8019.
+LaTeX Info: Redefining \rmfamily on input line 8015.
+LaTeX Info: Redefining \sffamily on input line 8015.
+LaTeX Info: Redefining \ttfamily on input line 8015.
 
 Overfull \hbox (63.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 138 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPH
@@ -2560,9 +2560,9 @@ IQUE & CARTOGRAPHIE
  []
 
 [138]
-LaTeX Info: Redefining \rmfamily on input line 8081.
-LaTeX Info: Redefining \sffamily on input line 8081.
-LaTeX Info: Redefining \ttfamily on input line 8081.
+LaTeX Info: Redefining \rmfamily on input line 8077.
+LaTeX Info: Redefining \sffamily on input line 8077.
+LaTeX Info: Redefining \ttfamily on input line 8077.
 
 Overfull \hbox (45.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -2570,9 +2570,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 139
  []
 
 [139]
-LaTeX Info: Redefining \rmfamily on input line 8143.
-LaTeX Info: Redefining \sffamily on input line 8143.
-LaTeX Info: Redefining \ttfamily on input line 8143.
+LaTeX Info: Redefining \rmfamily on input line 8139.
+LaTeX Info: Redefining \sffamily on input line 8139.
+LaTeX Info: Redefining \ttfamily on input line 8139.
 
 Overfull \hbox (63.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 140 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPH
@@ -2580,9 +2580,9 @@ IQUE & CARTOGRAPHIE
  []
 
 [140]
-LaTeX Info: Redefining \rmfamily on input line 8205.
-LaTeX Info: Redefining \sffamily on input line 8205.
-LaTeX Info: Redefining \ttfamily on input line 8205.
+LaTeX Info: Redefining \rmfamily on input line 8201.
+LaTeX Info: Redefining \sffamily on input line 8201.
+LaTeX Info: Redefining \ttfamily on input line 8201.
 
 Overfull \hbox (45.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -2590,9 +2590,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 141
  []
 
 [141]
-LaTeX Info: Redefining \rmfamily on input line 8267.
-LaTeX Info: Redefining \sffamily on input line 8267.
-LaTeX Info: Redefining \ttfamily on input line 8267.
+LaTeX Info: Redefining \rmfamily on input line 8263.
+LaTeX Info: Redefining \sffamily on input line 8263.
+LaTeX Info: Redefining \ttfamily on input line 8263.
 
 Overfull \hbox (63.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 142 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPH
@@ -2600,9 +2600,9 @@ IQUE & CARTOGRAPHIE
  []
 
 [142]
-LaTeX Info: Redefining \rmfamily on input line 8329.
-LaTeX Info: Redefining \sffamily on input line 8329.
-LaTeX Info: Redefining \ttfamily on input line 8329.
+LaTeX Info: Redefining \rmfamily on input line 8325.
+LaTeX Info: Redefining \sffamily on input line 8325.
+LaTeX Info: Redefining \ttfamily on input line 8325.
 
 Overfull \hbox (45.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -2610,9 +2610,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 143
  []
 
 [143]
-LaTeX Info: Redefining \rmfamily on input line 8391.
-LaTeX Info: Redefining \sffamily on input line 8391.
-LaTeX Info: Redefining \ttfamily on input line 8391.
+LaTeX Info: Redefining \rmfamily on input line 8387.
+LaTeX Info: Redefining \sffamily on input line 8387.
+LaTeX Info: Redefining \ttfamily on input line 8387.
 
 Overfull \hbox (63.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 144 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPH
@@ -2620,9 +2620,9 @@ IQUE & CARTOGRAPHIE
  []
 
 [144]
-LaTeX Info: Redefining \rmfamily on input line 8453.
-LaTeX Info: Redefining \sffamily on input line 8453.
-LaTeX Info: Redefining \ttfamily on input line 8453.
+LaTeX Info: Redefining \rmfamily on input line 8449.
+LaTeX Info: Redefining \sffamily on input line 8449.
+LaTeX Info: Redefining \ttfamily on input line 8449.
 
 Overfull \hbox (45.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -2630,9 +2630,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 145
  []
 
 [145]
-LaTeX Info: Redefining \rmfamily on input line 8515.
-LaTeX Info: Redefining \sffamily on input line 8515.
-LaTeX Info: Redefining \ttfamily on input line 8515.
+LaTeX Info: Redefining \rmfamily on input line 8511.
+LaTeX Info: Redefining \sffamily on input line 8511.
+LaTeX Info: Redefining \ttfamily on input line 8511.
 
 Overfull \hbox (63.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 146 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPH
@@ -2640,9 +2640,9 @@ IQUE & CARTOGRAPHIE
  []
 
 [146]
-LaTeX Info: Redefining \rmfamily on input line 8577.
-LaTeX Info: Redefining \sffamily on input line 8577.
-LaTeX Info: Redefining \ttfamily on input line 8577.
+LaTeX Info: Redefining \rmfamily on input line 8573.
+LaTeX Info: Redefining \sffamily on input line 8573.
+LaTeX Info: Redefining \ttfamily on input line 8573.
 
 Overfull \hbox (45.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -2650,9 +2650,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 147
  []
 
 [147]
-LaTeX Info: Redefining \rmfamily on input line 8639.
-LaTeX Info: Redefining \sffamily on input line 8639.
-LaTeX Info: Redefining \ttfamily on input line 8639.
+LaTeX Info: Redefining \rmfamily on input line 8635.
+LaTeX Info: Redefining \sffamily on input line 8635.
+LaTeX Info: Redefining \ttfamily on input line 8635.
 
 Overfull \hbox (63.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 148 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPH
@@ -2660,9 +2660,9 @@ IQUE & CARTOGRAPHIE
  []
 
 [148]
-LaTeX Info: Redefining \rmfamily on input line 8701.
-LaTeX Info: Redefining \sffamily on input line 8701.
-LaTeX Info: Redefining \ttfamily on input line 8701.
+LaTeX Info: Redefining \rmfamily on input line 8697.
+LaTeX Info: Redefining \sffamily on input line 8697.
+LaTeX Info: Redefining \ttfamily on input line 8697.
 
 Overfull \hbox (45.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -2670,9 +2670,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 149
  []
 
 [149]
-LaTeX Info: Redefining \rmfamily on input line 8763.
-LaTeX Info: Redefining \sffamily on input line 8763.
-LaTeX Info: Redefining \ttfamily on input line 8763.
+LaTeX Info: Redefining \rmfamily on input line 8759.
+LaTeX Info: Redefining \sffamily on input line 8759.
+LaTeX Info: Redefining \ttfamily on input line 8759.
 
 Overfull \hbox (63.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 150 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPH
@@ -2680,9 +2680,9 @@ IQUE & CARTOGRAPHIE
  []
 
 [150]
-LaTeX Info: Redefining \rmfamily on input line 8825.
-LaTeX Info: Redefining \sffamily on input line 8825.
-LaTeX Info: Redefining \ttfamily on input line 8825.
+LaTeX Info: Redefining \rmfamily on input line 8821.
+LaTeX Info: Redefining \sffamily on input line 8821.
+LaTeX Info: Redefining \ttfamily on input line 8821.
 
 Overfull \hbox (45.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -2690,9 +2690,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 151
  []
 
 [151]
-LaTeX Info: Redefining \rmfamily on input line 8887.
-LaTeX Info: Redefining \sffamily on input line 8887.
-LaTeX Info: Redefining \ttfamily on input line 8887.
+LaTeX Info: Redefining \rmfamily on input line 8883.
+LaTeX Info: Redefining \sffamily on input line 8883.
+LaTeX Info: Redefining \ttfamily on input line 8883.
 
 Overfull \hbox (63.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 152 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPH
@@ -2700,9 +2700,9 @@ IQUE & CARTOGRAPHIE
  []
 
 [152]
-LaTeX Info: Redefining \rmfamily on input line 8949.
-LaTeX Info: Redefining \sffamily on input line 8949.
-LaTeX Info: Redefining \ttfamily on input line 8949.
+LaTeX Info: Redefining \rmfamily on input line 8945.
+LaTeX Info: Redefining \sffamily on input line 8945.
+LaTeX Info: Redefining \ttfamily on input line 8945.
 
 Overfull \hbox (45.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -2710,9 +2710,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 153
  []
 
 [153]
-LaTeX Info: Redefining \rmfamily on input line 9011.
-LaTeX Info: Redefining \sffamily on input line 9011.
-LaTeX Info: Redefining \ttfamily on input line 9011.
+LaTeX Info: Redefining \rmfamily on input line 9007.
+LaTeX Info: Redefining \sffamily on input line 9007.
+LaTeX Info: Redefining \ttfamily on input line 9007.
 
 Overfull \hbox (63.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 154 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPH
@@ -2720,9 +2720,9 @@ IQUE & CARTOGRAPHIE
  []
 
 [154]
-LaTeX Info: Redefining \rmfamily on input line 9073.
-LaTeX Info: Redefining \sffamily on input line 9073.
-LaTeX Info: Redefining \ttfamily on input line 9073.
+LaTeX Info: Redefining \rmfamily on input line 9069.
+LaTeX Info: Redefining \sffamily on input line 9069.
+LaTeX Info: Redefining \ttfamily on input line 9069.
 
 Overfull \hbox (45.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -2730,9 +2730,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 155
  []
 
 [155]
-LaTeX Info: Redefining \rmfamily on input line 9135.
-LaTeX Info: Redefining \sffamily on input line 9135.
-LaTeX Info: Redefining \ttfamily on input line 9135.
+LaTeX Info: Redefining \rmfamily on input line 9131.
+LaTeX Info: Redefining \sffamily on input line 9131.
+LaTeX Info: Redefining \ttfamily on input line 9131.
 
 Overfull \hbox (63.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 156 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPH
@@ -2740,9 +2740,9 @@ IQUE & CARTOGRAPHIE
  []
 
 [156]
-LaTeX Info: Redefining \rmfamily on input line 9197.
-LaTeX Info: Redefining \sffamily on input line 9197.
-LaTeX Info: Redefining \ttfamily on input line 9197.
+LaTeX Info: Redefining \rmfamily on input line 9193.
+LaTeX Info: Redefining \sffamily on input line 9193.
+LaTeX Info: Redefining \ttfamily on input line 9193.
 
 Overfull \hbox (45.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -2750,9 +2750,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 157
  []
 
 [157]
-LaTeX Info: Redefining \rmfamily on input line 9259.
-LaTeX Info: Redefining \sffamily on input line 9259.
-LaTeX Info: Redefining \ttfamily on input line 9259.
+LaTeX Info: Redefining \rmfamily on input line 9255.
+LaTeX Info: Redefining \sffamily on input line 9255.
+LaTeX Info: Redefining \ttfamily on input line 9255.
 
 Overfull \hbox (63.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 158 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPH
@@ -2760,9 +2760,9 @@ IQUE & CARTOGRAPHIE
  []
 
 [158]
-LaTeX Info: Redefining \rmfamily on input line 9321.
-LaTeX Info: Redefining \sffamily on input line 9321.
-LaTeX Info: Redefining \ttfamily on input line 9321.
+LaTeX Info: Redefining \rmfamily on input line 9317.
+LaTeX Info: Redefining \sffamily on input line 9317.
+LaTeX Info: Redefining \ttfamily on input line 9317.
 
 Overfull \hbox (45.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -2770,9 +2770,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 159
  []
 
 [159]
-LaTeX Info: Redefining \rmfamily on input line 9383.
-LaTeX Info: Redefining \sffamily on input line 9383.
-LaTeX Info: Redefining \ttfamily on input line 9383.
+LaTeX Info: Redefining \rmfamily on input line 9379.
+LaTeX Info: Redefining \sffamily on input line 9379.
+LaTeX Info: Redefining \ttfamily on input line 9379.
 
 Overfull \hbox (63.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 160 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPH
@@ -2780,9 +2780,9 @@ IQUE & CARTOGRAPHIE
  []
 
 [160]
-LaTeX Info: Redefining \rmfamily on input line 9445.
-LaTeX Info: Redefining \sffamily on input line 9445.
-LaTeX Info: Redefining \ttfamily on input line 9445.
+LaTeX Info: Redefining \rmfamily on input line 9441.
+LaTeX Info: Redefining \sffamily on input line 9441.
+LaTeX Info: Redefining \ttfamily on input line 9441.
 
 Overfull \hbox (45.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -2790,9 +2790,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 161
  []
 
 [161]
-LaTeX Info: Redefining \rmfamily on input line 9507.
-LaTeX Info: Redefining \sffamily on input line 9507.
-LaTeX Info: Redefining \ttfamily on input line 9507.
+LaTeX Info: Redefining \rmfamily on input line 9503.
+LaTeX Info: Redefining \sffamily on input line 9503.
+LaTeX Info: Redefining \ttfamily on input line 9503.
 
 Overfull \hbox (63.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 162 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPH
@@ -2800,9 +2800,9 @@ IQUE & CARTOGRAPHIE
  []
 
 [162]
-LaTeX Info: Redefining \rmfamily on input line 9569.
-LaTeX Info: Redefining \sffamily on input line 9569.
-LaTeX Info: Redefining \ttfamily on input line 9569.
+LaTeX Info: Redefining \rmfamily on input line 9565.
+LaTeX Info: Redefining \sffamily on input line 9565.
+LaTeX Info: Redefining \ttfamily on input line 9565.
 
 Overfull \hbox (45.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -2810,9 +2810,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 163
  []
 
 [163]
-LaTeX Info: Redefining \rmfamily on input line 9631.
-LaTeX Info: Redefining \sffamily on input line 9631.
-LaTeX Info: Redefining \ttfamily on input line 9631.
+LaTeX Info: Redefining \rmfamily on input line 9627.
+LaTeX Info: Redefining \sffamily on input line 9627.
+LaTeX Info: Redefining \ttfamily on input line 9627.
 
 Overfull \hbox (63.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 164 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPH
@@ -2820,9 +2820,9 @@ IQUE & CARTOGRAPHIE
  []
 
 [164]
-LaTeX Info: Redefining \rmfamily on input line 9693.
-LaTeX Info: Redefining \sffamily on input line 9693.
-LaTeX Info: Redefining \ttfamily on input line 9693.
+LaTeX Info: Redefining \rmfamily on input line 9689.
+LaTeX Info: Redefining \sffamily on input line 9689.
+LaTeX Info: Redefining \ttfamily on input line 9689.
 
 Overfull \hbox (45.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -2830,9 +2830,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 165
  []
 
 [165]
-LaTeX Info: Redefining \rmfamily on input line 9755.
-LaTeX Info: Redefining \sffamily on input line 9755.
-LaTeX Info: Redefining \ttfamily on input line 9755.
+LaTeX Info: Redefining \rmfamily on input line 9751.
+LaTeX Info: Redefining \sffamily on input line 9751.
+LaTeX Info: Redefining \ttfamily on input line 9751.
 
 Overfull \hbox (63.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 166 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPH
@@ -2840,9 +2840,9 @@ IQUE & CARTOGRAPHIE
  []
 
 [166]
-LaTeX Info: Redefining \rmfamily on input line 9817.
-LaTeX Info: Redefining \sffamily on input line 9817.
-LaTeX Info: Redefining \ttfamily on input line 9817.
+LaTeX Info: Redefining \rmfamily on input line 9813.
+LaTeX Info: Redefining \sffamily on input line 9813.
+LaTeX Info: Redefining \ttfamily on input line 9813.
 
 Overfull \hbox (45.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -2850,9 +2850,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 167
  []
 
 [167]
-LaTeX Info: Redefining \rmfamily on input line 9879.
-LaTeX Info: Redefining \sffamily on input line 9879.
-LaTeX Info: Redefining \ttfamily on input line 9879.
+LaTeX Info: Redefining \rmfamily on input line 9875.
+LaTeX Info: Redefining \sffamily on input line 9875.
+LaTeX Info: Redefining \ttfamily on input line 9875.
 
 Overfull \hbox (63.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 168 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPH
@@ -2860,9 +2860,9 @@ IQUE & CARTOGRAPHIE
  []
 
 [168]
-LaTeX Info: Redefining \rmfamily on input line 9941.
-LaTeX Info: Redefining \sffamily on input line 9941.
-LaTeX Info: Redefining \ttfamily on input line 9941.
+LaTeX Info: Redefining \rmfamily on input line 9937.
+LaTeX Info: Redefining \sffamily on input line 9937.
+LaTeX Info: Redefining \ttfamily on input line 9937.
 
 Overfull \hbox (45.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -2870,9 +2870,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 169
  []
 
 [169]
-LaTeX Info: Redefining \rmfamily on input line 10003.
-LaTeX Info: Redefining \sffamily on input line 10003.
-LaTeX Info: Redefining \ttfamily on input line 10003.
+LaTeX Info: Redefining \rmfamily on input line 9999.
+LaTeX Info: Redefining \sffamily on input line 9999.
+LaTeX Info: Redefining \ttfamily on input line 9999.
 
 Overfull \hbox (63.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 170 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPH
@@ -2880,13 +2880,13 @@ IQUE & CARTOGRAPHIE
  []
 
 [170]
-LaTeX Info: Redefining \rmfamily on input line 10066.
-LaTeX Info: Redefining \sffamily on input line 10066.
-LaTeX Info: Redefining \ttfamily on input line 10066.
+LaTeX Info: Redefining \rmfamily on input line 10057.
+LaTeX Info: Redefining \sffamily on input line 10057.
+LaTeX Info: Redefining \ttfamily on input line 10057.
 
-Overfull \hbox (11.73001pt too wide) has occurred while \output is active
-\TU/lmtt/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmtt/m/n/10 VECT
-EURS \TU/lmtt/m/sl/10 ET LES \TU/lmtt/m/n/10 RASTERS \TU/lmr/m/n/10 171
+Overfull \hbox (45.61224pt too wide) has occurred while \output is active
+\TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
+RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 171
  []
 
 [171]
@@ -2946,19 +2946,21 @@ Overfull \hbox (111.75pt too wide) in paragraph at lines 10102--10102
 CODE_R_ENP" "NOM_SITE" ...[] 
  []
 
-LaTeX Info: Redefining \rmfamily on input line 10124.
-LaTeX Info: Redefining \sffamily on input line 10124.
-LaTeX Info: Redefining \ttfamily on input line 10124.
+LaTeX Info: Redefining \rmfamily on input line 10115.
+LaTeX Info: Redefining \sffamily on input line 10115.
+LaTeX Info: Redefining \ttfamily on input line 10115.
 
-Overfull \hbox (0.75pt too wide) has occurred while \output is active
-\TU/lmr/m/n/10 172 \TU/lmtt/m/sl/10 CHAPITRE 5.  SYSTÈMES D'INFORMATION GÉOGRAP
-HIQUE & CARTOGRAPHIE
+Overfull \hbox (63.04335pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 172 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPH
+IQUE & CARTOGRAPHIE
  []
 
 [172]
-LaTeX Info: Redefining \rmfamily on input line 10170.
-LaTeX Info: Redefining \sffamily on input line 10170.
-LaTeX Info: Redefining \ttfamily on input line 10170.
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Info: Redefining \rmfamily on input line 10165.
+LaTeX Info: Redefining \sffamily on input line 10165.
+LaTeX Info: Redefining \ttfamily on input line 10165.
 
 Overfull \hbox (11.73001pt too wide) has occurred while \output is active
 \TU/lmtt/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmtt/m/n/10 VECT
@@ -3021,9 +3023,9 @@ df)
 
 LaTeX Warning: Float too large for page by 210.59673pt on input line 10291.
 
-LaTeX Info: Redefining \rmfamily on input line 10369.
-LaTeX Info: Redefining \sffamily on input line 10369.
-LaTeX Info: Redefining \ttfamily on input line 10369.
+LaTeX Info: Redefining \rmfamily on input line 10355.
+LaTeX Info: Redefining \sffamily on input line 10355.
+LaTeX Info: Redefining \ttfamily on input line 10355.
 
 Overfull \hbox (63.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 176 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPH
@@ -3031,26 +3033,83 @@ IQUE & CARTOGRAPHIE
  []
 
 [176]
-LaTeX Info: Redefining \rmfamily on input line 10369.
-LaTeX Info: Redefining \sffamily on input line 10369.
-LaTeX Info: Redefining \ttfamily on input line 10369.
+LaTeX Info: Redefining \rmfamily on input line 10355.
+LaTeX Info: Redefining \sffamily on input line 10355.
+LaTeX Info: Redefining \ttfamily on input line 10355.
 
 Overfull \hbox (117.18785pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.4.  LES SYSTÈMES DE COORDONNÉES DE RÉFÉRENCE GÉOGRAPHIQUES ET
  PROJETÉES \TU/lmr/m/n/10 177
  []
 
-[177] (./Mon_aide_memoire_R.bbl
-LaTeX Info: Redefining \rmfamily on input line 1.
-LaTeX Info: Redefining \sffamily on input line 1.
-LaTeX Info: Redefining \ttfamily on input line 1.
+[177]
+LaTeX Info: Redefining \rmfamily on input line 10384.
+LaTeX Info: Redefining \sffamily on input line 10384.
+LaTeX Info: Redefining \ttfamily on input line 10384.
 
 Overfull \hbox (63.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 178 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPH
 IQUE & CARTOGRAPHIE
  []
 
-[178])
+[178]
+Overfull \hbox (80.25pt too wide) in paragraph at lines 10388--10388
+[]\TU/lmtt/m/n/10 ## - Session info -------------------------------------------
+--------------------[] 
+ []
+
+
+Overfull \hbox (80.25pt too wide) in paragraph at lines 10400--10400
+[]\TU/lmtt/m/n/10 ## - Packages -----------------------------------------------
+--------------------[] 
+ []
+
+[179
+
+]
+Overfull \hbox (85.5pt too wide) in paragraph at lines 10425--10425
+[]\TU/lmtt/m/n/10 ##  ggspatial   * 1.1.3.9000 2020-08-10 [1] Github (paleolimb
+ot/ggspatial@4a965f1)[] 
+ []
+
+
+Overfull \hbox (64.5pt too wide) in paragraph at lines 10458--10458
+[]\TU/lmtt/m/n/10 ##  rmarkdown     2.3.3      2020-07-31 [1] Github (rstudio/r
+markdown@204aa41)[] 
+ []
+
+LaTeX Info: Redefining \rmfamily on input line 10468.
+LaTeX Info: Redefining \sffamily on input line 10468.
+LaTeX Info: Redefining \ttfamily on input line 10468.
+
+Overfull \hbox (0.75pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 180 \TU/lmtt/m/sl/10 CHAPITRE 5.  SYSTÈMES D'INFORMATION GÉOGRAP
+HIQUE & CARTOGRAPHIE
+ []
+
+[180] (./Mon_aide_memoire_R.bbl
+LaTeX Info: Redefining \rmfamily on input line 1.
+LaTeX Info: Redefining \sffamily on input line 1.
+LaTeX Info: Redefining \ttfamily on input line 1.
+
+Overfull \hbox (117.18785pt too wide) has occurred while \output is active
+\TU/lmr/m/sl/10 5.4.  LES SYSTÈMES DE COORDONNÉES DE RÉFÉRENCE GÉOGRAPHIQUES ET
+ PROJETÉES \TU/lmr/m/n/10 181
+ []
+
+[181]
+LaTeX Info: Redefining \rmfamily on input line 1.
+LaTeX Info: Redefining \sffamily on input line 1.
+LaTeX Info: Redefining \ttfamily on input line 1.
+
+Overfull \hbox (63.04335pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 182 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPH
+IQUE & CARTOGRAPHIE
+ []
+
+[182
+
+])
 The property list \polyglossia@langsetup contains the pairs (without outer
 braces):
 >  {latex/script}  =>  {latin}
@@ -3085,11 +3144,9 @@ braces):
 >  {french/babelname}  =>  {french}
 >  {french/localnumeral}  =>  {polyglossia@C@localnumeral}
 >  {french/Localnumeral}  =>  {polyglossia@C@localnumeral}.
-[179
-
-]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 10385.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 10385.
+[183]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 10490.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 10490.
 (./Mon_aide_memoire_R.aux
 LaTeX Info: Redefining \rmfamily on input line 21.
 LaTeX Info: Redefining \sffamily on input line 21.
@@ -3098,16 +3155,16 @@ LaTeX Info: Redefining \rmfamily on input line 25.
 LaTeX Info: Redefining \sffamily on input line 25.
 LaTeX Info: Redefining \ttfamily on input line 25.
 )
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 10385.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 10385.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 10490.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 10490.
  ) 
 Here is how much of TeX's memory you used:
- 30992 strings out of 479488
- 590719 string characters out of 5884709
- 1043476 words of memory out of 5000000
- 47879 multiletter control sequences out of 15000+600000
+ 30994 strings out of 479488
+ 590739 string characters out of 5884709
+ 1044516 words of memory out of 5000000
+ 47881 multiletter control sequences out of 15000+600000
  538901 words of font info for 91 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 59i,8n,118p,817b,599s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 59i,8n,118p,817b,603s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Mon_aide_memoire_R.pdf (179 pages).
+Output written on Mon_aide_memoire_R.pdf (183 pages).

@@ -193,7 +193,7 @@ library("sf")
 data_rnn <- st_read("examples/rnn2019_12/N_ENP_RNN_S_000.shp")
 ```
 
-Des informations intéressantes sont affichées lors de la lecture du fichier.
+Des informations intéressantes sont alors affichées après lecture du fichier. On peut y lire dans l'ordre : le chemin d'accès du fichier source ; le type de l'objet ainsi créé avec quelques informations sur ses éléments, 
 
 En regardant l'objet `sf` alors créé, on peut s'apercevoir qu'il a la forme d'un
 tableau de données comme on a l'habitude de voir. Cette caractéristique permet
