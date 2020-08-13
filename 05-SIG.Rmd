@@ -223,14 +223,16 @@ st_crs(data_rnn)$proj4string
 
 #### Création de cartes à partir de vecteurs
 
-(ref:plot-rnn) (A) Carte des Réserves Naturelles de la France métropolitaine. (B) Carte montrant la délimitation (en rouge) de la Réserve Naturelle Nationale de la Haute Chaîne du Jura.
+(ref:plot-rnn) Carte montrant la localisation géographique (point rouge) des Réserves Naturelles Nationales de la France métropolitaine. Un zoom a été fait pour apercevoir la délimitation de la Réserve Nationale de la Haute Chaîne du Jura.
 
-```{r plot-rnn, fig.cap='(ref:plot-rnn)', fig.show = "hold", out.width="100%", message=FALSE, warning=FALSE}
+```{r plot-rnn, fig.cap='(ref:plot-rnn)', message=FALSE, warning=FALSE, out.width="100%"}
 library("ggplot2")
+library("ggspatial") # Extension de ggplot2 pour la cartographie
 library("ggthemes") # Ajoute d'autres thèmes à ggplot2
-library("ggrepel")
+library("ggrepel") # Permet un meilleur affichage des étiquettes
+library("patchwork") # Permet de combiner les graphiques
 library("dplyr") # Permet la manipulation des données
-library("ggspatial")
+library("ggforce") # Extension de ggplot2 pour de nouveaux geom_*
 
 # Ajout des départements français.
 regions <- st_read("examples/regions-20180101-shp/regions-20180101.shp") %>%
@@ -249,22 +251,25 @@ data_rnn <- cbind(data_rnn, st_coordinates(st_point_on_surface(data_rnn)))
 # Création de cartes avec ggplot2.
 
 # Localisation des réserves en France métropolitaine
-rnn_france <- ggplot() +
-  annotation_spatial(regions) +
+rnn_france <- ggplot(regions) +
   annotation_map_tile(zoom = 5, zoomin = 0, type = "stamenwatercolor") +
   geom_sf(
-    data = regions,
     aes(fill = nom),
     colour = "black",
-    alpha = 0.2,
+    alpha = 0.6,
     show.legend = FALSE
   ) +
+  # Lien entre cartes non-zoomée et zoomée
+  geom_diagonal(
+    aes(x = 14, xend = 12.5, y = 46, yend = 47.2, strength = 50)
+  ) +
   geom_label_repel(
+    seed = 42,
     data = filter(data_rnn, ID_LOCAL == "RNN112"),
     aes(x = X, y = Y, label = "Haute Chaîne\ndu Jura"),
-    size = 3,
-    nudge_x = 4,
-    nudge_y = 0.3,
+    size = 4,
+    nudge_x = 6,
+    nudge_y = 1.2,
     segment.curvature = 0.5,
     segment.ncp = 1,
     segment.angle = 10,
@@ -283,33 +288,33 @@ rnn_france <- ggplot() +
     axis.title = element_blank()
   )
 
-rnn_france + labs(tag = "A")
-
 # On récupère les limites inférieures et supérieures de la RNN de la haute
 # chaîne du Jura.
 crop_limits <- st_bbox(filter(data_rnn, ID_LOCAL == "RNN112"))
 
-# On zoome sur la carte des régions en augmentant les limites précédentes par 10 km.
+# On zoome sur la carte des régions en augmentant les limites précédentes
+# par 10 km.
 crop_regions <- st_crop(regions, crop_limits + c(-0.1, -0.1, 0.15, 0.1))
 
-rnn_jura <- ggplot() +
-  annotation_spatial(crop_regions) +
+rnn_jura <- ggplot(crop_regions) +
   annotation_map_tile(zoomin = -1, type = "stamenwatercolor") +
   geom_sf(data = crop_regions, colour = "black", fill = NA, size = 1.05) +
   geom_sf(data = filter(data_rnn, ID_LOCAL == "RNN112"), fill = "darkred") +
-  annotation_north_arrow(
-    location = "bl",
-    which_north = "true",
-    style = north_arrow_nautical()
-  ) +
   coord_sf(expand = FALSE, datum = st_crs(4326)) +
-  theme_linedraw() +
+  theme_map() +
   theme(
-    panel.ontop = TRUE,
-    panel.background = element_blank()
+    panel.border = element_rect(colour = "black", fill = NA, size = 2),
+    panel.ontop = TRUE
   )
 
-rnn_jura + labs(tag = "B")
+layout_design <- c(
+  area(t = 1, l = 1, b = 8, r = 7),
+  area(t = 5, l = 6, b = 8, r = 8)
+)
+
+rnn_france + rnn_jura + 
+  plot_layout(design = layout_design) +
+  plot_annotation(caption = "\u00a9 OpenStreetMap contributors")
 ```
 
 

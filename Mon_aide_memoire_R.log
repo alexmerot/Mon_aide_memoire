@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.2)  11 AUG 2020 17:15
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020) (preloaded format=xelatex 2020.5.2)  13 AUG 2020 20:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2975,21 +2975,21 @@ _0=700000 +y_0=6600000 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"[]
  []
 
 
-Overfull \hbox (663.0pt too wide) in paragraph at lines 10213--10213
+Overfull \hbox (663.0pt too wide) in paragraph at lines 10215--10215
 []\TU/lmtt/m/n/10 ## Reading layer []regions-20180101[] from data source []/hom
 e/alexis/Documents/doc Alexis Merot/Mon_aide_memoire/examples/regions-20180101-
 shp/regions-20180101.shp[] using driver []ESRI Shapefile[][] 
  []
 
 
-Overfull \hbox (75.0pt too wide) in paragraph at lines 10217--10217
+Overfull \hbox (75.0pt too wide) in paragraph at lines 10219--10219
 []\TU/lmtt/m/n/10 ## bbox:           xmin: -61.80976 ymin: -21.38973 xmax: 55.8
 3669 ymax: 51.08899[] 
  []
 
-LaTeX Info: Redefining \rmfamily on input line 10298.
-LaTeX Info: Redefining \sffamily on input line 10298.
-LaTeX Info: Redefining \ttfamily on input line 10298.
+LaTeX Info: Redefining \rmfamily on input line 10303.
+LaTeX Info: Redefining \sffamily on input line 10303.
+LaTeX Info: Redefining \ttfamily on input line 10303.
 
 Overfull \hbox (63.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 174 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPH
@@ -2997,16 +2997,16 @@ IQUE & CARTOGRAPHIE
  []
 
 [174]
-Underfull \vbox (badness 10000) detected at line 10298
+Underfull \vbox (badness 10000) detected at line 10303
  []
 
 
-Underfull \vbox (badness 10000) detected at line 10298
+Underfull \vbox (badness 10000) detected at line 10303
  []
 
-LaTeX Info: Redefining \rmfamily on input line 10298.
-LaTeX Info: Redefining \sffamily on input line 10298.
-LaTeX Info: Redefining \ttfamily on input line 10298.
+LaTeX Info: Redefining \rmfamily on input line 10303.
+LaTeX Info: Redefining \sffamily on input line 10303.
+LaTeX Info: Redefining \ttfamily on input line 10303.
 
 Overfull \hbox (45.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -3017,18 +3017,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 175
 File: Mon_aide_memoire_R_files/figure-latex/plot-rnn-1.pdf Graphic file (type p
 df)
 <use Mon_aide_memoire_R_files/figure-latex/plot-rnn-1.pdf>
-File: Mon_aide_memoire_R_files/figure-latex/plot-rnn-2.pdf Graphic file (type p
-df)
-<use Mon_aide_memoire_R_files/figure-latex/plot-rnn-2.pdf>
-
-LaTeX Warning: Float too large for page by 209.83215pt on input line 10307.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-LaTeX Info: Redefining \rmfamily on input line 10336.
-LaTeX Info: Redefining \sffamily on input line 10336.
-LaTeX Info: Redefining \ttfamily on input line 10336.
+LaTeX Info: Redefining \rmfamily on input line 10339.
+LaTeX Info: Redefining \sffamily on input line 10339.
+LaTeX Info: Redefining \ttfamily on input line 10339.
 
 Overfull \hbox (63.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 176 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPH
@@ -3036,9 +3027,9 @@ IQUE & CARTOGRAPHIE
  []
 
 [176]
-LaTeX Info: Redefining \rmfamily on input line 10336.
-LaTeX Info: Redefining \sffamily on input line 10336.
-LaTeX Info: Redefining \ttfamily on input line 10336.
+LaTeX Info: Redefining \rmfamily on input line 10339.
+LaTeX Info: Redefining \sffamily on input line 10339.
+LaTeX Info: Redefining \ttfamily on input line 10339.
 
 Overfull \hbox (45.61224pt too wide) has occurred while \output is active
 \TU/lmr/m/sl/10 5.3.  LA REPRÉSENTATION DES DONNÉES : LES \TU/lmr/m/n/10 VECTEU
@@ -3046,9 +3037,9 @@ RS \TU/lmr/m/sl/10 ET LES \TU/lmr/m/n/10 RASTERS 177
  []
 
 [177]
-LaTeX Info: Redefining \rmfamily on input line 10400.
-LaTeX Info: Redefining \sffamily on input line 10400.
-LaTeX Info: Redefining \ttfamily on input line 10400.
+LaTeX Info: Redefining \rmfamily on input line 10405.
+LaTeX Info: Redefining \sffamily on input line 10405.
+LaTeX Info: Redefining \ttfamily on input line 10405.
 
 Overfull \hbox (63.04335pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 178 \TU/lmr/m/sl/10 CHAPITRE 5.  SYSTÈMES D’INFORMATION GÉOGRAPH
@@ -3056,13 +3047,13 @@ IQUE & CARTOGRAPHIE
  []
 
 [178]
-Overfull \hbox (80.25pt too wide) in paragraph at lines 10404--10404
+Overfull \hbox (80.25pt too wide) in paragraph at lines 10409--10409
 []\TU/lmtt/m/n/10 ## - Session info -------------------------------------------
 --------------------[] 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 10416--10416
+Overfull \hbox (80.25pt too wide) in paragraph at lines 10421--10421
 []\TU/lmtt/m/n/10 ## - Packages -----------------------------------------------
 --------------------[] 
  []
@@ -3070,26 +3061,26 @@ Overfull \hbox (80.25pt too wide) in paragraph at lines 10416--10416
 [179
 
 ]
-Overfull \hbox (64.5pt too wide) in paragraph at lines 10441--10441
+Overfull \hbox (64.5pt too wide) in paragraph at lines 10447--10447
 []\TU/lmtt/m/n/10 ##  ggplot2     * 3.3.2.9000 2020-08-11 [1] Github (tidyverse
 /ggplot2@6d91349)[] 
  []
 
 
-Overfull \hbox (54.0pt too wide) in paragraph at lines 10442--10442
+Overfull \hbox (54.0pt too wide) in paragraph at lines 10448--10448
 []\TU/lmtt/m/n/10 ##  ggrepel     * 0.9.0      2020-08-11 [1] Github (slowkow/g
 grepel@4d0ef50)[] 
  []
 
 
-Overfull \hbox (64.5pt too wide) in paragraph at lines 10477--10477
+Overfull \hbox (64.5pt too wide) in paragraph at lines 10486--10486
 []\TU/lmtt/m/n/10 ##  rmarkdown     2.3.3      2020-07-31 [1] Github (rstudio/r
 markdown@204aa41)[] 
  []
 
-LaTeX Info: Redefining \rmfamily on input line 10484.
-LaTeX Info: Redefining \sffamily on input line 10484.
-LaTeX Info: Redefining \ttfamily on input line 10484.
+LaTeX Info: Redefining \rmfamily on input line 10489.
+LaTeX Info: Redefining \sffamily on input line 10489.
+LaTeX Info: Redefining \ttfamily on input line 10489.
 
 Overfull \hbox (0.75pt too wide) has occurred while \output is active
 \TU/lmr/m/n/10 180 \TU/lmtt/m/sl/10 CHAPITRE 5.  SYSTÈMES D'INFORMATION GÉOGRAP
@@ -3154,8 +3145,8 @@ braces):
 >  {french/localnumeral}  =>  {polyglossia@C@localnumeral}
 >  {french/Localnumeral}  =>  {polyglossia@C@localnumeral}.
 [183]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 10509.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 10509.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 10519.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 10519.
 (./Mon_aide_memoire_R.aux
 LaTeX Info: Redefining \rmfamily on input line 21.
 LaTeX Info: Redefining \sffamily on input line 21.
@@ -3164,14 +3155,14 @@ LaTeX Info: Redefining \rmfamily on input line 25.
 LaTeX Info: Redefining \sffamily on input line 25.
 LaTeX Info: Redefining \ttfamily on input line 25.
 )
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 10509.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 10509.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 10519.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 10519.
  ) 
 Here is how much of TeX's memory you used:
- 30994 strings out of 479488
- 590739 string characters out of 5884709
- 1046527 words of memory out of 5000000
- 47881 multiletter control sequences out of 15000+600000
+ 30987 strings out of 479488
+ 590389 string characters out of 5884709
+ 1047581 words of memory out of 5000000
+ 47875 multiletter control sequences out of 15000+600000
  538901 words of font info for 91 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  59i,8n,118p,817b,603s stack positions out of 5000i,500n,10000p,200000b,80000s
