@@ -9,6 +9,8 @@ bookdown::gitbook:
       after: |
         <li><a href="https://github.com/rstudio/bookdown" target="blank">Écrit avec bookdown</a></li>
     download: no
+    fontsettings:
+      theme: sepia
     sharing:
       facebook: no
       twitter: no

@@ -20,6 +20,12 @@
   <defs
      id="defs2">
     <rect
+       id="rect1072"
+       height="47.640278"
+       width="80.679562"
+       y="112.03119"
+       x="-82.381205" />
+    <rect
        x="203.49184"
        y="92.249537"
        width="-30.838542"
@@ -228,19 +234,19 @@
   </defs>
   <sodipodi:namedview
      inkscape:window-maximized="1"
-     inkscape:window-y="0"
-     inkscape:window-x="0"
-     inkscape:window-height="1043"
+     inkscape:window-y="27"
+     inkscape:window-x="1920"
+     inkscape:window-height="1053"
      inkscape:window-width="1920"
      showgrid="false"
      inkscape:document-rotation="0"
-     inkscape:current-layer="layer12"
+     inkscape:current-layer="layer13"
      inkscape:document-units="mm"
-     inkscape:cy="349.6839"
-     inkscape:cx="252.08708"
-     inkscape:zoom="1.9773243"
+     inkscape:cy="-0.84899532"
+     inkscape:cx="7.9451628"
+     inkscape:zoom="0.64"
      inkscape:pageshadow="2"
-     inkscape:pageopacity="1"
+     inkscape:pageopacity="0"
      borderopacity="1.0"
      bordercolor="#666666"
      pagecolor="#ffffff"
@@ -1178,13 +1184,18 @@
        inkscape:label="fond"
        style="display:inline">
       <path
-         style="fill:#ffffff;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         inkscape:connector-curvature="0"
+         id="path2265"
+         d="M 73.449248,104.45823 91.623583,90.622376 75.869177,88.131958 Z"
+         style="fill:#ffffff;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         style="fill:#fbfbdf;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
          d="M 7.1960509,44.088277 11.678322,90.870914 74.487301,98.051053 77.559613,75.622281 82.00909,65.748579 86.428478,59.493168 86.855972,38.775474 50.663289,16.802986 9.0912941,40.067954 Z"
          id="path2803"
          inkscape:connector-curvature="0"
          sodipodi:nodetypes="cccccccccc" />
       <path
-         style="fill:#141414;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         style="fill:#1c1c1c;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          d="M 7.7040797,41.428992 C 15.331995,75.241729 14.859391,86.402823 46.375821,92.857849 l 18.20059,2.999209 10.04172,2.228996 0.136798,2.543056 L 50.58765,115.87204 7.4923437,91.043926 Z"
          id="path2799"
          inkscape:connector-curvature="0"
@@ -1195,6 +1206,11 @@
          id="path2801"
          inkscape:connector-curvature="0"
          sodipodi:nodetypes="ccccc" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path2263"
+         d="m 32.270644,27.821538 c 0,0 14.247611,-8.99122 39.700369,0.867624 L 51.598395,16.565443 Z"
+         style="fill:#ffffff;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
     </g>
     <g
        inkscape:groupmode="layer"
@@ -1303,6 +1319,17 @@
          style="display:inline;fill:#00a37a;fill-opacity:1;stroke:none;stroke-width:1.89719;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          d="M 50.452451,13.637928 4.805627,39.16557 4.8831417,93.260457 50.608,118.65374 96.254308,93.126099 91.623583,90.622376 50.603865,114.38888 8.7867793,90.330919 8.7133987,42.087871 50.456071,17.902784 86.855972,38.775474 86.717993,34.563516 c 0,0 -24.587601,-14.207088 -36.265542,-20.925588 z"
          sodipodi:nodetypes="ccccccccccccc" />
+      <path
+         style="display:inline;fill:#00614e;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 96.254307,93.126098 -5e-6,6.879172 -45.646303,25.52768 v -6.87921 z"
+         id="path1074"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="ccccc" />
+      <path
+         style="display:inline;fill:#00614e;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="M 4.8831417,100.13963 50.607999,125.53295 50.608,118.65374 4.8831417,93.260457 Z"
+         id="path1082"
+         inkscape:connector-curvature="0" />
     </g>
     <g
        inkscape:groupmode="layer"
@@ -1395,21 +1422,25 @@
          d="m 57.967715,44.675321 a 5.5635315,6.3978275 27.522485 0 1 1.394356,-8.794483 5.5635315,6.3978275 27.522485 0 1 8.01395,0.509562 5.5635315,6.3978275 27.522485 0 1 -1.394358,8.79448 5.5635315,6.3978275 27.522485 0 1 -8.013948,-0.509559 z"
          style="display:inline;fill:none;fill-opacity:1;stroke:#ff0000;stroke-width:0.999999;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          id="path2816" />
-      <text
-         transform="matrix(1.055465,0,0,1.055465,-1.9070554,-5.8138732)"
-         xml:space="preserve"
-         id="text2828"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;line-height:1.25;font-family:'Marck Script';-inkscape-font-specification:'Marck Script, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0.9525px;word-spacing:0px;white-space:pre;inline-size:63.113;stroke-width:0.94745"><tspan
-           sodipodi:role="line"
-           x="0"
-           y="5.7626527"><tspan
-             rotate="0 -0.50991648 -0.50991648 -0.50991648 -0.50991648 -0.50991648 -0.50991648 -0.50991648 -0.50991648 -0.50991648 -0.50991648 -0.50991648"
-             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05556px;font-family:'Marck Script';-inkscape-font-specification:'Marck Script, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.94745">Alexis Mérot</tspan></tspan></text>
       <path
          inkscape:connector-curvature="0"
          id="path214"
          d="M 56.428836,121.82876 102.07515,96.3011"
          style="fill:none;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    </g>
+    <g
+       inkscape:groupmode="layer"
+       id="layer16"
+       inkscape:label="text">
+      <text
+         transform="matrix(0.91194742,-0.50348402,0.57275316,0.78033878,0,0)"
+         y="139.36426"
+         x="-29.141308"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.18992px;line-height:1.25;font-family:'Marck Script';-inkscape-font-specification:'Marck Script, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;white-space:pre;fill:#ffffff;stroke-width:0.441406"
+         id="text1070"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.18992px;font-family:'Marck Script';-inkscape-font-specification:'Marck Script, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke-width:0.441406"
+           id="tspan1074">Alexis Mérot</tspan></text>
     </g>
   </g>
 </svg>
