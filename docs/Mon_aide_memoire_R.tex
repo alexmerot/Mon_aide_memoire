@@ -153,7 +153,7 @@
 
 \title{Aide-mémoire : Analyses de données \& Cartographie sur R}
 \author{Alexis Mérot}
-\date{Modifié le : 2020-08-17}
+\date{Modifié le : 2020-08-18}
 
 \begin{document}
 \maketitle
@@ -237,6 +237,7 @@ ce document.
   \DataTypeTok{minRows =} \DecValTok{5}\NormalTok{,}
   \DataTypeTok{highlight =} \OtherTok{TRUE}\NormalTok{,}
   \DataTypeTok{rownames =} \OtherTok{TRUE}\NormalTok{,}
+  \DataTypeTok{defaultColDef =} \KeywordTok{colDef}\NormalTok{(}\DataTypeTok{na =} \StringTok{"NA"}\NormalTok{),}
 \NormalTok{  ...}
 \NormalTok{) \{}
   \KeywordTok{reactable}\NormalTok{(}
@@ -249,6 +250,7 @@ ce document.
     \DataTypeTok{highlight =}\NormalTok{ highlight,}
     \DataTypeTok{rownames =}\NormalTok{ rownames,}
     \DataTypeTok{striped =} \OtherTok{TRUE}\NormalTok{,}
+    \DataTypeTok{defaultColDef =}\NormalTok{ defaultColDef,}
 \NormalTok{    ...}
 \NormalTok{  )}
 \NormalTok{\}}
@@ -392,89 +394,145 @@ ainsi que le livre en cours d'écriture
 \hypertarget{extraction-de-donnuxe9es-provenant-dun-pdf}{%
 \section{Extraction de données provenant d'un PDF}\label{extraction-de-donnuxe9es-provenant-dun-pdf}}
 
+Il existe plusieurs packages sous R permettant de manipuler les PDF. Pour en
+extraire le texte et les métadonnées, il y a le package
+\href{https://github.com/ropensci/pdftools}{\texttt{pdftools}}. Néanmoins, pour pouvoir
+extraire plus particulièrement les données des tableaux, il existe le package
+\href{https://github.com/ropensci/tabulizer}{\texttt{tabulizer}} qui sert de lien à la
+bibliothèque java \href{https://github.com/tabulapdf/tabula-java/}{Tabula}. C'est ce
+package que je vais utiliser pour pouvoir extraire les données d'un PDF.
+
 \begin{Shaded}
 \begin{Highlighting}[]
 \KeywordTok{library}\NormalTok{(}\StringTok{"tabulizer"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
+Pour montrer l'utilisation de ce package, je vais utiliser pour exemple un PDF
+(visible ci-dessous) téléchargé sur le
+\href{https://www.rnn-hautechainedujura.fr/patrimoine-naturel/faune/}{site} de la
+Réserve Naturelle Nationale (RNN) de la Haute Chaîne du Jura. Ce fichier
+contient des tableaux montrant les données de recensement pour le plan de
+gestion 2019-2020 de la faune présente.
+
+\label{fig:jura-data-pdf} Figure \ref{fig:jura-data-pdf}: Données de recensement des vertébrés dans la Réserve Naturelle Nationale de la Haute Chaîne du Jura.
+
 \begin{Shaded}
 \begin{Highlighting}[]
+\CommentTok{\# Chemin d\textquotesingle{}accès au PDF}
 \NormalTok{pdf\_data\_jura \textless{}{-}}\StringTok{ "examples/faune{-}RNN{-}jura/Faune{-}vertebres{-}PG3.pdf"}
 \end{Highlighting}
 \end{Shaded}
+
+Pour extraire les données, il faut utiliser la fonction \texttt{extract\_tables}. Cette
+fonction renvoie par défaut une matrice ou une liste de matrices s'il y a
+plusieurs tableaux. On peut renvoyer directement un \texttt{data.frame} en ajoutant le
+paramètre \texttt{output\ =\ "data.frame"}. Cependant, lors de la tentative de
+conversion, la structure du tableau peut ne pas correspondre au jeu de données
+réel. Je garde donc ici la sortie en matrice, puis je transforme ces matrices en
+\texttt{data.frame}. Vu qu'il y a plusieurs tableaux, la fonction \texttt{extract\_tables} va
+sortir une liste de matrices. J'utilise donc la fonction \texttt{map} du package
+\href{https://purrr.tidyverse.org/}{\texttt{purrr}} pour appliquer la fonction
+\texttt{as.data.frame} de manière récursive sur tous les éléments de la liste. Ce
+package permet d'améliorer la partie programmation fonctionnelle dans R,
+notamment en remplaçant la plupart des boucles \texttt{for}. Le code devient ainsi plus
+succinct et plus facile à lire, tout en gardant son efficacité.
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{jura\_data \textless{}{-}}\StringTok{ }\KeywordTok{extract\_tables}\NormalTok{(pdf\_data\_jura) }\OperatorTok{\%\textgreater{}\%}\StringTok{ }
 \StringTok{  }\NormalTok{purrr}\OperatorTok{::}\KeywordTok{map}\NormalTok{(as.data.frame)}
-
-\NormalTok{purrr}\OperatorTok{::}\KeywordTok{map}\NormalTok{(jura\_data, dim)}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{verbatim}
-## [[1]]
-## [1] 21 15
-## 
-## [[2]]
-## [1] 60 15
-## 
-## [[3]]
-## [1] 71 16
-## 
-## [[4]]
-## [1] 74 15
-\end{verbatim}
+On peut ensuite vérifier que les tableaux correspondent à ce que l'on peut voir sur le PDF. Par exemple, on peut regarder les dimensions des tableaux à l'aide de la fonction \texttt{dim}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
+\NormalTok{purrr}\OperatorTok{::}\KeywordTok{map}\NormalTok{(jura\_data, dim)}
+\CommentTok{\#\# [[1]]}
+\CommentTok{\#\# [1] 21 15}
+\CommentTok{\#\# }
+\CommentTok{\#\# [[2]]}
+\CommentTok{\#\# [1] 60 15}
+\CommentTok{\#\# }
+\CommentTok{\#\# [[3]]}
+\CommentTok{\#\# [1] 71 16}
+\CommentTok{\#\# }
+\CommentTok{\#\# [[4]]}
+\CommentTok{\#\# [1] 74 15}
+\end{Highlighting}
+\end{Shaded}
+
+On peut voir déjà qu'il y a 4 tableaux au lieu de 3. C'est dû au fait que le 3ème tableau est séparé sur deux pages. De plus, les tableaux 1 et la première partie du 3 contiennent une colonne en trop (respectivement 15 au lieu de 14 et 16 au lieu de 15).
+
+Regardons alors de plus près ce que contiennent ces tableaux :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Récupération du nom des tableaux dans la liste.}
 \NormalTok{tableau \textless{}{-}}\StringTok{ }\NormalTok{purrr}\OperatorTok{::}\KeywordTok{map}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\KeywordTok{length}\NormalTok{(jura\_data), }\OperatorTok{\textasciitilde{}}\StringTok{ }\NormalTok{glue}\OperatorTok{::}\KeywordTok{glue}\NormalTok{(}\StringTok{"jura\_data[[\{.\}]]"}\NormalTok{))}
 
+\CommentTok{\# Création d\textquotesingle{}un tableau interactif contenant l\textquotesingle{}ensemble des jeux de données.}
 \NormalTok{all\_output \textless{}{-}}\StringTok{ }\KeywordTok{my\_reactable}\NormalTok{(}
   \KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{tableau =} \KeywordTok{unlist}\NormalTok{(tableau)),}
   \DataTypeTok{details =} \ControlFlowTok{function}\NormalTok{(index) \{}
 \NormalTok{    htmltools}\OperatorTok{::}\KeywordTok{div}\NormalTok{(}
-      \DataTypeTok{style =} \StringTok{"padding: 16 px"}\NormalTok{,}
-      \KeywordTok{my\_reactable}\NormalTok{(}
-\NormalTok{        jura\_data[[index]],}
-        \DataTypeTok{fullWidth =} \OtherTok{FALSE}\NormalTok{,}
-        \DataTypeTok{pagination =} \OtherTok{FALSE}\NormalTok{,}
-        \DataTypeTok{outlined =} \OtherTok{TRUE}\NormalTok{,}
-        \DataTypeTok{compact =} \OtherTok{TRUE}\NormalTok{,}
-        \DataTypeTok{height =} \DecValTok{500}\NormalTok{,}
-        \DataTypeTok{showPageSizeOptions =} \OtherTok{FALSE}\NormalTok{,}
-        \DataTypeTok{showPageInfo =} \OtherTok{FALSE}
-\NormalTok{      )}
+        \KeywordTok{my\_reactable}\NormalTok{(}
+\NormalTok{          jura\_data[[index]],}
+          \DataTypeTok{fullWidth =} \OtherTok{FALSE}\NormalTok{,}
+          \DataTypeTok{pagination =} \OtherTok{FALSE}\NormalTok{,}
+          \DataTypeTok{outlined =} \OtherTok{TRUE}\NormalTok{,}
+          \DataTypeTok{compact =} \OtherTok{TRUE}\NormalTok{,}
+          \DataTypeTok{height =} \DecValTok{500}\NormalTok{,}
+          \DataTypeTok{showPageSizeOptions =} \OtherTok{FALSE}\NormalTok{,}
+          \DataTypeTok{showPageInfo =} \OtherTok{FALSE}
+\NormalTok{        )}
 \NormalTok{    )}
 \NormalTok{  \},}
   \DataTypeTok{searchable =} \OtherTok{FALSE}\NormalTok{,}
   \DataTypeTok{defaultPageSize =} \KeywordTok{length}\NormalTok{(tableau), }
   \DataTypeTok{minRows =} \KeywordTok{length}\NormalTok{(tableau),}
   \DataTypeTok{onClick =} \StringTok{"expand"}\NormalTok{,}
-  \DataTypeTok{rowStyle =} \KeywordTok{list}\NormalTok{(}\DataTypeTok{cursor =} \StringTok{"pointer"}\NormalTok{)}
+  \DataTypeTok{rowStyle =} \KeywordTok{list}\NormalTok{(}\DataTypeTok{cursor =} \StringTok{"pointer"}\NormalTok{),}
+  \DataTypeTok{rownames =} \OtherTok{FALSE}\NormalTok{,}
+  \DataTypeTok{defaultColDef =} \KeywordTok{colDef}\NormalTok{(}\DataTypeTok{na =} \StringTok{""}\NormalTok{)}
 \NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
-\label{tab:juradata} Tableaux contenant les données brutes extraites du PDF provenant du plan de gestion 2020-2029 de la RNN de la Haute Chaîne du Jura.
+\label{tab:juradata} Tableaux contenant les données brutes extraites du PDF (cliquer pour étendre les tableaux).
 
-\begin{center}\includegraphics[width=0.6\linewidth]{Mon_aide_memoire_R_files/figure-latex/unnamed-chunk-7-1} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{Mon_aide_memoire_R_files/figure-latex/unnamed-chunk-8-1} \end{center}
+
+On peut alors observer qu'il faut nettoyer ces jeux de données. En effet, il
+faut d'abord mettre la première ligne en tant que nom des colonnes (fonction
+\texttt{janitor::row\_to\_names}). Ensuite il faut modifier les noms des colonnes pour
+les standardiser et être plus facilement utilisés dans les scripts (fonction
+\texttt{janitor::clean\_names}). Il faut aussi rajouter des \texttt{NA} dans les cases vides
+(fonction \texttt{dplyr::na\_if}). Les lignes entièrement vides (remplies de \texttt{NA})
+peuvent être supprimées (fonction \texttt{janitor::remove\_empty}). De même pour les
+colonnes vides qui ne sont pas de base dans le PDF. Enfin, les puces
+typographiques ``•'' qui représentent la valeur booléenne \texttt{TRUE} doivent être
+remplacées par exemple par ``oui'', pour que ces colonnes soient plus facilement
+manipulables (fonctions \texttt{dplyr::mutate} et \texttt{dplyr::across}).
+
+Pour ce faire, je crée une fonction pour que le code soit facilement
+réutilisable :
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{clean\_extracted\_data \textless{}{-}}\StringTok{ }\ControlFlowTok{function}\NormalTok{(}
 \NormalTok{  data\_extracted,}
   \DataTypeTok{na.value =} \StringTok{""}\NormalTok{, }
-  \DataTypeTok{recode.bullet =} \OtherTok{TRUE}\NormalTok{,}
-  \DataTypeTok{quiet =} \OtherTok{FALSE}
+  \DataTypeTok{recode.bullet =} \OtherTok{TRUE}
 \NormalTok{) \{}
   
 \NormalTok{  cleaned\_df \textless{}{-}}\StringTok{ }\NormalTok{data\_extracted }\OperatorTok{\%\textgreater{}\%}
 \StringTok{    }\NormalTok{janitor}\OperatorTok{::}\KeywordTok{row\_to\_names}\NormalTok{(}\DecValTok{1}\NormalTok{) }\OperatorTok{\%\textgreater{}\%}
 \StringTok{    }\NormalTok{janitor}\OperatorTok{::}\KeywordTok{clean\_names}\NormalTok{() }\OperatorTok{\%\textgreater{}\%}
 \StringTok{    }\KeywordTok{na\_if}\NormalTok{(na.value) }\OperatorTok{\%\textgreater{}\%}
-\StringTok{    }\NormalTok{janitor}\OperatorTok{::}\KeywordTok{remove\_empty}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\StringTok{"rows"}\NormalTok{, }\StringTok{"cols"}\NormalTok{), }\DataTypeTok{quiet =} \OtherTok{FALSE}\NormalTok{)}
+\StringTok{    }\NormalTok{janitor}\OperatorTok{::}\KeywordTok{remove\_empty}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\StringTok{"rows"}\NormalTok{, }\StringTok{"cols"}\NormalTok{))}
   
   \ControlFlowTok{if}\NormalTok{ (recode.bullet) \{}
 \NormalTok{    replace\_bullet \textless{}{-}}\StringTok{ }\ControlFlowTok{function}\NormalTok{(x) \{}
@@ -498,65 +556,27 @@ ainsi que le livre en cours d'écriture
 \StringTok{      }\KeywordTok{mutate}\NormalTok{(}\KeywordTok{across}\NormalTok{(}\KeywordTok{where}\NormalTok{(}\OperatorTok{\textasciitilde{}}\StringTok{ }\KeywordTok{any}\NormalTok{(}\KeywordTok{grepl}\NormalTok{(}\StringTok{"•"}\NormalTok{, .))), replace\_bullet))}
 \NormalTok{  \}}
   
-  \KeywordTok{rownames}\NormalTok{(cleaned\_df) \textless{}{-}}\StringTok{ }\OtherTok{NULL}
+  \KeywordTok{rownames}\NormalTok{(cleaned\_df) \textless{}{-}}\StringTok{ }\OtherTok{NULL} \CommentTok{\# Actualisation des numéros de ligne}
   
   \KeywordTok{return}\NormalTok{(cleaned\_df)}
 \NormalTok{\}}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{jura\_herpetofaune \textless{}{-}}\StringTok{ }\KeywordTok{extract\_tables}\NormalTok{(pdf\_data\_jura, }\DataTypeTok{pages =} \DecValTok{1}\NormalTok{) }\OperatorTok{\%\textgreater{}\%}\StringTok{ }
-\StringTok{  }\KeywordTok{as.data.frame}\NormalTok{() }\OperatorTok{\%\textgreater{}\%}
-\StringTok{  }\KeywordTok{clean\_extracted\_data}\NormalTok{()}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## Removing 1 empty rows of 20 rows total (5%).
-\end{verbatim}
-
-\begin{verbatim}
-## Removing 1 empty columns of 15 columns total (Removed: x).
-\end{verbatim}
+Ensuite, il ne reste plus qu'à appliquer cette fonction sur les tableaux
+extraits :
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{jura\_mammifere \textless{}{-}}\StringTok{ }\KeywordTok{extract\_tables}\NormalTok{(pdf\_data\_jura, }\DataTypeTok{pages =} \DecValTok{2}\NormalTok{) }\OperatorTok{\%\textgreater{}\%}
-\StringTok{  }\KeywordTok{as.data.frame}\NormalTok{() }\OperatorTok{\%\textgreater{}\%}
-\StringTok{  }\KeywordTok{clean\_extracted\_data}\NormalTok{()}
+\NormalTok{jura\_data\_cleaned \textless{}{-}}\StringTok{ }\NormalTok{jura\_data }\OperatorTok{\%\textgreater{}\%}\StringTok{ }\NormalTok{purrr}\OperatorTok{::}\KeywordTok{map}\NormalTok{(clean\_extracted\_data)}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{verbatim}
-## No empty rows to remove.
-\end{verbatim}
+Les tableaux ressemblent maintenant à cela :
 
-\begin{verbatim}
-## No empty columns to remove.
-\end{verbatim}
+\label{tab:juradatacleaned} Tableaux contenant les données extraites du PDF et nettoyées (cliquer pour étendre les tableaux).
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{jura\_avifaune \textless{}{-}}\StringTok{ }\KeywordTok{extract\_tables}\NormalTok{(pdf\_data\_jura, }\DataTypeTok{pages =} \DecValTok{3}\OperatorTok{:}\DecValTok{4}\NormalTok{) }\OperatorTok{\%\textgreater{}\%}
-\StringTok{  }\NormalTok{purrr}\OperatorTok{::}\KeywordTok{map}\NormalTok{(as.data.frame) }\OperatorTok{\%\textgreater{}\%}
-\StringTok{  }\NormalTok{purrr}\OperatorTok{::}\KeywordTok{map}\NormalTok{(clean\_extracted\_data)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## No empty rows to remove.
-## No empty columns to remove.
-\end{verbatim}
-
-\begin{verbatim}
-## No empty rows to remove.
-\end{verbatim}
-
-\begin{verbatim}
-## No empty columns to remove.
-\end{verbatim}
+\begin{center}\includegraphics[width=0.6\linewidth]{Mon_aide_memoire_R_files/figure-latex/unnamed-chunk-11-1} \end{center}
 
 \hypertarget{ruxe9cupuxe9ration-de-donnuxe9es-provenant-du-web-le-web-scraping}{%
 \section{\texorpdfstring{Récupération de données provenant du web : le \emph{web scraping}}{Récupération de données provenant du web : le web scraping}}\label{ruxe9cupuxe9ration-de-donnuxe9es-provenant-du-web-le-web-scraping}}
@@ -10659,7 +10679,7 @@ discrètes} ainsi que des \textbf{données continues}.
 ##  collate  fr_FR.UTF-8                 
 ##  ctype    fr_FR.UTF-8                 
 ##  tz       Europe/Paris                
-##  date     2020-08-17                  
+##  date     2020-08-18                  
 ## 
 ## - Packages -----------------------------------------------
 ##  package       * version    date       lib

@@ -19,7 +19,7 @@ description: "Ceci est l'ensemble de mes notes accumulées au fur et à mesure d
 ---
 
 ```{r max-height, include=FALSE}
-# Ajout d'un paramètre de chunk pour changer la hauteur des blocs de code.
+# Ajout d'un paramètre de chunk pour changer la hauteur max des blocs de code.
 # Astuce trouvée sur https://bookdown.org/yihui/rmarkdown-cookbook/hook-scroll.html#hook-scroll
 
 options(width = 60)
@@ -141,6 +141,7 @@ my_reactable <- function(
   minRows = 5,
   highlight = TRUE,
   rownames = TRUE,
+  defaultColDef = colDef(na = "NA"),
   ...
 ) {
   reactable(
@@ -153,6 +154,7 @@ my_reactable <- function(
     highlight = highlight,
     rownames = rownames,
     striped = TRUE,
+    defaultColDef = defaultColDef,
     ...
   )
 }

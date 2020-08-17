@@ -6,70 +6,130 @@
 
 
 ## Extraction de données provenant d'un PDF
-  
+
+Il existe plusieurs packages sous R permettant de manipuler les PDF. Pour en
+extraire le texte et les métadonnées, il y a le package
+[`pdftools`](https://github.com/ropensci/pdftools). Néanmoins, pour pouvoir
+extraire plus particulièrement les données des tableaux, il existe le package
+[`tabulizer`](https://github.com/ropensci/tabulizer) qui sert de lien à la
+bibliothèque java [Tabula](https://github.com/tabulapdf/tabula-java/). C'est ce
+package que je vais utiliser pour pouvoir extraire les données d'un PDF.
+
 ```{r}
 library("tabulizer")
 ```
 
+Pour montrer l'utilisation de ce package, je vais utiliser pour exemple un PDF
+(visible ci-dessous) téléchargé sur le
+[site](https://www.rnn-hautechainedujura.fr/patrimoine-naturel/faune/) de la
+Réserve Naturelle Nationale (RNN) de la Haute Chaîne du Jura. Ce fichier
+contient des tableaux montrant les données de recensement pour le plan de
+gestion 2019-2020 de la faune présente.
+
+<figure>
+  <iframe title="Données de recensement des vertébrés dans la Réserve Naturelle Nationale de la Haute Chaîne du Jura." src="examples/faune-RNN-jura/Faune-vertebres-PG3.pdf" width="100%" height="500px"></iframe>
+  <figcaption>(#fig:jura-data-pdf) Figure \@ref(fig:jura-data-pdf): Données de recensement des vertébrés dans la Réserve Naturelle Nationale de la Haute Chaîne du Jura.</figcaption>
+</figure>
+
 ```{r}
+# Chemin d'accès au PDF
 pdf_data_jura <- "examples/faune-RNN-jura/Faune-vertebres-PG3.pdf"
 ```
+
+Pour extraire les données, il faut utiliser la fonction `extract_tables`. Cette
+fonction renvoie par défaut une matrice ou une liste de matrices s'il y a
+plusieurs tableaux. On peut renvoyer directement un `data.frame` en ajoutant le
+paramètre `output = "data.frame"`. Cependant, lors de la tentative de
+conversion, la structure du tableau peut ne pas correspondre au jeu de données
+réel. Je garde donc ici la sortie en matrice, puis je transforme ces matrices en
+`data.frame`. Vu qu'il y a plusieurs tableaux, la fonction `extract_tables` va
+sortir une liste de matrices. J'utilise donc la fonction `map` du package
+[`purrr`](https://purrr.tidyverse.org/) pour appliquer la fonction
+`as.data.frame` de manière récursive sur tous les éléments de la liste. Ce
+package permet d'améliorer la partie programmation fonctionnelle dans R,
+notamment en remplaçant la plupart des boucles `for`. Le code devient ainsi plus
+succinct et plus facile à lire, tout en gardant son efficacité.
 
 ```{r}
 jura_data <- extract_tables(pdf_data_jura) %>% 
   purrr::map(as.data.frame)
+```
 
+On peut ensuite vérifier que les tableaux correspondent à ce que l'on peut voir sur le PDF. Par exemple, on peut regarder les dimensions des tableaux à l'aide de la fonction `dim`.
+
+```{r, collapse=TRUE}
 purrr::map(jura_data, dim)
 ```
 
+On peut voir déjà qu'il y a 4 tableaux au lieu de 3. C'est dû au fait que le 3ème tableau est séparé sur deux pages. De plus, les tableaux 1 et la première partie du 3 contiennent une colonne en trop (respectivement 15 au lieu de 14 et 16 au lieu de 15).
+
+Regardons alors de plus près ce que contiennent ces tableaux :
+
 ```{r}
+# Récupération du nom des tableaux dans la liste.
 tableau <- purrr::map(1:length(jura_data), ~ glue::glue("jura_data[[{.}]]"))
 
+# Création d'un tableau interactif contenant l'ensemble des jeux de données.
 all_output <- my_reactable(
   data.frame(tableau = unlist(tableau)),
   details = function(index) {
     htmltools::div(
-      style = "padding: 16 px",
-      my_reactable(
-        jura_data[[index]],
-        fullWidth = FALSE,
-        pagination = FALSE,
-        outlined = TRUE,
-        compact = TRUE,
-        height = 500,
-        showPageSizeOptions = FALSE,
-        showPageInfo = FALSE
-      )
+        my_reactable(
+          jura_data[[index]],
+          fullWidth = FALSE,
+          pagination = FALSE,
+          outlined = TRUE,
+          compact = TRUE,
+          height = 500,
+          showPageSizeOptions = FALSE,
+          showPageInfo = FALSE
+        )
     )
   },
   searchable = FALSE,
   defaultPageSize = length(tableau), 
   minRows = length(tableau),
   onClick = "expand",
-  rowStyle = list(cursor = "pointer")
+  rowStyle = list(cursor = "pointer"),
+  rownames = FALSE,
+  defaultColDef = colDef(na = "")
 )
 ```
+<br>
 
-<caption>(#tab:juradata) Tableaux contenant les données brutes extraites du PDF provenant du plan de gestion 2020-2029 de la RNN de la Haute Chaîne du Jura. </caption>
+<caption>(#tab:juradata) Tableaux contenant les données brutes extraites du PDF (cliquer pour étendre les tableaux). </caption>
 
 ```{r, echo=FALSE}
 all_output
 ```
 
+On peut alors observer qu'il faut nettoyer ces jeux de données. En effet, il
+faut d'abord mettre la première ligne en tant que nom des colonnes (fonction
+`janitor::row_to_names`). Ensuite il faut modifier les noms des colonnes pour
+les standardiser et être plus facilement utilisés dans les scripts (fonction
+`janitor::clean_names`). Il faut aussi rajouter des `NA` dans les cases vides
+(fonction `dplyr::na_if`). Les lignes entièrement vides (remplies de `NA`)
+peuvent être supprimées (fonction `janitor::remove_empty`). De même pour les
+colonnes vides qui ne sont pas de base dans le PDF. Enfin, les puces
+typographiques "•" qui représentent la valeur booléenne `TRUE` doivent être
+remplacées par exemple par "oui", pour que ces colonnes soient plus facilement
+manipulables (fonctions `dplyr::mutate` et `dplyr::across`).
+
+Pour ce faire, je crée une fonction pour que le code soit facilement
+réutilisable :
 
 ```{r}
 clean_extracted_data <- function(
   data_extracted,
   na.value = "", 
-  recode.bullet = TRUE,
-  quiet = FALSE
+  recode.bullet = TRUE
 ) {
   
   cleaned_df <- data_extracted %>%
     janitor::row_to_names(1) %>%
     janitor::clean_names() %>%
     na_if(na.value) %>%
-    janitor::remove_empty(c("rows", "cols"), quiet = FALSE)
+    janitor::remove_empty(c("rows", "cols"))
   
   if (recode.bullet) {
     replace_bullet <- function(x) {
@@ -93,27 +153,58 @@ clean_extracted_data <- function(
       mutate(across(where(~ any(grepl("•", .))), replace_bullet))
   }
   
-  rownames(cleaned_df) <- NULL
+  rownames(cleaned_df) <- NULL # Actualisation des numéros de ligne
   
   return(cleaned_df)
 }
 ```
 
+Ensuite, il ne reste plus qu'à appliquer cette fonction sur les tableaux
+extraits :
+
 ```{r}
-jura_herpetofaune <- extract_tables(pdf_data_jura, pages = 1) %>% 
-  as.data.frame() %>%
-  clean_extracted_data()
-
-jura_mammifere <- extract_tables(pdf_data_jura, pages = 2) %>%
-  as.data.frame() %>%
-  clean_extracted_data()
-
-jura_avifaune <- extract_tables(pdf_data_jura, pages = 3:4) %>%
-  purrr::map(as.data.frame) %>%
-  purrr::map(clean_extracted_data)
+jura_data_cleaned <- jura_data %>% purrr::map(clean_extracted_data)
 ```
 
+Les tableaux ressemblent maintenant à cela :
 
+<caption>(#tab:juradatacleaned) Tableaux contenant les données extraites du PDF et nettoyées (cliquer pour étendre les tableaux). </caption>
+
+```{r, echo=FALSE}
+# Récupération du nom des tableaux dans la liste.
+tableau <- purrr::map(
+  1:length(jura_data_cleaned),
+  ~ glue::glue("jura_data_cleaned[[{.}]]")
+)
+
+# Création d'un tableau interactif contenant l'ensemble des jeux de données.
+all_output <- my_reactable(
+  data.frame(tableau = unlist(tableau)),
+  details = function(index) {
+    htmltools::div(
+        my_reactable(
+          jura_data_cleaned[[index]],
+          fullWidth = FALSE,
+          pagination = FALSE,
+          outlined = TRUE,
+          compact = TRUE,
+          height = 500,
+          showPageSizeOptions = FALSE,
+          showPageInfo = FALSE
+        )
+    )
+  },
+  searchable = FALSE,
+  defaultPageSize = length(tableau), 
+  minRows = length(tableau),
+  onClick = "expand",
+  rowStyle = list(cursor = "pointer"),
+  rownames = FALSE,
+  defaultColDef = colDef(na = "")
+)
+
+all_output
+```
   
 ## Récupération de données provenant du web : le _web scraping_
   
