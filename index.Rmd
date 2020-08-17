@@ -18,12 +18,44 @@ favicon: "images/favicon_io/favicon.ico"
 description: "Ceci est l'ensemble de mes notes accumulées au fur et à mesure de mon apprentissage de différents outils et concepts qui sont nécessaires à mes besoins dans les analyses de données et la programmation. Cela me permet de les comprendre, les mémoriser, ainsi que de les partager."
 ---
 
+```{r max-height, include=FALSE}
+# Ajout d'un paramètre de chunk pour changer la hauteur des blocs de code.
+# Astuce trouvée sur https://bookdown.org/yihui/rmarkdown-cookbook/hook-scroll.html#hook-scroll
+
+options(width = 60)
+
+# Hauteur du bloc source.
+local({
+  hook_source <- knitr::knit_hooks$get('source')
+  knitr::knit_hooks$set(source = function(x, options) {
+    if (!is.null(options$source.max.height)) options$attr.source <- c(
+      options$attr.source,
+      sprintf('style="max-height: %s;"', options$source.max.height)
+    )
+    hook_source(x, options)
+  })
+})
+
+# Hauteur du bloc de sortie.
+local({
+  hook_output <- knitr::knit_hooks$get('output')
+  knitr::knit_hooks$set(output = function(x, options) {
+    if (!is.null(options$output.max.height)) options$attr.output <- c(
+      options$attr.output,
+      sprintf('style="max-height: %s;"', options$output.max.height)
+    )
+    hook_output(x, options)
+  })
+})
+```
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(
  fig.width = 7,
  fig.asp = 0.8,
  out.width = "60%",
- fig.align='center'
+ fig.align='center',
+ source.max.height="500px"
 )
 options(knitr.table.format = "html")
 ```
@@ -69,3 +101,60 @@ accessibles dans les références bibliographiques ou dans les ressources Intern
 à la fin des chapitres.
 
 Il n'y a pour l'instant qu'une version en ligne, mais une version PDF sera aussi disponible en téléchargement lorsque l'aide-mémoire sera plus mature.
+
+Avant de commencer, on charge les packages dont on aura besoin tout au long de
+ce document.
+
+```{r, message=FALSE}
+library("ggplot2")   # Visualisation des données basée sur "The Grammar of graphics"
+library("ggthemes")  # Ajoute d'autres thèmes à ggplot2
+library("ggrepel")   # Permet un meilleur affichage des étiquettes
+library("patchwork") # Permet de combiner les graphiques
+library("dplyr")     # Permet la manipulation des données
+library("ggforce")   # Extension de ggplot2 pour de nouveaux geom_*
+
+library("reactable") # Création des tableaux interactifs (HTML seulement)
+```
+
+```{r theme-reactable}
+# Configuration du thème par défaut des tableaux via 'reactable'
+options(reactable.theme = reactableTheme(
+  color = "hsl(233, 9%, 87%)",
+  backgroundColor = "hsl(233, 9%, 19%)", 
+  borderColor = "hsl(233, 9%, 22%)", 
+  stripedColor = "hsl(233, 12%, 22%)", 
+  highlightColor = "hsl(233, 12%, 24%)",
+  inputStyle = list(backgroundColor = "hsl(233, 9%, 25%)"), 
+  selectStyle = list(backgroundColor = "hsl(233, 9%, 25%)"), 
+  pageButtonHoverStyle = list(backgroundColor = "hsl(233, 9%, 25%)"), 
+  pageButtonActiveStyle = list(backgroundColor = "hsl(233, 9%, 28%)")
+  )
+)
+
+# Paramètres par défaut.
+my_reactable <- function(
+  data,
+  searchable = TRUE,
+  showPageSizeOptions = TRUE,
+  pageSizeOptions = c(5, 10, 15, 20),
+  defaultPageSize = 5, 
+  minRows = 5,
+  highlight = TRUE,
+  rownames = TRUE,
+  ...
+) {
+  reactable(
+    data,
+    searchable = searchable,
+    showPageSizeOptions = showPageSizeOptions,
+    pageSizeOptions = pageSizeOptions,
+    defaultPageSize = defaultPageSize, 
+    minRows = minRows,
+    highlight = highlight,
+    rownames = rownames,
+    striped = TRUE,
+    ...
+  )
+}
+```
+

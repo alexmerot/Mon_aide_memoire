@@ -50,6 +50,12 @@
 
 
 
+<script src="libs/core-js-2.5.3/shim.min.js"></script>
+<script src="libs/react-16.12.0/react.min.js"></script>
+<script src="libs/react-16.12.0/react-dom.min.js"></script>
+<script src="libs/reactwidget-1.0.0/react-tools.js"></script>
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<script src="libs/reactable-binding-0.2.0/reactable.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 
 
@@ -192,7 +198,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">Aide-mémoire : Analyses de données &amp; Cartographie sur R</h1>
 <p class="author"><em>Alexis Mérot</em></p>
-<p class="date"><em>Modifié le : 2020-08-15</em></p>
+<p class="date"><em>Modifié le : 2020-08-17</em></p>
 </div>
 <div id="introduction" class="section level1 unnumbered">
 <h1>Introduction</h1>
@@ -217,6 +223,55 @@ exemples se focaliseront pour la plupart sur des données en lien à ces domaine
 accessibles dans les références bibliographiques ou dans les ressources Internet
 à la fin des chapitres.</p>
 <p>Il n’y a pour l’instant qu’une version en ligne, mais une version PDF sera aussi disponible en téléchargement lorsque l’aide-mémoire sera plus mature.</p>
+<p>Avant de commencer, on charge les packages dont on aura besoin tout au long de
+ce document.</p>
+<div class="sourceCode" id="cb1" style="max-height: 500px;"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1" aria-hidden="true"></a><span class="kw">library</span>(<span class="st">&quot;ggplot2&quot;</span>)   <span class="co"># Visualisation des données basée sur &quot;The Grammar of graphics&quot;</span></span>
+<span id="cb1-2"><a href="index.html#cb1-2" aria-hidden="true"></a><span class="kw">library</span>(<span class="st">&quot;ggthemes&quot;</span>)  <span class="co"># Ajoute d&#39;autres thèmes à ggplot2</span></span>
+<span id="cb1-3"><a href="index.html#cb1-3" aria-hidden="true"></a><span class="kw">library</span>(<span class="st">&quot;ggrepel&quot;</span>)   <span class="co"># Permet un meilleur affichage des étiquettes</span></span>
+<span id="cb1-4"><a href="index.html#cb1-4" aria-hidden="true"></a><span class="kw">library</span>(<span class="st">&quot;patchwork&quot;</span>) <span class="co"># Permet de combiner les graphiques</span></span>
+<span id="cb1-5"><a href="index.html#cb1-5" aria-hidden="true"></a><span class="kw">library</span>(<span class="st">&quot;dplyr&quot;</span>)     <span class="co"># Permet la manipulation des données</span></span>
+<span id="cb1-6"><a href="index.html#cb1-6" aria-hidden="true"></a><span class="kw">library</span>(<span class="st">&quot;ggforce&quot;</span>)   <span class="co"># Extension de ggplot2 pour de nouveaux geom_*</span></span>
+<span id="cb1-7"><a href="index.html#cb1-7" aria-hidden="true"></a></span>
+<span id="cb1-8"><a href="index.html#cb1-8" aria-hidden="true"></a><span class="kw">library</span>(<span class="st">&quot;reactable&quot;</span>) <span class="co"># Création des tableaux interactifs (HTML seulement)</span></span></code></pre></div>
+<div class="sourceCode" id="cb2" style="max-height: 500px;"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="index.html#cb2-1" aria-hidden="true"></a><span class="co"># Configuration du thème par défaut des tableaux via &#39;reactable&#39;</span></span>
+<span id="cb2-2"><a href="index.html#cb2-2" aria-hidden="true"></a><span class="kw">options</span>(<span class="dt">reactable.theme =</span> <span class="kw">reactableTheme</span>(</span>
+<span id="cb2-3"><a href="index.html#cb2-3" aria-hidden="true"></a>  <span class="dt">color =</span> <span class="st">&quot;hsl(233, 9%, 87%)&quot;</span>,</span>
+<span id="cb2-4"><a href="index.html#cb2-4" aria-hidden="true"></a>  <span class="dt">backgroundColor =</span> <span class="st">&quot;hsl(233, 9%, 19%)&quot;</span>, </span>
+<span id="cb2-5"><a href="index.html#cb2-5" aria-hidden="true"></a>  <span class="dt">borderColor =</span> <span class="st">&quot;hsl(233, 9%, 22%)&quot;</span>, </span>
+<span id="cb2-6"><a href="index.html#cb2-6" aria-hidden="true"></a>  <span class="dt">stripedColor =</span> <span class="st">&quot;hsl(233, 12%, 22%)&quot;</span>, </span>
+<span id="cb2-7"><a href="index.html#cb2-7" aria-hidden="true"></a>  <span class="dt">highlightColor =</span> <span class="st">&quot;hsl(233, 12%, 24%)&quot;</span>,</span>
+<span id="cb2-8"><a href="index.html#cb2-8" aria-hidden="true"></a>  <span class="dt">inputStyle =</span> <span class="kw">list</span>(<span class="dt">backgroundColor =</span> <span class="st">&quot;hsl(233, 9%, 25%)&quot;</span>), </span>
+<span id="cb2-9"><a href="index.html#cb2-9" aria-hidden="true"></a>  <span class="dt">selectStyle =</span> <span class="kw">list</span>(<span class="dt">backgroundColor =</span> <span class="st">&quot;hsl(233, 9%, 25%)&quot;</span>), </span>
+<span id="cb2-10"><a href="index.html#cb2-10" aria-hidden="true"></a>  <span class="dt">pageButtonHoverStyle =</span> <span class="kw">list</span>(<span class="dt">backgroundColor =</span> <span class="st">&quot;hsl(233, 9%, 25%)&quot;</span>), </span>
+<span id="cb2-11"><a href="index.html#cb2-11" aria-hidden="true"></a>  <span class="dt">pageButtonActiveStyle =</span> <span class="kw">list</span>(<span class="dt">backgroundColor =</span> <span class="st">&quot;hsl(233, 9%, 28%)&quot;</span>)</span>
+<span id="cb2-12"><a href="index.html#cb2-12" aria-hidden="true"></a>  )</span>
+<span id="cb2-13"><a href="index.html#cb2-13" aria-hidden="true"></a>)</span>
+<span id="cb2-14"><a href="index.html#cb2-14" aria-hidden="true"></a></span>
+<span id="cb2-15"><a href="index.html#cb2-15" aria-hidden="true"></a><span class="co"># Paramètres par défaut.</span></span>
+<span id="cb2-16"><a href="index.html#cb2-16" aria-hidden="true"></a>my_reactable &lt;-<span class="st"> </span><span class="cf">function</span>(</span>
+<span id="cb2-17"><a href="index.html#cb2-17" aria-hidden="true"></a>  data,</span>
+<span id="cb2-18"><a href="index.html#cb2-18" aria-hidden="true"></a>  <span class="dt">searchable =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb2-19"><a href="index.html#cb2-19" aria-hidden="true"></a>  <span class="dt">showPageSizeOptions =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb2-20"><a href="index.html#cb2-20" aria-hidden="true"></a>  <span class="dt">pageSizeOptions =</span> <span class="kw">c</span>(<span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">20</span>),</span>
+<span id="cb2-21"><a href="index.html#cb2-21" aria-hidden="true"></a>  <span class="dt">defaultPageSize =</span> <span class="dv">5</span>, </span>
+<span id="cb2-22"><a href="index.html#cb2-22" aria-hidden="true"></a>  <span class="dt">minRows =</span> <span class="dv">5</span>,</span>
+<span id="cb2-23"><a href="index.html#cb2-23" aria-hidden="true"></a>  <span class="dt">highlight =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb2-24"><a href="index.html#cb2-24" aria-hidden="true"></a>  <span class="dt">rownames =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb2-25"><a href="index.html#cb2-25" aria-hidden="true"></a>  ...</span>
+<span id="cb2-26"><a href="index.html#cb2-26" aria-hidden="true"></a>) {</span>
+<span id="cb2-27"><a href="index.html#cb2-27" aria-hidden="true"></a>  <span class="kw">reactable</span>(</span>
+<span id="cb2-28"><a href="index.html#cb2-28" aria-hidden="true"></a>    data,</span>
+<span id="cb2-29"><a href="index.html#cb2-29" aria-hidden="true"></a>    <span class="dt">searchable =</span> searchable,</span>
+<span id="cb2-30"><a href="index.html#cb2-30" aria-hidden="true"></a>    <span class="dt">showPageSizeOptions =</span> showPageSizeOptions,</span>
+<span id="cb2-31"><a href="index.html#cb2-31" aria-hidden="true"></a>    <span class="dt">pageSizeOptions =</span> pageSizeOptions,</span>
+<span id="cb2-32"><a href="index.html#cb2-32" aria-hidden="true"></a>    <span class="dt">defaultPageSize =</span> defaultPageSize, </span>
+<span id="cb2-33"><a href="index.html#cb2-33" aria-hidden="true"></a>    <span class="dt">minRows =</span> minRows,</span>
+<span id="cb2-34"><a href="index.html#cb2-34" aria-hidden="true"></a>    <span class="dt">highlight =</span> highlight,</span>
+<span id="cb2-35"><a href="index.html#cb2-35" aria-hidden="true"></a>    <span class="dt">rownames =</span> rownames,</span>
+<span id="cb2-36"><a href="index.html#cb2-36" aria-hidden="true"></a>    <span class="dt">striped =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb2-37"><a href="index.html#cb2-37" aria-hidden="true"></a>    ...</span>
+<span id="cb2-38"><a href="index.html#cb2-38" aria-hidden="true"></a>  )</span>
+<span id="cb2-39"><a href="index.html#cb2-39" aria-hidden="true"></a>}</span></code></pre></div>
 
 </div>
 <h3>Références</h3>

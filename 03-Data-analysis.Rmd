@@ -1,12 +1,133 @@
 # Extraction/importation, nettoyage & manipulation des données {#data-analysis}
 
 ::: {.infobox .caution data-latex="{caution}"}
-**Work In Progress**
+*_Work In Progress_*
 :::
 
 
 ## Extraction de données provenant d'un PDF
   
-## Récupération de données provenant du web : le *web scraping*
+```{r}
+library("tabulizer")
+```
+
+```{r}
+pdf_data_jura <- "examples/faune-RNN-jura/Faune-vertebres-PG3.pdf"
+```
+
+```{r}
+jura_data <- extract_tables(pdf_data_jura) %>% 
+  purrr::map(as.data.frame)
+
+purrr::map(jura_data, dim)
+```
+
+```{r}
+tableau <- purrr::map(1:length(jura_data), ~ glue::glue("jura_data[[{.}]]"))
+
+all_output <- my_reactable(
+  data.frame(tableau = unlist(tableau)),
+  details = function(index) {
+    htmltools::div(
+      style = "padding: 16 px",
+      my_reactable(
+        jura_data[[index]],
+        fullWidth = FALSE,
+        pagination = FALSE,
+        outlined = TRUE,
+        compact = TRUE,
+        height = 500,
+        showPageSizeOptions = FALSE,
+        showPageInfo = FALSE
+      )
+    )
+  },
+  searchable = FALSE,
+  defaultPageSize = length(tableau), 
+  minRows = length(tableau),
+  onClick = "expand",
+  rowStyle = list(cursor = "pointer")
+)
+```
+
+<caption>(#tab:juradata) Tableaux contenant les données brutes extraites du PDF provenant du plan de gestion 2020-2029 de la RNN de la Haute Chaîne du Jura. </caption>
+
+```{r, echo=FALSE}
+all_output
+```
+
+
+```{r}
+clean_extracted_data <- function(
+  data_extracted,
+  na.value = "", 
+  recode.bullet = TRUE,
+  quiet = FALSE
+) {
+  
+  cleaned_df <- data_extracted %>%
+    janitor::row_to_names(1) %>%
+    janitor::clean_names() %>%
+    na_if(na.value) %>%
+    janitor::remove_empty(c("rows", "cols"), quiet = FALSE)
+  
+  if (recode.bullet) {
+    replace_bullet <- function(x) {
+      if (is.na(x)) {
+        output = x
+      } else {
+        if (x == "•") {
+          output = "oui"
+        } else if (x == "") {
+          output = "non"
+        } else {
+          output = x
+        }
+      }
+      
+      return(output)
+    }
+    
+    cleaned_df <- cleaned_df %>%
+      rowwise() %>%
+      mutate(across(where(~ any(grepl("•", .))), replace_bullet))
+  }
+  
+  rownames(cleaned_df) <- NULL
+  
+  return(cleaned_df)
+}
+```
+
+```{r}
+jura_herpetofaune <- extract_tables(pdf_data_jura, pages = 1) %>% 
+  as.data.frame() %>%
+  clean_extracted_data()
+
+jura_mammifere <- extract_tables(pdf_data_jura, pages = 2) %>%
+  as.data.frame() %>%
+  clean_extracted_data()
+
+jura_avifaune <- extract_tables(pdf_data_jura, pages = 3:4) %>%
+  purrr::map(as.data.frame) %>%
+  purrr::map(clean_extracted_data)
+```
+
+
+  
+## Récupération de données provenant du web : le _web scraping_
   
 ## Liste de ressources Internet utiles {.unnumbered #ref-data-analysis}
+
+* Courte comparaison entre [les deux
+packages](https://thinkr.fr/tm-ou-tidytext-introduction-au-text-mining-avec-r/)
+de _text mining_ dans R.
+* Introduction au [_tidy text mining_](https://www.tidytextmining.com/).
+* [Introduction](https://cran.r-project.org/web/packages/tabulizer/vignettes/tabulizer.html) au package [`tabulizer`](https://github.com/ropensci/tabulizer).
+* [Tutoriel](https://datascienceplus.com/extracting-tables-from-pdfs-in-r-using-the-tabulizer-package/)
+sur l'utilisation du package `tabulizer`.
+* Autre [tutoriel](https://blog.az.sg/posts/reading-pdfs-in-r/) sur `tabulizer`.
+* [Catalogue](https://cran.r-project.org/web/packages/janitor/vignettes/janitor.html)
+des fonctions du package `janitor` pour l'exploration et le nettoyage des données.
+* [Introduction](https://cran.r-project.org/web/packages/naniar/vignettes/getting-started-w-naniar.html)
+du package `naniar` pour la manipulation des valeurs manquantes.
