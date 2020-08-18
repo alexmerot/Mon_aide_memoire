@@ -27,7 +27,7 @@ contient des tableaux montrant les données de recensement pour le plan de
 gestion 2019-2020 de la faune présente.
 
 <figure>
-  <iframe title="Données de recensement des vertébrés dans la Réserve Naturelle Nationale de la Haute Chaîne du Jura." src="examples/faune-RNN-jura/Faune-vertebres-PG3.pdf" width="100%" height="500px"></iframe>
+  <embed type = "application/pdf" src="examples/faune-RNN-jura/Faune-vertebres-PG3.pdf" width="100%" height="500px">
   <figcaption>(#fig:jura-data-pdf) Figure \@ref(fig:jura-data-pdf): Données de recensement des vertébrés dans la Réserve Naturelle Nationale de la Haute Chaîne du Jura.</figcaption>
 </figure>
 
