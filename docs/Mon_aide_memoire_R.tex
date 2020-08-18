@@ -471,9 +471,14 @@ Regardons alors de plus près ce que contiennent ces tableaux :
 \CommentTok{\# Récupération du nom des tableaux dans la liste.}
 \NormalTok{tableau \textless{}{-}}\StringTok{ }\NormalTok{purrr}\OperatorTok{::}\KeywordTok{map}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\KeywordTok{length}\NormalTok{(jura\_data), }\OperatorTok{\textasciitilde{}}\StringTok{ }\NormalTok{glue}\OperatorTok{::}\KeywordTok{glue}\NormalTok{(}\StringTok{"jura\_data[[\{.\}]]"}\NormalTok{))}
 
+\CommentTok{\# Récupération des dimensions des tableaux}
+\NormalTok{dimensions \textless{}{-}}\StringTok{ }\NormalTok{purrr}\OperatorTok{::}\KeywordTok{map}\NormalTok{(jura\_data, dim) }\OperatorTok{\%\textgreater{}\%}
+\StringTok{  }\NormalTok{purrr}\OperatorTok{::}\KeywordTok{map}\NormalTok{(}\OperatorTok{\textasciitilde{}}\StringTok{ }\NormalTok{glue}\OperatorTok{::}\KeywordTok{glue}\NormalTok{(}\StringTok{"\{.[[1]]\} lignes et \{.[[2]]\} colonnes"}\NormalTok{)) }\OperatorTok{\%\textgreater{}\%}
+\StringTok{  }\KeywordTok{unlist}\NormalTok{()}
+
 \CommentTok{\# Création d\textquotesingle{}un tableau interactif contenant l\textquotesingle{}ensemble des jeux de données.}
 \NormalTok{all\_output \textless{}{-}}\StringTok{ }\KeywordTok{my\_reactable}\NormalTok{(}
-  \KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{tableau =} \KeywordTok{unlist}\NormalTok{(tableau)),}
+  \KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{tableau =} \KeywordTok{unlist}\NormalTok{(tableau), dimensions),}
   \DataTypeTok{details =} \ControlFlowTok{function}\NormalTok{(index) \{}
 \NormalTok{    htmltools}\OperatorTok{::}\KeywordTok{div}\NormalTok{(}
         \KeywordTok{my\_reactable}\NormalTok{(}
@@ -516,7 +521,7 @@ remplacées par exemple par ``oui'', pour que ces colonnes soient plus facilemen
 manipulables (fonctions \texttt{dplyr::mutate} et \texttt{dplyr::across}).
 
 Pour ce faire, je crée une fonction pour que le code soit facilement
-réutilisable :
+réutilisable (et applicable dans la fonction \texttt{purrr::map}) :
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -550,8 +555,10 @@ réutilisable :
 \NormalTok{    \}}
     
 \NormalTok{    cleaned\_df \textless{}{-}}\StringTok{ }\NormalTok{cleaned\_df }\OperatorTok{\%\textgreater{}\%}
-\StringTok{      }\KeywordTok{rowwise}\NormalTok{() }\OperatorTok{\%\textgreater{}\%}
-\StringTok{      }\KeywordTok{mutate}\NormalTok{(}\KeywordTok{across}\NormalTok{(}\KeywordTok{where}\NormalTok{(}\OperatorTok{\textasciitilde{}}\StringTok{ }\KeywordTok{any}\NormalTok{(}\KeywordTok{grepl}\NormalTok{(}\StringTok{"•"}\NormalTok{, .))), replace\_bullet))}
+\StringTok{      }\KeywordTok{rowwise}\NormalTok{() }\OperatorTok{\%\textgreater{}\%}\StringTok{ }\CommentTok{\# Groupement par ligne}
+\StringTok{      }\CommentTok{\# Pour chaque colonne ayant les puces, on remplace la puce}
+\StringTok{      }\KeywordTok{mutate}\NormalTok{(}\KeywordTok{across}\NormalTok{(}\KeywordTok{where}\NormalTok{(}\OperatorTok{\textasciitilde{}}\StringTok{ }\KeywordTok{any}\NormalTok{(}\KeywordTok{grepl}\NormalTok{(}\StringTok{"•"}\NormalTok{, .))), replace\_bullet)) }\OperatorTok{\%\textgreater{}\%}
+\StringTok{      }\KeywordTok{ungroup}\NormalTok{()}
 \NormalTok{  \}}
   
   \KeywordTok{rownames}\NormalTok{(cleaned\_df) \textless{}{-}}\StringTok{ }\OtherTok{NULL} \CommentTok{\# Actualisation des numéros de ligne}
@@ -575,6 +582,76 @@ Les tableaux ressemblent maintenant à cela :
 \label{tab:juradatacleaned} Tableaux contenant les données extraites du PDF et nettoyées (cliquer pour étendre les tableaux).
 
 \begin{center}\includegraphics[width=0.6\linewidth]{Mon_aide_memoire_R_files/figure-latex/unnamed-chunk-11-1} \end{center}
+
+C'est beaucoup mieux. Néanmoins il reste une colonne en trop dans le tableau
+\texttt{jura\_data{[}{[}3{]}{]}}. S'il n'y avait eu que des cases vides, la colonne aurait été supprimée. On peut donc regarder les lignes où il y a des erreurs :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{line\_id \textless{}{-}}\StringTok{ }\KeywordTok{which}\NormalTok{(}\OperatorTok{!}\KeywordTok{is.na}\NormalTok{(jura\_data\_cleaned[[}\DecValTok{3}\NormalTok{]]}\OperatorTok{$}\NormalTok{x))}
+
+\KeywordTok{my\_reactable}\NormalTok{(}
+\NormalTok{  jura\_data\_cleaned[[}\DecValTok{3}\NormalTok{]][line\_id,],}
+  \DataTypeTok{searchable =} \OtherTok{FALSE}\NormalTok{,}
+  \DataTypeTok{defaultPageSize =} \KeywordTok{length}\NormalTok{(line\_id), }
+  \DataTypeTok{minRows =} \KeywordTok{length}\NormalTok{(line\_id)}
+\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=0.6\linewidth]{Mon_aide_memoire_R_files/figure-latex/unnamed-chunk-12-1} \end{center}
+
+Une seule ligne en ressort : celle pour le Grand Tétras. En comparant avec la ligne du tableau sur le PDF, on peut se rendre compte qu'il y a un décalage à partir de la colonne \texttt{directive\_oiseaux\_annexe\_1}. Cela peut être dû à la mauvaise visualisation de la puce (bien présente) à la colonne \texttt{protection\_nationale}. Cette puce ne semble pas visible, mais en surlignant avec la souris le texte de cette case, on peut voir apparaître la puce ``•''. On peut donc réécrire correctement cette ligne d'après le PDF :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Suppression de la colonne en trop.}
+\NormalTok{jura\_data\_cleaned[[}\DecValTok{3}\NormalTok{]] \textless{}{-}}\StringTok{ }\KeywordTok{select}\NormalTok{(jura\_data\_cleaned[[}\DecValTok{3}\NormalTok{]], }\OperatorTok{{-}}\NormalTok{x)}
+
+\CommentTok{\# Modification de la ligne posant problème.}
+\NormalTok{jura\_data\_cleaned[[}\DecValTok{3}\NormalTok{]][line\_id,] \textless{}{-}}\StringTok{ }\KeywordTok{list}\NormalTok{(}
+  \StringTok{"Tetrao urogallus major C. L. Brehm, 1831"}\NormalTok{,}
+  \StringTok{"Grand Tétras"}\NormalTok{,}
+  \StringTok{"2018"}\NormalTok{,}
+  \StringTok{"oui"}\NormalTok{,}
+  \StringTok{"oui"}\NormalTok{,}
+  \StringTok{"VU"}\NormalTok{,}
+  \StringTok{"CR"}\NormalTok{,}
+  \StringTok{"oui"}\NormalTok{,}
+  \OtherTok{NA}\NormalTok{,}
+  \StringTok{"oui"}\NormalTok{,}
+  \OtherTok{NA}\NormalTok{,}
+  \StringTok{"En déclin"}\NormalTok{,}
+  \StringTok{"Forte"}\NormalTok{,}
+  \StringTok{"Forte"}\NormalTok{,}
+  \StringTok{"1"}
+\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Ensuite, on peut fusionner les deux sous-parties du tableau 3 (tableaux
+\texttt{jura\_data\_cleaned{[}{[}3{]}{]}} et \texttt{jura\_data\_cleaned{[}{[}4{]}{]}}) et visualiser les tableaux
+finaux :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{herpetofaune\_jura \textless{}{-}}\StringTok{ }\NormalTok{jura\_data\_cleaned[[}\DecValTok{1}\NormalTok{]]}
+\NormalTok{mammiferes\_jura \textless{}{-}}\StringTok{ }\NormalTok{jura\_data\_cleaned[[}\DecValTok{2}\NormalTok{]]}
+\NormalTok{avifaune\_jura \textless{}{-}}\StringTok{ }\KeywordTok{bind\_rows}\NormalTok{(jura\_data\_cleaned[[}\DecValTok{3}\NormalTok{]], jura\_data\_cleaned[[}\DecValTok{4}\NormalTok{]])}
+\end{Highlighting}
+\end{Shaded}
+
+\label{tab:herpetofaune-jura}Données présentant l'herpétofaune de la Réserve Naturelle Nationale de la Haute Chaîne du Jura.
+
+\begin{center}\includegraphics[width=0.6\linewidth]{Mon_aide_memoire_R_files/figure-latex/unnamed-chunk-15-1} \end{center}
+
+\label{tab:mammifere-jura}Données présentant les mammifères de la Réserve Naturelle Nationale de la Haute Chaîne du Jura.
+
+\begin{center}\includegraphics[width=0.6\linewidth]{Mon_aide_memoire_R_files/figure-latex/unnamed-chunk-16-1} \end{center}
+
+\label{tab:avifaune-jura}Données présentant l'avifaune de la Réserve Naturelle Nationale de la Haute Chaîne du Jura.
+
+\begin{center}\includegraphics[width=0.6\linewidth]{Mon_aide_memoire_R_files/figure-latex/unnamed-chunk-17-1} \end{center}
 
 \hypertarget{ruxe9cupuxe9ration-de-donnuxe9es-provenant-du-web-le-web-scraping}{%
 \section{\texorpdfstring{Récupération de données provenant du web : le \emph{web scraping}}{Récupération de données provenant du web : le web scraping}}\label{ruxe9cupuxe9ration-de-donnuxe9es-provenant-du-web-le-web-scraping}}
@@ -10697,7 +10774,7 @@ discrètes} ainsi que des \textbf{données continues}.
 ##  desc            1.2.0      2018-05-01 [3]
 ##  devtools        2.3.1      2020-07-21 [3]
 ##  digest          0.6.25     2020-02-23 [3]
-##  dplyr         * 1.0.1      2020-07-31 [1]
+##  dplyr         * 1.0.2      2020-08-18 [1]
 ##  e1071           1.7-3      2019-11-26 [1]
 ##  ellipsis        0.3.1      2020-05-15 [3]
 ##  evaluate        0.14       2019-05-28 [3]

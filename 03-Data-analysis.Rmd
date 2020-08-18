@@ -64,9 +64,14 @@ Regardons alors de plus près ce que contiennent ces tableaux :
 # Récupération du nom des tableaux dans la liste.
 tableau <- purrr::map(1:length(jura_data), ~ glue::glue("jura_data[[{.}]]"))
 
+# Récupération des dimensions des tableaux
+dimensions <- purrr::map(jura_data, dim) %>%
+  purrr::map(~ glue::glue("{.[[1]]} lignes et {.[[2]]} colonnes")) %>%
+  unlist()
+
 # Création d'un tableau interactif contenant l'ensemble des jeux de données.
 all_output <- my_reactable(
-  data.frame(tableau = unlist(tableau)),
+  data.frame(tableau = unlist(tableau), dimensions),
   details = function(index) {
     htmltools::div(
         my_reactable(
@@ -97,6 +102,7 @@ all_output <- my_reactable(
 ```{r, echo=FALSE}
 all_output
 ```
+<br>
 
 On peut alors observer qu'il faut nettoyer ces jeux de données. En effet, il
 faut d'abord mettre la première ligne en tant que nom des colonnes (fonction
@@ -111,7 +117,7 @@ remplacées par exemple par "oui", pour que ces colonnes soient plus facilement
 manipulables (fonctions `dplyr::mutate` et `dplyr::across`).
 
 Pour ce faire, je crée une fonction pour que le code soit facilement
-réutilisable :
+réutilisable (et applicable dans la fonction `purrr::map`) :
 
 ```{r}
 clean_extracted_data <- function(
@@ -144,8 +150,10 @@ clean_extracted_data <- function(
     }
     
     cleaned_df <- cleaned_df %>%
-      rowwise() %>%
-      mutate(across(where(~ any(grepl("•", .))), replace_bullet))
+      rowwise() %>% # Groupement par ligne
+      # Pour chaque colonne ayant les puces, on remplace la puce
+      mutate(across(where(~ any(grepl("•", .))), replace_bullet)) %>%
+      ungroup()
   }
   
   rownames(cleaned_df) <- NULL # Actualisation des numéros de ligne
@@ -172,9 +180,14 @@ tableau <- purrr::map(
   ~ glue::glue("jura_data_cleaned[[{.}]]")
 )
 
+# Récupération des dimensions des tableaux
+dimensions <- purrr::map(jura_data_cleaned, dim) %>%
+  purrr::map(~ glue::glue("{.[[1]]} lignes et {.[[2]]} colonnes")) %>%
+  unlist()
+
 # Création d'un tableau interactif contenant l'ensemble des jeux de données.
 all_output <- my_reactable(
-  data.frame(tableau = unlist(tableau)),
+  data.frame(tableau = unlist(tableau), dimensions),
   details = function(index) {
     htmltools::div(
         my_reactable(
@@ -200,9 +213,85 @@ all_output <- my_reactable(
 
 all_output
 ```
-  
+
+C'est beaucoup mieux. Néanmoins il reste une colonne en trop dans le tableau
+`jura_data[[3]]`. S'il n'y avait eu que des cases vides, la colonne aurait été supprimée. On peut donc regarder les lignes où il y a des erreurs :
+
+```{r}
+line_id <- which(!is.na(jura_data_cleaned[[3]]$x))
+
+my_reactable(
+  jura_data_cleaned[[3]][line_id,],
+  searchable = FALSE,
+  defaultPageSize = length(line_id), 
+  minRows = length(line_id)
+)
+```
+
+Une seule ligne en ressort : celle pour le Grand Tétras. En comparant avec la ligne du tableau sur le PDF, on peut se rendre compte qu'il y a un décalage à partir de la colonne `directive_oiseaux_annexe_1`. Cela peut être dû à la mauvaise visualisation de la puce (bien présente) à la colonne `protection_nationale`. Cette puce ne semble pas visible, mais en surlignant avec la souris le texte de cette case, on peut voir apparaître la puce "•". On peut donc réécrire correctement cette ligne d'après le PDF :
+
+```{r}
+# Suppression de la colonne en trop.
+jura_data_cleaned[[3]] <- select(jura_data_cleaned[[3]], -x)
+
+# Modification de la ligne posant problème.
+jura_data_cleaned[[3]][line_id,] <- list(
+  "Tetrao urogallus major C. L. Brehm, 1831",
+  "Grand Tétras",
+  "2018",
+  "oui",
+  "oui",
+  "VU",
+  "CR",
+  "oui",
+  NA,
+  "oui",
+  NA,
+  "En déclin",
+  "Forte",
+  "Forte",
+  "1"
+)
+```
+<br>
+
+Ensuite, on peut fusionner les deux sous-parties du tableau 3 (tableaux
+`jura_data_cleaned[[3]]` et `jura_data_cleaned[[4]]`) et visualiser les tableaux
+finaux :
+
+```{r}
+herpetofaune_jura <- jura_data_cleaned[[1]]
+mammiferes_jura <- jura_data_cleaned[[2]]
+avifaune_jura <- bind_rows(jura_data_cleaned[[3]], jura_data_cleaned[[4]])
+```
+
+<caption>(#tab:herpetofaune-jura)Données présentant l'herpétofaune de la Réserve Naturelle Nationale de la Haute Chaîne du Jura.</caption>
+
+```{r, echo=FALSE}
+my_reactable(herpetofaune_jura)
+```
+<br>
+
+<caption>(#tab:mammifere-jura)Données présentant les mammifères de la Réserve Naturelle Nationale de la Haute Chaîne du Jura.</caption>
+
+```{r, echo=FALSE}
+my_reactable(mammiferes_jura)
+```
+<br>
+
+<caption>(#tab:avifaune-jura)Données présentant l'avifaune de la Réserve Naturelle Nationale de la Haute Chaîne du Jura.</caption>
+
+```{r, echo=FALSE}
+my_reactable(avifaune_jura)
+```
+<br>
+
 ## Récupération de données provenant du web : le _web scraping_
-  
+
+
+
+
+
 ## Liste de ressources Internet utiles {.unnumbered #ref-data-analysis}
 
 * Courte comparaison entre [les deux
