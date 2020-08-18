@@ -19,17 +19,12 @@ package que je vais utiliser pour pouvoir extraire les données d'un PDF.
 library("tabulizer")
 ```
 
-Pour montrer l'utilisation de ce package, je vais utiliser pour exemple un PDF
-(visible ci-dessous) téléchargé sur le
-[site](https://www.rnn-hautechainedujura.fr/patrimoine-naturel/faune/) de la
-Réserve Naturelle Nationale (RNN) de la Haute Chaîne du Jura. Ce fichier
-contient des tableaux montrant les données de recensement pour le plan de
-gestion 2019-2020 de la faune présente.
-
-<figure>
-  <embed type = "application/pdf" src="examples/faune-RNN-jura/Faune-vertebres-PG3.pdf" width="100%" height="500px">
-  <figcaption>(#fig:jura-data-pdf) Figure \@ref(fig:jura-data-pdf): Données de recensement des vertébrés dans la Réserve Naturelle Nationale de la Haute Chaîne du Jura.</figcaption>
-</figure>
+Pour montrer l'utilisation de ce package, je vais utiliser pour
+[exemple un PDF](examples/faune-RNN-jura/Faune-vertebres-PG3.pdf) téléchargé sur
+le [site](https://www.rnn-hautechainedujura.fr/patrimoine-naturel/faune/) de la
+[Réserve Naturelle Nationale (RNN) de la Haute Chaîne du Jura](https://www.rnn-hautechainedujura.fr/).
+Ce fichier contient des tableaux montrant les données de recensement pour le
+plan de gestion 2019-2020 de la faune présente.
 
 ```{r}
 # Chemin d'accès au PDF
