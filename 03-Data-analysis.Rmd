@@ -15,7 +15,7 @@ extraire plus particulièrement les données des tableaux, il existe le package
 bibliothèque java [Tabula](https://github.com/tabulapdf/tabula-java/). C'est ce
 package que je vais utiliser pour pouvoir extraire les données d'un PDF.
 
-```{r}
+```{r, message=FALSE, warning=FALSE}
 library("tabulizer")
 ```
 
@@ -56,7 +56,10 @@ On peut ensuite vérifier que les tableaux correspondent à ce que l'on peut voi
 purrr::map(jura_data, dim)
 ```
 
-On peut voir déjà qu'il y a 4 tableaux au lieu de 3. C'est dû au fait que le 3ème tableau est séparé sur deux pages. De plus, les tableaux 1 et la première partie du 3 contiennent une colonne en trop (respectivement 15 au lieu de 14 et 16 au lieu de 15).
+On peut voir déjà qu'il y a 4 tableaux au lieu de 3. C'est dû au fait que le
+3ème tableau est séparé sur deux pages. De plus, les tableaux 1 et la première
+partie du 3 contiennent une colonne en trop (respectivement 15 au lieu de 14 et
+16 au lieu de 15).
 
 Regardons alors de plus près ce que contiennent ces tableaux :
 
@@ -86,7 +89,6 @@ all_output <- my_reactable(
         )
     )
   },
-  searchable = FALSE,
   defaultPageSize = length(tableau), 
   minRows = length(tableau),
   onClick = "expand",
@@ -104,57 +106,105 @@ all_output
 ```
 <br>
 
-On peut alors observer qu'il faut nettoyer ces jeux de données. En effet, il
-faut d'abord mettre la première ligne en tant que nom des colonnes (fonction
-`janitor::row_to_names`). Ensuite il faut modifier les noms des colonnes pour
-les standardiser et être plus facilement utilisés dans les scripts (fonction
-`janitor::clean_names`). Il faut aussi rajouter des `NA` dans les cases vides
-(fonction `dplyr::na_if`). Les lignes entièrement vides (remplies de `NA`)
-peuvent être supprimées (fonction `janitor::remove_empty`). De même pour les
-colonnes vides qui ne sont pas de base dans le PDF. Enfin, les puces
-typographiques "•" qui représentent la valeur booléenne `TRUE` doivent être
-remplacées par exemple par "oui", pour que ces colonnes soient plus facilement
-manipulables (fonctions `dplyr::mutate` et `dplyr::across`).
+Si on regarde les valeurs uniques des colonnes en trop pour `jura_data[[1]]` et
+`jura_data[[3]]`, on s'aperçoit que la colonne du premier tableau est vide
+(`""`), tandis que pour l'autre il y a la présence d'un `"1"`.
+
+```{r}
+unique(jura_data[[1]][, 15])
+unique(jura_data[[3]][, 16])
+```
+
+On peut donc regarder la ligne où il y a l'erreur :
+
+```{r}
+line_id <- which(jura_data[[3]][, 16] == "1")
+
+my_reactable(
+  jura_data[[3]][line_id,],
+  height = "auto",
+  filterable = FALSE,
+  defaultPageSize = 1, 
+  minRows = 1
+)
+```
+
+La ligne qui en ressort est celle pour le Grand Tétras. En comparant avec la
+ligne du tableau sur le PDF, on peut se rendre compte qu'il y a un décalage à
+partir de la colonne de la Directive Oiseaux Annexe 1. Cela peut être dû à la
+mauvaise visualisation de la puce (bien présente) à la colonne
+"Protection nationale". Cette puce ne semble pas visible, mais en surlignant
+avec la souris le texte de cette case, on peut voir apparaître la puce "•". On
+peut donc réécrire correctement cette ligne d'après le PDF :
+
+```{r}
+# Modification de la ligne posant problème.
+jura_data[[3]][line_id,] <- list(
+  "Tetrao urogallus major C. L. Brehm, 1831",
+  "Grand Tétras",
+  "2018",
+  "oui",
+  "oui",
+  "VU",
+  "CR",
+  "oui",
+  NA,
+  "oui",
+  NA,
+  "En déclin",
+  "Forte",
+  "Forte",
+  "1",
+  ""
+)
+```
+
+Maintenant que cela est fait, on peut également observer qu'il faut nettoyer ces
+jeux de données. En effet, il faut d'abord mettre la première ligne en tant que
+nom des colonnes (fonction `janitor::row_to_names`). Ensuite il faut modifier
+les noms des colonnes pour les standardiser et être plus facilement utilisables
+dans les scripts (fonction `janitor::clean_names`). Il faut aussi rajouter des
+`NA` dans les cases vides (fonction `dplyr::na_if`). Les lignes et colonnes
+entièrement vides peuvent être supprimées (fonction `janitor::remove_empty`).
+Enfin, les puces typographiques "•" qui représentent la valeur booléenne `TRUE`
+doivent être remplacées par exemple par "oui", pour que ces colonnes soient plus
+facilement manipulables (fonctions `dplyr::mutate` et `dplyr::across`).
 
 Pour ce faire, je crée une fonction pour que le code soit facilement
 réutilisable (et applicable dans la fonction `purrr::map`) :
 
 ```{r}
-clean_extracted_data <- function(
-  data_extracted,
-  na.value = "", 
-  recode.bullet = TRUE
-) {
-  
+clean_extracted_data <- function(data_extracted) {
   cleaned_df <- data_extracted %>%
     janitor::row_to_names(1) %>%
-    janitor::clean_names() %>%
-    na_if(na.value) %>%
-    janitor::remove_empty(c("rows", "cols"))
+    janitor::clean_names()
   
-  if (recode.bullet) {
-    replace_bullet <- function(x) {
-      if (is.na(x)) {
-        output = x
+  # Création de la fonction qui remplacera les puces typographiques.
+  replace_bullet <- function(x) {
+    if (is.na(x)) {
+      output = x
+    } else {
+      if (x == "•") {
+        output = "oui"
+      } else if (x == "") {
+        output = "non"
       } else {
-        if (x == "•") {
-          output = "oui"
-        } else if (x == "") {
-          output = "non"
-        } else {
-          output = x
-        }
+        output = x
       }
-      
-      return(output)
     }
     
-    cleaned_df <- cleaned_df %>%
-      rowwise() %>% # Groupement par ligne
-      # Pour chaque colonne ayant les puces, on remplace la puce
-      mutate(across(where(~ any(grepl("•", .))), replace_bullet)) %>%
-      ungroup()
+    return(output)
   }
+  
+  cleaned_df <- cleaned_df %>%
+    # Pour chaque colonne ayant les puces, on les remplace.
+    mutate(across(where(~ any(grepl("•", .))), ~ purrr::map_chr(., replace_bullet))) %>%
+    ungroup() %>%
+    # Pour les colonnes où les cases vides ne représentent pas des NA, on les
+    # remplacent par "—".
+    mutate(across(starts_with(c("lr_", "ec_")), ~ ifelse(. == "", "—", .))) %>%
+    na_if("") %>% # On remplace les cases vides restantes par des NA.
+    janitor::remove_empty(c("rows", "cols")) # Suppression des lignes et colonnes vides
   
   rownames(cleaned_df) <- NULL # Actualisation des numéros de ligne
   
@@ -213,49 +263,9 @@ all_output <- my_reactable(
 
 all_output
 ```
-
-C'est beaucoup mieux. Néanmoins il reste une colonne en trop dans le tableau
-`jura_data[[3]]`. S'il n'y avait eu que des cases vides, la colonne aurait été supprimée. On peut donc regarder les lignes où il y a des erreurs :
-
-```{r}
-line_id <- which(!is.na(jura_data_cleaned[[3]]$x))
-
-my_reactable(
-  jura_data_cleaned[[3]][line_id,],
-  searchable = FALSE,
-  defaultPageSize = length(line_id), 
-  minRows = length(line_id)
-)
-```
-
-Une seule ligne en ressort : celle pour le Grand Tétras. En comparant avec la ligne du tableau sur le PDF, on peut se rendre compte qu'il y a un décalage à partir de la colonne `directive_oiseaux_annexe_1`. Cela peut être dû à la mauvaise visualisation de la puce (bien présente) à la colonne `protection_nationale`. Cette puce ne semble pas visible, mais en surlignant avec la souris le texte de cette case, on peut voir apparaître la puce "•". On peut donc réécrire correctement cette ligne d'après le PDF :
-
-```{r}
-# Suppression de la colonne en trop.
-jura_data_cleaned[[3]] <- select(jura_data_cleaned[[3]], -x)
-
-# Modification de la ligne posant problème.
-jura_data_cleaned[[3]][line_id,] <- list(
-  "Tetrao urogallus major C. L. Brehm, 1831",
-  "Grand Tétras",
-  "2018",
-  "oui",
-  "oui",
-  "VU",
-  "CR",
-  "oui",
-  NA,
-  "oui",
-  NA,
-  "En déclin",
-  "Forte",
-  "Forte",
-  "1"
-)
-```
 <br>
 
-Ensuite, on peut fusionner les deux sous-parties du tableau 3 (tableaux
+On peut maintenant fusioner les deux sous-parties du tableau 3 (tableaux
 `jura_data_cleaned[[3]]` et `jura_data_cleaned[[4]]`) et visualiser les tableaux
 finaux :
 
@@ -288,72 +298,183 @@ my_reactable(avifaune_jura)
 
 ## Récupération de données provenant du web : le _web scraping_
 
-```{r}
-library("polite")
+
+<!-- TODO : Utiliser le package `polite` avec `rvest`  -->
+```{r, message=FALSE, warning=FALSE}
 library("rvest")
 ```
 
-On commence par ouvrir la session de la page web de l'accueil de Wikipedia.
-Ensuite, on récupère
-
 ```{r}
-get_bird_classification <- function(bird) {
-  session <- html_session("https://fr.wikipedia.org/wiki/Wikip%C3%A9dia:Accueil_principal")
+get_bird_classification <- function(bird, taxon = c("Ordre", "Famille")) {
+  wiki_link <- "https://fr.wikipedia.org/wiki/Wikip%C3%A9dia:Accueil_principal"
+  session <- html_session(wiki_link)
   
   form <- html_form(session)
   form_modified <- set_values(form[[1]], search = bird)
   
-  # On entre potentiellement directement sur la page wikipédia de l'oiseau recherché.
+  # On entre sur la page wikipédia de l'oiseau recherché.
   wiki_bird <- submit_form(session, form_modified, submit = "go")
   
-  # On récupère le titre de 1er niveau de la page.
-  title <- wiki_bird %>%
-    html_node(xpath = "//div[@class='entete']//div") %>%
-    html_text()
-
-  # Si la recherche n'a pas trouvé directement la page de l'oiseau en question,
-  # on tombe sur la page "Résultats de la recherche". On choisit donc de suivre
-  # le 1er lien présenté.
-  if (title == "Résultats de la recherche") {
-    wiki_bird <- wiki_bird %>%
-      follow_link(xpath = "//ul[@class='mw-search-results']//li[1]//div[1]//a[1]")
-    
-    # On récupère le bon titre (nom de l'oiseau) :
-    title <- wiki_bird %>%
-      html_node(xpath = "	//h1[@id='firstHeading']") %>%
-      html_text()
-  }
-  
-  print(title)
-  
   tbl_classification <- wiki_bird %>%
-    html_node(xpath = "//table[@class='taxobox_classification']") 
+    html_node(xpath = "//table[@class='taxobox_classification']") %>%
+    html_table() %>%
+    magrittr::set_colnames(c("niveau_classification", "nom_classification")) %>%
+    filter(niveau_classification %in% taxon) %>%
+    tidyr::pivot_wider(
+      names_from = niveau_classification,
+      values_from = nom_classification
+    )
   
-  if (is.na(tbl_classification)) {
-    print("PAS DE TABLE DE CLASSIFICATION")
-  } else {
-    tbl_classification <- tbl_classification %>%
-      html_table() %>%
-      magrittr::set_colnames(c("niveau_classification", "nom_classification")) %>%
-      tidyr::pivot_wider(
-        names_from = niveau_classification,
-        values_from = nom_classification
-      )
-  }
-  
-  tbl_classification$nom_wiki <- title
+  tbl_classification$nom <- bird
   
   return(tbl_classification)
 }
 ```
 
-```{r}
+```{r, cache=TRUE}
 noms_latin <- stringr::str_extract_all(avifaune_jura$nom_latin, r"(^\w+\s+\w+)")
 
-classification_oiseaux <- purrr::map(noms_latin, get_bird_classification)
+classification_oiseaux <- purrr::map(noms_latin, get_bird_classification) %>%
+  bind_rows() # Fusion des tableaux
+```
+
+```{r}
+avifaune_jura <- avifaune_jura %>%
+  mutate(nom = unlist(noms_latin)) %>%
+  left_join(classification_oiseaux, by = "nom") %>%
+  select(-nom) %>%
+  relocate(Ordre:last_col())
+```
+<br>
+
+<caption>(#tab:avifaune-famille)Données présentant l'avifaune de la Réserve Naturelle Nationale de la Haute Chaîne du Jura. Ces données ont été regroupées selon l'ordre et la famille des espèces présentes. (Cliquer pour étendre.)</caption>
+
+```{r, echo=FALSE}
+my_reactable(
+  avifaune_jura,
+  groupBy = c("Ordre", "Famille"),
+  height = "600",
+  rownames = FALSE,
+  defaultExpanded = TRUE,
+  columns = list(
+    Ordre = colDef(
+      class = "sticky left-col-1",
+      headerClass = "sticky left-col-1",
+    ),
+    Famille = colDef(
+      class = "sticky left-col-2",
+      headerClass = "sticky left-col-2"
+    ),
+    nom_latin = colDef(
+      class = "sticky left-col-3",
+      headerClass = "sticky left-col-3"
+    ),
+    lr_nationale_2016_des_oiseaux_nicheurs = colDef(
+      style = function(value) {
+        colour <- "#1e74a2"
+        if (value == "NA") colour <- "#ffffff"
+        if (value == "—") colour <- "#d0cece"
+        if (value == "LC") colour <- "#a9d08e"
+        if (value == "NT") colour <- "#fce4d6"
+        if (value == "VU") colour <- "#ffd966"
+        if (value == "EN") colour <- "#ff9900"
+        if (value == "CR") colour <- "#ff3300"
+        
+        list(background = colour, fontWeight = "bold", color = "#000000")
+      }
+    ),
+    lr_ra_2008 = colDef(
+      style = function(value) {
+        colour <- "#1e74a2"
+        if (value == "NA") colour <- "#ffffff"
+        if (value %in% c("DDm", "DD")) colour <- "#ffffff"
+        if (value == "—") colour <- "#d0cece"
+        if (value %in% c("LC", "LCm")) colour <- "#a9d08e"
+        if (value == "NT") colour <- "#fce4d6"
+        if (value %in% c("VU", "VUm", "Vum")) colour <- "#ffd966"
+        if (value == "EN") colour <- "#ff9900"
+        if (value == "CR") colour <- "#ff3300"
+        
+        list(background = colour, fontWeight = "bold", color = "#000000")
+      }
+    ),
+    ec_do_pop_nicheuse = colDef(
+      style = function(value) {
+        colour <- "#1e74a2"
+        if (value == "NA") colour <- "#ffffff"
+        if (value %in% c("Fluctuantes", "Inconnues")) colour <- "#ffffff"
+        if (value == "—") colour <- "#d0cece"
+        if (value == "En amélioration") colour <- "#a9d08e"
+        if (value == "Stable") colour <- "#ffd966"
+        if (value == "En déclin") colour <- "#ff3300"
+
+        list(background = colour, fontWeight = "bold", color = "#000000")
+      }
+    ),
+    valeur_patrimoniale = colDef(
+      style = function(value) {
+        colour <- "#1e74a2"
+        if (value == "Faible") colour <- "#fff2cc"
+        if (value == "Moyenne") colour <- "#ffd966"
+        if (value == "Forte") colour <- "#ff3300"
+
+        list(background = colour, fontWeight = "bold", color = "#000000")
+      }
+    ),
+    responsabilite_rnn = colDef(
+      style = function(value) {
+        colour <- "#1e74a2"
+        if (value == "Faible") colour <- "#fff2cc"
+        if (value == "Moyenne") colour <- "#ffd966"
+        if (value == "Forte") colour <- "#ff3300"
+        
+        list(background = colour, fontWeight = "bold", color = "#000000")
+      }
+    ),
+    priorite_de_conservation = colDef(
+      style = function(value) {
+        colour <- "#1e74a2"
+        if (value == "1") colour <- "#fff2cc"
+        if (value == "2") colour <- "#ffd966"
+        if (value == "3") colour <- "#ff3300"
+        
+        list(background = colour, fontWeight = "bold", color = "#000000")
+      }
+    )
+  ),
+  defaultColDef = colDef(
+    footerStyle = list(
+      fontWeight = "bold",
+      background = "hsl(52, 4%, 47%)",
+      color = "#000000")
+  )
+)
+
+```
+
+```{css, echo=FALSE}
+.sticky {
+  position: sticky !important;
+  background: hsl(233, 9%, 19%);
+  z-index: 1;
+}
+
+.left-col-1 {
+  left: 0;
+}
+
+.left-col-2 {
+  left: 100px;
+}
+
+.left-col-3 {
+  left: 200px;
+  border-right: 1px solid hsl(233, 9%, 22%) !important;
+}
 ```
 
 
+<br>
 
 ## Liste de ressources Internet utiles {.unnumbered #ref-data-analysis}
 

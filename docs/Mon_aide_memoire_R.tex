@@ -153,7 +153,7 @@
 
 \title{Aide-mémoire : Analyses de données \& Cartographie sur R}
 \author{Alexis Mérot}
-\date{Modifié le : 2020-08-18}
+\date{Modifié le : 2020-08-19}
 
 \begin{document}
 \maketitle
@@ -230,27 +230,30 @@ ce document.
 \CommentTok{\# Paramètres par défaut.}
 \NormalTok{my\_reactable \textless{}{-}}\StringTok{ }\ControlFlowTok{function}\NormalTok{(}
 \NormalTok{  data,}
-  \DataTypeTok{searchable =} \OtherTok{TRUE}\NormalTok{,}
-  \DataTypeTok{showPageSizeOptions =} \OtherTok{TRUE}\NormalTok{,}
-  \DataTypeTok{pageSizeOptions =} \KeywordTok{c}\NormalTok{(}\DecValTok{5}\NormalTok{, }\DecValTok{10}\NormalTok{, }\DecValTok{15}\NormalTok{, }\DecValTok{20}\NormalTok{),}
+  \DataTypeTok{height =} \DecValTok{650}\NormalTok{,}
+  \DataTypeTok{filterable =} \OtherTok{TRUE}\NormalTok{,}
   \DataTypeTok{defaultPageSize =} \DecValTok{5}\NormalTok{, }
   \DataTypeTok{minRows =} \DecValTok{5}\NormalTok{,}
   \DataTypeTok{highlight =} \OtherTok{TRUE}\NormalTok{,}
   \DataTypeTok{rownames =} \OtherTok{TRUE}\NormalTok{,}
-  \DataTypeTok{defaultColDef =} \KeywordTok{colDef}\NormalTok{(}\DataTypeTok{na =} \StringTok{"NA"}\NormalTok{),}
+  \DataTypeTok{striped =} \OtherTok{TRUE}\NormalTok{,}
+  \DataTypeTok{pagination =} \OtherTok{FALSE}\NormalTok{,}
+  \DataTypeTok{defaultColDef =} \KeywordTok{colDef}\NormalTok{(}\DataTypeTok{na =} \StringTok{"NA"}\NormalTok{, }\DataTypeTok{align =} \StringTok{"center"}\NormalTok{),}
+  \DataTypeTok{style =} \KeywordTok{list}\NormalTok{(}\DataTypeTok{fontSize =} \StringTok{"10px"}\NormalTok{),}
 \NormalTok{  ...}
 \NormalTok{) \{}
   \KeywordTok{reactable}\NormalTok{(}
 \NormalTok{    data,}
-    \DataTypeTok{searchable =}\NormalTok{ searchable,}
-    \DataTypeTok{showPageSizeOptions =}\NormalTok{ showPageSizeOptions,}
-    \DataTypeTok{pageSizeOptions =}\NormalTok{ pageSizeOptions,}
+    \DataTypeTok{height =}\NormalTok{ height,}
+    \DataTypeTok{filterable =}\NormalTok{ filterable,}
     \DataTypeTok{defaultPageSize =}\NormalTok{ defaultPageSize, }
     \DataTypeTok{minRows =}\NormalTok{ minRows,}
     \DataTypeTok{highlight =}\NormalTok{ highlight,}
     \DataTypeTok{rownames =}\NormalTok{ rownames,}
-    \DataTypeTok{striped =} \OtherTok{TRUE}\NormalTok{,}
+    \DataTypeTok{striped =}\NormalTok{ striped,}
+    \DataTypeTok{pagination =}\NormalTok{ pagination,}
     \DataTypeTok{defaultColDef =}\NormalTok{ defaultColDef,}
+    \DataTypeTok{style =}\NormalTok{ style,}
 \NormalTok{    ...}
 \NormalTok{  )}
 \NormalTok{\}}
@@ -462,7 +465,10 @@ On peut ensuite vérifier que les tableaux correspondent à ce que l'on peut voi
 \end{Highlighting}
 \end{Shaded}
 
-On peut voir déjà qu'il y a 4 tableaux au lieu de 3. C'est dû au fait que le 3ème tableau est séparé sur deux pages. De plus, les tableaux 1 et la première partie du 3 contiennent une colonne en trop (respectivement 15 au lieu de 14 et 16 au lieu de 15).
+On peut voir déjà qu'il y a 4 tableaux au lieu de 3. C'est dû au fait que le
+3ème tableau est séparé sur deux pages. De plus, les tableaux 1 et la première
+partie du 3 contiennent une colonne en trop (respectivement 15 au lieu de 14 et
+16 au lieu de 15).
 
 Regardons alors de plus près ce que contiennent ces tableaux :
 
@@ -493,7 +499,6 @@ Regardons alors de plus près ce que contiennent ces tableaux :
 \NormalTok{        )}
 \NormalTok{    )}
 \NormalTok{  \},}
-  \DataTypeTok{searchable =} \OtherTok{FALSE}\NormalTok{,}
   \DataTypeTok{defaultPageSize =} \KeywordTok{length}\NormalTok{(tableau), }
   \DataTypeTok{minRows =} \KeywordTok{length}\NormalTok{(tableau),}
   \DataTypeTok{onClick =} \StringTok{"expand"}\NormalTok{,}
@@ -508,58 +513,127 @@ Regardons alors de plus près ce que contiennent ces tableaux :
 
 \begin{center}\includegraphics[width=0.6\linewidth]{Mon_aide_memoire_R_files/figure-latex/unnamed-chunk-8-1} \end{center}
 
-On peut alors observer qu'il faut nettoyer ces jeux de données. En effet, il
-faut d'abord mettre la première ligne en tant que nom des colonnes (fonction
-\texttt{janitor::row\_to\_names}). Ensuite il faut modifier les noms des colonnes pour
-les standardiser et être plus facilement utilisés dans les scripts (fonction
-\texttt{janitor::clean\_names}). Il faut aussi rajouter des \texttt{NA} dans les cases vides
-(fonction \texttt{dplyr::na\_if}). Les lignes entièrement vides (remplies de \texttt{NA})
-peuvent être supprimées (fonction \texttt{janitor::remove\_empty}). De même pour les
-colonnes vides qui ne sont pas de base dans le PDF. Enfin, les puces
-typographiques ``•'' qui représentent la valeur booléenne \texttt{TRUE} doivent être
-remplacées par exemple par ``oui'', pour que ces colonnes soient plus facilement
-manipulables (fonctions \texttt{dplyr::mutate} et \texttt{dplyr::across}).
+Si on regarde les valeurs uniques des colonnes en trop pour \texttt{jura\_data{[}{[}1{]}{]}} et
+\texttt{jura\_data{[}{[}3{]}{]}}, on s'aperçoit que la colonne du premier tableau est vide
+(\texttt{""}), tandis que pour l'autre il y a la présence d'un \texttt{"1"}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{unique}\NormalTok{(jura\_data[[}\DecValTok{1}\NormalTok{]][, }\DecValTok{15}\NormalTok{])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] ""
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{unique}\NormalTok{(jura\_data[[}\DecValTok{3}\NormalTok{]][, }\DecValTok{16}\NormalTok{])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] ""  "1"
+\end{verbatim}
+
+On peut donc regarder la ligne où il y a l'erreur :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{line\_id \textless{}{-}}\StringTok{ }\KeywordTok{which}\NormalTok{(jura\_data[[}\DecValTok{3}\NormalTok{]][, }\DecValTok{16}\NormalTok{] }\OperatorTok{==}\StringTok{ "1"}\NormalTok{)}
+
+\KeywordTok{my\_reactable}\NormalTok{(}
+\NormalTok{  jura\_data[[}\DecValTok{3}\NormalTok{]][line\_id,],}
+  \DataTypeTok{height =} \StringTok{"auto"}\NormalTok{,}
+  \DataTypeTok{filterable =} \OtherTok{FALSE}\NormalTok{,}
+  \DataTypeTok{defaultPageSize =} \DecValTok{1}\NormalTok{, }
+  \DataTypeTok{minRows =} \DecValTok{1}
+\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=0.6\linewidth]{Mon_aide_memoire_R_files/figure-latex/unnamed-chunk-10-1} \end{center}
+
+La ligne qui en ressort est celle pour le Grand Tétras. En comparant avec la
+ligne du tableau sur le PDF, on peut se rendre compte qu'il y a un décalage à
+partir de la colonne de la Directive Oiseaux Annexe 1. Cela peut être dû à la
+mauvaise visualisation de la puce (bien présente) à la colonne
+``Protection nationale''. Cette puce ne semble pas visible, mais en surlignant
+avec la souris le texte de cette case, on peut voir apparaître la puce ``•''. On
+peut donc réécrire correctement cette ligne d'après le PDF :
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Modification de la ligne posant problème.}
+\NormalTok{jura\_data[[}\DecValTok{3}\NormalTok{]][line\_id,] \textless{}{-}}\StringTok{ }\KeywordTok{list}\NormalTok{(}
+  \StringTok{"Tetrao urogallus major C. L. Brehm, 1831"}\NormalTok{,}
+  \StringTok{"Grand Tétras"}\NormalTok{,}
+  \StringTok{"2018"}\NormalTok{,}
+  \StringTok{"oui"}\NormalTok{,}
+  \StringTok{"oui"}\NormalTok{,}
+  \StringTok{"VU"}\NormalTok{,}
+  \StringTok{"CR"}\NormalTok{,}
+  \StringTok{"oui"}\NormalTok{,}
+  \OtherTok{NA}\NormalTok{,}
+  \StringTok{"oui"}\NormalTok{,}
+  \OtherTok{NA}\NormalTok{,}
+  \StringTok{"En déclin"}\NormalTok{,}
+  \StringTok{"Forte"}\NormalTok{,}
+  \StringTok{"Forte"}\NormalTok{,}
+  \StringTok{"1"}\NormalTok{,}
+  \StringTok{""}
+\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Maintenant que cela est fait, on peut également observer qu'il faut nettoyer ces
+jeux de données. En effet, il faut d'abord mettre la première ligne en tant que
+nom des colonnes (fonction \texttt{janitor::row\_to\_names}). Ensuite il faut modifier
+les noms des colonnes pour les standardiser et être plus facilement utilisables
+dans les scripts (fonction \texttt{janitor::clean\_names}). Il faut aussi rajouter des
+\texttt{NA} dans les cases vides (fonction \texttt{dplyr::na\_if}). Les lignes et colonnes
+entièrement vides peuvent être supprimées (fonction \texttt{janitor::remove\_empty}).
+Enfin, les puces typographiques ``•'' qui représentent la valeur booléenne \texttt{TRUE}
+doivent être remplacées par exemple par ``oui'', pour que ces colonnes soient plus
+facilement manipulables (fonctions \texttt{dplyr::mutate} et \texttt{dplyr::across}).
 
 Pour ce faire, je crée une fonction pour que le code soit facilement
 réutilisable (et applicable dans la fonction \texttt{purrr::map}) :
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{clean\_extracted\_data \textless{}{-}}\StringTok{ }\ControlFlowTok{function}\NormalTok{(}
-\NormalTok{  data\_extracted,}
-  \DataTypeTok{na.value =} \StringTok{""}\NormalTok{, }
-  \DataTypeTok{recode.bullet =} \OtherTok{TRUE}
-\NormalTok{) \{}
-  
+\NormalTok{clean\_extracted\_data \textless{}{-}}\StringTok{ }\ControlFlowTok{function}\NormalTok{(data\_extracted) \{}
 \NormalTok{  cleaned\_df \textless{}{-}}\StringTok{ }\NormalTok{data\_extracted }\OperatorTok{\%\textgreater{}\%}
 \StringTok{    }\NormalTok{janitor}\OperatorTok{::}\KeywordTok{row\_to\_names}\NormalTok{(}\DecValTok{1}\NormalTok{) }\OperatorTok{\%\textgreater{}\%}
-\StringTok{    }\NormalTok{janitor}\OperatorTok{::}\KeywordTok{clean\_names}\NormalTok{() }\OperatorTok{\%\textgreater{}\%}
-\StringTok{    }\KeywordTok{na\_if}\NormalTok{(na.value) }\OperatorTok{\%\textgreater{}\%}
-\StringTok{    }\NormalTok{janitor}\OperatorTok{::}\KeywordTok{remove\_empty}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\StringTok{"rows"}\NormalTok{, }\StringTok{"cols"}\NormalTok{))}
+\StringTok{    }\NormalTok{janitor}\OperatorTok{::}\KeywordTok{clean\_names}\NormalTok{()}
   
-  \ControlFlowTok{if}\NormalTok{ (recode.bullet) \{}
-\NormalTok{    replace\_bullet \textless{}{-}}\StringTok{ }\ControlFlowTok{function}\NormalTok{(x) \{}
-      \ControlFlowTok{if}\NormalTok{ (}\KeywordTok{is.na}\NormalTok{(x)) \{}
-\NormalTok{        output =}\StringTok{ }\NormalTok{x}
+  \CommentTok{\# Création de la fonction qui remplacera les puces typographiques.}
+\NormalTok{  replace\_bullet \textless{}{-}}\StringTok{ }\ControlFlowTok{function}\NormalTok{(x) \{}
+    \ControlFlowTok{if}\NormalTok{ (}\KeywordTok{is.na}\NormalTok{(x)) \{}
+\NormalTok{      output =}\StringTok{ }\NormalTok{x}
+\NormalTok{    \} }\ControlFlowTok{else}\NormalTok{ \{}
+      \ControlFlowTok{if}\NormalTok{ (x }\OperatorTok{==}\StringTok{ "•"}\NormalTok{) \{}
+\NormalTok{        output =}\StringTok{ "oui"}
+\NormalTok{      \} }\ControlFlowTok{else} \ControlFlowTok{if}\NormalTok{ (x }\OperatorTok{==}\StringTok{ ""}\NormalTok{) \{}
+\NormalTok{        output =}\StringTok{ "non"}
 \NormalTok{      \} }\ControlFlowTok{else}\NormalTok{ \{}
-        \ControlFlowTok{if}\NormalTok{ (x }\OperatorTok{==}\StringTok{ "•"}\NormalTok{) \{}
-\NormalTok{          output =}\StringTok{ "oui"}
-\NormalTok{        \} }\ControlFlowTok{else} \ControlFlowTok{if}\NormalTok{ (x }\OperatorTok{==}\StringTok{ ""}\NormalTok{) \{}
-\NormalTok{          output =}\StringTok{ "non"}
-\NormalTok{        \} }\ControlFlowTok{else}\NormalTok{ \{}
-\NormalTok{          output =}\StringTok{ }\NormalTok{x}
-\NormalTok{        \}}
+\NormalTok{        output =}\StringTok{ }\NormalTok{x}
 \NormalTok{      \}}
-      
-      \KeywordTok{return}\NormalTok{(output)}
 \NormalTok{    \}}
     
-\NormalTok{    cleaned\_df \textless{}{-}}\StringTok{ }\NormalTok{cleaned\_df }\OperatorTok{\%\textgreater{}\%}
-\StringTok{      }\KeywordTok{rowwise}\NormalTok{() }\OperatorTok{\%\textgreater{}\%}\StringTok{ }\CommentTok{\# Groupement par ligne}
-\StringTok{      }\CommentTok{\# Pour chaque colonne ayant les puces, on remplace la puce}
-\StringTok{      }\KeywordTok{mutate}\NormalTok{(}\KeywordTok{across}\NormalTok{(}\KeywordTok{where}\NormalTok{(}\OperatorTok{\textasciitilde{}}\StringTok{ }\KeywordTok{any}\NormalTok{(}\KeywordTok{grepl}\NormalTok{(}\StringTok{"•"}\NormalTok{, .))), replace\_bullet)) }\OperatorTok{\%\textgreater{}\%}
-\StringTok{      }\KeywordTok{ungroup}\NormalTok{()}
+    \KeywordTok{return}\NormalTok{(output)}
 \NormalTok{  \}}
+  
+\NormalTok{  cleaned\_df \textless{}{-}}\StringTok{ }\NormalTok{cleaned\_df }\OperatorTok{\%\textgreater{}\%}
+\StringTok{    }\CommentTok{\# Pour chaque colonne ayant les puces, on les remplace.}
+\StringTok{    }\KeywordTok{mutate}\NormalTok{(}\KeywordTok{across}\NormalTok{(}\KeywordTok{where}\NormalTok{(}\OperatorTok{\textasciitilde{}}\StringTok{ }\KeywordTok{any}\NormalTok{(}\KeywordTok{grepl}\NormalTok{(}\StringTok{"•"}\NormalTok{, .))), }\OperatorTok{\textasciitilde{}}\StringTok{ }\NormalTok{purrr}\OperatorTok{::}\KeywordTok{map\_chr}\NormalTok{(., replace\_bullet))) }\OperatorTok{\%\textgreater{}\%}
+\StringTok{    }\KeywordTok{ungroup}\NormalTok{() }\OperatorTok{\%\textgreater{}\%}
+\StringTok{    }\CommentTok{\# Pour les colonnes où les cases vides ne représentent pas des NA, on les}
+\StringTok{    }\CommentTok{\# remplacent par "—".}
+\StringTok{    }\KeywordTok{mutate}\NormalTok{(}\KeywordTok{across}\NormalTok{(}\KeywordTok{starts\_with}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\StringTok{"lr\_"}\NormalTok{, }\StringTok{"ec\_"}\NormalTok{)), }\OperatorTok{\textasciitilde{}}\StringTok{ }\KeywordTok{ifelse}\NormalTok{(. }\OperatorTok{==}\StringTok{ ""}\NormalTok{, }\StringTok{"—"}\NormalTok{, .))) }\OperatorTok{\%\textgreater{}\%}
+\StringTok{    }\KeywordTok{na\_if}\NormalTok{(}\StringTok{""}\NormalTok{) }\OperatorTok{\%\textgreater{}\%}\StringTok{ }\CommentTok{\# On remplace les cases vides restantes par des NA.}
+\StringTok{    }\NormalTok{janitor}\OperatorTok{::}\KeywordTok{remove\_empty}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\StringTok{"rows"}\NormalTok{, }\StringTok{"cols"}\NormalTok{)) }\CommentTok{\# Suppression des lignes et colonnes vides}
   
   \KeywordTok{rownames}\NormalTok{(cleaned\_df) \textless{}{-}}\StringTok{ }\OtherTok{NULL} \CommentTok{\# Actualisation des numéros de ligne}
   
@@ -581,55 +655,9 @@ Les tableaux ressemblent maintenant à cela :
 
 \label{tab:juradatacleaned} Tableaux contenant les données extraites du PDF et nettoyées (cliquer pour étendre les tableaux).
 
-\begin{center}\includegraphics[width=0.6\linewidth]{Mon_aide_memoire_R_files/figure-latex/unnamed-chunk-11-1} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{Mon_aide_memoire_R_files/figure-latex/unnamed-chunk-14-1} \end{center}
 
-C'est beaucoup mieux. Néanmoins il reste une colonne en trop dans le tableau
-\texttt{jura\_data{[}{[}3{]}{]}}. S'il n'y avait eu que des cases vides, la colonne aurait été supprimée. On peut donc regarder les lignes où il y a des erreurs :
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{line\_id \textless{}{-}}\StringTok{ }\KeywordTok{which}\NormalTok{(}\OperatorTok{!}\KeywordTok{is.na}\NormalTok{(jura\_data\_cleaned[[}\DecValTok{3}\NormalTok{]]}\OperatorTok{$}\NormalTok{x))}
-
-\KeywordTok{my\_reactable}\NormalTok{(}
-\NormalTok{  jura\_data\_cleaned[[}\DecValTok{3}\NormalTok{]][line\_id,],}
-  \DataTypeTok{searchable =} \OtherTok{FALSE}\NormalTok{,}
-  \DataTypeTok{defaultPageSize =} \KeywordTok{length}\NormalTok{(line\_id), }
-  \DataTypeTok{minRows =} \KeywordTok{length}\NormalTok{(line\_id)}
-\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{center}\includegraphics[width=0.6\linewidth]{Mon_aide_memoire_R_files/figure-latex/unnamed-chunk-12-1} \end{center}
-
-Une seule ligne en ressort : celle pour le Grand Tétras. En comparant avec la ligne du tableau sur le PDF, on peut se rendre compte qu'il y a un décalage à partir de la colonne \texttt{directive\_oiseaux\_annexe\_1}. Cela peut être dû à la mauvaise visualisation de la puce (bien présente) à la colonne \texttt{protection\_nationale}. Cette puce ne semble pas visible, mais en surlignant avec la souris le texte de cette case, on peut voir apparaître la puce ``•''. On peut donc réécrire correctement cette ligne d'après le PDF :
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{\# Suppression de la colonne en trop.}
-\NormalTok{jura\_data\_cleaned[[}\DecValTok{3}\NormalTok{]] \textless{}{-}}\StringTok{ }\KeywordTok{select}\NormalTok{(jura\_data\_cleaned[[}\DecValTok{3}\NormalTok{]], }\OperatorTok{{-}}\NormalTok{x)}
-
-\CommentTok{\# Modification de la ligne posant problème.}
-\NormalTok{jura\_data\_cleaned[[}\DecValTok{3}\NormalTok{]][line\_id,] \textless{}{-}}\StringTok{ }\KeywordTok{list}\NormalTok{(}
-  \StringTok{"Tetrao urogallus major C. L. Brehm, 1831"}\NormalTok{,}
-  \StringTok{"Grand Tétras"}\NormalTok{,}
-  \StringTok{"2018"}\NormalTok{,}
-  \StringTok{"oui"}\NormalTok{,}
-  \StringTok{"oui"}\NormalTok{,}
-  \StringTok{"VU"}\NormalTok{,}
-  \StringTok{"CR"}\NormalTok{,}
-  \StringTok{"oui"}\NormalTok{,}
-  \OtherTok{NA}\NormalTok{,}
-  \StringTok{"oui"}\NormalTok{,}
-  \OtherTok{NA}\NormalTok{,}
-  \StringTok{"En déclin"}\NormalTok{,}
-  \StringTok{"Forte"}\NormalTok{,}
-  \StringTok{"Forte"}\NormalTok{,}
-  \StringTok{"1"}
-\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-Ensuite, on peut fusionner les deux sous-parties du tableau 3 (tableaux
+On peut maintenant fusioner les deux sous-parties du tableau 3 (tableaux
 \texttt{jura\_data\_cleaned{[}{[}3{]}{]}} et \texttt{jura\_data\_cleaned{[}{[}4{]}{]}}) et visualiser les tableaux
 finaux :
 
@@ -643,18 +671,76 @@ finaux :
 
 \label{tab:herpetofaune-jura}Données présentant l'herpétofaune de la Réserve Naturelle Nationale de la Haute Chaîne du Jura.
 
-\begin{center}\includegraphics[width=0.6\linewidth]{Mon_aide_memoire_R_files/figure-latex/unnamed-chunk-15-1} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{Mon_aide_memoire_R_files/figure-latex/unnamed-chunk-16-1} \end{center}
 
 \label{tab:mammifere-jura}Données présentant les mammifères de la Réserve Naturelle Nationale de la Haute Chaîne du Jura.
 
-\begin{center}\includegraphics[width=0.6\linewidth]{Mon_aide_memoire_R_files/figure-latex/unnamed-chunk-16-1} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{Mon_aide_memoire_R_files/figure-latex/unnamed-chunk-17-1} \end{center}
 
 \label{tab:avifaune-jura}Données présentant l'avifaune de la Réserve Naturelle Nationale de la Haute Chaîne du Jura.
 
-\begin{center}\includegraphics[width=0.6\linewidth]{Mon_aide_memoire_R_files/figure-latex/unnamed-chunk-17-1} \end{center}
+\begin{center}\includegraphics[width=0.6\linewidth]{Mon_aide_memoire_R_files/figure-latex/unnamed-chunk-18-1} \end{center}
 
 \hypertarget{ruxe9cupuxe9ration-de-donnuxe9es-provenant-du-web-le-web-scraping}{%
 \section{\texorpdfstring{Récupération de données provenant du web : le \emph{web scraping}}{Récupération de données provenant du web : le web scraping}}\label{ruxe9cupuxe9ration-de-donnuxe9es-provenant-du-web-le-web-scraping}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(}\StringTok{"rvest"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{get\_bird\_classification \textless{}{-}}\StringTok{ }\ControlFlowTok{function}\NormalTok{(bird, }\DataTypeTok{taxon =} \KeywordTok{c}\NormalTok{(}\StringTok{"Ordre"}\NormalTok{, }\StringTok{"Famille"}\NormalTok{)) \{}
+\NormalTok{  wiki\_link \textless{}{-}}\StringTok{ "https://fr.wikipedia.org/wiki/Wikip\%C3\%A9dia:Accueil\_principal"}
+\NormalTok{  session \textless{}{-}}\StringTok{ }\KeywordTok{html\_session}\NormalTok{(wiki\_link)}
+  
+\NormalTok{  form \textless{}{-}}\StringTok{ }\KeywordTok{html\_form}\NormalTok{(session)}
+\NormalTok{  form\_modified \textless{}{-}}\StringTok{ }\KeywordTok{set\_values}\NormalTok{(form[[}\DecValTok{1}\NormalTok{]], }\DataTypeTok{search =}\NormalTok{ bird)}
+  
+  \CommentTok{\# On entre sur la page wikipédia de l\textquotesingle{}oiseau recherché.}
+\NormalTok{  wiki\_bird \textless{}{-}}\StringTok{ }\KeywordTok{submit\_form}\NormalTok{(session, form\_modified, }\DataTypeTok{submit =} \StringTok{"go"}\NormalTok{)}
+  
+\NormalTok{  tbl\_classification \textless{}{-}}\StringTok{ }\NormalTok{wiki\_bird }\OperatorTok{\%\textgreater{}\%}
+\StringTok{    }\KeywordTok{html\_node}\NormalTok{(}\DataTypeTok{xpath =} \StringTok{"//table[@class=\textquotesingle{}taxobox\_classification\textquotesingle{}]"}\NormalTok{) }\OperatorTok{\%\textgreater{}\%}
+\StringTok{    }\KeywordTok{html\_table}\NormalTok{() }\OperatorTok{\%\textgreater{}\%}
+\StringTok{    }\NormalTok{magrittr}\OperatorTok{::}\KeywordTok{set\_colnames}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\StringTok{"niveau\_classification"}\NormalTok{, }\StringTok{"nom\_classification"}\NormalTok{)) }\OperatorTok{\%\textgreater{}\%}
+\StringTok{    }\KeywordTok{filter}\NormalTok{(niveau\_classification }\OperatorTok{\%in\%}\StringTok{ }\NormalTok{taxon) }\OperatorTok{\%\textgreater{}\%}
+\StringTok{    }\NormalTok{tidyr}\OperatorTok{::}\KeywordTok{pivot\_wider}\NormalTok{(}
+      \DataTypeTok{names\_from =}\NormalTok{ niveau\_classification,}
+      \DataTypeTok{values\_from =}\NormalTok{ nom\_classification}
+\NormalTok{    )}
+  
+\NormalTok{  tbl\_classification}\OperatorTok{$}\NormalTok{nom \textless{}{-}}\StringTok{ }\NormalTok{bird}
+  
+  \KeywordTok{return}\NormalTok{(tbl\_classification)}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{noms\_latin \textless{}{-}}\StringTok{ }\NormalTok{stringr}\OperatorTok{::}\KeywordTok{str\_extract\_all}\NormalTok{(avifaune\_jura}\OperatorTok{$}\NormalTok{nom\_latin, r}\StringTok{"(\^{}\textbackslash{}w+\textbackslash{}s+\textbackslash{}w+)"}\NormalTok{)}
+
+\NormalTok{classification\_oiseaux \textless{}{-}}\StringTok{ }\NormalTok{purrr}\OperatorTok{::}\KeywordTok{map}\NormalTok{(noms\_latin, get\_bird\_classification) }\OperatorTok{\%\textgreater{}\%}
+\StringTok{  }\KeywordTok{bind\_rows}\NormalTok{() }\CommentTok{\# Fusion des tableaux}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{avifaune\_jura \textless{}{-}}\StringTok{ }\NormalTok{avifaune\_jura }\OperatorTok{\%\textgreater{}\%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{nom =} \KeywordTok{unlist}\NormalTok{(noms\_latin)) }\OperatorTok{\%\textgreater{}\%}
+\StringTok{  }\KeywordTok{left\_join}\NormalTok{(classification\_oiseaux, }\DataTypeTok{by =} \StringTok{"nom"}\NormalTok{) }\OperatorTok{\%\textgreater{}\%}
+\StringTok{  }\KeywordTok{select}\NormalTok{(}\OperatorTok{{-}}\NormalTok{nom) }\OperatorTok{\%\textgreater{}\%}
+\StringTok{  }\KeywordTok{relocate}\NormalTok{(Ordre}\OperatorTok{:}\KeywordTok{last\_col}\NormalTok{())}
+\end{Highlighting}
+\end{Shaded}
+
+\label{tab:avifaune-famille}Données présentant l'avifaune de la Réserve Naturelle Nationale de la Haute Chaîne du Jura. Ces données ont été regroupées selon l'ordre et la famille des espèces présentes. (Cliquer pour étendre.)
+
+\begin{center}\includegraphics[width=0.6\linewidth]{Mon_aide_memoire_R_files/figure-latex/unnamed-chunk-23-1} \end{center}
 
 \hypertarget{ref-data-analysis}{%
 \section*{Liste de ressources Internet utiles}\label{ref-data-analysis}}
@@ -10754,7 +10840,7 @@ discrètes} ainsi que des \textbf{données continues}.
 ##  collate  fr_FR.UTF-8                 
 ##  ctype    fr_FR.UTF-8                 
 ##  tz       Europe/Paris                
-##  date     2020-08-18                  
+##  date     2020-08-19                  
 ## 
 ## - Packages -----------------------------------------------
 ##  package       * version    date       lib
@@ -10834,7 +10920,7 @@ discrètes} ainsi que des \textbf{données continues}.
 ##  rosm            0.2.5      2019-07-22 [1]
 ##  rprojroot       1.3-2      2018-01-03 [3]
 ##  rstudioapi      0.11       2020-02-07 [3]
-##  rvest           0.3.6      2020-07-25 [1]
+##  rvest         * 0.3.6      2020-07-25 [1]
 ##  scales          1.1.1      2020-05-11 [3]
 ##  sessioninfo     1.1.1      2018-11-05 [3]
 ##  sf            * 0.9-5      2020-07-14 [1]
@@ -10855,7 +10941,7 @@ discrètes} ainsi que des \textbf{données continues}.
 ##  webshot         0.5.2      2019-11-22 [3]
 ##  withr           2.2.0      2020-04-20 [3]
 ##  xfun            0.16       2020-07-24 [1]
-##  xml2            1.3.2      2020-04-23 [3]
+##  xml2          * 1.3.2      2020-04-23 [3]
 ##  yaml            2.2.1      2020-02-01 [3]
 ##  source                                 
 ##  CRAN (R 4.0.1)                         

@@ -1,0 +1,12 @@
+base
+ggplot2
+ggthemes
+ggrepel
+patchwork
+dplyr
+ggforce
+reactable
+tabulizer
+polite
+xml2
+rvest

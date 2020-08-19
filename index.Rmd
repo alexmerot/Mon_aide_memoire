@@ -134,27 +134,30 @@ options(reactable.theme = reactableTheme(
 # Paramètres par défaut.
 my_reactable <- function(
   data,
-  searchable = TRUE,
-  showPageSizeOptions = TRUE,
-  pageSizeOptions = c(5, 10, 15, 20),
+  height = 650,
+  filterable = TRUE,
   defaultPageSize = 5, 
   minRows = 5,
   highlight = TRUE,
   rownames = TRUE,
-  defaultColDef = colDef(na = "NA"),
+  striped = TRUE,
+  pagination = FALSE,
+  defaultColDef = colDef(na = "NA", align = "center"),
+  style = list(fontSize = "10px"),
   ...
 ) {
   reactable(
     data,
-    searchable = searchable,
-    showPageSizeOptions = showPageSizeOptions,
-    pageSizeOptions = pageSizeOptions,
+    height = height,
+    filterable = filterable,
     defaultPageSize = defaultPageSize, 
     minRows = minRows,
     highlight = highlight,
     rownames = rownames,
-    striped = TRUE,
+    striped = striped,
+    pagination = pagination,
     defaultColDef = defaultColDef,
+    style = style,
     ...
   )
 }
