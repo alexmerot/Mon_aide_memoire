@@ -288,7 +288,70 @@ my_reactable(avifaune_jura)
 
 ## Récupération de données provenant du web : le _web scraping_
 
+```{r}
+library("polite")
+library("rvest")
+```
 
+On commence par ouvrir la session de la page web de l'accueil de Wikipedia.
+Ensuite, on récupère
+
+```{r}
+get_bird_classification <- function(bird) {
+  session <- html_session("https://fr.wikipedia.org/wiki/Wikip%C3%A9dia:Accueil_principal")
+  
+  form <- html_form(session)
+  form_modified <- set_values(form[[1]], search = bird)
+  
+  # On entre potentiellement directement sur la page wikipédia de l'oiseau recherché.
+  wiki_bird <- submit_form(session, form_modified, submit = "go")
+  
+  # On récupère le titre de 1er niveau de la page.
+  title <- wiki_bird %>%
+    html_node(xpath = "//div[@class='entete']//div") %>%
+    html_text()
+
+  # Si la recherche n'a pas trouvé directement la page de l'oiseau en question,
+  # on tombe sur la page "Résultats de la recherche". On choisit donc de suivre
+  # le 1er lien présenté.
+  if (title == "Résultats de la recherche") {
+    wiki_bird <- wiki_bird %>%
+      follow_link(xpath = "//ul[@class='mw-search-results']//li[1]//div[1]//a[1]")
+    
+    # On récupère le bon titre (nom de l'oiseau) :
+    title <- wiki_bird %>%
+      html_node(xpath = "	//h1[@id='firstHeading']") %>%
+      html_text()
+  }
+  
+  print(title)
+  
+  tbl_classification <- wiki_bird %>%
+    html_node(xpath = "//table[@class='taxobox_classification']") 
+  
+  if (is.na(tbl_classification)) {
+    print("PAS DE TABLE DE CLASSIFICATION")
+  } else {
+    tbl_classification <- tbl_classification %>%
+      html_table() %>%
+      magrittr::set_colnames(c("niveau_classification", "nom_classification")) %>%
+      tidyr::pivot_wider(
+        names_from = niveau_classification,
+        values_from = nom_classification
+      )
+  }
+  
+  tbl_classification$nom_wiki <- title
+  
+  return(tbl_classification)
+}
+```
+
+```{r}
+noms_latin <- stringr::str_extract_all(avifaune_jura$nom_latin, r"(^\w+\s+\w+)")
+
+classification_oiseaux <- purrr::map(noms_latin, get_bird_classification)
+```
 
 
 
