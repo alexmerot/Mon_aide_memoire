@@ -298,11 +298,24 @@ my_reactable(avifaune_jura)
 
 ## Récupération de données provenant du web : le _web scraping_
 
+Le _web scraping_ est une technique permettant d'extraire, le plus souvent de
+façon automatique, le contenu d'une page web. Cela peut être très utile pour
+récupérer des données publiques nécessaires à nos analyses.
+
+Sous R, le package permettant de parcourir et de récupérer facilement le contenu
+d'une page web s'appelle [`rvest`](https://github.com/tidyverse/rvest).
 
 <!-- TODO : Utiliser le package `polite` avec `rvest`  -->
 ```{r, message=FALSE, warning=FALSE}
 library("rvest")
 ```
+
+Ici, mon but est de récupérer la classification des différentes espèces
+d'oiseaux de la Réserve Naturelle Nationale de la Haute Chaîne du Jura (tableau
+\@ref(tab:avifaune-jura)). Cette classification peut être facilement récupéré
+sur les pages Wikipédia des oiseaux en question. Je veux donc créer une fonction
+qui va rechercher la page Wikipédia de l'oiseau voulu, puis récupérer sous la
+forme d'un tableau sa classification.
 
 ```{r}
 get_bird_classification <- function(bird, taxon = c("Ordre", "Famille")) {
