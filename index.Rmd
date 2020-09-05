@@ -63,7 +63,7 @@ options(knitr.table.format = "html")
 ```{r include=FALSE}
 # Créer automatiquement une base de données '.bib' pour les packages R utilisés.
 knitr::write_bib(c(
-  .packages(), 'knitr', 'rmarkdown', 'blogdown'
+  .packages(), 'knitr', 'rmarkdown', 'blogdown', 'purrr'
 ), 'packages.bib')
 
 # Ne pas supprimer les fichiers latex auxiliaires.

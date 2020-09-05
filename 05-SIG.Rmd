@@ -386,7 +386,12 @@ rnn_france <- ggplot(regions) +
     segment.ncp = 1,
     segment.angle = 10,
   ) +
-  stat_sf_coordinates(data = data_rnn, colour = "darkred", size = 2) +
+  geom_point(
+    data = data_rnn,
+    aes(x = X, y = Y),
+    colour = "darkred",
+    size = 2
+  ) +
   annotation_north_arrow(
     location = "bl",
     which_north = "true",
@@ -411,7 +416,7 @@ crop_limits <- st_bbox(filter(data_rnn, ID_LOCAL == "RNN112"))
 crop_regions <- st_crop(regions, crop_limits + c(-0.1, -0.1, 0.15, 0.1))
 
 rnn_jura <- ggplot(crop_regions) +
-  annotation_map_tile(zoomin = -1, type = "stamenwatercolor") +
+  annotation_map_tile(zoomin = -1, type = "stamenwatercolor", progress = "none") +
   geom_sf(data = crop_regions, colour = "black", fill = NA, size = 1.05) +
   geom_sf(data = filter(data_rnn, ID_LOCAL == "RNN112"), fill = "darkred") +
   coord_sf(expand = FALSE, datum = st_crs(4326)) +
@@ -424,7 +429,7 @@ rnn_jura <- ggplot(crop_regions) +
 
 (ref:fig-rnn) Carte montrant la localisation géographique (point rouge) des Réserves Naturelles Nationales de la France métropolitaine. Un zoom a été fait pour apercevoir la délimitation de la Réserve Nationale de la Haute Chaîne du Jura.
 
-```{r fig-rnn, fig.cap='(ref:plot-rnn)', message=FALSE, warning=FALSE, out.width="100%", cache = TRUE}
+```{r fig-rnn, fig.cap='(ref:fig-rnn)', message=FALSE, warning=FALSE, out.width="100%", cache = TRUE}
 layout_design <- c(
   area(t = 1, l = 1, b = 8, r = 7),
   area(t = 5, l = 6, b = 8, r = 8)
@@ -473,56 +478,16 @@ grande taille (résolution basse ou grossière).
 
 ### Le package **`ggiraph`**
 
-```{r plot-rnn-jura-interactive, cache=TRUE, message=FALSE, warning=FALSE}
+```{r}
 library("ggiraph")
+```
 
-rnn_france <- ggplot(regions) +
-  annotation_map_tile(zoom = 5, zoomin = 0, type = "stamenwatercolor") +
-  geom_sf_interactive(
-    aes(tooltip = nom, fill = nom, data_id = code_insee),
-    colour = "black",
-    alpha = 0.6,
-    show.legend = FALSE
-  ) +
-  # Lien entre cartes non-zoomée et zoomée
-  geom_diagonal(
-    aes(x = 14, xend = 12.5, y = 46, yend = 47.2)
-  ) +
-  geom_label_repel(
-    seed = 42,
-    data = filter(data_rnn, ID_LOCAL == "RNN112"),
-    aes(x = X, y = Y, label = "Haute Chaîne\ndu Jura"),
-    size = 4,
-    nudge_x = 6,
-    nudge_y = 1.2,
-    segment.curvature = 0.5,
-    segment.ncp = 1,
-    segment.angle = 10,
-  ) +
-  geom_point_interactive(
-    data = tibble::rowid_to_column(data_rnn),
-    aes(x = X, y = Y, tooltip = NOM_SITE, data_id = glue("point_{rowid}")),
-    colour = "darkred",
-    size = 2
-  ) +
-  annotation_north_arrow(
-    location = "bl",
-    which_north = "true",
-    style = north_arrow_nautical()
-  ) +
-  coord_sf(datum = st_crs(4326)) +
-  theme_linedraw() +
-  theme(
-    panel.ontop = TRUE,
-    panel.background = element_blank(),
-    axis.title = element_blank()
-  )
-
+```{r code-rnn-jura-interactive, cache=TRUE, message=FALSE, warning=FALSE}
 # Communes du pays de Gex
 pays_de_gex <- st_read("examples/communes-pays-de-gex/communes-pays-de-gex.shp")
 
-rnn_jura <- ggplot(crop_regions) +
-  annotation_map_tile(zoomin = -1, type = "stamenwatercolor") +
+rnn_jura_interactive <- ggplot(crop_regions) +
+  annotation_map_tile(zoomin = -1, type = "stamenwatercolor", progress = "none") +
   geom_sf(data = crop_regions, colour = "black", fill = NA, size = 1.1) +
   geom_sf(
     data = filter(data_rnn, ID_LOCAL == "RNN112"), 
@@ -536,25 +501,85 @@ rnn_jura <- ggplot(crop_regions) +
     fill = "black",
     alpha = 0.3
   ) +
+  labs(caption = "© OpenStreetMap contributors") +
   coord_sf(expand = FALSE, datum = st_crs(4326)) +
   theme_map() +
+  theme_linedraw() +
   theme(
-    panel.border = element_rect(colour = "black", fill = NA, size = 2),
-    panel.ontop = TRUE
+    panel.ontop = TRUE,
+    panel.background = element_blank(),
+    axis.title = element_blank()
   )
+```
 
-interactive_plot <- rnn_france + rnn_jura + 
-  plot_layout(design = layout_design) +
-  plot_annotation(caption = "\u00a9 OpenStreetMap contributors")
+(ref:plot-rnn-jura-interactive) Carte de la délimitation (en rouge) de la Réserve Naturelle Nationale de la Haute-Chaîne du Jura. Le nom des communes de la Communauté d'Agglomération du Pays de Gex est visible interactivement en passant dessus le curseur de la souris.
 
+```{r plot-rnn-jura-interactive, cache=TRUE, message=FALSE, warning=FALSE, fig.cap="(ref:plot-rnn-jura-interactive)"}
 girafe(
-  code = print(interactive_plot),
+  code = print(rnn_jura_interactive),
   options = list(
     opts_hover(css = "fill:orange;"),
     opts_hover_inv(css = "opacity:0.2;"),
     opts_zoom(max = 5)
   )
 )
+```
+
+### Le package *`mapview`*
+
+```{r}
+library("mapview")
+```
+
+
+Pour afficher toutes les options globales disponibles dans `mapview` :
+
+```{r}
+mapviewOptions()
+```
+
+```{r}
+map_types <- c(
+  "Esri.NatGeoWorldMap",
+  "OpenTopoMap",
+  "GeoportailFrance.maps",
+  "GeoportailFrance.orthos",
+  "OpenStreetMap.France"
+)
+
+description_rnn <- data_rnn %>%
+  st_drop_geometry() %>%
+  select(NOM_SITE, DATE_CREA, OPERATEUR, SURF_OFF, ID_MNHN, URL_FICHE) %>%
+  mutate(
+    description = glue(
+      '
+      <h1 style="border: 3px solid; text-align: center; border-radius: 15px">
+      {NOM_SITE}
+      </h1>
+
+      <b>Date de création</b> : {format(DATE_CREA, "%d/%m/%Y")}<br>
+      <b>Opérateur</b> : {OPERATEUR}<br>
+      <b>Superficie officielle</b> : {SURF_OFF} ha<br>
+      <b>Identifiant du MNHN</b> : {ID_MNHN}<br>
+      <b>Lien</b> : <a href={URL_FICHE}>{URL_FICHE}</a><br>
+      '
+    )
+  ) %>%
+  pull(description)
+```
+
+Carte interactive montrant la localisation des Réserves Naturelles Nationales en France métropolitaine. La taille des points est proportionnelle à la superficie des réserves. Une courte description est visible en cliquant sur les points.
+
+```{r, out.width="100%", fig.cap="test", warning=FALSE}
+st_point_on_surface(data_rnn) %>%
+  mapview(
+    col.regions = "darkred",
+    layer.name = "Réserves Naturelles Nationales",
+    map.types = map_types,
+    label = "NOM_SITE",
+    popup = description_rnn,
+    cex = "SURF_OFF"
+  )
 ```
 
 ## Les cartes en 3D avec **`rayshader`**
