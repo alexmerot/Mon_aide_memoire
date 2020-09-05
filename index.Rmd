@@ -4,7 +4,6 @@ author: "Alexis Mérot"
 date: "Modifié le : `r Sys.Date()`"
 site: bookdown::bookdown_site
 lang: fr-FR
-documentclass: book
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 csl: chicago-author-date-fr.csl
@@ -55,7 +54,8 @@ knitr::opts_chunk$set(
  fig.asp = 0.8,
  out.width = "60%",
  fig.align='center',
- source.max.height="500px"
+ source.max.height="500px",
+ output.max.height="600px"
 )
 options(knitr.table.format = "html")
 ```
@@ -112,6 +112,7 @@ library("ggrepel")   # Permet un meilleur affichage des étiquettes
 library("patchwork") # Permet de combiner les graphiques
 library("dplyr")     # Permet la manipulation des données
 library("ggforce")   # Extension de ggplot2 pour de nouveaux geom_*
+library("glue")      # Interprétation des chaînes de caractères littérales
 
 library("reactable") # Création des tableaux interactifs (HTML seulement)
 ```

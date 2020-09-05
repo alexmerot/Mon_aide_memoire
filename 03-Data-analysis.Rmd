@@ -4,6 +4,7 @@
 *_Work In Progress_*
 :::
 
+<!-- TODO : Ajouter l'analyse exploratoire des données -->
 
 ## Extraction de données provenant d'un PDF
 
