@@ -512,9 +512,7 @@ rnn_jura_interactive <- ggplot(crop_regions) +
   )
 ```
 
-(ref:plot-rnn-jura-interactive) Carte de la délimitation (en rouge) de la Réserve Naturelle Nationale de la Haute-Chaîne du Jura. Le nom des communes de la Communauté d'Agglomération du Pays de Gex est visible interactivement en passant dessus le curseur de la souris.
-
-```{r plot-rnn-jura-interactive, cache=TRUE, message=FALSE, warning=FALSE, fig.cap="(ref:plot-rnn-jura-interactive)"}
+```{r, eval=FALSE}
 girafe(
   code = print(rnn_jura_interactive),
   options = list(
@@ -525,12 +523,31 @@ girafe(
 )
 ```
 
+(ref:plot-rnn-jura-interactive) Carte de la délimitation (en rouge) de la Réserve Naturelle Nationale de la Haute-Chaîne du Jura. Le nom des communes de la Communauté d'Agglomération du Pays de Gex est visible interactivement en passant dessus le curseur de la souris.
+
+```{r plot-rnn-jura-interactive, fig.height="600px", out.width="100%", message=FALSE, warning=FALSE, echo=FALSE, fig.cap="(ref:plot-rnn-jura-interactive)"}
+if (!file.exists("docs/images/plot-rnn-jura-interactive.html")) {
+  girafe(
+    code = print(rnn_jura_interactive),
+    options = list(
+      opts_hover(css = "fill:orange;"),
+      opts_hover_inv(css = "opacity:0.2;"),
+      opts_zoom(max = 5)
+    )
+  ) %>%
+  htmlwidgets::saveWidget(
+    file = here::here("images", "plot-rnn-jura-interactive.html"),
+    selfcontained = TRUE
+  )
+}
+knitr::include_url("images/plot-rnn-jura-interactive.html")
+```
+
 ### Le package *`mapview`*
 
 ```{r}
 library("mapview")
 ```
-
 
 Pour afficher toutes les options globales disponibles dans `mapview` :
 
@@ -568,9 +585,9 @@ description_rnn <- data_rnn %>%
   pull(description)
 ```
 
-Carte interactive montrant la localisation des Réserves Naturelles Nationales en France métropolitaine. La taille des points est proportionnelle à la superficie des réserves. Une courte description est visible en cliquant sur les points.
+<br>
 
-```{r, out.width="100%", fig.cap="test", warning=FALSE}
+```{r, eval=FALSE}
 st_point_on_surface(data_rnn) %>%
   mapview(
     col.regions = "darkred",
@@ -581,6 +598,27 @@ st_point_on_surface(data_rnn) %>%
     cex = "SURF_OFF"
   )
 ```
+
+(ref:plot-mapview) Carte interactive montrant la localisation des Réserves Naturelles Nationales en France métropolitaine. La taille des points est proportionnelle à la superficie des réserves. Une courte description est visible en cliquant sur les points.
+
+```{r plot-mapview, out.width="100%", fig.cap="(ref:plot-mapview)", warning=FALSE, message=FALSE, echo=FALSE}
+if (!file.exists("docs/images/plot-mapview.html")) {
+  st_point_on_surface(data_rnn) %>%
+    mapview(
+      col.regions = "darkred",
+      layer.name = "Réserves Naturelles Nationales",
+      map.types = map_types,
+      label = "NOM_SITE",
+      popup = description_rnn,
+      cex = "SURF_OFF"
+    ) %>%
+    mapshot(here::here("images", "plot-mapview.html"), remove_controls = NULL)
+}
+knitr::include_url("images/plot-mapview.html")
+```
+
+
+
 
 ## Les cartes en 3D avec **`rayshader`**
 
