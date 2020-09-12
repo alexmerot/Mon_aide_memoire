@@ -617,10 +617,183 @@ if (!file.exists("docs/images/plot-mapview.html")) {
 knitr::include_url("images/plot-mapview.html")
 ```
 
-
-
-
 ## Les cartes en 3D avec **`rayshader`**
+
+```{r, eval=FALSE}
+library("rayshader")
+library("raster")
+```
+
+```{r, eval=FALSE}
+# Zone géographique d'intérêt.
+boundary_box <- extent(
+  843442,
+  866595,
+  6686564,
+  6703526
+)
+
+# Chargement de la carte historique de Dijon.
+cassini <- stack("examples/3d_map/dijon/Carte_générale_de_la_France_Dalier_(17_btv1b53095148b_1_georef.tif")
+
+# Recadrage sur la zone d'intérêt.
+cassini_croped <- crop(cassini, boundary_box)
+
+# Visualisation du raster RGB.
+plotRGB(cassini_croped)
+```
+
+(ref:plotrgb-dijon-cassini) Carte 2D en couleur de Cassini (XVIII^e^ siècle) montrant la ville de Dijon en France.
+
+```{r plotrgb-dijon-cassini, echo=FALSE, out.width="100%", fig.cap="(ref:plotrgb-dijon-cassini)"}
+knitr::include_graphics("images/3d_map_export/plotrgb_dijon_cassini.jpeg")
+```
+
+```{r, eval=FALSE}
+# Transformation en array
+cassini_array <- as.array(cassini_croped)
+```
+
+```{r, eval=FALSE}
+# Chargement de la carte d'élévation.
+dijon_topo <- raster("examples/3d_map/dijon/BDALTIV2_75M_FXX_0825_6750_MNT_LAMB93_IGN69.asc")
+crs(dijon_topo) <- CRS("+init=EPSG:2154")
+dijon_topo <- crop(dijon_topo, boundary_box) %>% raster_to_matrix()
+```
+
+```{r, eval=FALSE}
+# Création des couches pour les ombres
+ray_layer <- ray_shade(dijon_topo, zscale = 20, multicore = TRUE)
+
+ambient_layer <- ambient_shade(
+  dijon_topo,
+  zscale = 10,
+  multicore = TRUE,
+  maxsearch = 200
+)
+```
+
+```{r, eval=FALSE}
+# On divise par 255 pour avoir des valeurs entre 0 et 1.
+# (L'étendue des couleurs RGB est en effet entre 0 et 255.)
+
+# Carte en 3D en vue de dessus, avec la fonction `plot_map`
+(cassini_array/255) %>%
+  add_shadow(ray_layer, 0.3) %>%
+  add_shadow(ambient_layer, 0) %>%
+  plot_map()
+```
+
+(ref:plot2d-dijon-cassini) Carte de Cassini (XVIII^e^ siècle) en 3D et en vue de dessus, montrant la ville de Dijon en France.
+
+```{r plot2d-dijon-cassini, echo=FALSE, out.width="100%", fig.cap="(ref:plot2d-dijon-cassini)"}
+knitr::include_graphics("images/3d_map_export/dijon_cassini_2d.jpeg")
+```
+
+```{r, eval=FALSE}
+# Carte en 3D avec la fonction `plot_3d` permettant de changer la position de la caméra.
+(cassini_array/255) %>%
+  add_shadow(ray_layer, 0.3) %>%
+  add_shadow(ambient_layer, 0) %>%
+  plot_3d(dijon_topo, zscale = 30)
+
+# On crée une vue de dessus.
+# Je mets ici -90 car la fonction `render_highquality` va inverser cette valeur,
+# je ne sais pas si c'est un bug (-90 deviendra la bonne valeur : 90).
+render_camera(
+  zoom  = 0.5,
+  phi   = -90,  # Angle d'azimut (max 90)
+  theta = 0   # Angle de rotation
+)
+
+render_highquality(
+  lightaltitude = 25,
+  environment_light = "examples/3d_map/HDRI/kiara_1_dawn_4k.hdr"
+)
+```
+
+(ref:plot3d-dijon-cassini1) Carte de Cassini (XVIII^e^ siècle) en 3D et en vue de dessus, montrant la ville de Dijon en France. Le rendu de la lumière est ici de meilleure qualité.
+
+```{r plot3d-dijon-cassini1, echo=FALSE, out.width="100%", fig.cap="(ref:plot3d-dijon-cassini1)"}
+knitr::include_graphics("images/3d_map_export/dijon_cassini.jpeg")
+```
+
+```{r, eval=FALSE}
+# zscale plus élevé
+(cassini_array/255) %>%
+  add_shadow(ray_layer, 0.3) %>%
+  add_shadow(ambient_layer, 0) %>%
+  plot_3d(dijon_topo, zscale = 60)
+
+# On positionne la caméra sur le côté.
+render_camera(
+  zoom  = 0.3,
+  phi   = 15,  # Angle d'azimut (max 90)
+  theta = 55   # Angle de rotation
+)
+```
+
+```{r, eval=FALSE}
+# Meilleure qualité
+render_highquality(
+  light = TRUE,
+  lightaltitude = 25,
+  environment_light = "examples/3d_map/HDRI/kiara_1_dawn_4k.hdr"
+)
+```
+
+(ref:plot3d-dijon-cassini2) Carte de Cassini (XVIII^e^ siècle) en 3D montrant la ville de Dijon en France. La caméra a été déplacée pour avoir une vue sur le côté.
+
+```{r plot3d-dijon-cassini2, echo=FALSE, out.width="100%", fig.cap="(ref:plot3d-dijon-cassini2)"}
+knitr::include_graphics("images/3d_map_export/dijon_cassini_phi15.jpeg")
+```
+
+```{r, eval=FALSE}
+# On rajoute de la profondeur de champs (bokeh)
+render_depth(
+  focus = 0.52,
+  environment_light = "examples/3d_map/HDRI/kiara_1_dawn_4k.hdr"
+)
+```
+
+(ref:bokeh-dijon-cassini) Carte de Cassini (XVIII^e^ siècle) en 3D montrant la ville de Dijon en France. La profondeur de champ a été ajoutée pour créer un effet *bokeh*.
+
+```{r bokeh-dijon-cassini, echo=FALSE, out.width="100%", fig.cap="(ref:bokeh-dijon-cassini)"}
+knitr::include_graphics("images/3d_map_export/dijon_cassini_bokeh.jpeg")
+```
+
+```{r, eval=FALSE}
+# Caméra pour la vidéo
+render_camera(
+  zoom  = 0.3,
+  phi   = 25,  # Angle d'azimut (max 90)
+  theta = 0   # Angle de rotation
+)
+
+render_movie(
+  "images/3d_map_export/dijon_3d_audio",
+  type = "oscillate",
+  frames = 720,
+  audio = "examples/3d_map/musique/jacques-gallot-suite-in-f-sharp-minor-prelude-a-magical-music.mp3"
+)
+```
+
+<!-- FIXME Trouver un moyen d'ajouter une légende référencée à la vidéo. -->
+
+<!-- (ref:video-dijon-cassini) Vidéo de la carte de Cassini (XVIII^e^ siècle) en 3D montrant la ville de Dijon en France. <br> *(Audio : Prélude de la suite en Fa dièse majeur, Jacques de Gallot.)* -->
+
+<!-- ```{r video-dijon-cassini, echo=FALSE, fig.cap="(ref:video-dijon-cassini)", out.width="100%"} -->
+<!-- knitr::include_url("images/3d_map_export/dijon_cassini_3d_audio.html") -->
+<!-- ``` -->
+
+Vidéo de la carte de Cassini (XVIII^e^ siècle) en 3D montrant la ville de Dijon en France.  
+*(Audio : Prélude de la suite en Fa dièse majeur, Jacques de Gallot.)*
+
+<video loop="true" controls>
+  <source src="images/3d_map_export/dijon_cassini_3d_audio.mp4"
+          type="video/mp4">
+  <p>Sorry, your browser doesn't support embedded videos.</p>
+</video>
 
 ***
 

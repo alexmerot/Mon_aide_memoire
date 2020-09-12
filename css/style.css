@@ -45,6 +45,19 @@ p {
   font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+.footnotes hr {
+  border: 1px solid !important;
+  height: 0 !important;
+  width: 60%;
+  margin: 4em auto 2em !important;
+  color: currentcolor;
+}
+
+video {
+  width: 100% !important;
+  height: auto !important;
+}
+
 .infobox {
   padding: 1em 1em 1em 4em;
   margin-bottom: 10px;
