@@ -51,14 +51,16 @@ jura_data <- extract_tables(pdf_data_jura) %>%
   purrr::map(as.data.frame)
 ```
 
-On peut ensuite vérifier que les tableaux correspondent à ce que l'on peut voir sur le PDF. Par exemple, on peut regarder les dimensions des tableaux à l'aide de la fonction `dim`.
+On peut ensuite vérifier que les tableaux correspondent à ce que l'on peut voir
+sur le PDF. Par exemple, on peut regarder les dimensions des tableaux à l'aide
+de la fonction `dim`.
 
 ```{r, collapse=TRUE}
 purrr::map(jura_data, dim)
 ```
 
 On peut voir déjà qu'il y a 4 tableaux au lieu de 3. C'est dû au fait que le
-3ème tableau est séparé sur deux pages. De plus, les tableaux 1 et la première
+3^ème^ tableau est séparé sur deux pages. De plus, les tableaux 1 et la première
 partie du 3 contiennent une colonne en trop (respectivement 15 au lieu de 14 et
 16 au lieu de 15).
 
@@ -301,7 +303,10 @@ my_reactable(avifaune_jura)
 
 Le _web scraping_ est une technique permettant d'extraire, le plus souvent de
 façon automatique, le contenu d'une page web. Cela peut être très utile pour
-récupérer des données publiques nécessaires à nos analyses.
+récupérer des données publiques nécessaires à nos analyses. Internet est un
+puits de connaissance, il faut donc en profiter et puiser ses ressources.
+[Wikipédia](https://fr.wikipedia.org/wiki/Wikip%C3%A9dia:Accueil_principal)
+peut être parfait pour cela.
 
 Sous R, le package permettant de parcourir et de récupérer facilement le contenu
 d'une page web s'appelle [`rvest`](https://github.com/tidyverse/rvest).
@@ -313,7 +318,7 @@ library("rvest")
 
 Ici, mon but est de récupérer la classification des différentes espèces
 d'oiseaux de la Réserve Naturelle Nationale de la Haute Chaîne du Jura (tableau
-\@ref(tab:avifaune-jura)). Cette classification peut être facilement récupéré
+\@ref(tab:avifaune-jura)). Cette classification peut être facilement récupérée
 sur les pages Wikipédia des oiseaux en question. Je veux donc créer une fonction
 qui va rechercher la page Wikipédia de l'oiseau voulu, puis récupérer sous la
 forme d'un tableau sa classification.
@@ -321,17 +326,23 @@ forme d'un tableau sa classification.
 ```{r}
 get_bird_classification <- function(bird, taxon = c("Ordre", "Famille")) {
   wiki_link <- "https://fr.wikipedia.org/wiki/Wikip%C3%A9dia:Accueil_principal"
+  
+  # On ouvre une session sur la page d'accueil de Wikipédia
   session <- html_session(wiki_link)
   
+  # On écrit dans la barre de recherche le nom de l'oiseau
   form <- html_form(session)
   form_modified <- set_values(form[[1]], search = bird)
   
-  # On entre sur la page wikipédia de l'oiseau recherché.
+  # On entre sur la page wikipédia de l'oiseau
   wiki_bird <- submit_form(session, form_modified, submit = "go")
   
   tbl_classification <- wiki_bird %>%
+    # On récupère le nœud HTML contenant le tableau
     html_node(xpath = "//table[@class='taxobox_classification']") %>%
+    # On extrait le tableau
     html_table() %>%
+    # Puis on met en forme ce tableau
     magrittr::set_colnames(c("niveau_classification", "nom_classification")) %>%
     filter(niveau_classification %in% taxon) %>%
     tidyr::pivot_wider(
@@ -345,12 +356,20 @@ get_bird_classification <- function(bird, taxon = c("Ordre", "Famille")) {
 }
 ```
 
+La fonction ainsi créée est utilisée sur les noms latin extraits du PDF. Pour
+enlever les noms de découvreur des espèces (exemple : « (Linnaeus, 1758) »),
+j'utilise une expression régulière qui identifie l'espèce et le genre des
+oiseaux (ça extrait les deux premiers mots de la chaîne de caractères).
+
 ```{r, cache=TRUE}
 noms_latin <- stringr::str_extract_all(avifaune_jura$nom_latin, r"(^\w+\s+\w+)")
 
 classification_oiseaux <- purrr::map(noms_latin, get_bird_classification) %>%
   bind_rows() # Fusion des tableaux
 ```
+
+Je fusionne ensuite le 1^er^ tableau avec le tableau récupéré par *web
+scraping*.
 
 ```{r}
 avifaune_jura <- avifaune_jura %>%

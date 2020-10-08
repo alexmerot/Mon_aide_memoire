@@ -6,10 +6,12 @@
 
 ## Pourquoi R Markdown ? {#pourquoi-rmarkdown}
 
+
+
 R Markdown désigne un format de fichier (à l'extension **.Rmd**) et plus
 globalement le framework utilisé pour créer plus facilement des documents
 (généralement scientifiques) automatisés. Ces documents peuvent ainsi être
-totalement reproductibles et plusieurs formats de rendu final (statiques ou
+totalement reproductibles et plusieurs formats d'exportation (statiques ou
 dynamiques) sont supportés.
 
 Le fichier est écrit via le langage Markdown et des sections de code R peuvent y
@@ -20,23 +22,41 @@ permettant de générer un document structuré et élégant.
 Pour que cela fonctionne, R Markdown est lié à deux packages : `knitr` et le
 convertisseur universel de document `pandoc` (Fig. \@ref(fig:rmarkdownflow)).  
 Le package `knitr` permet la création, à partir du fichier **.Rmd**, d'un fichier
-au format **md** contenant le code et sa sortie. Ce fichier est alors converti
-dans le format de rendu final voulu via `pandoc` (**.html**, **.pdf**, etc).
+au format **.md** contenant le code et sa sortie. Ce fichier est alors converti
+dans le format d'exportation voulu via `pandoc` (**.html**, **.pdf**, etc).
 
-(ref:rmarkdownflow) *Source : <https://rmarkdown.rstudio.com/lesson-2.html>*
+Pour une configuration plus poussée de la mise en page, selon le format
+d'exportation utilisé il est préférable d'avoir quelques bases de HTML/CSS et de
+$\LaTeX$. Néanmoins, avec les bons mots-clés il est facile de trouver des
+réponses aux problèmes rencontrés via votre moteur de recherche préféré
+(généralement, au moins une autre personne s'est arrachée sa belle chevelure sur
+un problème similaire au vôtre, s'en est plaint sur un forum équivalent à
+[Stackoverflow](https://stackoverflow.com/questions), puis s'est vue
+éventuellement répondre un trollesque «
+[RTFM](https://knowyourmeme.com/memes/rtfm) »). Néanmoins, la prise en main de
+RMarkdown est plutôt facile et sa constante évolution due à sa communauté fait
+que la mise en forme des documents est de plus en plus simple.
+
+(ref:rmarkdownflow) Diagramme montrant le processus de création de documents à partir de RMarkdown.
 
 ```{r rmarkdownflow, echo=FALSE, fig.cap='(ref:rmarkdownflow)'}
-knitr::include_graphics("images/rmarkdownflow.png")
+DiagrammeR::mermaid('
+  graph LR
+    subgraph 
+    A[.Rmd] --> B{knitr}
+    B --> C(.md)
+    end
+    subgraph 
+    C --> D{pandoc}
+    D ==> E((Documents<br>finaux))
+    end
+', height = '100%', width = '100%')
 ```
 
-Toutes mes notes seront donc écrites via R Markdown, et cette section intégrera
-toutes les astuces intéressantes que je rencontre au fur et à mesure des
-besoins.
-
-Pour ne pas paraphraser tout l'excellent guide de @rmarkdown2018, je vous invite à
-lire leur excellent guide gratuit : <https://bookdown.org/yihui/rmarkdown/>,
-ainsi que le livre en cours d'écriture
-[R Markdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/).
+Pour ne pas paraphraser tout l'excellent guide de @rmarkdown2018, je vous invite
+à lire leur livre : <https://bookdown.org/yihui/rmarkdown/>, ainsi que leur
+nouveau livre [R Markdown
+Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/).
 
 ***
 

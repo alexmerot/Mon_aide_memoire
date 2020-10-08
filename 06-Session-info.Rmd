@@ -1,4 +1,4 @@
 # Session info {.unnumbered #session-info}
 ```{r session_info, include=TRUE, echo=FALSE, results='markup'}
-devtools::session_info()
+sessioninfo::session_info()
 ```

@@ -14,23 +14,22 @@
 
 Un Système d'Information Géographique est, comme tout Système d'Information
 [^SI], un ensemble organisé de ressources ayant pour fonction de collecter,
-stocker, traiter et diffuser des informations [^SIG]. Ici, ces informations
-(généralement informatisées) sont des données géospatiales stockées sous forme
-de couches d'informations superposées et reliées les unes aux autres par un
-référentiel cartographique [^Référentiel]. Les SIG sont devenus des outils
-essentiels dans de nombreux domaines tels que l'écologie, la médecine ou la
-sociologie.
+stocker, traiter et diffuser des informations [^SIG]. Ici, ces informations sont
+des données géospatiales stockées sous forme de couches d'informations
+superposées et reliées les unes aux autres par un référentiel cartographique
+[^Référentiel]. Les SIG sont devenus des outils essentiels dans de nombreux
+domaines tels que l'écologie, la météorologie, la médecine, ou la sociologie.
 
 Pour aider les utilisateurs au traitement des données géospatiales, il existe de
 performants et très utilisés logiciels gratuits ou payants tels que
 [QGis](https://www.qgis.org/fr/site/) ou
 [ArcGIS](https://www.arcgis.com/index.html). Ces logiciels offrent une approche
 graphique à la lecture, l'écriture, la manipulation et la visualisation des
-données. Ceci peut néanmoins limiter la reproductibilité et l'automatisation des
-projets. Pour remédier à cela, de nombreux langages de programmation peuvent
-être utilisés pour écrire et partager des scripts. Parmi les plus utilisés, il y
-a [Python](https://www.python.org/) (qui est notamment utilisé pour la
-conception de plugins dans les logiciels de SIG) et
+données. Ceci peut néanmoins limiter la **reproductibilité** et
+l'**automatisation** des projets. Pour remédier à cela, de nombreux langages de
+programmation peuvent être utilisés pour écrire et partager des scripts. Parmi
+les plus utilisés, il y a [Python](https://www.python.org/) (qui est notamment
+utilisé pour la conception de plugins dans les logiciels de SIG) et
 [R](https://www.r-project.org/about.html) (dont les scripts sont maintenant
 exécutables dans QGis). En plus de cela, l'approche en lignes de commande permet
 de se libérer de certaines contraintes imposées par ces logiciels ainsi que
@@ -65,7 +64,11 @@ langages possèdent des programmes plus adaptés pour certaines tâches, des
 packages R offrent la possibilité d'en faciliter l'accès. Par exemple, les
 packages tels que [`Rcpp`](https://github.com/RcppCore/Rcpp) et
 [`Reticulate`](https://rstudio.github.io/reticulate/) permettent l'utilisation
-de programmes écrits respectivement en C++ et Python.
+de programmes écrits respectivement en C++ et Python. Outre cela, depuis peu
+j'ai eu le plaisir de voir un nouveau package émerger :
+[`qgisprocess`](https://github.com/paleolimbot/qgisprocess). Ce package fournit
+une interface pour pouvoir utiliser les algorithmes disponibles dans QGIS. Il
+permet donc d'étendre les possibilités de R pour les SIG.
 
 D'autres caractéristiques intéressantes de R sont sa flexibilité et sa constante
 évolution. Par exemple, il offre maintenant la possibilité de faire facilement
@@ -140,52 +143,74 @@ ces entités basiques (formant des `MULITPOINTS`, des `MULTIPOLYLIGNES` et des
 différents est alors de type « collection de géométrie » (`GEOMETRYCOLLECTION`).
 
 Ces 7 types de géométrie précédemment cités font partis des types les plus
-utilisés. Ils peuvent être créé avec le package `sf` comme cela :
+utilisés. Ils peuvent être facilement créés avec le package `sf`. Il faut alors
+savoir que :
 
-```{r collapse=TRUE, message=FALSE}
+```{r, message=FALSE, warning=FALSE}
 library("sf")
 ```
 
+- Un POINT est un vecteur :
 
-```{r sf-types, collapse=TRUE}
-# Un POINT est un vecteur :
+```{r, collapse=TRUE}
 POINT <- c(-0.25, 1)
 st_point(POINT)
+```
 
-# Un MULTIPOINT est une matrice :
+- Un MULTIPOINT est une matrice :
+
+```{r, collapse=TRUE}
 MULTIPOINT <- rbind(c(-0.25, 1), c(0.25, 1))
 st_multipoint(MULTIPOINT)
+```
 
-# Un LINESTRING est une matrice :
+- Un LINESTRING est une matrice :
+
+```{r, collapse=TRUE}
 LINESTRING <- rbind(c(-1, 1), c(-1, 2.5), c(0, 1.5))
 st_linestring(LINESTRING)
+```
 
-# On peut alors créer un contour avec un LINESTRING qui se ferme :
+- On peut alors créer un contour avec un LINESTRING qui se ferme :
+
+```{r, collapse=TRUE}
 LINESTRING_boundary <- rbind(c(-1, 1), c(-1, 2.5), c(0, 1.5), c(-1, 1))
 st_linestring(LINESTRING_boundary)
+```
 
-# Un MULTILINESTRING est une liste de matrices :
+- Un MULTILINESTRING est une liste de matrices :
+
+```{r, collapse=TRUE}
 MULTILINESTRING <- list(
   LINESTRING,
   rbind(c(1, 1), c(1, 2.5))
 )
 st_multilinestring(MULTILINESTRING)
+```
 
-# Un POLYGON est une liste de matrices :
+- Un POLYGON est une liste de matrices :
+
+```{r, collapse=TRUE}
 POLYGON <- list(
   rbind(c(0, 0), c(-1, 1), c(0, 1.5), c(1, 1), c(0, 0))
 )
 st_polygon(POLYGON)
+```
 
-# Un MULTIPOLYGON est une liste de liste de matrices :
+- Un MULTIPOLYGON est une liste de liste de matrices :
+
+```{r, collapse=TRUE}
 MULTIPOLYGONE <- list(
   POLYGON,
   list(rbind(c(-1, 1), c(-1, 2.5), c(0, 1.5), c(-1, 1))),
   list(rbind(c(1, 1), c(1, 2.5), c(0, 1.5), c(1, 1)))
 )
 st_multipolygon(MULTIPOLYGONE)
+```
 
-# Un GEOMETRYCOLLECTION est une liste de tous les autres types de géométrie.
+- Un GEOMETRYCOLLECTION est une liste de tous les autres types de géométrie :
+
+```{r, collapse=TRUE}
 GEOMETRYCOLLECTION <- list(
   st_multipolygon(MULTIPOLYGONE),
   st_multipoint(MULTIPOINT)
@@ -224,7 +249,7 @@ sf_type <- st_set_geometry(sf_type, sfc)
 ```
 
 
-```{r plot-sf-types2, out.width="100%", fig.cap="Principaux types de géométries pour le Modèle d'Entité Simple (SFA)."}
+```{r plot-sf-types2, out.width="100%", echo=FALSE, fig.cap="Principaux types de géométries pour le Modèle d'Entité Simple (SFA)."}
 ggplot(sf_type) +
   geom_sf(fill = "orange", colour = "black") +
   facet_wrap(vars(factor(type, levels = type)), ncol = 4) +
@@ -312,6 +337,8 @@ my_reactable(
 )
 ```
 
+<br>
+
 On peut visualiser les attributs de l'objet `data_rnn` à l'aide de la fonction
 `attributes` :
 
@@ -338,7 +365,6 @@ Par exemple, ici le `proj4string` vaut :
 ```{r str-data-rnn3, collapse=TRUE}
 st_crs(data_rnn)$proj4string
 ```
-
 
 #### Création de cartes à partir de vecteurs
 
@@ -439,7 +465,6 @@ rnn_france + rnn_jura +
   plot_layout(design = layout_design) +
   plot_annotation(caption = "\u00a9 OpenStreetMap contributors")
 ```
-
 
 [^OGC]: L'OGC est un consortium international qui développe des standards ouverts
 (OpenGIS) dans les domaines de la géomatique et de l'information géographique.
@@ -545,7 +570,7 @@ knitr::include_url("images/plot-rnn-jura-interactive.html")
 
 ### Le package *`mapview`*
 
-```{r}
+```{r, message=FALSE}
 library("mapview")
 ```
 
@@ -786,7 +811,7 @@ render_movie(
 <!-- knitr::include_url("images/3d_map_export/dijon_cassini_3d_audio.html") -->
 <!-- ``` -->
 
-Vidéo de la carte de Cassini (XVIII^e^ siècle) en 3D montrant la ville de Dijon en France.  
+Vidéo de la carte de Cassini (XVIII^e^ siècle) en 3D montrant la ville de Dijon en France.
 *(Audio : Prélude de la suite en Fa dièse majeur, Jacques de Gallot.)*
 
 <video loop="true" controls>
