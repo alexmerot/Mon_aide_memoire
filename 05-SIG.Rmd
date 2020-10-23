@@ -197,7 +197,7 @@ POLYGON <- list(
 st_polygon(POLYGON)
 ```
 
-- Un MULTIPOLYGON est une liste de liste de matrices :
+- Un MULTIPOLYGON est une liste de listes de matrices :
 
 ```{r, collapse=TRUE}
 MULTIPOLYGONE <- list(

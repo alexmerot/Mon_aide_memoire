@@ -107,7 +107,7 @@ La version minimale de R utilisée ici est une version ≥
 contient des changements majeurs tels que la spécification de chaînes de
 caractères brutes (utile notamment pour les expressions régulières) ou la valeur
 par défaut `FALSE` de l'option `stringAsFactors`. Les sections de code
-pourraient donc ne pas fonctionnées si la version utilisée est inférieure à la
+pourraient donc ne pas fonctionner si la version utilisée est inférieure à la
 4.0.
 
 Pour une information complète sur la session R utilisée ici, il faut se référer
