@@ -1,0 +1,144 @@
+nom_latin,nom_vernaculaire,date_derniere_observation,protection_nationale,directive_oiseaux_annexe_1,lr_nationale_2016_des_oiseaux_nicheurs,lr_ra_2008,present_en_rnn,present_abords_rnn,nicheur_en_rnn,migrateur_de_passage_en_rnn,ec_do_pop_nicheuse,valeur_patrimoniale,responsabilite_rnn,priorite_de_conservation
+"Prunella collaris  (Scopoli, 1769)",Accenteur alpin,2017,oui,non,LC,LC,oui,non,oui,non,Stable,Faible,Faible,3
+"Prunella modularis  (Linnaeus, 1758)",Accenteur mouchet,2017,oui,non,LC,LC,non,oui,oui,non,Stable,Faible,Faible,3
+"Aquila chrysaetos  (Linnaeus, 1758)",Aigle royal,2017,oui,oui,VU,VU,oui,non,oui,non,Stable,Forte,Forte,1
+"Alauda arvensis  Linnaeus, 1758",Alouette des champs,2017,non,non,NT,VU,oui,non,oui,oui,En déclin,Faible,Faible,2
+"Lullula arborea (Linnaeus, 1758)",Alouette lulu,1999,oui,oui,—,DDm,non,oui,non,oui,—,Faible,Moyenne,2
+"Accipiter gentilis  (Linnaeus, 1758)",Autour des palombes,2017,oui,non,EN,LC,oui,non,oui,non,En déclin,Moyenne,Moyenne,2
+"Pandion haliaetus (Linnaeus, 1758)",Balbuzard pêcheur,2017,oui,oui,—,LCm,oui,non,non,oui,—,Moyenne,Faible,3
+"Loxia curvirostra  Linnaeus, 1758",Bec croisé des sapins,2018,oui,non,LC,LC,oui,non,oui,non,Stable,Faible,Faible,3
+"Scolopax rusticola Linnaeus, 1758",Bécasse des bois,2017,oui,non,LC,NT,oui,non,oui,oui,Stable,Moyenne,Moyenne,2
+"Motacilla cinerea  Tunstall, 1771",Bergeronette des ruisseaux,2004,oui,non,LC,LC,oui,non,oui,non,Fluctuantes,Faible,Faible,3
+"Motacilla alba alba Linnaeus, 1758",Bergeronette grise,2017,oui,non,LC,LC,non,oui,oui,oui,"NA",Faible,Faible,3
+"Motacilla flava  Linnaeus, 1758",Bergeronette printanière,1998,oui,non,—,LCm,oui,non,non,oui,—,Faible,Faible,3
+"Pernis apivorus  (Linnaeus, 1758)",Bondrée apivore,2017,oui,non,LC,NT,oui,non,oui,oui,Stable,Moyenne,Moyenne,2
+"Pyrrhula pyrrhula  (Linnaeus, 1758)",Bouvreuil pivoine,2018,oui,non,VU,LC,non,oui,oui,non,En déclin,Faible,Moyenne,3
+"Plectrophenax nivalis  (Linnaeus, 1758)",Bruant des neiges,2004,oui,non,—,—,non,oui,?,non,"NA",Faible,Faible,3
+"Emberiza cia  Linnaeus, 1766",Bruant fou,2018,oui,non,LC,LC,oui,non,oui,oui,Stable,Faible,Faible,3
+"Emberiza citrinella  Linnaeus, 1758",Bruant jaune,2017,oui,non,—,—,non,oui,non,non,—,Faible,Faible,3
+"Emberiza hortulana  (Linnaeus, 1758)",Bruant ortolan,Historique,oui,oui,—,VUm,non,non,non,oui,—,Moyenne,Faible,3
+"Emberiza calandra  Linnaeus, 1758",Bruant proyer,1996,oui,non,—,—,non,oui,?,non,—,Faible,Faible,3
+"Emberiza cirlus  Linnaeus, 1758",Bruant zizi,2003,oui,non,—,—,oui,non,non,non,—,Faible,Faible,3
+"Circus pygargus  (Linnaeus, 1758)",Busard cendré,2003,oui,oui,—,—,oui,non,non,oui,—,Moyenne,Faible,3
+"Circus aeruginosus  (Linnaeus, 1758)",Busard des roseaux,2012,oui,oui,—,LCm,non,oui,non,oui,—,Moyenne,Faible,3
+"Circus cyaneus  (Linnaeus, 1758)",Busard Saint-Martin,2009,oui,oui,—,LCm,oui,non,non,non,—,Moyenne,Faible,3
+"Buteo buteo  (Linnaeus, 1758)",Buse variable,2017,oui,non,LC,NT,oui,non,oui,non,En déclin,Faible,Moyenne,3
+"Coturnix coturnix  (Linnaeus, 1758)",Caille des blés,Historique,oui,non,—,VUm,non,non,non,oui,—,Faible,Faible,3
+"Anas platyrhynchos  Linnaeus, 1758",Canard colvert,2003,oui,non,LC,LC,non,oui,oui,non,En amélioration,Faible,Faible,3
+"Nucifraga caryocatactes  (Linnaeus, 1758)",Cassenoix moucheté,2017,oui,non,LC,LC,oui,non,oui,non,Fluctuantes,Faible,Moyenne,3
+"Carduelis carduelis  (Linnaeus, 1758)",Chardonneret élégant,2017,oui,non,VU,LC,non,oui,oui,non,En déclin,Faible,Faible,3
+"Glaucidium passerinum  (Linnaeus, 1758)",Chevêchette d'Europe,2015,oui,oui,NT,VU,oui,non,oui,non,En amélioration,Moyenne,Forte,1
+"Corvus monedula  Linnaeus, 1758",Choucas des tours,1994,oui,non,—,—,non,oui,non,non,—,Faible,Faible,3
+"Athene noctua  (Scopoli, 1769)",Chouette chevêche,Historique,oui,non,—,—,non,non,non,non,—,Faible,Moyenne,3
+"Tyto alba  (Scopoli, 1769)",Chouette effraie,Historique,oui,non,—,—,non,non,non,non,—,Faible,Moyenne,3
+"Strix aluco  Linnaeus, 1758",Chouette hulotte,2017,oui,non,LC,LC,oui,non,oui,non,Inconnues,Faible,Faible,3
+"Ciconia nigra  (Linnaeus, 1758)",Cigogne noire,2017,oui,oui,—,VUm,oui,non,non,oui,—,Moyenne,Faible,3
+"Cinclus cinclus  (Linnaeus, 1758)",Cincle plongeur,1996,oui,non,LC,LC,non,oui,oui,non,Stable,Faible,Faible,3
+"Circaetus gallicus  (Gmelin, 1788)",Circaète Jean-le-blanc,2016,oui,oui,—,LCm,oui,non,non,oui,—,Moyenne,Faible,3
+"Corvus corone Linnaeus, 1758",Corneille noire,2018,non,non,LC,LC,non,oui,oui,non,Stable,Faible,Faible,3
+"Cuculus canorus  (Linnaeus, 1758)",Coucou gris,2017,oui,non,LC,LC,oui,non,oui,oui,En amélioration,Faible,Faible,3
+"Caprimulgus europaeus  Linnaeus, 1758",Engoulevent d'Europe,1998,oui,oui,—,LCm,oui,non,non,oui,—,Moyenne,Faible,3
+"Accipiter nisus  (Linnaeus, 1758)",Epervier d'Europe,2017,oui,non,LC,LC,oui,non,oui,non,En déclin,Faible,Faible,3
+"Sturnus vulgaris  (Linnaeus, 1758)",Etourneau sansonnet,Historique,non,non,LC,LC,non,non,oui,non,Stable,Faible,Faible,3
+"Phasianus colchicus (Linnaeus, 1758)",Faisan de Colchide,2014,non,non,—,—,oui,non,non,non,—,Faible,Faible,3
+"Falco tinnunculus  Linnaeus, 1758",Faucon crécerelle,2017,oui,non,NT,LC,oui,non,oui,non,En déclin,Faible,Moyenne,2
+"Falco columbarius  Linnaeus, 1758",Faucon émerillon,2002,oui,oui,—,DDm,oui,non,non,oui,—,Moyenne,Faible,3
+"Falco subbuteo  Linnaeus, 1758",Faucon hobereau,2008,oui,non,LC,LC,oui,non,oui,oui,En déclin,Faible,Faible,3
+"Falco vespertinus  Linnaeus, 1766",Faucon kobez,2002,oui,oui,—,LCm,non,oui,non,oui,—,Moyenne,Faible,3
+"Falco peregrinus Tunstall, 1771",Faucon pèlerin,2018,oui,oui,LC,VU,oui,non,oui,non,En amélioration,Moyenne,Forte,1
+"Sylvia atricapilla  (Linnaeus, 1758)",Fauvette à tête noire,2017,oui,non,LC,LC,oui,non,oui,oui,En amélioration,Faible,Faible,3
+"Sylvia curruca  (Linnaeus, 1758)",Fauvette babillarde,1997,oui,non,—,LCm,oui,non,non,oui,—,Faible,Faible,3
+"Sylvia borin  (Boddaert, 1783)",Fauvette des jardins,2017,oui,non,NT,LC,non,oui,oui,oui,Stable,Faible,Faible,3
+"Sylvia communis  Latham, 1787",Fauvette grisette,1996,oui,non,LC,NT,oui,non,oui,oui,En amélioration,Faible,Faible,3
+"Sylvia hortensis (Gmelin, 1789)",Fauvette orphée,Historique,oui,non,—,DDm,non,non,non,oui,—,Faible,Faible,3
+"Sylvia cantillans (Pallas, 1764)",Fauvette passerinette,Historique,oui,non,—,LCm,oui,non,non,oui,—,Faible,Faible,3
+"Garrulus glandarius  (Linnaeus, 1758)",Geai des chênes,2017,non,non,LC,LC,non,oui,oui,non,En amélioration,Faible,Faible,3
+"Bonasa bonasia  (Linnaeus, 1758)",Gélinotte des bois,2017,oui,oui,NT,NT,oui,non,oui,non,Fluctuantes,Moyenne,Forte,1
+"Muscicapa striata  (Pallas, 1764)",Gobemouche gris,2017,oui,non,NT,NT,non,oui,oui,oui,Stable,Moyenne,Moyenne,3
+"Ficedula hypoleuca  (Pallas, 1764)",Gobemouche noir,2017,oui,non,—,LCm,oui,non,non,oui,—,Faible,Faible,3
+"Corvus corax  Linnaeus, 1758",Grand corbeau,2018,oui,non,LC,LC,oui,non,oui,non,En amélioration,Faible,Moyenne,2
+"Phalacrocorax carbo  (Linnaeus, 1758)",Grand Cormoran,2016,oui,non,—,LCm,oui,non,non,oui,—,Faible,Faible,3
+"Tetrao urogallus major C. L. Brehm, 1831",Grand Tétras,2018,oui,oui,VU,CR,oui,NA,oui,NA,En déclin,Forte,Forte,1
+"Certhia familiaris  Linnaeus, 1758",Grimpereau des bois,2017,oui,non,LC,LC,oui,non,oui,non,Stable,Faible,Faible,3
+"Certhia brachydactyla  C.L. Brehm, 1820",Grimpereau des jardins,2017,oui,non,LC,LC,non,non,oui,non,Stable,Faible,Faible,3
+"Turdus viscivorus  Linnaeus, 1758",Grive draine,2017,non,non,LC,LC,oui,non,oui,non,En déclin,Faible,Faible,3
+"Turdus pilaris  Linnaeus, 1758",Grive litorne,2017,non,non,—,LCm,oui,non,non,oui,—,Faible,Faible,3
+"Turdus iliacus  Linnaeus, 1766",Grive mauvis,2017,non,non,—,LCm,non,oui,non,oui,—,Faible,Faible,3
+"Turdus philomelos  C. L. Brehm, 1831",Grive musicienne,2017,non,non,LC,LC,non,oui,oui,non,Stable,Faible,Faible,3
+"Coccothraustes coccothraustes (Linnaeus, 1758)",Grosbec casse-noyaux,2017,oui,non,LC,LC,oui,non,oui,non,En amélioration,Faible,Faible,3
+"Merops apiaster  Linnaeus, 1758",Guêpier d'Europe,2013,oui,non,—,DDm,non,oui,non,oui,—,Faible,Faible,3
+"Ardea cinerea  (Linnaeus, 1758)",Héron cendré,Historique,oui,non,—,—,non,non,non,non,—,Faible,Faible,3
+"Bubo bubo  (Linnaeus, 1758)",Grand-duc d'Europe,2016,oui,oui,—,—,oui,oui,non,non,—,Moyenne,Moyenne,2
+"Asio otus  (Linnaeus, 1758)",Hibou moyen-duc,2017,oui,non,LC,LC,oui,non,oui,non,Inconnues,Faible,Faible,3
+"Delichon urbicum  (Linnaeus, 1758)",Hirondelle de fenêtre,2017,oui,non,—,LCm,oui,non,non,oui,—,Faible,Faible,3
+"Riparia riparia  (Linnaeus, 1758)",Hirondelle de rivage,2012,oui,non,—,—,non,oui,non,oui,—,Faible,Faible,3
+"Ptyonoprogne rupestris  (Scopoli, 1769)",Hirondelle de rochers,2003,oui,non,LC,LC,oui,non,oui,non,Stable,Faible,Faible,3
+"Hirundo rustica  Linnaeus, 1758",Hirondelle rustique,2013,oui,non,—,LCm,non,oui,non,oui,—,Faible,Faible,3
+"Upupa epops  (Linnaeus, 1758)",Huppe fasciée,2013,oui,non,—,VUm,non,oui,non,oui,—,Faible,Faible,3
+"Bombycilla garrulus  (Linnaeus, 1758)",Jaseur boréal,2005,oui,non,—,"NA",oui,non,non,oui,—,Faible,Faible,3
+"Carduelis cannabina  (Linnaeus, 1758)",Linotte mélodieuse,2017,oui,non,VU,LC,oui,non,oui,non,En déclin,Faible,Faible,3
+"Locustella naevia  (Boddaert, 1783)",Locustelle tachetée,2000,oui,non,—,—,oui,non,non,non,—,Faible,Faile,3
+"Oriolus oriolus  (Linnaeus, 1758)",Loriot d'Europe,1996,oui,non,—,LCm,oui,non,non,oui,—,Faible,Faible,3
+"Alcedo atthis  (Linnaeus, 1758)",Martin pêcheur,Historique,oui,oui,—,—,non,non,non,non,—,Moyenne,Faible,3
+"Tachymarptis melba  (Linnaeus, 1758)",Martinet à ventre blanc,2002,oui,non,LC,LC,oui,non,oui,oui,Stable,Faible,Faible,3
+"Apus apus  (Linnaeus, 1758)",Martinet noir,2017,oui,non,—,LCm,non,oui,non,oui,—,Faible,Faible,3
+"Turdus torquatus Linnaeus, 1758",Merle à plastron,2017,oui,non,LC,LC,oui,non,oui,oui,Stable,Faible,Moyenne,2
+"Turdus merula  Linnaeus, 1758",Merle noir,2017,non,non,LC,LC,non,oui,oui,non,Stable,Faible,Faible,3
+"Aegithalos caudatus  (Linnaeus, 1758)",Mésange à longue queue,2017,oui,non,LC,LC,non,oui,oui,non,Stable,Faible,Faible,3
+"Cyanistes caeruleus  (Linnaeus, 1758)",Mésange bleue,2017,oui,non,LC,LC,non,oui,oui,non,En amélioration,Faible,Faible,3
+"Parus montanus Conrad von Baldenstein, 1827",Mésange boréale,2017,oui,non,VU,LC,non,oui,oui,non,Stable,Faible,Faible,3
+"Parus major  Linnaeus, 1758",Mésange charbonnière,2017,oui,non,LC,LC,non,oui,oui,non,En amélioration,Faible,Faible,3
+"Lophophanes cristatus  (Linnaeus, 1758)",Mésange huppée,2017,oui,non,LC,LC,oui,non,oui,non,Stable,Faible,Faible,3
+"Periparus ater  (Linnaeus, 1758)",Mésange noire,2016,oui,non,LC,LC,oui,non,oui,non,Fluctuantes,Faible,Faible,3
+"Poecile palustris  (Linnaeus, 1758)",Mésange nonnette,2017,oui,non,LC,LC,non,oui,oui,non,En amélioration,Faible,Faible,3
+"Milvus migrans  (Boddaert, 1783)",Milan noir,2017,oui,oui,—,LCm,oui,non,non,non,—,Moyenne,Faible,3
+"Milvus milvus  (Linnaeus, 1758)",Milan royal,2017,oui,oui,—,—,oui,non,non,oui,—,Moyenne,Faible,3
+"Passer domesticus  (Linnaeus, 1758)",Moineau domestique,Historique,oui,non,—,—,non,non,non,non,—,Faible,Faible,3
+"Passer montanus  (Linnaeus, 1758)",Moineau friquet,2005,oui,non,—,—,non,oui,non,non,—,Faible,Faible,3
+"Monticola saxatilis  (Linnaeus, 1758)",Monticole de roche,2017,oui,non,NT,VU,oui,non,oui,oui,Stable,Faible,Moyenne,2
+"Montifringilla nivalis  (Linnaeus, 1766)",Niverolle alpine,Historique,oui,non,—,—,non,non,non,non,—,Faible,Faible,3
+"Aegolius funereus  (Linnaeus, 1758)",Nyctale de Tengmalm,2017,oui,oui,LC,VU,oui,non,oui,non,Fluctuantes,Moyenne,Forte,1
+"Picus canus (Gmelin, 1788)",Pic cendré,1999,oui,oui,—,—,non,oui,non,non,—,Moyenne,Faible,3
+"Dendrocopos major  (Linnaeus, 1758)",Pic épeiche,2017,oui,non,LC,LC,oui,non,oui,non,En amélioration,Faible,Faible,3
+"Dendrocopos  minor  (Linnaeus, 1758)",Pic épeichette,Historique,oui,non,—,—,non,non,non,non,—,Faible,Faible,3
+"Dendrocopos medius  (Linnaeus, 1758)",Pic mar,Historique,oui,oui,LC,CR,non,non,oui,non,En amélioration,Faible,Moyenne,3
+"Dryocopus martius  (Linnaeus, 1758)",Pic noir,2017,oui,oui,LC,LC,oui,non,oui,non,En amélioration,Faible,Faible,3
+"Picoides tridactylus  (Linnaeus, 1758)",Pic tridactyle,2016,oui,oui,CR,CR,oui,non,oui,non,Inconnues,Forte,Forte,1
+"Picus viridis Linnaeus, 1758",Pic vert,2017,oui,non,LC,LC,oui,non,oui,non,Stable,Faible,Faible,3
+"Pica pica  (Linnaeus, 1758)",Pie bavarde,Historique,non,non,—,—,non,non,non,non,—,Faible,Faible,3
+"Lanius collurio  Linnaeus, 1758",Pie-grièche écorcheur,2017,oui,oui,NT,LC,oui,non,oui,oui,Fluctuantes,Moyenne,Moyenne,2
+"Lanius excubitor  (Linnaeus, 1758)",Pie-grièche grise,Historique,oui,non,—,—,non,non,non,non,—,Faible,Faible,3
+"Columba oenas  Linnaeus, 1758",Pigeon colombin,2017,non,non,LC,VU,non,oui,oui,non,Fluctuantes,Faible,Faible,3
+"Columba palumbus  Linnaeus, 1758",Pigeon ramier,2017,non,non,LC,LC,oui,non,oui,non,En amélioration,Faible,Faible,3
+"Fringilla coelebs  (Linnaeus, 1758)",Pinson des arbres,2017,oui,non,LC,LC,non,oui,oui,non,En amélioration,Faible,Faible,3
+"Fringilla montifringilla  Linnaeus, 1758",Pinson du nord,2013,oui,non,—,LCm,oui,non,non,oui,—,Faible,Faible,3
+"Anthus trivialis  Linnaeus, 1758",Pipit des arbres,2017,oui,non,LC,LC,oui,non,oui,oui,En amélioration,Faible,Faible,3
+"Anthus pratensis (Linnaeus, 1758)",Pipit farlouse,2017,oui,non,VU,LC,oui,non,oui,oui,En déclin,Faible,Faible,3
+"Anthus spinoletta  (Linnaeus, 1758)",Pipit spioncelle,2017,oui,non,LC,LC,oui,non,oui,oui,Inconnues,Faible,Faible,3
+"Eudromias morinellus  (Linnaeus, 1758)",Pluvier guignard,2017,oui,oui,—,DDm,oui,non,non,oui,—,Moyenne,Faible,3
+"Phylloscopus bonelli  (Vieillot, 1819)",Pouillot de Bonelli,2017,oui,non,LC,LC,oui,non,oui,oui,En amélioration,Faible,Faible,3
+"Phylloscopus trochilus  (Linnaeus, 1758)",Pouillot fitis,1996,oui,non,NT,NT,oui,non,oui,oui,Stable,Faible,Faible,3
+"Phylloscopus sibilatrix  (Bechstein, 1793)",Pouillot siffleur,2003,oui,non,NT,EN,oui,non,oui,oui,Stable,Faible,Faible,3
+"Phylloscopus collybita  (Vieillot, 1887)",Pouillot véloce,2017,oui,non,LC,LC,oui,non,oui,oui,En déclin,Faible,Faible,3
+"Regulus ignicapilla  (Temminck, 1820)",Roitelet à triple-bandeau,2017,oui,non,LC,LC,non,oui,oui,non,Stable,Faible,Faible,3
+"Regulus regulus  (Linnaeus, 1758)",Roitelet huppé,2017,oui,non,NT,LC,non,oui,oui,non,En déclin,Faible,Faible,3
+"Luscinia megarhynchos  C. L. Brehm, 1831",Rossignol philomène,1996,oui,non,—,LCm,non,oui,non,oui,—,Faible,Faible,3
+"Erithacus rubecula  (Linnaeus, 1758)",Rougegorge familier,2017,oui,non,LC,LC,non,oui,oui,non,Stable,Faible,Faible,3
+"Phoenicurus phoenicurus  (Linnaeus, 1758)",Rougequeue à front blanc,2017,oui,non,LC,LC,oui,non,oui,oui,En amélioration,Faible,Faible,3
+"Phoenicurus ochruros  (S. G. Gmelin, 1774)",Rougequeue noir,2017,oui,non,LC,LC,non,oui,oui,non,Stable,Faible,Faible,3
+"Acrocephalus scirpaceus  (Hermann, 1804)",Rousserolle effarvatte,1994,oui,non,—,—,non,oui,non,non,—,Faible,Faible,3
+"Acrocephalus palustris (Bechstein, 1798)",Rousserolle verderolle,1996,oui,non,—,—,non,oui,non,non,—,Faible,Faible,3
+"Serinus serinus  (Linnaeus, 1766)",Serin cini,Historique,oui,non,VU,LC,non,non,oui,oui,En déclin,Faible,Faible,3
+"Sitta europaea  Linnaeus, 1758",Sittelle torchepot,2017,oui,non,LC,"NA",oui,non,oui,non,En amélioration,Faible,Faible,3
+"Acanthis flammea  (Linnaeus, 1758)",Sizerin flammé,2017,oui,non,VU,"NA",oui,non,oui,non,"NA",Faible,Faible,3
+"Saxicola rubicola  (Linnaeus, 1766)",Tarier pâtre,1996,oui,non,NT,LC,non,oui,oui,oui,En déclin,Faible,Faible,3
+"Carduelis spinus  (Linnaeus, 1758)",Tarin des aulnes,2018,oui,non,LC,DD,non,oui,oui,oui,Inconnues,Faible,Faible,3
+"Tichodroma muraria  (Linnaeus, 1758)",Tichodrome échelette,2017,oui,non,NT,LC,oui,non,oui,non,Inconnues,Faible,Moyenne,2
+"Jynx torquilla  Linnaeus, 1758",Torcol fourmilier,1998,oui,non,LC,VU,oui,non,oui,oui,Stable,Faible,Moyenne,3
+"Streptopelia turtur  (Linnaeus, 1758)",Tourterelle des bois,1996,non,non,—,LCm,non,oui,non,oui,—,Faible,Faible,3
+"Oenanthe oenanthe  (Linnaeus, 1758)",Traquet motteux,2017,oui,non,LC,LC,oui,non,oui,oui,En déclin,Faible,Moyenne,3
+"Saxicola rubetra  (Linnaeus, 1758)",Traquet tarier,2003,oui,non,—,Vum,non,oui,non,non,En déclin,Faible,Faible,3
+"Troglodytes troglodytes  (Linnaeus, 1758)",Troglodyte mignon,2017,oui,non,LC,LC,non,oui,oui,non,En déclin,Faible,Faible,3
+"Gyps fulvus  (Hablizl, 1783)",Vautour fauve,2000,oui,oui,—,—,oui,non,non,non,—,Moyenne,Faible,3
+"Carduelis citrinella  (Pallas, 1764)",Venturon montagnard,2017,oui,non,NT,LC,oui,non,oui,non,En déclin,Moyenne,Forte,1
+"Carduelis chloris  (Linnaeus, 1758)",Verdier d'Europe,2017,oui,non,VU,LC,non,oui,oui,non,En déclin,Faible,Faible,3

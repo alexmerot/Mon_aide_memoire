@@ -28,7 +28,7 @@ Jura](https://www.rnn-hautechainedujura.fr/). Ce fichier contient des tableaux
 montrant les données de recensement pour le plan de gestion 2019-2020 de la
 faune présente.
 
-```{r, echo=FALSE, message=FALSE}
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
 downloadthis::download_file(
   path = "examples/faune-RNN-jura/Faune-vertebres-PG3.pdf",
   output_name = "Faune-vertebres-PG3",
@@ -60,9 +60,13 @@ package permet d'améliorer la partie programmation fonctionnelle dans R,
 notamment en remplaçant la plupart des boucles `for`. Le code devient ainsi plus
 succinct et plus facile à lire, tout en gardant son efficacité.
 
-```{r}
+```{r, eval=FALSE}
 jura_data <- extract_tables(pdf_data_jura) %>% 
   purrr::map(as.data.frame)
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+jura_data <- readRDS("examples/faune-RNN-jura/jura_data.RDS")
 ```
 
 On peut ensuite vérifier que les tableaux correspondent à ce que l'on peut voir
@@ -73,7 +77,7 @@ de la fonction `dim`.
 purrr::map(jura_data, dim)
 ```
 
-On peut voir déjà qu'il y a 4 tableaux au lieu de 3. C'est dû au fait que le
+On peut déjà voir qu'il y a 4 tableaux au lieu de 3. C'est dû au fait que le
 3^ème^ tableau est séparé sur deux pages. De plus, les tableaux 1 et la première
 partie du 3 contiennent une colonne en trop (respectivement 15 au lieu de 14 et
 16 au lieu de 15).
@@ -375,24 +379,42 @@ enlever les noms de découvreur des espèces (exemple : « (Linnaeus, 1758) »),
 j'utilise une expression régulière qui identifie l'espèce et le genre des
 oiseaux (ça extrait les deux premiers mots de la chaîne de caractères).
 
-```{r, cache=TRUE}
+```{r, eval=FALSE}
 noms_latin <- stringr::str_extract_all(avifaune_jura$nom_latin, r"(^\w+\s+\w+)")
 
 classification_oiseaux <- purrr::map(noms_latin, get_bird_classification) %>%
   bind_rows() # Fusion des tableaux
 ```
 
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+classification_oiseaux <- readr::read_csv("examples/webscraping/classification_avifaune.csv")
+```
+
+
 Je fusionne ensuite le 1^er^ tableau avec le tableau récupéré par *web
 scraping*.
 
-```{r}
+```{r, eval=FALSE}
 avifaune_jura <- avifaune_jura %>%
   mutate(nom = unlist(noms_latin)) %>%
   left_join(classification_oiseaux, by = "nom") %>%
   select(-nom) %>%
   relocate(Ordre:last_col())
 ```
+
 <br>
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+downloadthis::download_file(
+  path = "examples/webscraping/classification_avifaune.csv",
+  output_name = "classification_avifaune", 
+  button_label = "Télécharger au format CSV",
+  button_type = "warning",
+  has_icon = TRUE,
+  icon = "fa fa-save",
+  class = "hvr-sweep-to-left"
+)
+```
 
 <caption>(#tab:avifaune-famille)Données présentant l'avifaune de la Réserve Naturelle Nationale de la Haute Chaîne du Jura. Ces données ont été regroupées selon l'ordre et la famille des espèces présentes. (Cliquer pour étendre.)</caption>
 
