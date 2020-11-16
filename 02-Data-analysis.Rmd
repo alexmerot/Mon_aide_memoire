@@ -387,7 +387,7 @@ classification_oiseaux <- purrr::map(noms_latin, get_bird_classification) %>%
 ```
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
-classification_oiseaux <- readr::read_csv("examples/webscraping/classification_avifaune.csv")
+avifaune_jura <- readr::read_csv("examples/webscraping/classification_avifaune.csv")
 ```
 
 
