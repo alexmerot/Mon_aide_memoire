@@ -286,7 +286,7 @@ all_output
 ```
 <br>
 
-On peut maintenant fusioner les deux sous-parties du tableau 3 (tableaux
+On peut maintenant fusionner les deux sous-parties du tableau 3 (tableaux
 `jura_data_cleaned[[3]]` et `jura_data_cleaned[[4]]`) et visualiser les tableaux
 finaux :
 
@@ -387,7 +387,7 @@ classification_oiseaux <- purrr::map(noms_latin, get_bird_classification) %>%
 ```
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
-avifaune_jura <- readr::read_csv("examples/webscraping/classification_avifaune.csv")
+avifaune_jura <- readr::read_csv("examples/webscraping/classification_avifaune.csv", na = "")
 ```
 
 

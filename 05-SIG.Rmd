@@ -637,7 +637,11 @@ if (!file.exists("docs/images/plot-mapview.html")) {
       popup = description_rnn,
       cex = "SURF_OFF"
     ) %>%
-    mapshot(here::here("images", "plot-mapview.html"), remove_controls = NULL)
+    mapshot(
+      here::here("images", "plot-mapview.html"), 
+      remove_controls = NULL,
+      selfcontained = FALSE # Les lourds fichiers HTML ne peuvent être indépendants
+    )
 }
 knitr::include_url("images/plot-mapview.html")
 ```
