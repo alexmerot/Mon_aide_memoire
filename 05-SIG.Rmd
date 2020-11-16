@@ -390,7 +390,12 @@ data_rnn <- cbind(data_rnn, st_coordinates(st_point_on_surface(data_rnn)))
 ```{r ggplot-rnn-1, message=FALSE, warning=FALSE}
 # Localisation des réserves en France métropolitaine
 rnn_france <- ggplot(regions) +
-  annotation_map_tile(zoom = 5, zoomin = 0, type = "stamenwatercolor") +
+  annotation_map_tile(
+    zoom = 5, 
+    zoomin = 0,
+    type = "stamenwatercolor", 
+    progress = "none"
+  ) +
   geom_sf(
     aes(fill = nom),
     colour = "black",
