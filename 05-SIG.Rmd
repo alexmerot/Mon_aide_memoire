@@ -648,6 +648,9 @@ if (!file.exists("docs/images/plot-mapview.html")) {
       selfcontained = FALSE # Les lourds fichiers HTML ne peuvent être indépendants
     )
 }
+# Pour le moment, il faut copier manuellement les dépendances du fichier HTML
+# vers le dossier /docs
+# file.copy(from = "images/plot-mapview_files", to = "docs/images", recursive = TRUE)
 knitr::include_url("images/plot-mapview.html")
 ```
 
