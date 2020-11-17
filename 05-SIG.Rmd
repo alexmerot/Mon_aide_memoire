@@ -600,10 +600,13 @@ description_rnn <- data_rnn %>%
   mutate(
     description = glue(
       '
+      <style>
+      div.leaflet-popup-content {{width:auto !important; height:auto !important}}
+      </style>
       <h1 style="border: 3px solid; text-align: center; border-radius: 15px">
       {NOM_SITE}
       </h1>
-
+      <hr>
       <b>Date de création</b> : {format(DATE_CREA, "%d/%m/%Y")}<br>
       <b>Opérateur</b> : {OPERATEUR}<br>
       <b>Superficie officielle</b> : {SURF_OFF} ha<br>

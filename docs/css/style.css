@@ -110,9 +110,3 @@ video {
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
 }
-
-/*Popups pour mapview*/
-.esri-popup__main-container.esri-widget {
-  width: 50px !important;
-  max-height: 100px !important;
-}
