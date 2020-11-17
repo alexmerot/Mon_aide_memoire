@@ -113,6 +113,6 @@ video {
 
 /*Popups pour mapview*/
 .esri-popup__main-container.esri-widget {
-  width: 310px !important;
-  max-height: 300px !important;
+  width: 50px !important;
+  max-height: 100px !important;
 }
