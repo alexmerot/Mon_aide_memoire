@@ -460,7 +460,7 @@ rnn_jura <- ggplot(crop_regions) +
 
 (ref:fig-rnn) Carte montrant la localisation géographique (point rouge) des Réserves Naturelles Nationales de la France métropolitaine. Un zoom a été fait pour apercevoir la délimitation de la Réserve Nationale de la Haute Chaîne du Jura.
 
-```{r fig-rnn, fig.cap='(ref:fig-rnn)', message=FALSE, warning=FALSE, out.width="100%", cache = TRUE}
+```{r fig-rnn, fig.cap='(ref:fig-rnn)', message=FALSE, warning=FALSE, out.width="100%"}
 layout_design <- c(
   area(t = 1, l = 1, b = 8, r = 7),
   area(t = 5, l = 6, b = 8, r = 8)
