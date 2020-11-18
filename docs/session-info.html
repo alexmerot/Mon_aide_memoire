@@ -187,7 +187,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.5" data-path="SIG.html"><a href="SIG.html#cartes-interactives"><i class="fa fa-check"></i><b>5.5</b> Les cartes interactives</a>
 <ul>
 <li class="chapter" data-level="5.5.1" data-path="SIG.html"><a href="SIG.html#le-package-ggiraph"><i class="fa fa-check"></i><b>5.5.1</b> Le package <strong><code>ggiraph</code></strong></a></li>
-<li class="chapter" data-level="5.5.2" data-path="SIG.html"><a href="SIG.html#le-package-mapview"><i class="fa fa-check"></i><b>5.5.2</b> Le package <em><code>mapview</code></em></a></li>
+<li class="chapter" data-level="5.5.2" data-path="SIG.html"><a href="SIG.html#le-package-leaflet"><i class="fa fa-check"></i><b>5.5.2</b> Le package <em><code>leaflet</code></em></a></li>
 </ul></li>
 <li class="chapter" data-level="5.6" data-path="SIG.html"><a href="SIG.html#les-cartes-en-3d-avec-rayshader"><i class="fa fa-check"></i><b>5.6</b> Les cartes en 3D avec <strong><code>rayshader</code></strong></a></li>
 <li class="chapter" data-level="" data-path="SIG.html"><a href="SIG.html#ref-sig"><i class="fa fa-check"></i>Liste de ressources Internet utiles</a></li>
@@ -226,7 +226,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  collate  fr_FR.UTF-8                 
 ##  ctype    fr_FR.UTF-8                 
 ##  tz       Europe/Paris                
-##  date     2020-11-17                  
+##  date     2020-11-18                  
 ## 
 ## ─ Packages ───────────────────────────────────────────────
 ##  package           * version    date       lib
@@ -262,6 +262,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  ggspatial         * 1.1.4      2020-07-12 [1]
 ##  ggthemes          * 4.2.0      2019-05-13 [1]
 ##  glue              * 1.4.2      2020-08-27 [1]
+##  gridExtra           2.3        2017-09-09 [1]
 ##  gtable              0.3.0      2019-03-25 [3]
 ##  here                1.0.0      2020-11-15 [1]
 ##  highr               0.8        2019-03-20 [3]
@@ -275,13 +276,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  KernSmooth          2.23-18    2020-10-29 [4]
 ##  knitr               1.30       2020-09-22 [1]
 ##  lattice             0.20-41    2020-04-02 [4]
-##  leafem              0.1.3      2020-07-26 [1]
-##  leaflet             2.0.3      2019-11-16 [1]
-##  leaflet.providers   1.9.0      2019-11-09 [1]
+##  leafem            * 0.1.3      2020-11-18 [1]
+##  leaflet           * 2.0.3.9000 2020-11-18 [1]
+##  leaflet.providers   1.9.0      2020-11-18 [1]
 ##  lifecycle           0.2.0      2020-03-06 [3]
 ##  lubridate           1.7.9.2    2020-11-13 [1]
-##  magrittr            1.5        2014-11-22 [3]
-##  mapview           * 2.9.0      2020-08-11 [1]
+##  magrittr            2.0.1      2020-11-17 [1]
+##  mapview             2.9.4      2020-11-18 [1]
 ##  MASS                7.3-53     2020-09-09 [4]
 ##  mime                0.9        2020-02-04 [3]
 ##  munsell             0.5.0      2018-06-12 [3]
@@ -324,115 +325,120 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  tweenr              1.0.1      2018-12-14 [1]
 ##  units               0.6-7      2020-06-13 [1]
 ##  uuid                0.1-4      2020-02-26 [1]
-##  vctrs               0.3.4      2020-08-29 [1]
+##  vctrs               0.3.5      2020-11-17 [1]
+##  viridis             0.5.1      2018-03-29 [1]
+##  viridisLite         0.3.0      2018-02-01 [3]
 ##  visNetwork          2.0.9      2019-12-06 [1]
 ##  webshot             0.5.2      2019-11-22 [3]
 ##  withr               2.3.0      2020-09-22 [1]
 ##  xfun                0.19       2020-10-30 [1]
 ##  xml2              * 1.3.2      2020-04-23 [3]
 ##  yaml                2.2.1      2020-02-01 [3]
-##  source                                  
-##  CRAN (R 4.0.1)                          
-##  CRAN (R 4.0.0)                          
-##  CRAN (R 4.0.0)                          
-##  CRAN (R 4.0.3)                          
-##  CRAN (R 4.0.3)                          
-##  CRAN (R 4.0.0)                          
-##  CRAN (R 4.0.1)                          
-##  CRAN (R 4.0.2)                          
-##  CRAN (R 4.0.3)                          
-##  CRAN (R 4.0.3)                          
-##  CRAN (R 4.0.0)                          
-##  CRAN (R 4.0.0)                          
-##  CRAN (R 4.0.1)                          
-##  Github (rich-iannone/DiagrammeR@b6a7019)
-##  CRAN (R 4.0.3)                          
-##  CRAN (R 4.0.3)                          
-##  CRAN (R 4.0.2)                          
-##  CRAN (R 4.0.3)                          
-##  CRAN (R 4.0.0)                          
-##  CRAN (R 4.0.0)                          
-##  CRAN (R 4.0.0)                          
-##  CRAN (R 4.0.0)                          
-##  CRAN (R 4.0.2)                          
-##  CRAN (R 4.0.0)                          
-##  CRAN (R 4.0.3)                          
-##  CRAN (R 4.0.1)                          
-##  Github (davidgohel/ggiraph@0abe7f1)     
-##  Github (tidyverse/ggplot2@b76fa96)      
-##  Github (slowkow/ggrepel@4d0ef50)        
-##  CRAN (R 4.0.2)                          
-##  CRAN (R 4.0.1)                          
-##  CRAN (R 4.0.2)                          
-##  CRAN (R 4.0.0)                          
-##  CRAN (R 4.0.3)                          
-##  CRAN (R 4.0.0)                          
-##  CRAN (R 4.0.1)                          
-##  CRAN (R 4.0.1)                          
-##  CRAN (R 4.0.2)                          
-##  CRAN (R 4.0.2)                          
-##  CRAN (R 4.0.1)                          
-##  CRAN (R 4.0.1)                          
-##  CRAN (R 4.0.2)                          
-##  CRAN (R 4.0.3)                          
-##  CRAN (R 4.0.2)                          
-##  CRAN (R 4.0.0)                          
-##  CRAN (R 4.0.2)                          
-##  CRAN (R 4.0.1)                          
-##  CRAN (R 4.0.1)                          
-##  CRAN (R 4.0.0)                          
-##  CRAN (R 4.0.3)                          
-##  CRAN (R 4.0.0)                          
-##  CRAN (R 4.0.2)                          
-##  CRAN (R 4.0.2)                          
-##  CRAN (R 4.0.0)                          
-##  CRAN (R 4.0.0)                          
-##  CRAN (R 4.0.3)                          
-##  CRAN (R 4.0.2)                          
-##  CRAN (R 4.0.0)                          
-##  CRAN (R 4.0.1)                          
-##  CRAN (R 4.0.0)                          
-##  CRAN (R 4.0.1)                          
-##  CRAN (R 4.0.1)                          
-##  CRAN (R 4.0.0)                          
-##  CRAN (R 4.0.3)                          
-##  CRAN (R 4.0.3)                          
-##  CRAN (R 4.0.0)                          
-##  CRAN (R 4.0.2)                          
-##  CRAN (R 4.0.2)                          
-##  CRAN (R 4.0.2)                          
-##  CRAN (R 4.0.2)                          
-##  CRAN (R 4.0.3)                          
-##  CRAN (R 4.0.2)                          
-##  CRAN (R 4.0.2)                          
-##  CRAN (R 4.0.3)                          
-##  CRAN (R 4.0.2)                          
-##  CRAN (R 4.0.3)                          
-##  CRAN (R 4.0.3)                          
-##  CRAN (R 4.0.2)                          
-##  CRAN (R 4.0.1)                          
-##  CRAN (R 4.0.0)                          
-##  CRAN (R 4.0.0)                          
-##  CRAN (R 4.0.2)                          
-##  CRAN (R 4.0.1)                          
-##  CRAN (R 4.0.2)                          
-##  CRAN (R 4.0.2)                          
-##  CRAN (R 4.0.0)                          
-##  CRAN (R 4.0.2)                          
-##  Github (ropensci/tabulizer@fa4dff5)     
-##  Github (ropensci/tabulizerjars@d1924e0) 
-##  CRAN (R 4.0.2)                          
-##  CRAN (R 4.0.1)                          
-##  CRAN (R 4.0.1)                          
-##  CRAN (R 4.0.1)                          
-##  CRAN (R 4.0.1)                          
-##  CRAN (R 4.0.2)                          
-##  CRAN (R 4.0.1)                          
-##  CRAN (R 4.0.0)                          
-##  CRAN (R 4.0.2)                          
-##  CRAN (R 4.0.3)                          
-##  CRAN (R 4.0.0)                          
-##  CRAN (R 4.0.0)                          
+##  source                                    
+##  CRAN (R 4.0.1)                            
+##  CRAN (R 4.0.0)                            
+##  CRAN (R 4.0.0)                            
+##  CRAN (R 4.0.3)                            
+##  CRAN (R 4.0.3)                            
+##  CRAN (R 4.0.0)                            
+##  CRAN (R 4.0.1)                            
+##  CRAN (R 4.0.2)                            
+##  CRAN (R 4.0.3)                            
+##  CRAN (R 4.0.3)                            
+##  CRAN (R 4.0.0)                            
+##  CRAN (R 4.0.0)                            
+##  CRAN (R 4.0.1)                            
+##  Github (rich-iannone/DiagrammeR@b6a7019)  
+##  CRAN (R 4.0.3)                            
+##  CRAN (R 4.0.3)                            
+##  CRAN (R 4.0.2)                            
+##  CRAN (R 4.0.3)                            
+##  CRAN (R 4.0.0)                            
+##  CRAN (R 4.0.0)                            
+##  CRAN (R 4.0.0)                            
+##  CRAN (R 4.0.0)                            
+##  CRAN (R 4.0.2)                            
+##  CRAN (R 4.0.0)                            
+##  CRAN (R 4.0.3)                            
+##  CRAN (R 4.0.1)                            
+##  Github (davidgohel/ggiraph@0abe7f1)       
+##  Github (tidyverse/ggplot2@b76fa96)        
+##  Github (slowkow/ggrepel@4d0ef50)          
+##  CRAN (R 4.0.2)                            
+##  CRAN (R 4.0.1)                            
+##  CRAN (R 4.0.2)                            
+##  CRAN (R 4.0.1)                            
+##  CRAN (R 4.0.0)                            
+##  CRAN (R 4.0.3)                            
+##  CRAN (R 4.0.0)                            
+##  CRAN (R 4.0.1)                            
+##  CRAN (R 4.0.1)                            
+##  CRAN (R 4.0.2)                            
+##  CRAN (R 4.0.2)                            
+##  CRAN (R 4.0.1)                            
+##  CRAN (R 4.0.1)                            
+##  CRAN (R 4.0.2)                            
+##  CRAN (R 4.0.3)                            
+##  CRAN (R 4.0.2)                            
+##  CRAN (R 4.0.0)                            
+##  Github (r-spatial/leafem@b90a32e)         
+##  Github (rstudio/leaflet@d4e7f69)          
+##  Github (rstudio/leaflet.providers@a992fad)
+##  CRAN (R 4.0.0)                            
+##  CRAN (R 4.0.3)                            
+##  CRAN (R 4.0.3)                            
+##  Github (r-spatial/mapview@1fe53fc)        
+##  CRAN (R 4.0.2)                            
+##  CRAN (R 4.0.0)                            
+##  CRAN (R 4.0.0)                            
+##  CRAN (R 4.0.3)                            
+##  CRAN (R 4.0.2)                            
+##  CRAN (R 4.0.0)                            
+##  CRAN (R 4.0.1)                            
+##  CRAN (R 4.0.0)                            
+##  CRAN (R 4.0.1)                            
+##  CRAN (R 4.0.1)                            
+##  CRAN (R 4.0.0)                            
+##  CRAN (R 4.0.3)                            
+##  CRAN (R 4.0.3)                            
+##  CRAN (R 4.0.0)                            
+##  CRAN (R 4.0.2)                            
+##  CRAN (R 4.0.2)                            
+##  CRAN (R 4.0.2)                            
+##  CRAN (R 4.0.2)                            
+##  CRAN (R 4.0.3)                            
+##  CRAN (R 4.0.2)                            
+##  CRAN (R 4.0.2)                            
+##  CRAN (R 4.0.3)                            
+##  CRAN (R 4.0.2)                            
+##  CRAN (R 4.0.3)                            
+##  CRAN (R 4.0.3)                            
+##  CRAN (R 4.0.2)                            
+##  CRAN (R 4.0.1)                            
+##  CRAN (R 4.0.0)                            
+##  CRAN (R 4.0.0)                            
+##  CRAN (R 4.0.2)                            
+##  CRAN (R 4.0.1)                            
+##  CRAN (R 4.0.2)                            
+##  CRAN (R 4.0.2)                            
+##  CRAN (R 4.0.0)                            
+##  CRAN (R 4.0.2)                            
+##  Github (ropensci/tabulizer@fa4dff5)       
+##  Github (ropensci/tabulizerjars@d1924e0)   
+##  CRAN (R 4.0.2)                            
+##  CRAN (R 4.0.1)                            
+##  CRAN (R 4.0.1)                            
+##  CRAN (R 4.0.1)                            
+##  CRAN (R 4.0.1)                            
+##  CRAN (R 4.0.3)                            
+##  CRAN (R 4.0.1)                            
+##  CRAN (R 4.0.0)                            
+##  CRAN (R 4.0.1)                            
+##  CRAN (R 4.0.0)                            
+##  CRAN (R 4.0.2)                            
+##  CRAN (R 4.0.3)                            
+##  CRAN (R 4.0.0)                            
+##  CRAN (R 4.0.0)                            
 ## 
 ## [1] /home/alexis/R/x86_64-pc-linux-gnu-library/4.0
 ## [2] /usr/local/lib/R/site-library

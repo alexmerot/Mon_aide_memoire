@@ -9,7 +9,7 @@ fig:plot-sf-types2
 tab:data-rnn
 fig:fig-rnn
 fig:plot-rnn-jura-interactive
-fig:plot-mapview
+fig:plot-leaflet
 fig:plotrgb-dijon-cassini
 fig:plot2d-dijon-cassini
 fig:plot3d-dijon-cassini1
@@ -36,5 +36,5 @@ rasters
 CRS
 cartes-interactives
 le-package-ggiraph
-le-package-mapview
+le-package-leaflet
 les-cartes-en-3d-avec-rayshader

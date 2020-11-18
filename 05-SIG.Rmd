@@ -573,17 +573,13 @@ if (!file.exists("docs/images/plot-rnn-jura-interactive.html")) {
 knitr::include_url("images/plot-rnn-jura-interactive.html")
 ```
 
-### Le package *`mapview`*
+### Le package *`leaflet`*
 
-```{r, message=FALSE}
-library("mapview")
+```{r, message=FALSE, warning=FALSE}
+library("leaflet")
+library("leafem")
 ```
 
-Pour afficher toutes les options globales disponibles dans `mapview` :
-
-```{r}
-mapviewOptions()
-```
 
 ```{r}
 map_types <- c(
@@ -600,13 +596,9 @@ description_rnn <- data_rnn %>%
   mutate(
     description = glue(
       '
-      <style>
-      div.leaflet-popup-content {{width:auto !important; height:auto !important}}
-      </style>
       <h1 style="border: 3px solid; text-align: center; border-radius: 15px">
       {NOM_SITE}
       </h1>
-      <hr>
       <b>Date de création</b> : {format(DATE_CREA, "%d/%m/%Y")}<br>
       <b>Opérateur</b> : {OPERATEUR}<br>
       <b>Superficie officielle</b> : {SURF_OFF} ha<br>
@@ -620,41 +612,70 @@ description_rnn <- data_rnn %>%
 
 <br>
 
-```{r, eval=FALSE}
-st_point_on_surface(data_rnn) %>%
-  mapview(
-    col.regions = "darkred",
-    layer.name = "Réserves Naturelles Nationales",
-    map.types = map_types,
-    label = "NOM_SITE",
+```{r leaflet, warning=FALSE, message=FALSE}
+pal = colorNumeric(viridis::viridis(length(data_rnn$SURF_OFF)), data_rnn$SURF_OFF)
+
+carte <- leaflet() %>%
+  addFeatures(
+    data = data_rnn,
+    color = "black",
+    weight = 1,
+    opacity = 1,
+    fillOpacity = 0,
+    label = ~NOM_SITE,
     popup = description_rnn,
-    cex = "SURF_OFF"
-  )
+    group = "Contours"
+  ) %>%
+  addFeatures(
+    data = st_point_on_surface(data_rnn),
+    color = "black",
+    weight = 1,
+    fillColor = ~viridis::viridis(length(SURF_OFF)),
+    opacity = 0.8,
+    fillOpacity = 0.8,
+    label = ~NOM_SITE,
+    popup = description_rnn,
+    group = "Points1",
+    bringToFront = TRUE
+  ) %>%
+  addLegend(
+    data = data_rnn,
+    position = "bottomleft", 
+    pal = pal,
+    values = ~SURF_OFF,
+    title = "Surface (m²)",
+    opacity = 1
+  ) %>%
+  addLayersControl(
+    baseGroups = c(map_types),
+    overlayGroups = c("Points1", "Contours")
+  ) %>%
+  addMouseCoordinates() %>%
+  addHomeButton(st_bbox(data_rnn), "Retour", position = "topright") %>%
+  addMiniMap(toggleDisplay = TRUE)
+  
+
+for (provider in map_types) {
+  carte <- addProviderTiles(carte, provider, group = provider)
+}
 ```
 
-(ref:plot-mapview) Carte interactive montrant la localisation des Réserves Naturelles Nationales en France métropolitaine. La taille des points est proportionnelle à la superficie des réserves. Une courte description est visible en cliquant sur les points.
+<br>
 
-```{r plot-mapview, out.width="100%", fig.cap="(ref:plot-mapview)", warning=FALSE, message=FALSE, echo=FALSE}
-if (!file.exists("docs/images/plot-mapview.html")) {
-  st_point_on_surface(data_rnn) %>%
-    mapview(
-      col.regions = "darkred",
-      layer.name = "Réserves Naturelles Nationales",
-      map.types = map_types,
-      label = "NOM_SITE",
-      popup = description_rnn,
-      cex = "SURF_OFF"
-    ) %>%
-    mapshot(
-      here::here("images", "plot-mapview.html"), 
-      remove_controls = NULL,
-      selfcontained = FALSE # Les lourds fichiers HTML ne peuvent être indépendants
-    )
-}
+(ref:plot-leaflet) Carte interactive montrant la localisation et le contour des Réserves Naturelles Nationales en France métropolitaine.
+
+```{r plot-leaflet, out.width="100%", fig.cap="(ref:plot-leaflet)", warning=FALSE, message=FALSE, echo=FALSE}
+mapview::mapshot(
+  carte,
+  here::here("images", "plot-leaflet.html"), 
+  remove_controls = NULL,
+  selfcontained = FALSE # Les lourds fichiers HTML ne peuvent être indépendants
+)
+
 # Pour le moment, il faut copier manuellement les dépendances du fichier HTML
 # vers le dossier /docs
-# file.copy(from = "images/plot-mapview_files", to = "docs/images", recursive = TRUE)
-knitr::include_url("images/plot-mapview.html")
+fs::dir_copy("images/plot-leaflet_files/", "docs/images/plot-leaflet_files/")
+knitr::include_url("images/plot-leaflet.html")
 ```
 
 ## Les cartes en 3D avec **`rayshader`**
