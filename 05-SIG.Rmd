@@ -643,7 +643,7 @@ carte <- leaflet() %>%
     position = "bottomleft", 
     pal = pal,
     values = ~SURF_OFF,
-    title = "Surface (m²)",
+    title = "Surface (ha)",
     opacity = 1
   ) %>%
   addLayersControl(
