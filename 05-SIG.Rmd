@@ -269,7 +269,7 @@ via la bibliothèque [GDAL](https://gdal.org/) ; mais aussi représenter et
 transformer des systèmes de coordonnées projetées, à partir de la
 bibliothèque [PROJ](https://proj.org/).
 
-#### Lecture des fichiers de données spatiales pour les vecteurs
+#### Lecture des fichiers de données spatiales pour les vecteurs {#sf-read}
 
 Pour avoir un aperçu des objets `sf` sous R, nous allons prendre pour exemple
 les données de localisation des Réserves Naturelles Nationales (RNN) de la
@@ -542,45 +542,52 @@ rnn_jura_interactive <- ggplot(crop_regions) +
   )
 ```
 
-```{r, eval=FALSE}
+<br>
+
+(ref:plot-rnn-jura-interactive) Carte de la délimitation (en rouge) de la Réserve Naturelle Nationale de la Haute-Chaîne du Jura. Le nom des communes de la Communauté d'Agglomération du Pays de Gex est visible interactivement en passant dessus le curseur de la souris.
+
+```{r plot-rnn-jura-interactive, message=FALSE, warning=FALSE, fig.cap="(ref:plot-rnn-jura-interactive)"}
 girafe(
   code = print(rnn_jura_interactive),
   options = list(
     opts_hover(css = "fill:orange;"),
     opts_hover_inv(css = "opacity:0.2;"),
-    opts_zoom(max = 5)
+    opts_zoom(max = 5),
+    opts_sizing(rescale = TRUE)
   )
 )
 ```
 
-(ref:plot-rnn-jura-interactive) Carte de la délimitation (en rouge) de la Réserve Naturelle Nationale de la Haute-Chaîne du Jura. Le nom des communes de la Communauté d'Agglomération du Pays de Gex est visible interactivement en passant dessus le curseur de la souris.
+### Le package **`leaflet`**
 
-```{r plot-rnn-jura-interactive, fig.height="600px", out.width="100%", message=FALSE, warning=FALSE, echo=FALSE, fig.cap="(ref:plot-rnn-jura-interactive)"}
-if (!file.exists("docs/images/plot-rnn-jura-interactive.html")) {
-  girafe(
-    code = print(rnn_jura_interactive),
-    options = list(
-      opts_hover(css = "fill:orange;"),
-      opts_hover_inv(css = "opacity:0.2;"),
-      opts_zoom(max = 5)
-    )
-  ) %>%
-  htmlwidgets::saveWidget(
-    file = here::here("images", "plot-rnn-jura-interactive.html"),
-    selfcontained = TRUE
-  )
-}
-knitr::include_url("images/plot-rnn-jura-interactive.html")
-```
+Le package [`leaflet`](https://rstudio.github.io/leaflet/) permet d'intégrer et
+de contrôler dans R les cartes créées via la bibliothèque javascript
+[Leaflet](https://leafletjs.com/). Cette bibliothèque permettant de créer des
+cartes interactives est *open-source* et très populaire. Elle est notamment
+utilisée par OpenStreetMap.
 
-### Le package *`leaflet`*
+D'autres packages tels que [`leafem`](https://github.com/r-spatial/leafem) et
+[`leafpop`](https://github.com/r-spatial/leafpop) permettent d'étendre
+facilement les fonctionnalités du package `leaflet`.
 
 ```{r, message=FALSE, warning=FALSE}
 library("leaflet")
 library("leafem")
 ```
 
+Je vais créer ici une carte interactive permettant de localiser les Réserves
+Naturelles Nationales en France métropolitaine, ainsi que de visualiser leur
+contour et de comparer leur surface.
 
+`leaflet` intègre plusieurs fonds de carte venant de OpenStreetMap. Cette
+fonctionnalité peut être étendue en utilisant des fonds de carte provenant de
+différents fournisseurs. Une liste des fonds de carte disponibles peut être
+retrouvée à l'aide du package
+[`leaflet.providers`](https://github.com/rstudio/leaflet.providers) ou
+visualisée directement via le site
+<http://leaflet-extras.github.io/leaflet-providers/>.
+
+Je commence par créer un vecteur contenant les fonds de carte voulus :
 ```{r}
 map_types <- c(
   "Esri.NatGeoWorldMap",
@@ -589,7 +596,13 @@ map_types <- c(
   "GeoportailFrance.orthos",
   "OpenStreetMap.France"
 )
+```
 
+Ensuite je crée, à partir du jeu de données [`data_rnn`](#sf-read), un vecteur
+contenant la description des différentes réserves. Cela servira pour la création
+des pop-ups. La description est mise en forme à l'aide de balises HTML.
+
+```{r}
 description_rnn <- data_rnn %>%
   st_drop_geometry() %>%
   select(NOM_SITE, DATE_CREA, OPERATEUR, SURF_OFF, ID_MNHN, URL_FICHE) %>%
@@ -612,11 +625,48 @@ description_rnn <- data_rnn %>%
 
 <br>
 
-```{r leaflet, warning=FALSE, message=FALSE}
-pal = colorNumeric(viridis::viridis(length(data_rnn$SURF_OFF)), data_rnn$SURF_OFF)
+Pour comparer la surface des réserves, je vais utiliser le package
+[`viridis`](https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html)
+pour créer une palette de couleurs mieux adaptée pour les daltoniens.
 
+La fonction `colorNumeric` permet d'intégrer la palette à `leaflet` en créant
+une fonction qui pourra être réutiliser pour assigner une couleur à chaque
+valeur de surface.
+
+Pour avoir un meilleur contraste, on peut préalablement avec la fonction `cut`
+créer des intervalles regroupant les données de surface.
+
+```{r}
+cut_labels <- c(
+  "≤ 100", 
+  "(100 — 500]",
+  "(500 — 1000]",
+  "(1000 — 2000]", 
+  "(2000 — 5000]", 
+  "(5000 — 10000]", 
+  "(10000 — 17000]"
+)
+
+cut_values <- cut(
+  data_rnn$SURF_OFF, 
+  breaks = c(-Inf, 100, 500, 1000, 2000, 5000, 10000, 17000), 
+  labels = cut_labels
+)
+
+data_rnn <- mutate(data_rnn, SURF_OFF_CUT = cut_values)
+
+pal = colorFactor(
+  palette = viridis::viridis(length(cut_values), direction = -1), 
+  domain = data_rnn$SURF_OFF_CUT
+)
+```
+
+Enfin, la carte peut être créée couche par couche, d'une manière équivalente à
+`ggplot2`.
+
+```{r, warning=FALSE, message=FALSE}
 carte <- leaflet() %>%
-  addFeatures(
+  addFeatures( # Ajout des polygones
     data = data_rnn,
     color = "black",
     weight = 1,
@@ -626,35 +676,38 @@ carte <- leaflet() %>%
     popup = description_rnn,
     group = "Contours"
   ) %>%
-  addFeatures(
+  addFeatures( # Ajout des cercles
     data = st_point_on_surface(data_rnn),
     color = "black",
     weight = 1,
-    fillColor = ~viridis::viridis(length(SURF_OFF)),
-    opacity = 0.8,
+    fillColor = ~pal(SURF_OFF_CUT), # On utilise la fonction qu'on avait créée
+    opacity = 1,
     fillOpacity = 0.8,
     label = ~NOM_SITE,
     popup = description_rnn,
     group = "Points1",
     bringToFront = TRUE
   ) %>%
-  addLegend(
+  addLegend( # Ajout de la légende
     data = data_rnn,
     position = "bottomleft", 
     pal = pal,
-    values = ~SURF_OFF,
+    values = ~SURF_OFF_CUT,
     title = "Surface (ha)",
     opacity = 1
   ) %>%
-  addLayersControl(
+  addLayersControl( # Ajout d'une interface utilisateur pour contrôler les couches
     baseGroups = c(map_types),
-    overlayGroups = c("Points1", "Contours")
+    overlayGroups = c("Points", "Contours")
   ) %>%
   addMouseCoordinates() %>%
   addHomeButton(st_bbox(data_rnn), "Retour", position = "topright") %>%
-  addMiniMap(toggleDisplay = TRUE)
-  
+  addMiniMap(toggleDisplay = TRUE, minimized = TRUE)
+```
 
+Les fonds de carte sont ajoutés via une boucle `for`.
+
+```{r, warning=FALSE, message=FALSE}
 for (provider in map_types) {
   carte <- addProviderTiles(carte, provider, group = provider)
 }
@@ -674,6 +727,7 @@ mapview::mapshot(
 
 # Pour le moment, il faut copier manuellement les dépendances du fichier HTML
 # vers le dossier /docs
+if (dir.exists("docs/images/plot-leaflet_files/")) fs::dir_delete("docs/images/plot-leaflet_files/")
 fs::dir_copy("images/plot-leaflet_files/", "docs/images/plot-leaflet_files/")
 knitr::include_url("images/plot-leaflet.html")
 ```

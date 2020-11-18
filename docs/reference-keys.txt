@@ -30,7 +30,7 @@ whatis-sig
 R-sig
 data-sig
 vectors
-lecture-des-fichiers-de-données-spatiales-pour-les-vecteurs
+sf-read
 création-de-cartes-à-partir-de-vecteurs
 rasters
 CRS
